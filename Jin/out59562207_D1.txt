@@ -1,0 +1,43 @@
+
+Ótimo aparelho, com preço bom e qualidade melhora ainda. 
+Bom produto, funciona bem, tem bom preço e cumpre o que promete. 
+Aparelho muito bom, me atende no que preciso no dia a dia, para que pagar mais se pode ter quase o mesmo por menos. 
+Bom. 
+Pratico. 
+MOTO G ou MOTO Z NUNCA MAIS! 
+MOTO G5: Pior opção possível. 
+O produto e intermediario digamos que pobre tem que tomar no *** memo. 
+Foi o pior aparelho que já comprei, não recomendo para ninguem. 
+Creio que para usuários mais exigentes não compensaria. 
+Moto G5 Plus decepciona. 
+Aparelbo com problema. 
+
+
+Celular Bom mas poderia ser mais barato e resistente. 
+Ótimo Aparelho. Porém Caríssimo, Bateria meia boca. 
+S7 razoavel. 
+Podia ter melhor custo-benefício. 
+O aparelho poderia ser um pouco mais barato. 
+Poderia custar mais barato. 
+Além disso, é caro demais. 
+Em seu preço original de $4200,00 não mesmo. 
+Eu já possuia o S7 Edge e resolvi comprar o S7 como alternativa porque gostei da experiência. 
+A cada dia o celular me surpreende com funções que facilita no meu meu dia a dia. 
+Produto excelente e sem arrependimento. 
+Gostei bastante pela inovação nas características e velocidade. 
+Não deixou nada a desejar. 
+
+
+
+sentences:    12   13
+    words:    98   99
+
+
+( 29  15)      22    12    12   [[ 14]]  
+
+               23    12    10    [ 13]      ~  2
+
+[162, 132, 95, 361, 481, 607, 561, 536, 545, 268, 601, 571]
+[99, 178, 652, 576, 104, 79, 181, 186, 433, 367, 516, 529, 493]
+
+

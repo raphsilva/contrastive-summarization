@@ -1,0 +1,30 @@
+
+A Câmera tem ótimo desempenho e tem resultados de uma semi professional. 
+Excelente câmera! Vale a pena.Quem não é profissional basta dar uma estudada, ler e praticar! 
+Esta câmera é um ótimo produto,estou satisfeito e fazendo muitos registro importante, pode compra esta aprovado. 
+Boa maquina para quem esta começando a fotografar. 
+Amei esse produto,me surpreendi com a ótima qualidade,essa câmera virou minha queridinha,amei ela mesmo,só que o ruim dela é a duração da bateria,acaba rápido,mais o respo é ótimo,e ela é super fácil de mexer.Recomendo para todos. 
+
+
+Câmera leve e fácil manuseio, manual completo, além do display e qualidade das fotos perfeitas. 
+O modo automático não é muito eficiente, mas as funções são variadas e sabendo usa-las a câmera é muito boa. 
+Ótimo produto, superou minhas expectativas, recomendo. 
+Produto coerente com todas as especificações técnicas. 
+Não dá para focar e o flash só acende na hora do disparo. 
+Produto muito bom para quem é amador e quer tirar fotos no lazer. 
+Ótima legal de usar. 
+
+
+
+sentences:     5    7
+    words:    87   78
+
+
+( 81  68)      74    33    46   [[ 46]]  
+
+               75    38    46    [ 46]      ~ 11
+
+[85, 91, 128, 135, 106]
+[81, 98, 57, 88, 72, 110, 79]
+
+

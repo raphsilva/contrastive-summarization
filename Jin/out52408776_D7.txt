@@ -1,0 +1,33 @@
+
+Os tutoriais online Canon ajudam muito. 
+O produto vem com correia para evitar quedas, duas lentes para fotografia, o corpo é resistente, a qualidade de fotografia é superior se comparado a prozoomers, Acompanha bateria, tampas de lentes para evitar riscos e manchas ao manusear. 
+Com ISO acima disso as fotos ficam boas, mas apresentam algumas granulações leves. 
+Ótimo custo-benefício. 
+Deveria vir com bateria extrado demais atende minhas necessidades. 
+Poderia vir um software pelo menos trial para poder editar fotos. 
+Falta uma mochila para transporte, o que daria muito mais segurança, mesmo sabendo da robustez do corpo. 
+
+
+Algumas informações não viram no Manual. 
+É necessário aprender a usar as funções. 
+Foto ruim pouca luminosidade. 
+Fotograr à noite ou locais com pouca luminosidade é difícil. 
+Não recomento a câmera para quem queira fazer videos profissionais, fora isso, é uma boa câmera, e a qualidade de imagem para fotos é incrível. 
+Excelente custo benefício para um iniciante. 
+Adquiri o produto e avalio ótimo custo-benefício. 
+Excelente custo-benefício. 
+
+
+
+sentences:     7    8
+    words:    96   67
+
+
+( 74  54)      64    62    75   [[ 67]]  
+
+               59    62    72    [ 64]      ~  4
+
+[5, 4, 29, 24, 21, 17, 15]
+[13, 97, 70, 71, 26, 65, 43, 7]
+
+

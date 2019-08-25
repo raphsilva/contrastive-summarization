@@ -1,0 +1,34 @@
+
+O produto vem com correia para evitar quedas, duas lentes para fotografia, o corpo é resistente, a qualidade de fotografia é superior se comparado a prozoomers, Acompanha bateria, tampas de lentes para evitar riscos e manchas ao manusear. 
+Uma ótima opção para fotógrafos iniciantes e amadores que querem se profissionalizar.O custo beneficio, é um dos maiores pontos positivos. 
+Relativamente bom o investimento, o produto apresenta diversas características de uso profissional amador, comprei para uso pessoal e tive bons resultados. 
+Ótimo custo-benefício. 
+Ótimo custo benefício! Fotos em alta definição. 
+Ótimo custo benefício. 
+Custo beneficio excelente. 
+E o preço esta muito bom. 
+
+
+Algumas informações não viram no Manual. 
+Foto ruim pouca luminosidade. 
+Ótima legal de usar. 
+Correspondente com todas as características citadas, muito fácil manuseio.. 
+A imagem é muito boa e muito fácil de usar. 
+Maquina de fácil utilização e boa resolução das fotos. 
+Qualidade da imagem, facilidade no uso. 
+Fotograr à noite ou locais com pouca luminosidade é difícil. 
+
+
+
+sentences:     8    8
+    words:   100   58
+
+
+( 62  58)      60    62    50   [[ 57]]  
+
+               60    62    50    [ 57]      ~  0
+
+[4, 61, 108, 24, 84, 122, 57, 56]
+[13, 70, 79, 15, 23, 41, 51, 71]
+
+

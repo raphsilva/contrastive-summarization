@@ -1,0 +1,38 @@
+
+Para quem procura uma câmera de entrada ela é muito boa! 
+Tem ISO relativamente bom, mas apresenta uma limitação em qualidade a partir do ISO 1600. 
+Uma coisa muito legal é a possibilidade de trocar as lentes, pois o produto é compatível com todas as lentes da marca. 
+E ótima tem um foco excelente. 
+Ótimo custo-benefício. 
+O peso e o tamanho atrapalham um pouco, mas para este tipo de equipamento é comum, se comparado aos outros modelos de câmera. 
+A abertura de diafragma das lentes do kit não são das melhores, mas pelo preço proposto é satisfatório. 
+
+
+É necessário aprender a usar as funções. 
+Fotograr à noite ou locais com pouca luminosidade é difícil. 
+Foto ruim pouca luminosidade. 
+Não dá para focar e o flash só acende na hora do disparo. 
+Algumas informações não viram no Manual. 
+Porém, me incomodou o ruído presente no momento de gravação de videos. 
+Maquina Boa utilização. 
+Amei super facil de usar. 
+Facilidade no uso. 
+Ótima legal de usar. 
+Câmera leve e fácil manuseio, manual completo, além do display e qualidade das fotos perfeitas. 
+Correspondente com todas as características citadas, muito fácil manuseio.. 
+Excelente custo-benefício. 
+
+
+
+sentences:     7   13
+    words:    97   93
+
+
+( 69  65)      67    72    51   [[ 62]]  
+
+               68    74    52    [ 63]      ~  2
+
+[95, 28, 33, 126, 24, 7, 10]
+[97, 71, 70, 72, 13, 24, 50, 20, 40, 79, 81, 15, 7]
+
+

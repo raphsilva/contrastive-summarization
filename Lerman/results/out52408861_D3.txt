@@ -1,0 +1,34 @@
+
+Creio que a única coisa negativa são os &dquote&apenas&dquote& 2 GB de memória, se fossem 3 GB o aparelho seria imbativel, mas na sua faixa de preço ainda está valendo a pena. 
+A memória é muito boa e a bateria chega a durar 48 horas. 
+Lindo. 
+A câmera tem menos estabilidade, sinto de alguns app&squote&s exclusivos da série Galaxy. 
+MOTO G5: Pior opção possível. 
+A função de dividir a tela e usar dois aplicativos simultaneamente é ótima. 
+Pratico. 
+A diferença é que esse aqui não trava e a bateria dura, DE FATO, 1 dia inteiro. 
+
+
+Gostei muito do s7, desempenho excelente, apenas a bateria ruim. 
+A câmera é um dos diferenciais. 
+Excelente aparelho! Só o preço que é alto demais e a Samsung que enche de APPs que não se utiliza que não tem como apagar. 
+O prata suja bastante na parte de trás do aparelho. 
+Excelente produto acessórios um pouco carros para ter todos, mais o óculos foi brinde foi menos um para compra, a capa que protege a lente e um pouco frágil. 
+Um produto com um grande desempenho e de fácil manuseio. 
+Em seu preço original de $4200,00 não mesmo. 
+Bateria horrível. 
+
+
+
+sentences:     8    8
+    words:    95  100
+
+
+( 46  57)      52    75    55   [[ 59]]  
+
+               52    75    55    [ 59]      ~  0
+
+[476, 294, 525, 305, 561, 379, 481, 435]
+[593, 535, 584, 502, 317, 589, 186, 677]
+
+

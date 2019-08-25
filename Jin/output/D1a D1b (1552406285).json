@@ -1,0 +1,77 @@
+{
+    "meta": {
+        "limits (per side)": {
+            "sentences": 30,
+            "words": 100
+        },
+        "run time": 690.97,
+        "size": {
+            "source": {
+                "sentences": [
+                    269,
+                    253
+                ],
+                "words": [
+                    3767,
+                    3462
+                ]
+            }
+        },
+        "source": [
+            "D3a",
+            "D3b"
+        ]
+    },
+    "output": [
+        {
+            "evaluation": {
+                "c": 3900,
+                "r": 2400
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "clues",
+                "method": "CONTRASTIVE",
+                "optmization": "greedy",
+                "polarity attribution": "complex",
+                "similarity": "corpus"
+            },
+            "size": {
+                "word count": [
+                    98,
+                    99
+                ]
+            },
+            "summ": [
+                [
+                    107,
+                    309,
+                    377,
+                    234,
+                    378,
+                    221,
+                    299,
+                    525,
+                    419,
+                    609,
+                    76,
+                    568
+                ],
+                [
+                    58,
+                    256,
+                    254,
+                    573,
+                    211,
+                    677,
+                    305,
+                    33,
+                    561,
+                    132,
+                    171,
+                    216
+                ]
+            ]
+        }
+    ]
+}

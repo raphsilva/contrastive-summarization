@@ -1,0 +1,43 @@
+
+Muito bom, tamanho ideal. 
+A tela é bem brilhante. 
+O Android 7.0 é muito bom. 
+Gosto do Android quase puro e a Motorola atualiza o sistema operacional mais rápido que os demais fabricantes. 
+Sempre inovando e como sempre, Androide puro. 
+Bonito e leve. 
+Dura bastane tempo. 
+Lindo. 
+Review speaker ruim. 
+Para mim, a memória interna deveria ser aumentada, pois o Android quase ocupa toda ela. 
+Também percebi um bug que quando se carrega o celular, dependendo da capa de proteção não dá pra usar a tela touch (a voltagem interfere na detecção dos toques) 
+Bateria já estava ruim. 
+
+
+Só achei um pouco pesado. 
+Mas acredito que em breve me adaptarei ao produto, e essa questão será passado. 
+Quanto ao software, muito poluído. 
+Por ser todo em vidro suja um pouco, mas nada que uma capinha não resolva. 
+A cor prata é bem enjoativa. 
+Bateria horrível. 
+Produto de otima qualidade, produto feito para durar. 
+É à prova d&squote&água mesmo. 
+Para armazená-las possui ótimo espaço (32gb), além de permitir expandir o espaço utilizando o cartão de memória. 
+A memória é ótima e ainda é expansível. 
+Interface diferente dos demais androids, porém é agradável. 
+Imagem top. 
+Graficos impressionam pela qualidade. 
+
+
+
+sentences:    12   13
+    words:    98   99
+
+
+( 27  21)      24    38    36   [[ 31]]  
+
+               24    39    37    [ 32]      ~  2
+
+[107, 309, 378, 377, 234, 221, 299, 525, 609, 419, 76, 568]
+[58, 256, 254, 573, 211, 677, 33, 305, 561, 132, 220, 81, 530]
+
+

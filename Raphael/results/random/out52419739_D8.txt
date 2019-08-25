@@ -1,0 +1,38 @@
+
+Vale a pena, não nos deixa apontar um item negativo. 
+A câmera também é muito boa. 
+Design bonito, processador bom, bateria com ótima duração, funções fáceis de usar. 
+Produto muito fácil de se utilizar. 
+Fácil de usar e com vários recurso que são encontrados na linha premium. 
+Só acho que devem melhorar a qualidade da câmera tanto traseira quanto frontal. 
+Produto de muita boa qualidade, eficiente e ágil. 
+Ótimo smartphone, reúne os melhores atributos de um aparelho premium. 
+
+
+Bom e caro. 
+Complicado de encontrar películas compatíveis com a tela toda. 
+Processamento rápido e câmera boa. 
+O aparelho poderia ser um pouco mais barato. 
+Celular Bom mas poderia ser mais barato e resistente. 
+Bateria dura até 2 dias, muito boa. 
+Poderia custar mais barato. 
+Estou impressionado com o desempenho do celular! 
+Só achei um pouco pesado. 
+Amigável, rapido, excelente acabamento. 
+Igual aos outros a única coisa que é melhor a bateria carrega muito rápido. 
+Por enquanto não tenho do que reclamar, é lindo e cumpre todas as funções, e a câmera é espetacular! 
+
+
+
+sentences:     8   12
+    words:    78   94
+
+
+( 65  76)      71    46    45   [[ 51]]  
+
+               69    44    44    [ 50]      ~  6
+
+[60, 4, 52, 68, 85, 55, 16, 83]
+[77, 19, 56, 104, 99, 55, 79, 66, 58, 74, 6, 27]
+
+

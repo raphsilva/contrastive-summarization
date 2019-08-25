@@ -1,0 +1,182 @@
+100 tests, discard 10(x2) best and worst
+
+
+
+============  D8a D8b ============
+
+
+
+               43    41    34   [  39 ]    ( 39)      ~  0
+
+             ~  0  ~  0  ~  0               ~  0
+
+
+max            43    41    34                 39
+
+min            43    41    34                 39
+
+
+simple mean    43    41    34      39       ' 39'      ~  0
+
+
+
+
+ avg words 1:   99.67 
+ avg words 2:   26.95 
+
+ avg sentences 1:    3.00 
+ avg sentences 2:    3.00 
+
+ time  15.52 
+ diff summs: 12
+
+
+
+
+
+
+
+
+
+============  D7a D7b ============
+
+
+
+               60    62    50   [  57 ]    ( 57)      ~  0
+
+             ~  0  ~  0  ~  0               ~  0
+
+
+max            60    62    50                 57
+
+min            60    62    50                 57
+
+
+simple mean    60    62    50      57       ' 57'      ~  0
+
+
+
+
+ avg words 1:   98.68 
+ avg words 2:   54.42 
+
+ avg sentences 1:    6.76 
+ avg sentences 2:    6.76 
+
+ time  12.44 
+ diff summs: 100
+
+
+
+
+
+
+
+
+
+============  D6a D6b ============
+
+
+
+               82    92    78   [  84 ]    ( 84)      ~  3
+
+             ~  2  ~  8  ~  2               ~  3
+
+
+max            92   100    84                 86
+
+min            80    83    76                 80
+
+
+simple mean    83    92    79      84       ' 84'      ~  3
+
+
+
+
+ avg words 1:   92.61 
+ avg words 2:   99.22 
+
+ avg sentences 1:    5.52 
+ avg sentences 2:    5.52 
+
+ time  18.12 
+ diff summs: 92
+
+
+
+
+
+
+
+
+
+============  D5a D5b ============
+
+
+
+               66    75    59   [  66 ]    ( 66)      ~  1
+
+             ~  2  ~  0  ~  1               ~  1
+
+
+max            70    75    62                 68
+
+min            61    75    58                 64
+
+
+simple mean    66    75    59      66       ' 66'      ~  1
+
+
+
+
+ avg words 1:   97.89 
+ avg words 2:   61.80 
+
+ avg sentences 1:    5.80 
+ avg sentences 2:    5.80 
+
+ time  34.88 
+ diff summs: 86
+
+
+
+
+
+
+
+
+
+============  D4a D4b ============
+
+
+
+               72    50    52   [  56 ]    ( 56)      ~  0
+
+             ~  0  ~  0  ~  0               ~  0
+
+
+max            72    50    52                 56
+
+min            72    50    52                 56
+
+
+simple mean    72    50    52      56       ' 56'      ~  0
+
+
+
+
+ avg words 1:   63.00 
+ avg words 2:   99.00 
+
+ avg sentences 1:    5.00 
+ avg sentences 2:    5.00 
+
+ time 386.73 
+ diff summs: 1
+
+
+
+
+
+
+

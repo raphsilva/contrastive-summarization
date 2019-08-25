@@ -1,0 +1,7379 @@
+{
+    "meta": {
+        "limits (per side)": {
+            "sentences": 20,
+            "words": 100
+        },
+        "run time": 619.35,
+        "size": {
+            "source": {
+                "sentences": [
+                    29,
+                    25
+                ],
+                "words": [
+                    599,
+                    261
+                ]
+            }
+        },
+        "source": [
+            "30",
+            "31"
+        ]
+    },
+    "output": [
+        {
+            "evaluation": {
+                "C": 40.909090909090914,
+                "D": 33.98692810457516,
+                "H": 38.813758942062634,
+                "R": 42.69005847953216
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    100,
+                    22
+                ]
+            },
+            "summ": [
+                [
+                    10,
+                    64,
+                    25
+                ],
+                [
+                    58,
+                    18,
+                    81
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 40.909090909090914,
+                "D": 33.98692810457516,
+                "H": 38.813758942062634,
+                "R": 42.69005847953216
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    100,
+                    31
+                ]
+            },
+            "summ": [
+                [
+                    10,
+                    64,
+                    25
+                ],
+                [
+                    58,
+                    18,
+                    57
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 40.909090909090914,
+                "D": 33.98692810457516,
+                "H": 38.813758942062634,
+                "R": 42.69005847953216
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    100,
+                    22
+                ]
+            },
+            "summ": [
+                [
+                    10,
+                    64,
+                    2
+                ],
+                [
+                    58,
+                    18,
+                    81
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 40.909090909090914,
+                "D": 33.98692810457516,
+                "H": 38.813758942062634,
+                "R": 42.69005847953216
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    100,
+                    22
+                ]
+            },
+            "summ": [
+                [
+                    10,
+                    64,
+                    61
+                ],
+                [
+                    58,
+                    18,
+                    81
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 40.909090909090914,
+                "D": 33.98692810457516,
+                "H": 38.813758942062634,
+                "R": 42.69005847953216
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    99,
+                    31
+                ]
+            },
+            "summ": [
+                [
+                    10,
+                    64,
+                    71
+                ],
+                [
+                    58,
+                    18,
+                    57
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 40.909090909090914,
+                "D": 33.98692810457516,
+                "H": 38.813758942062634,
+                "R": 42.69005847953216
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    100,
+                    31
+                ]
+            },
+            "summ": [
+                [
+                    10,
+                    64,
+                    2
+                ],
+                [
+                    58,
+                    18,
+                    57
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 40.909090909090914,
+                "D": 33.98692810457516,
+                "H": 38.813758942062634,
+                "R": 42.69005847953216
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    100,
+                    22
+                ]
+            },
+            "summ": [
+                [
+                    10,
+                    64,
+                    25
+                ],
+                [
+                    58,
+                    18,
+                    81
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 40.909090909090914,
+                "D": 33.98692810457516,
+                "H": 38.813758942062634,
+                "R": 42.69005847953216
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    100,
+                    31
+                ]
+            },
+            "summ": [
+                [
+                    10,
+                    64,
+                    6
+                ],
+                [
+                    58,
+                    18,
+                    57
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 40.909090909090914,
+                "D": 33.98692810457516,
+                "H": 38.813758942062634,
+                "R": 42.69005847953216
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    99,
+                    31
+                ]
+            },
+            "summ": [
+                [
+                    10,
+                    64,
+                    1
+                ],
+                [
+                    58,
+                    18,
+                    57
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 40.909090909090914,
+                "D": 33.98692810457516,
+                "H": 38.813758942062634,
+                "R": 42.69005847953216
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    99,
+                    22
+                ]
+            },
+            "summ": [
+                [
+                    10,
+                    64,
+                    71
+                ],
+                [
+                    58,
+                    18,
+                    81
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 40.909090909090914,
+                "D": 33.98692810457516,
+                "H": 38.813758942062634,
+                "R": 42.69005847953216
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    99,
+                    31
+                ]
+            },
+            "summ": [
+                [
+                    10,
+                    64,
+                    1
+                ],
+                [
+                    58,
+                    18,
+                    57
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 40.909090909090914,
+                "D": 33.98692810457516,
+                "H": 38.813758942062634,
+                "R": 42.69005847953216
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    100,
+                    22
+                ]
+            },
+            "summ": [
+                [
+                    10,
+                    64,
+                    25
+                ],
+                [
+                    58,
+                    18,
+                    81
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 40.909090909090914,
+                "D": 33.98692810457516,
+                "H": 38.813758942062634,
+                "R": 42.69005847953216
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    99,
+                    22
+                ]
+            },
+            "summ": [
+                [
+                    10,
+                    64,
+                    71
+                ],
+                [
+                    58,
+                    18,
+                    81
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 40.909090909090914,
+                "D": 33.98692810457516,
+                "H": 38.813758942062634,
+                "R": 42.69005847953216
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    100,
+                    31
+                ]
+            },
+            "summ": [
+                [
+                    10,
+                    64,
+                    6
+                ],
+                [
+                    58,
+                    18,
+                    57
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 40.909090909090914,
+                "D": 33.98692810457516,
+                "H": 38.813758942062634,
+                "R": 42.69005847953216
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    100,
+                    22
+                ]
+            },
+            "summ": [
+                [
+                    10,
+                    64,
+                    61
+                ],
+                [
+                    58,
+                    18,
+                    81
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 40.909090909090914,
+                "D": 33.98692810457516,
+                "H": 38.813758942062634,
+                "R": 42.69005847953216
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    99,
+                    22
+                ]
+            },
+            "summ": [
+                [
+                    10,
+                    64,
+                    71
+                ],
+                [
+                    58,
+                    18,
+                    81
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 40.909090909090914,
+                "D": 33.98692810457516,
+                "H": 38.813758942062634,
+                "R": 42.69005847953216
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    99,
+                    22
+                ]
+            },
+            "summ": [
+                [
+                    10,
+                    64,
+                    71
+                ],
+                [
+                    58,
+                    18,
+                    81
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 40.909090909090914,
+                "D": 33.98692810457516,
+                "H": 38.813758942062634,
+                "R": 42.69005847953216
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    100,
+                    22
+                ]
+            },
+            "summ": [
+                [
+                    10,
+                    64,
+                    61
+                ],
+                [
+                    58,
+                    18,
+                    81
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 40.909090909090914,
+                "D": 33.98692810457516,
+                "H": 38.813758942062634,
+                "R": 42.69005847953216
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    99,
+                    22
+                ]
+            },
+            "summ": [
+                [
+                    10,
+                    64,
+                    1
+                ],
+                [
+                    58,
+                    18,
+                    81
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 40.909090909090914,
+                "D": 33.98692810457516,
+                "H": 38.813758942062634,
+                "R": 42.69005847953216
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    99,
+                    22
+                ]
+            },
+            "summ": [
+                [
+                    10,
+                    64,
+                    1
+                ],
+                [
+                    58,
+                    18,
+                    81
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 40.909090909090914,
+                "D": 33.98692810457516,
+                "H": 38.813758942062634,
+                "R": 42.69005847953216
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    99,
+                    31
+                ]
+            },
+            "summ": [
+                [
+                    10,
+                    64,
+                    1
+                ],
+                [
+                    58,
+                    18,
+                    57
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 40.909090909090914,
+                "D": 33.98692810457516,
+                "H": 38.813758942062634,
+                "R": 42.69005847953216
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    99,
+                    31
+                ]
+            },
+            "summ": [
+                [
+                    10,
+                    64,
+                    1
+                ],
+                [
+                    58,
+                    18,
+                    57
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 40.909090909090914,
+                "D": 33.98692810457516,
+                "H": 38.813758942062634,
+                "R": 42.69005847953216
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    100,
+                    22
+                ]
+            },
+            "summ": [
+                [
+                    10,
+                    64,
+                    25
+                ],
+                [
+                    58,
+                    18,
+                    81
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 40.909090909090914,
+                "D": 33.98692810457516,
+                "H": 38.813758942062634,
+                "R": 42.69005847953216
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    100,
+                    31
+                ]
+            },
+            "summ": [
+                [
+                    10,
+                    64,
+                    61
+                ],
+                [
+                    58,
+                    18,
+                    57
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 40.909090909090914,
+                "D": 33.98692810457516,
+                "H": 38.813758942062634,
+                "R": 42.69005847953216
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    100,
+                    22
+                ]
+            },
+            "summ": [
+                [
+                    10,
+                    64,
+                    6
+                ],
+                [
+                    58,
+                    18,
+                    81
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 40.909090909090914,
+                "D": 33.98692810457516,
+                "H": 38.813758942062634,
+                "R": 42.69005847953216
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    99,
+                    22
+                ]
+            },
+            "summ": [
+                [
+                    10,
+                    64,
+                    1
+                ],
+                [
+                    58,
+                    18,
+                    81
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 40.909090909090914,
+                "D": 33.98692810457516,
+                "H": 38.813758942062634,
+                "R": 42.69005847953216
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    100,
+                    22
+                ]
+            },
+            "summ": [
+                [
+                    10,
+                    64,
+                    2
+                ],
+                [
+                    58,
+                    18,
+                    81
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 40.909090909090914,
+                "D": 33.98692810457516,
+                "H": 38.813758942062634,
+                "R": 42.69005847953216
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    100,
+                    22
+                ]
+            },
+            "summ": [
+                [
+                    10,
+                    64,
+                    25
+                ],
+                [
+                    58,
+                    18,
+                    81
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 40.909090909090914,
+                "D": 33.98692810457516,
+                "H": 38.813758942062634,
+                "R": 42.69005847953216
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    100,
+                    31
+                ]
+            },
+            "summ": [
+                [
+                    10,
+                    64,
+                    25
+                ],
+                [
+                    58,
+                    18,
+                    57
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 40.909090909090914,
+                "D": 33.98692810457516,
+                "H": 38.813758942062634,
+                "R": 42.69005847953216
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    100,
+                    22
+                ]
+            },
+            "summ": [
+                [
+                    10,
+                    64,
+                    25
+                ],
+                [
+                    58,
+                    18,
+                    81
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 40.909090909090914,
+                "D": 33.98692810457516,
+                "H": 38.813758942062634,
+                "R": 42.69005847953216
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    99,
+                    22
+                ]
+            },
+            "summ": [
+                [
+                    10,
+                    64,
+                    1
+                ],
+                [
+                    58,
+                    18,
+                    81
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 40.909090909090914,
+                "D": 33.98692810457516,
+                "H": 38.813758942062634,
+                "R": 42.69005847953216
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    99,
+                    31
+                ]
+            },
+            "summ": [
+                [
+                    10,
+                    64,
+                    71
+                ],
+                [
+                    58,
+                    18,
+                    57
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 40.909090909090914,
+                "D": 33.98692810457516,
+                "H": 38.813758942062634,
+                "R": 42.69005847953216
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    100,
+                    22
+                ]
+            },
+            "summ": [
+                [
+                    10,
+                    64,
+                    6
+                ],
+                [
+                    58,
+                    18,
+                    81
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 40.909090909090914,
+                "D": 33.98692810457516,
+                "H": 38.813758942062634,
+                "R": 42.69005847953216
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    100,
+                    31
+                ]
+            },
+            "summ": [
+                [
+                    10,
+                    64,
+                    6
+                ],
+                [
+                    58,
+                    18,
+                    57
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 40.909090909090914,
+                "D": 33.98692810457516,
+                "H": 38.813758942062634,
+                "R": 42.69005847953216
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    100,
+                    31
+                ]
+            },
+            "summ": [
+                [
+                    10,
+                    64,
+                    6
+                ],
+                [
+                    58,
+                    18,
+                    57
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 40.909090909090914,
+                "D": 33.98692810457516,
+                "H": 38.813758942062634,
+                "R": 42.69005847953216
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    99,
+                    31
+                ]
+            },
+            "summ": [
+                [
+                    10,
+                    64,
+                    1
+                ],
+                [
+                    58,
+                    18,
+                    57
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 40.909090909090914,
+                "D": 33.98692810457516,
+                "H": 38.813758942062634,
+                "R": 42.69005847953216
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    100,
+                    22
+                ]
+            },
+            "summ": [
+                [
+                    10,
+                    64,
+                    2
+                ],
+                [
+                    58,
+                    18,
+                    81
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 40.909090909090914,
+                "D": 33.98692810457516,
+                "H": 38.813758942062634,
+                "R": 42.69005847953216
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    100,
+                    31
+                ]
+            },
+            "summ": [
+                [
+                    10,
+                    64,
+                    6
+                ],
+                [
+                    58,
+                    18,
+                    57
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 40.909090909090914,
+                "D": 33.98692810457516,
+                "H": 38.813758942062634,
+                "R": 42.69005847953216
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    100,
+                    31
+                ]
+            },
+            "summ": [
+                [
+                    10,
+                    64,
+                    61
+                ],
+                [
+                    58,
+                    18,
+                    57
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 40.909090909090914,
+                "D": 33.98692810457516,
+                "H": 38.813758942062634,
+                "R": 42.69005847953216
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    100,
+                    22
+                ]
+            },
+            "summ": [
+                [
+                    10,
+                    64,
+                    2
+                ],
+                [
+                    58,
+                    18,
+                    81
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 40.909090909090914,
+                "D": 33.98692810457516,
+                "H": 38.813758942062634,
+                "R": 42.69005847953216
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    99,
+                    31
+                ]
+            },
+            "summ": [
+                [
+                    10,
+                    64,
+                    71
+                ],
+                [
+                    58,
+                    18,
+                    57
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 40.909090909090914,
+                "D": 33.98692810457516,
+                "H": 38.813758942062634,
+                "R": 42.69005847953216
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    100,
+                    22
+                ]
+            },
+            "summ": [
+                [
+                    10,
+                    64,
+                    2
+                ],
+                [
+                    58,
+                    18,
+                    81
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 40.909090909090914,
+                "D": 33.98692810457516,
+                "H": 38.813758942062634,
+                "R": 42.69005847953216
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    99,
+                    22
+                ]
+            },
+            "summ": [
+                [
+                    10,
+                    64,
+                    71
+                ],
+                [
+                    58,
+                    18,
+                    81
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 40.909090909090914,
+                "D": 33.98692810457516,
+                "H": 38.813758942062634,
+                "R": 42.69005847953216
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    100,
+                    31
+                ]
+            },
+            "summ": [
+                [
+                    10,
+                    64,
+                    2
+                ],
+                [
+                    58,
+                    18,
+                    57
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 40.909090909090914,
+                "D": 33.98692810457516,
+                "H": 38.813758942062634,
+                "R": 42.69005847953216
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    100,
+                    22
+                ]
+            },
+            "summ": [
+                [
+                    10,
+                    64,
+                    2
+                ],
+                [
+                    58,
+                    18,
+                    81
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 40.909090909090914,
+                "D": 33.98692810457516,
+                "H": 38.813758942062634,
+                "R": 42.69005847953216
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    100,
+                    22
+                ]
+            },
+            "summ": [
+                [
+                    10,
+                    64,
+                    61
+                ],
+                [
+                    58,
+                    18,
+                    81
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 40.909090909090914,
+                "D": 33.98692810457516,
+                "H": 38.813758942062634,
+                "R": 42.69005847953216
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    100,
+                    31
+                ]
+            },
+            "summ": [
+                [
+                    10,
+                    64,
+                    6
+                ],
+                [
+                    58,
+                    18,
+                    57
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 40.909090909090914,
+                "D": 33.98692810457516,
+                "H": 38.813758942062634,
+                "R": 42.69005847953216
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    100,
+                    22
+                ]
+            },
+            "summ": [
+                [
+                    10,
+                    64,
+                    25
+                ],
+                [
+                    58,
+                    18,
+                    81
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 40.909090909090914,
+                "D": 33.98692810457516,
+                "H": 38.813758942062634,
+                "R": 42.69005847953216
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    99,
+                    31
+                ]
+            },
+            "summ": [
+                [
+                    10,
+                    64,
+                    1
+                ],
+                [
+                    58,
+                    18,
+                    57
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 40.909090909090914,
+                "D": 33.98692810457516,
+                "H": 38.813758942062634,
+                "R": 42.69005847953216
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    100,
+                    22
+                ]
+            },
+            "summ": [
+                [
+                    10,
+                    64,
+                    25
+                ],
+                [
+                    58,
+                    18,
+                    81
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 40.909090909090914,
+                "D": 33.98692810457516,
+                "H": 38.813758942062634,
+                "R": 42.69005847953216
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    99,
+                    22
+                ]
+            },
+            "summ": [
+                [
+                    10,
+                    64,
+                    1
+                ],
+                [
+                    58,
+                    18,
+                    81
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 40.909090909090914,
+                "D": 33.98692810457516,
+                "H": 38.813758942062634,
+                "R": 42.69005847953216
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    100,
+                    31
+                ]
+            },
+            "summ": [
+                [
+                    10,
+                    64,
+                    25
+                ],
+                [
+                    58,
+                    18,
+                    57
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 40.909090909090914,
+                "D": 33.98692810457516,
+                "H": 38.813758942062634,
+                "R": 42.69005847953216
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    99,
+                    31
+                ]
+            },
+            "summ": [
+                [
+                    10,
+                    64,
+                    1
+                ],
+                [
+                    58,
+                    18,
+                    57
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 40.909090909090914,
+                "D": 33.98692810457516,
+                "H": 38.813758942062634,
+                "R": 42.69005847953216
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    99,
+                    31
+                ]
+            },
+            "summ": [
+                [
+                    10,
+                    64,
+                    71
+                ],
+                [
+                    58,
+                    18,
+                    57
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 40.909090909090914,
+                "D": 33.98692810457516,
+                "H": 38.813758942062634,
+                "R": 42.69005847953216
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    100,
+                    31
+                ]
+            },
+            "summ": [
+                [
+                    10,
+                    64,
+                    25
+                ],
+                [
+                    58,
+                    18,
+                    57
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 40.909090909090914,
+                "D": 33.98692810457516,
+                "H": 38.813758942062634,
+                "R": 42.69005847953216
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    100,
+                    31
+                ]
+            },
+            "summ": [
+                [
+                    10,
+                    64,
+                    6
+                ],
+                [
+                    58,
+                    18,
+                    57
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 40.909090909090914,
+                "D": 33.98692810457516,
+                "H": 38.813758942062634,
+                "R": 42.69005847953216
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    100,
+                    22
+                ]
+            },
+            "summ": [
+                [
+                    10,
+                    64,
+                    2
+                ],
+                [
+                    58,
+                    18,
+                    81
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 40.909090909090914,
+                "D": 33.98692810457516,
+                "H": 38.813758942062634,
+                "R": 42.69005847953216
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    99,
+                    31
+                ]
+            },
+            "summ": [
+                [
+                    10,
+                    64,
+                    1
+                ],
+                [
+                    58,
+                    18,
+                    57
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 40.909090909090914,
+                "D": 33.98692810457516,
+                "H": 38.813758942062634,
+                "R": 42.69005847953216
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    100,
+                    31
+                ]
+            },
+            "summ": [
+                [
+                    10,
+                    64,
+                    6
+                ],
+                [
+                    58,
+                    18,
+                    57
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 40.909090909090914,
+                "D": 33.98692810457516,
+                "H": 38.813758942062634,
+                "R": 42.69005847953216
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    100,
+                    31
+                ]
+            },
+            "summ": [
+                [
+                    10,
+                    64,
+                    2
+                ],
+                [
+                    58,
+                    18,
+                    57
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 40.909090909090914,
+                "D": 33.98692810457516,
+                "H": 38.813758942062634,
+                "R": 42.69005847953216
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    100,
+                    31
+                ]
+            },
+            "summ": [
+                [
+                    10,
+                    64,
+                    61
+                ],
+                [
+                    58,
+                    18,
+                    57
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 40.909090909090914,
+                "D": 33.98692810457516,
+                "H": 38.813758942062634,
+                "R": 42.69005847953216
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    99,
+                    22
+                ]
+            },
+            "summ": [
+                [
+                    10,
+                    64,
+                    1
+                ],
+                [
+                    58,
+                    18,
+                    81
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 40.909090909090914,
+                "D": 33.98692810457516,
+                "H": 38.813758942062634,
+                "R": 42.69005847953216
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    99,
+                    22
+                ]
+            },
+            "summ": [
+                [
+                    10,
+                    64,
+                    1
+                ],
+                [
+                    58,
+                    18,
+                    81
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 40.909090909090914,
+                "D": 33.98692810457516,
+                "H": 38.813758942062634,
+                "R": 42.69005847953216
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    99,
+                    31
+                ]
+            },
+            "summ": [
+                [
+                    10,
+                    64,
+                    71
+                ],
+                [
+                    58,
+                    18,
+                    57
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 40.909090909090914,
+                "D": 33.98692810457516,
+                "H": 38.813758942062634,
+                "R": 42.69005847953216
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    100,
+                    31
+                ]
+            },
+            "summ": [
+                [
+                    10,
+                    64,
+                    25
+                ],
+                [
+                    58,
+                    18,
+                    57
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 40.909090909090914,
+                "D": 33.98692810457516,
+                "H": 38.813758942062634,
+                "R": 42.69005847953216
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    100,
+                    22
+                ]
+            },
+            "summ": [
+                [
+                    10,
+                    64,
+                    25
+                ],
+                [
+                    58,
+                    18,
+                    81
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 40.909090909090914,
+                "D": 33.98692810457516,
+                "H": 38.813758942062634,
+                "R": 42.69005847953216
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    100,
+                    22
+                ]
+            },
+            "summ": [
+                [
+                    10,
+                    64,
+                    61
+                ],
+                [
+                    58,
+                    18,
+                    81
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 40.909090909090914,
+                "D": 33.98692810457516,
+                "H": 38.813758942062634,
+                "R": 42.69005847953216
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    99,
+                    31
+                ]
+            },
+            "summ": [
+                [
+                    10,
+                    64,
+                    71
+                ],
+                [
+                    58,
+                    18,
+                    57
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 40.909090909090914,
+                "D": 33.98692810457516,
+                "H": 38.813758942062634,
+                "R": 42.69005847953216
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    99,
+                    31
+                ]
+            },
+            "summ": [
+                [
+                    10,
+                    64,
+                    1
+                ],
+                [
+                    58,
+                    18,
+                    57
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 40.909090909090914,
+                "D": 33.98692810457516,
+                "H": 38.813758942062634,
+                "R": 42.69005847953216
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    100,
+                    31
+                ]
+            },
+            "summ": [
+                [
+                    10,
+                    64,
+                    2
+                ],
+                [
+                    58,
+                    18,
+                    57
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 40.909090909090914,
+                "D": 33.98692810457516,
+                "H": 38.813758942062634,
+                "R": 42.69005847953216
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    100,
+                    31
+                ]
+            },
+            "summ": [
+                [
+                    10,
+                    64,
+                    61
+                ],
+                [
+                    58,
+                    18,
+                    57
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 40.909090909090914,
+                "D": 33.98692810457516,
+                "H": 38.813758942062634,
+                "R": 42.69005847953216
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    100,
+                    31
+                ]
+            },
+            "summ": [
+                [
+                    10,
+                    64,
+                    61
+                ],
+                [
+                    58,
+                    18,
+                    57
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 40.909090909090914,
+                "D": 33.98692810457516,
+                "H": 38.813758942062634,
+                "R": 42.69005847953216
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    100,
+                    31
+                ]
+            },
+            "summ": [
+                [
+                    10,
+                    64,
+                    6
+                ],
+                [
+                    58,
+                    18,
+                    57
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 40.909090909090914,
+                "D": 33.98692810457516,
+                "H": 38.813758942062634,
+                "R": 42.69005847953216
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    100,
+                    22
+                ]
+            },
+            "summ": [
+                [
+                    10,
+                    64,
+                    61
+                ],
+                [
+                    58,
+                    18,
+                    81
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 40.909090909090914,
+                "D": 33.98692810457516,
+                "H": 38.813758942062634,
+                "R": 42.69005847953216
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    100,
+                    31
+                ]
+            },
+            "summ": [
+                [
+                    10,
+                    64,
+                    25
+                ],
+                [
+                    58,
+                    18,
+                    57
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 40.909090909090914,
+                "D": 33.98692810457516,
+                "H": 38.813758942062634,
+                "R": 42.69005847953216
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    100,
+                    31
+                ]
+            },
+            "summ": [
+                [
+                    10,
+                    64,
+                    2
+                ],
+                [
+                    58,
+                    18,
+                    57
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 40.909090909090914,
+                "D": 33.98692810457516,
+                "H": 38.813758942062634,
+                "R": 42.69005847953216
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    100,
+                    31
+                ]
+            },
+            "summ": [
+                [
+                    10,
+                    64,
+                    61
+                ],
+                [
+                    58,
+                    18,
+                    57
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 40.909090909090914,
+                "D": 33.98692810457516,
+                "H": 38.813758942062634,
+                "R": 42.69005847953216
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    100,
+                    22
+                ]
+            },
+            "summ": [
+                [
+                    10,
+                    64,
+                    25
+                ],
+                [
+                    58,
+                    18,
+                    81
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 40.909090909090914,
+                "D": 33.98692810457516,
+                "H": 38.813758942062634,
+                "R": 42.69005847953216
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    100,
+                    31
+                ]
+            },
+            "summ": [
+                [
+                    10,
+                    64,
+                    6
+                ],
+                [
+                    58,
+                    18,
+                    57
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 40.909090909090914,
+                "D": 33.98692810457516,
+                "H": 38.813758942062634,
+                "R": 42.69005847953216
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    100,
+                    31
+                ]
+            },
+            "summ": [
+                [
+                    10,
+                    64,
+                    2
+                ],
+                [
+                    58,
+                    18,
+                    57
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 40.909090909090914,
+                "D": 33.98692810457516,
+                "H": 38.813758942062634,
+                "R": 42.69005847953216
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    100,
+                    31
+                ]
+            },
+            "summ": [
+                [
+                    10,
+                    64,
+                    6
+                ],
+                [
+                    58,
+                    18,
+                    57
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 40.909090909090914,
+                "D": 33.98692810457516,
+                "H": 38.813758942062634,
+                "R": 42.69005847953216
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    100,
+                    31
+                ]
+            },
+            "summ": [
+                [
+                    10,
+                    64,
+                    6
+                ],
+                [
+                    58,
+                    18,
+                    57
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 40.909090909090914,
+                "D": 33.98692810457516,
+                "H": 38.813758942062634,
+                "R": 42.69005847953216
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    100,
+                    31
+                ]
+            },
+            "summ": [
+                [
+                    10,
+                    64,
+                    6
+                ],
+                [
+                    58,
+                    18,
+                    57
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 40.909090909090914,
+                "D": 33.98692810457516,
+                "H": 38.813758942062634,
+                "R": 42.69005847953216
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    100,
+                    31
+                ]
+            },
+            "summ": [
+                [
+                    10,
+                    64,
+                    2
+                ],
+                [
+                    58,
+                    18,
+                    57
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 40.909090909090914,
+                "D": 33.98692810457516,
+                "H": 38.813758942062634,
+                "R": 42.69005847953216
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    99,
+                    31
+                ]
+            },
+            "summ": [
+                [
+                    10,
+                    64,
+                    1
+                ],
+                [
+                    58,
+                    18,
+                    57
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 40.909090909090914,
+                "D": 33.98692810457516,
+                "H": 38.813758942062634,
+                "R": 42.69005847953216
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    100,
+                    31
+                ]
+            },
+            "summ": [
+                [
+                    10,
+                    64,
+                    6
+                ],
+                [
+                    58,
+                    18,
+                    57
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 40.909090909090914,
+                "D": 33.98692810457516,
+                "H": 38.813758942062634,
+                "R": 42.69005847953216
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    99,
+                    22
+                ]
+            },
+            "summ": [
+                [
+                    10,
+                    64,
+                    1
+                ],
+                [
+                    58,
+                    18,
+                    81
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 40.909090909090914,
+                "D": 33.98692810457516,
+                "H": 38.813758942062634,
+                "R": 42.69005847953216
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    100,
+                    22
+                ]
+            },
+            "summ": [
+                [
+                    10,
+                    64,
+                    2
+                ],
+                [
+                    58,
+                    18,
+                    81
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 40.909090909090914,
+                "D": 33.98692810457516,
+                "H": 38.813758942062634,
+                "R": 42.69005847953216
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    99,
+                    22
+                ]
+            },
+            "summ": [
+                [
+                    10,
+                    64,
+                    1
+                ],
+                [
+                    58,
+                    18,
+                    81
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 40.909090909090914,
+                "D": 33.98692810457516,
+                "H": 38.813758942062634,
+                "R": 42.69005847953216
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    100,
+                    31
+                ]
+            },
+            "summ": [
+                [
+                    10,
+                    64,
+                    2
+                ],
+                [
+                    58,
+                    18,
+                    57
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 40.909090909090914,
+                "D": 33.98692810457516,
+                "H": 38.813758942062634,
+                "R": 42.69005847953216
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    100,
+                    22
+                ]
+            },
+            "summ": [
+                [
+                    10,
+                    64,
+                    61
+                ],
+                [
+                    58,
+                    18,
+                    81
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 40.909090909090914,
+                "D": 33.98692810457516,
+                "H": 38.813758942062634,
+                "R": 42.69005847953216
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    99,
+                    31
+                ]
+            },
+            "summ": [
+                [
+                    10,
+                    64,
+                    71
+                ],
+                [
+                    58,
+                    18,
+                    57
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 40.909090909090914,
+                "D": 33.98692810457516,
+                "H": 38.813758942062634,
+                "R": 42.69005847953216
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    100,
+                    22
+                ]
+            },
+            "summ": [
+                [
+                    10,
+                    64,
+                    25
+                ],
+                [
+                    58,
+                    18,
+                    81
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 40.909090909090914,
+                "D": 33.98692810457516,
+                "H": 38.813758942062634,
+                "R": 42.69005847953216
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    99,
+                    31
+                ]
+            },
+            "summ": [
+                [
+                    10,
+                    64,
+                    71
+                ],
+                [
+                    58,
+                    18,
+                    57
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 40.909090909090914,
+                "D": 33.98692810457516,
+                "H": 38.813758942062634,
+                "R": 42.69005847953216
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    100,
+                    31
+                ]
+            },
+            "summ": [
+                [
+                    10,
+                    64,
+                    61
+                ],
+                [
+                    58,
+                    18,
+                    57
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 40.909090909090914,
+                "D": 33.98692810457516,
+                "H": 38.813758942062634,
+                "R": 42.69005847953216
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    100,
+                    31
+                ]
+            },
+            "summ": [
+                [
+                    10,
+                    64,
+                    61
+                ],
+                [
+                    58,
+                    18,
+                    57
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 40.909090909090914,
+                "D": 33.98692810457516,
+                "H": 38.813758942062634,
+                "R": 42.69005847953216
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    99,
+                    22
+                ]
+            },
+            "summ": [
+                [
+                    10,
+                    64,
+                    71
+                ],
+                [
+                    58,
+                    18,
+                    81
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 40.909090909090914,
+                "D": 33.98692810457516,
+                "H": 38.813758942062634,
+                "R": 42.69005847953216
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    100,
+                    31
+                ]
+            },
+            "summ": [
+                [
+                    10,
+                    64,
+                    61
+                ],
+                [
+                    58,
+                    18,
+                    57
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 40.909090909090914,
+                "D": 33.98692810457516,
+                "H": 38.813758942062634,
+                "R": 42.69005847953216
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    100,
+                    22
+                ]
+            },
+            "summ": [
+                [
+                    10,
+                    64,
+                    2
+                ],
+                [
+                    58,
+                    18,
+                    81
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 40.909090909090914,
+                "D": 33.98692810457516,
+                "H": 38.813758942062634,
+                "R": 42.69005847953216
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    100,
+                    22
+                ]
+            },
+            "summ": [
+                [
+                    10,
+                    64,
+                    6
+                ],
+                [
+                    58,
+                    18,
+                    81
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 62.5,
+                "D": 50.0,
+                "H": 56.84596577017115,
+                "R": 59.61538461538461
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    95,
+                    67
+                ]
+            },
+            "summ": [
+                [
+                    4,
+                    8,
+                    29,
+                    122,
+                    57,
+                    14,
+                    24
+                ],
+                [
+                    13,
+                    70,
+                    50,
+                    63,
+                    40,
+                    38,
+                    101
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 62.5,
+                "D": 50.0,
+                "H": 56.84596577017115,
+                "R": 59.61538461538461
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    92,
+                    42
+                ]
+            },
+            "summ": [
+                [
+                    4,
+                    57,
+                    29,
+                    24,
+                    84,
+                    56,
+                    61,
+                    122
+                ],
+                [
+                    13,
+                    71,
+                    79,
+                    101,
+                    40,
+                    70,
+                    51,
+                    50
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 62.5,
+                "D": 50.0,
+                "H": 56.84596577017115,
+                "R": 59.61538461538461
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    98,
+                    43
+                ]
+            },
+            "summ": [
+                [
+                    4,
+                    24,
+                    84,
+                    122,
+                    77,
+                    8
+                ],
+                [
+                    13,
+                    71,
+                    40,
+                    38,
+                    41,
+                    50
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 62.5,
+                "D": 50.0,
+                "H": 56.84596577017115,
+                "R": 59.61538461538461
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    100,
+                    48
+                ]
+            },
+            "summ": [
+                [
+                    4,
+                    8,
+                    29,
+                    57,
+                    61,
+                    122,
+                    24
+                ],
+                [
+                    13,
+                    70,
+                    79,
+                    23,
+                    71,
+                    41,
+                    20
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 62.5,
+                "D": 50.0,
+                "H": 56.84596577017115,
+                "R": 59.61538461538461
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    99,
+                    71
+                ]
+            },
+            "summ": [
+                [
+                    4,
+                    108,
+                    14,
+                    57,
+                    24,
+                    61
+                ],
+                [
+                    13,
+                    71,
+                    15,
+                    23,
+                    63,
+                    50
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 62.5,
+                "D": 50.0,
+                "H": 56.84596577017115,
+                "R": 59.61538461538461
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    95,
+                    48
+                ]
+            },
+            "summ": [
+                [
+                    4,
+                    24,
+                    28,
+                    57,
+                    122,
+                    29,
+                    108
+                ],
+                [
+                    13,
+                    70,
+                    41,
+                    101,
+                    23,
+                    15,
+                    79
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 62.5,
+                "D": 50.0,
+                "H": 56.84596577017115,
+                "R": 59.61538461538461
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    99,
+                    72
+                ]
+            },
+            "summ": [
+                [
+                    4,
+                    84,
+                    27,
+                    77,
+                    24,
+                    56,
+                    122
+                ],
+                [
+                    13,
+                    70,
+                    63,
+                    38,
+                    23,
+                    40,
+                    79
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 62.5,
+                "D": 50.0,
+                "H": 56.84596577017115,
+                "R": 59.61538461538461
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    100,
+                    74
+                ]
+            },
+            "summ": [
+                [
+                    4,
+                    122,
+                    61,
+                    84,
+                    108,
+                    57,
+                    56,
+                    24
+                ],
+                [
+                    13,
+                    70,
+                    51,
+                    79,
+                    15,
+                    63,
+                    41,
+                    50
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 62.5,
+                "D": 50.0,
+                "H": 56.84596577017115,
+                "R": 59.61538461538461
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    100,
+                    83
+                ]
+            },
+            "summ": [
+                [
+                    4,
+                    57,
+                    29,
+                    61,
+                    56,
+                    24,
+                    28,
+                    122
+                ],
+                [
+                    13,
+                    70,
+                    41,
+                    40,
+                    38,
+                    51,
+                    63,
+                    23
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 62.5,
+                "D": 50.0,
+                "H": 56.84596577017115,
+                "R": 59.61538461538461
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    99,
+                    79
+                ]
+            },
+            "summ": [
+                [
+                    4,
+                    108,
+                    29,
+                    28,
+                    57,
+                    84,
+                    24
+                ],
+                [
+                    13,
+                    71,
+                    63,
+                    20,
+                    15,
+                    101,
+                    23
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 62.5,
+                "D": 50.0,
+                "H": 56.84596577017115,
+                "R": 59.61538461538461
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    100,
+                    32
+                ]
+            },
+            "summ": [
+                [
+                    4,
+                    14,
+                    29,
+                    77,
+                    84
+                ],
+                [
+                    13,
+                    71,
+                    41,
+                    70,
+                    40
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 62.5,
+                "D": 50.0,
+                "H": 56.84596577017115,
+                "R": 59.61538461538461
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    99,
+                    46
+                ]
+            },
+            "summ": [
+                [
+                    4,
+                    57,
+                    77,
+                    84,
+                    8,
+                    122
+                ],
+                [
+                    13,
+                    71,
+                    38,
+                    50,
+                    101,
+                    41
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 62.5,
+                "D": 50.0,
+                "H": 56.84596577017115,
+                "R": 59.61538461538461
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    100,
+                    36
+                ]
+            },
+            "summ": [
+                [
+                    4,
+                    56,
+                    8,
+                    24,
+                    61,
+                    29
+                ],
+                [
+                    13,
+                    70,
+                    51,
+                    23,
+                    101,
+                    79
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 62.5,
+                "D": 50.0,
+                "H": 56.84596577017115,
+                "R": 59.61538461538461
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    99,
+                    76
+                ]
+            },
+            "summ": [
+                [
+                    4,
+                    108,
+                    27,
+                    84,
+                    24,
+                    28
+                ],
+                [
+                    13,
+                    71,
+                    63,
+                    38,
+                    20,
+                    23
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 62.5,
+                "D": 50.0,
+                "H": 56.84596577017115,
+                "R": 59.61538461538461
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    98,
+                    73
+                ]
+            },
+            "summ": [
+                [
+                    4,
+                    108,
+                    8,
+                    24,
+                    29,
+                    122
+                ],
+                [
+                    13,
+                    71,
+                    15,
+                    41,
+                    51,
+                    63
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 62.5,
+                "D": 50.0,
+                "H": 56.84596577017115,
+                "R": 59.61538461538461
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    100,
+                    46
+                ]
+            },
+            "summ": [
+                [
+                    4,
+                    14,
+                    56,
+                    61,
+                    57,
+                    28,
+                    122
+                ],
+                [
+                    13,
+                    70,
+                    38,
+                    40,
+                    51,
+                    101,
+                    15
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 62.5,
+                "D": 50.0,
+                "H": 56.84596577017115,
+                "R": 59.61538461538461
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    100,
+                    78
+                ]
+            },
+            "summ": [
+                [
+                    4,
+                    61,
+                    8,
+                    84,
+                    122,
+                    24,
+                    57,
+                    56
+                ],
+                [
+                    13,
+                    70,
+                    51,
+                    40,
+                    79,
+                    63,
+                    38,
+                    23
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 62.5,
+                "D": 50.0,
+                "H": 56.84596577017115,
+                "R": 59.61538461538461
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    99,
+                    52
+                ]
+            },
+            "summ": [
+                [
+                    4,
+                    122,
+                    77,
+                    24,
+                    84,
+                    56,
+                    29,
+                    57
+                ],
+                [
+                    13,
+                    71,
+                    50,
+                    15,
+                    51,
+                    79,
+                    41,
+                    20
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 62.5,
+                "D": 50.0,
+                "H": 56.84596577017115,
+                "R": 59.61538461538461
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    100,
+                    44
+                ]
+            },
+            "summ": [
+                [
+                    4,
+                    56,
+                    61,
+                    27,
+                    14,
+                    122,
+                    24
+                ],
+                [
+                    13,
+                    71,
+                    101,
+                    23,
+                    20,
+                    70,
+                    40
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 62.5,
+                "D": 50.0,
+                "H": 56.84596577017115,
+                "R": 59.61538461538461
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    99,
+                    63
+                ]
+            },
+            "summ": [
+                [
+                    4,
+                    56,
+                    84,
+                    61,
+                    29,
+                    14
+                ],
+                [
+                    13,
+                    70,
+                    101,
+                    79,
+                    63,
+                    71
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 62.5,
+                "D": 50.0,
+                "H": 56.84596577017115,
+                "R": 59.61538461538461
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    98,
+                    62
+                ]
+            },
+            "summ": [
+                [
+                    4,
+                    24,
+                    28,
+                    29,
+                    77,
+                    122
+                ],
+                [
+                    13,
+                    71,
+                    63,
+                    79,
+                    51,
+                    40
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 62.5,
+                "D": 50.0,
+                "H": 56.84596577017115,
+                "R": 59.61538461538461
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    98,
+                    44
+                ]
+            },
+            "summ": [
+                [
+                    4,
+                    24,
+                    28,
+                    77,
+                    29,
+                    57
+                ],
+                [
+                    13,
+                    71,
+                    40,
+                    41,
+                    51,
+                    23
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 62.5,
+                "D": 50.0,
+                "H": 56.84596577017115,
+                "R": 59.61538461538461
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    99,
+                    75
+                ]
+            },
+            "summ": [
+                [
+                    4,
+                    108,
+                    77,
+                    84,
+                    57,
+                    122
+                ],
+                [
+                    13,
+                    71,
+                    15,
+                    38,
+                    20,
+                    63
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 62.5,
+                "D": 50.0,
+                "H": 56.84596577017115,
+                "R": 59.61538461538461
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    99,
+                    64
+                ]
+            },
+            "summ": [
+                [
+                    4,
+                    14,
+                    28,
+                    57,
+                    122,
+                    84,
+                    24,
+                    27
+                ],
+                [
+                    13,
+                    70,
+                    20,
+                    51,
+                    40,
+                    79,
+                    63,
+                    50
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 62.5,
+                "D": 50.0,
+                "H": 56.84596577017115,
+                "R": 59.61538461538461
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    99,
+                    35
+                ]
+            },
+            "summ": [
+                [
+                    4,
+                    8,
+                    27,
+                    57,
+                    28,
+                    56
+                ],
+                [
+                    13,
+                    70,
+                    23,
+                    50,
+                    40,
+                    41
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 62.5,
+                "D": 50.0,
+                "H": 56.84596577017115,
+                "R": 59.61538461538461
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    100,
+                    68
+                ]
+            },
+            "summ": [
+                [
+                    4,
+                    108,
+                    28,
+                    8,
+                    57,
+                    24
+                ],
+                [
+                    13,
+                    71,
+                    63,
+                    23,
+                    40,
+                    51
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 62.5,
+                "D": 50.0,
+                "H": 56.84596577017115,
+                "R": 59.61538461538461
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    100,
+                    54
+                ]
+            },
+            "summ": [
+                [
+                    4,
+                    57,
+                    61,
+                    28,
+                    56,
+                    29,
+                    24,
+                    122
+                ],
+                [
+                    13,
+                    71,
+                    79,
+                    40,
+                    51,
+                    70,
+                    15,
+                    38
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 62.5,
+                "D": 50.0,
+                "H": 56.84596577017115,
+                "R": 59.61538461538461
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    99,
+                    31
+                ]
+            },
+            "summ": [
+                [
+                    4,
+                    56,
+                    77,
+                    29,
+                    28
+                ],
+                [
+                    13,
+                    71,
+                    20,
+                    79,
+                    101
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 62.5,
+                "D": 50.0,
+                "H": 56.84596577017115,
+                "R": 59.61538461538461
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    100,
+                    54
+                ]
+            },
+            "summ": [
+                [
+                    4,
+                    61,
+                    77,
+                    122,
+                    57,
+                    24,
+                    84
+                ],
+                [
+                    13,
+                    71,
+                    38,
+                    41,
+                    40,
+                    15,
+                    20
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 62.5,
+                "D": 50.0,
+                "H": 56.84596577017115,
+                "R": 59.61538461538461
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    99,
+                    51
+                ]
+            },
+            "summ": [
+                [
+                    4,
+                    84,
+                    77,
+                    29,
+                    56,
+                    122,
+                    24,
+                    57
+                ],
+                [
+                    13,
+                    71,
+                    101,
+                    40,
+                    15,
+                    41,
+                    70,
+                    79
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 62.5,
+                "D": 50.0,
+                "H": 56.84596577017115,
+                "R": 59.61538461538461
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    100,
+                    58
+                ]
+            },
+            "summ": [
+                [
+                    4,
+                    24,
+                    29,
+                    27,
+                    14,
+                    56,
+                    57,
+                    84
+                ],
+                [
+                    13,
+                    71,
+                    20,
+                    50,
+                    79,
+                    15,
+                    41,
+                    38
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 62.5,
+                "D": 50.0,
+                "H": 56.84596577017115,
+                "R": 59.61538461538461
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    99,
+                    33
+                ]
+            },
+            "summ": [
+                [
+                    4,
+                    57,
+                    28,
+                    29,
+                    77,
+                    122
+                ],
+                [
+                    13,
+                    70,
+                    50,
+                    40,
+                    38,
+                    20
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 62.5,
+                "D": 50.0,
+                "H": 56.84596577017115,
+                "R": 59.61538461538461
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    99,
+                    27
+                ]
+            },
+            "summ": [
+                [
+                    4,
+                    56,
+                    29,
+                    8,
+                    108
+                ],
+                [
+                    13,
+                    71,
+                    50,
+                    40,
+                    20
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 62.5,
+                "D": 50.0,
+                "H": 56.84596577017115,
+                "R": 59.61538461538461
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    100,
+                    41
+                ]
+            },
+            "summ": [
+                [
+                    4,
+                    108,
+                    14,
+                    57,
+                    61,
+                    122
+                ],
+                [
+                    13,
+                    71,
+                    79,
+                    15,
+                    40,
+                    41
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 62.5,
+                "D": 50.0,
+                "H": 56.84596577017115,
+                "R": 59.61538461538461
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    99,
+                    42
+                ]
+            },
+            "summ": [
+                [
+                    4,
+                    56,
+                    77,
+                    61,
+                    122,
+                    57,
+                    24
+                ],
+                [
+                    13,
+                    70,
+                    41,
+                    15,
+                    50,
+                    51,
+                    20
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 62.5,
+                "D": 50.0,
+                "H": 56.84596577017115,
+                "R": 59.61538461538461
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    99,
+                    78
+                ]
+            },
+            "summ": [
+                [
+                    4,
+                    122,
+                    29,
+                    57,
+                    56,
+                    77,
+                    24,
+                    84
+                ],
+                [
+                    13,
+                    71,
+                    79,
+                    70,
+                    40,
+                    41,
+                    63,
+                    15
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 62.5,
+                "D": 50.0,
+                "H": 56.84596577017115,
+                "R": 59.61538461538461
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    98,
+                    74
+                ]
+            },
+            "summ": [
+                [
+                    4,
+                    24,
+                    29,
+                    8,
+                    14,
+                    56,
+                    122
+                ],
+                [
+                    13,
+                    71,
+                    23,
+                    79,
+                    101,
+                    20,
+                    63
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 62.5,
+                "D": 50.0,
+                "H": 56.84596577017115,
+                "R": 59.61538461538461
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    100,
+                    35
+                ]
+            },
+            "summ": [
+                [
+                    4,
+                    84,
+                    108,
+                    8,
+                    29
+                ],
+                [
+                    13,
+                    71,
+                    23,
+                    50,
+                    101
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 62.5,
+                "D": 50.0,
+                "H": 56.84596577017115,
+                "R": 59.61538461538461
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    98,
+                    52
+                ]
+            },
+            "summ": [
+                [
+                    4,
+                    61,
+                    24,
+                    27,
+                    29,
+                    122,
+                    56
+                ],
+                [
+                    13,
+                    71,
+                    50,
+                    15,
+                    51,
+                    101,
+                    38
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 62.5,
+                "D": 50.0,
+                "H": 56.84596577017115,
+                "R": 59.61538461538461
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    100,
+                    76
+                ]
+            },
+            "summ": [
+                [
+                    4,
+                    14,
+                    29,
+                    84,
+                    57,
+                    108,
+                    122
+                ],
+                [
+                    13,
+                    71,
+                    63,
+                    15,
+                    50,
+                    23,
+                    20
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 62.5,
+                "D": 50.0,
+                "H": 56.84596577017115,
+                "R": 59.61538461538461
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    100,
+                    52
+                ]
+            },
+            "summ": [
+                [
+                    4,
+                    61,
+                    108,
+                    57,
+                    14,
+                    122
+                ],
+                [
+                    13,
+                    71,
+                    51,
+                    41,
+                    15,
+                    38
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 62.5,
+                "D": 50.0,
+                "H": 56.84596577017115,
+                "R": 59.61538461538461
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    99,
+                    41
+                ]
+            },
+            "summ": [
+                [
+                    4,
+                    57,
+                    28,
+                    77,
+                    122,
+                    84,
+                    56
+                ],
+                [
+                    13,
+                    70,
+                    101,
+                    41,
+                    15,
+                    50,
+                    79
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 62.5,
+                "D": 50.0,
+                "H": 56.84596577017115,
+                "R": 59.61538461538461
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    98,
+                    37
+                ]
+            },
+            "summ": [
+                [
+                    4,
+                    24,
+                    28,
+                    77,
+                    29,
+                    57
+                ],
+                [
+                    13,
+                    70,
+                    79,
+                    20,
+                    51,
+                    38
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 62.5,
+                "D": 50.0,
+                "H": 56.84596577017115,
+                "R": 59.61538461538461
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    95,
+                    42
+                ]
+            },
+            "summ": [
+                [
+                    4,
+                    57,
+                    8,
+                    108,
+                    122,
+                    24,
+                    84
+                ],
+                [
+                    13,
+                    71,
+                    79,
+                    51,
+                    41,
+                    40,
+                    70
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 62.5,
+                "D": 50.0,
+                "H": 56.84596577017115,
+                "R": 59.61538461538461
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    100,
+                    43
+                ]
+            },
+            "summ": [
+                [
+                    4,
+                    122,
+                    27,
+                    61,
+                    108,
+                    24
+                ],
+                [
+                    13,
+                    70,
+                    38,
+                    71,
+                    51,
+                    20
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 62.5,
+                "D": 50.0,
+                "H": 56.84596577017115,
+                "R": 59.61538461538461
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    98,
+                    53
+                ]
+            },
+            "summ": [
+                [
+                    4,
+                    56,
+                    14,
+                    122,
+                    28,
+                    24,
+                    57,
+                    27
+                ],
+                [
+                    13,
+                    71,
+                    38,
+                    79,
+                    50,
+                    41,
+                    20,
+                    70
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 62.5,
+                "D": 50.0,
+                "H": 56.84596577017115,
+                "R": 59.61538461538461
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    100,
+                    43
+                ]
+            },
+            "summ": [
+                [
+                    4,
+                    57,
+                    84,
+                    27,
+                    29,
+                    108,
+                    24
+                ],
+                [
+                    13,
+                    70,
+                    101,
+                    20,
+                    15,
+                    50,
+                    23
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 62.5,
+                "D": 50.0,
+                "H": 56.84596577017115,
+                "R": 59.61538461538461
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    94,
+                    75
+                ]
+            },
+            "summ": [
+                [
+                    4,
+                    61,
+                    14,
+                    24,
+                    84,
+                    57,
+                    56,
+                    122
+                ],
+                [
+                    13,
+                    70,
+                    41,
+                    20,
+                    40,
+                    63,
+                    38,
+                    50
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 62.5,
+                "D": 50.0,
+                "H": 56.84596577017115,
+                "R": 59.61538461538461
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    98,
+                    45
+                ]
+            },
+            "summ": [
+                [
+                    4,
+                    24,
+                    29,
+                    28,
+                    77,
+                    122
+                ],
+                [
+                    13,
+                    71,
+                    15,
+                    51,
+                    23,
+                    79
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 62.5,
+                "D": 50.0,
+                "H": 56.84596577017115,
+                "R": 59.61538461538461
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    100,
+                    77
+                ]
+            },
+            "summ": [
+                [
+                    4,
+                    108,
+                    77,
+                    24,
+                    56,
+                    122,
+                    57
+                ],
+                [
+                    13,
+                    71,
+                    15,
+                    20,
+                    23,
+                    63,
+                    79
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 62.5,
+                "D": 50.0,
+                "H": 56.84596577017115,
+                "R": 59.61538461538461
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    98,
+                    38
+                ]
+            },
+            "summ": [
+                [
+                    4,
+                    108,
+                    8,
+                    122,
+                    29,
+                    24
+                ],
+                [
+                    13,
+                    71,
+                    101,
+                    41,
+                    40,
+                    79
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 62.5,
+                "D": 50.0,
+                "H": 56.84596577017115,
+                "R": 59.61538461538461
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    98,
+                    73
+                ]
+            },
+            "summ": [
+                [
+                    4,
+                    57,
+                    27,
+                    108,
+                    14,
+                    122,
+                    24
+                ],
+                [
+                    13,
+                    71,
+                    50,
+                    41,
+                    101,
+                    51,
+                    63
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 62.5,
+                "D": 50.0,
+                "H": 56.84596577017115,
+                "R": 59.61538461538461
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    99,
+                    34
+                ]
+            },
+            "summ": [
+                [
+                    4,
+                    122,
+                    14,
+                    61,
+                    84,
+                    27
+                ],
+                [
+                    13,
+                    70,
+                    50,
+                    38,
+                    40,
+                    51
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 62.5,
+                "D": 50.0,
+                "H": 56.84596577017115,
+                "R": 59.61538461538461
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    100,
+                    51
+                ]
+            },
+            "summ": [
+                [
+                    4,
+                    108,
+                    28,
+                    57,
+                    27,
+                    84
+                ],
+                [
+                    13,
+                    71,
+                    23,
+                    15,
+                    38,
+                    79
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 62.5,
+                "D": 50.0,
+                "H": 56.84596577017115,
+                "R": 59.61538461538461
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    100,
+                    68
+                ]
+            },
+            "summ": [
+                [
+                    4,
+                    8,
+                    27,
+                    61,
+                    122,
+                    24
+                ],
+                [
+                    13,
+                    70,
+                    20,
+                    63,
+                    71,
+                    23
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 62.5,
+                "D": 50.0,
+                "H": 56.84596577017115,
+                "R": 59.61538461538461
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    100,
+                    42
+                ]
+            },
+            "summ": [
+                [
+                    4,
+                    8,
+                    77,
+                    57,
+                    56,
+                    24,
+                    122
+                ],
+                [
+                    13,
+                    70,
+                    41,
+                    38,
+                    40,
+                    50,
+                    20
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 62.5,
+                "D": 50.0,
+                "H": 56.84596577017115,
+                "R": 59.61538461538461
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    100,
+                    70
+                ]
+            },
+            "summ": [
+                [
+                    4,
+                    14,
+                    56,
+                    122,
+                    29,
+                    84,
+                    27,
+                    24
+                ],
+                [
+                    13,
+                    70,
+                    20,
+                    63,
+                    50,
+                    15,
+                    101,
+                    79
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 62.5,
+                "D": 50.0,
+                "H": 56.84596577017115,
+                "R": 59.61538461538461
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    100,
+                    52
+                ]
+            },
+            "summ": [
+                [
+                    4,
+                    8,
+                    84,
+                    29,
+                    27,
+                    24,
+                    122
+                ],
+                [
+                    13,
+                    71,
+                    40,
+                    23,
+                    51,
+                    38,
+                    20
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 62.5,
+                "D": 50.0,
+                "H": 56.84596577017115,
+                "R": 59.61538461538461
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    100,
+                    50
+                ]
+            },
+            "summ": [
+                [
+                    4,
+                    84,
+                    24,
+                    61,
+                    28,
+                    122,
+                    14
+                ],
+                [
+                    13,
+                    71,
+                    50,
+                    40,
+                    38,
+                    51,
+                    23
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 62.5,
+                "D": 50.0,
+                "H": 56.84596577017115,
+                "R": 59.61538461538461
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    99,
+                    38
+                ]
+            },
+            "summ": [
+                [
+                    4,
+                    57,
+                    27,
+                    14,
+                    8,
+                    56
+                ],
+                [
+                    13,
+                    71,
+                    15,
+                    79,
+                    40,
+                    101
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 62.5,
+                "D": 50.0,
+                "H": 56.84596577017115,
+                "R": 59.61538461538461
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    99,
+                    72
+                ]
+            },
+            "summ": [
+                [
+                    4,
+                    24,
+                    14,
+                    84,
+                    28,
+                    27,
+                    56
+                ],
+                [
+                    13,
+                    70,
+                    50,
+                    41,
+                    63,
+                    20,
+                    38
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 62.5,
+                "D": 50.0,
+                "H": 56.84596577017115,
+                "R": 59.61538461538461
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    99,
+                    46
+                ]
+            },
+            "summ": [
+                [
+                    4,
+                    57,
+                    8,
+                    77,
+                    84,
+                    122
+                ],
+                [
+                    13,
+                    71,
+                    51,
+                    20,
+                    41,
+                    23
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 62.5,
+                "D": 50.0,
+                "H": 56.84596577017115,
+                "R": 59.61538461538461
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    98,
+                    77
+                ]
+            },
+            "summ": [
+                [
+                    4,
+                    14,
+                    57,
+                    28,
+                    27,
+                    24,
+                    122,
+                    56
+                ],
+                [
+                    13,
+                    70,
+                    51,
+                    101,
+                    15,
+                    23,
+                    40,
+                    63
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 62.5,
+                "D": 50.0,
+                "H": 56.84596577017115,
+                "R": 59.61538461538461
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    98,
+                    34
+                ]
+            },
+            "summ": [
+                [
+                    4,
+                    24,
+                    77,
+                    8,
+                    84,
+                    122
+                ],
+                [
+                    13,
+                    70,
+                    38,
+                    101,
+                    40,
+                    50
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 62.5,
+                "D": 50.0,
+                "H": 56.84596577017115,
+                "R": 59.61538461538461
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    99,
+                    37
+                ]
+            },
+            "summ": [
+                [
+                    4,
+                    108,
+                    122,
+                    27,
+                    8
+                ],
+                [
+                    13,
+                    71,
+                    41,
+                    101,
+                    51
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 62.5,
+                "D": 50.0,
+                "H": 56.84596577017115,
+                "R": 59.61538461538461
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    100,
+                    45
+                ]
+            },
+            "summ": [
+                [
+                    4,
+                    61,
+                    28,
+                    14,
+                    84,
+                    57,
+                    24
+                ],
+                [
+                    13,
+                    71,
+                    41,
+                    101,
+                    20,
+                    51,
+                    40
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 62.5,
+                "D": 50.0,
+                "H": 56.84596577017115,
+                "R": 59.61538461538461
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    98,
+                    44
+                ]
+            },
+            "summ": [
+                [
+                    4,
+                    8,
+                    108,
+                    57,
+                    24,
+                    29
+                ],
+                [
+                    13,
+                    70,
+                    15,
+                    23,
+                    41,
+                    51
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 62.5,
+                "D": 50.0,
+                "H": 56.84596577017115,
+                "R": 59.61538461538461
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    100,
+                    76
+                ]
+            },
+            "summ": [
+                [
+                    4,
+                    8,
+                    29,
+                    28,
+                    84,
+                    122,
+                    57
+                ],
+                [
+                    13,
+                    71,
+                    51,
+                    41,
+                    40,
+                    63,
+                    15
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 62.5,
+                "D": 50.0,
+                "H": 56.84596577017115,
+                "R": 59.61538461538461
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    98,
+                    49
+                ]
+            },
+            "summ": [
+                [
+                    4,
+                    61,
+                    84,
+                    57,
+                    24,
+                    28,
+                    29
+                ],
+                [
+                    13,
+                    71,
+                    101,
+                    23,
+                    20,
+                    41,
+                    40
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 62.5,
+                "D": 50.0,
+                "H": 56.84596577017115,
+                "R": 59.61538461538461
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    100,
+                    46
+                ]
+            },
+            "summ": [
+                [
+                    4,
+                    8,
+                    14,
+                    24,
+                    108,
+                    57
+                ],
+                [
+                    13,
+                    70,
+                    23,
+                    41,
+                    20,
+                    38
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 62.5,
+                "D": 50.0,
+                "H": 56.84596577017115,
+                "R": 59.61538461538461
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    100,
+                    60
+                ]
+            },
+            "summ": [
+                [
+                    4,
+                    57,
+                    29,
+                    27,
+                    14,
+                    28
+                ],
+                [
+                    13,
+                    70,
+                    20,
+                    50,
+                    41,
+                    63
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 62.5,
+                "D": 50.0,
+                "H": 56.84596577017115,
+                "R": 59.61538461538461
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    100,
+                    44
+                ]
+            },
+            "summ": [
+                [
+                    4,
+                    108,
+                    28,
+                    61,
+                    57,
+                    122
+                ],
+                [
+                    13,
+                    71,
+                    38,
+                    15,
+                    50,
+                    79
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 62.5,
+                "D": 50.0,
+                "H": 56.84596577017115,
+                "R": 59.61538461538461
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    100,
+                    37
+                ]
+            },
+            "summ": [
+                [
+                    4,
+                    84,
+                    27,
+                    28,
+                    8,
+                    122
+                ],
+                [
+                    13,
+                    70,
+                    50,
+                    20,
+                    23,
+                    41
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 62.5,
+                "D": 50.0,
+                "H": 56.84596577017115,
+                "R": 59.61538461538461
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    100,
+                    73
+                ]
+            },
+            "summ": [
+                [
+                    4,
+                    24,
+                    29,
+                    14,
+                    27,
+                    56,
+                    122,
+                    84
+                ],
+                [
+                    13,
+                    71,
+                    40,
+                    101,
+                    79,
+                    20,
+                    63,
+                    51
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 62.5,
+                "D": 50.0,
+                "H": 56.84596577017115,
+                "R": 59.61538461538461
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    100,
+                    77
+                ]
+            },
+            "summ": [
+                [
+                    4,
+                    122,
+                    27,
+                    24,
+                    108,
+                    84,
+                    29
+                ],
+                [
+                    13,
+                    71,
+                    15,
+                    41,
+                    70,
+                    63,
+                    101
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 62.5,
+                "D": 50.0,
+                "H": 56.84596577017115,
+                "R": 59.61538461538461
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    99,
+                    52
+                ]
+            },
+            "summ": [
+                [
+                    4,
+                    8,
+                    56,
+                    29,
+                    122,
+                    57,
+                    14
+                ],
+                [
+                    13,
+                    71,
+                    38,
+                    40,
+                    15,
+                    41,
+                    50
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 62.5,
+                "D": 50.0,
+                "H": 56.84596577017115,
+                "R": 59.61538461538461
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    100,
+                    44
+                ]
+            },
+            "summ": [
+                [
+                    4,
+                    61,
+                    57,
+                    14,
+                    108,
+                    122
+                ],
+                [
+                    13,
+                    70,
+                    38,
+                    23,
+                    101,
+                    51
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 62.5,
+                "D": 50.0,
+                "H": 56.84596577017115,
+                "R": 59.61538461538461
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    95,
+                    74
+                ]
+            },
+            "summ": [
+                [
+                    4,
+                    8,
+                    56,
+                    57,
+                    14,
+                    84,
+                    24,
+                    122
+                ],
+                [
+                    13,
+                    70,
+                    51,
+                    63,
+                    101,
+                    50,
+                    38,
+                    79
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 62.5,
+                "D": 50.0,
+                "H": 56.84596577017115,
+                "R": 59.61538461538461
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    99,
+                    82
+                ]
+            },
+            "summ": [
+                [
+                    4,
+                    61,
+                    77,
+                    122,
+                    56,
+                    57,
+                    24
+                ],
+                [
+                    13,
+                    71,
+                    38,
+                    51,
+                    63,
+                    15,
+                    101
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 62.5,
+                "D": 50.0,
+                "H": 56.84596577017115,
+                "R": 59.61538461538461
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    100,
+                    48
+                ]
+            },
+            "summ": [
+                [
+                    4,
+                    61,
+                    27,
+                    56,
+                    57,
+                    14,
+                    24
+                ],
+                [
+                    13,
+                    71,
+                    20,
+                    38,
+                    51,
+                    50,
+                    101
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 62.5,
+                "D": 50.0,
+                "H": 56.84596577017115,
+                "R": 59.61538461538461
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    99,
+                    62
+                ]
+            },
+            "summ": [
+                [
+                    4,
+                    14,
+                    8,
+                    84,
+                    122,
+                    28
+                ],
+                [
+                    13,
+                    71,
+                    63,
+                    40,
+                    51,
+                    79
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 62.5,
+                "D": 50.0,
+                "H": 56.84596577017115,
+                "R": 59.61538461538461
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    98,
+                    78
+                ]
+            },
+            "summ": [
+                [
+                    4,
+                    122,
+                    24,
+                    108,
+                    27,
+                    28,
+                    57
+                ],
+                [
+                    13,
+                    71,
+                    63,
+                    101,
+                    79,
+                    23,
+                    41
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 62.5,
+                "D": 50.0,
+                "H": 56.84596577017115,
+                "R": 59.61538461538461
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    99,
+                    43
+                ]
+            },
+            "summ": [
+                [
+                    4,
+                    24,
+                    28,
+                    108,
+                    84,
+                    29,
+                    122
+                ],
+                [
+                    13,
+                    70,
+                    20,
+                    23,
+                    50,
+                    101,
+                    41
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 62.5,
+                "D": 50.0,
+                "H": 56.84596577017115,
+                "R": 59.61538461538461
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    100,
+                    51
+                ]
+            },
+            "summ": [
+                [
+                    4,
+                    56,
+                    14,
+                    108,
+                    28,
+                    57,
+                    24
+                ],
+                [
+                    13,
+                    70,
+                    23,
+                    71,
+                    40,
+                    38,
+                    51
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 62.5,
+                "D": 50.0,
+                "H": 56.84596577017115,
+                "R": 59.61538461538461
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    100,
+                    76
+                ]
+            },
+            "summ": [
+                [
+                    4,
+                    122,
+                    77,
+                    108,
+                    57,
+                    56,
+                    24
+                ],
+                [
+                    13,
+                    70,
+                    63,
+                    38,
+                    51,
+                    41,
+                    101
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 62.5,
+                "D": 50.0,
+                "H": 56.84596577017115,
+                "R": 59.61538461538461
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    100,
+                    51
+                ]
+            },
+            "summ": [
+                [
+                    4,
+                    122,
+                    28,
+                    27,
+                    29,
+                    56,
+                    84,
+                    24
+                ],
+                [
+                    13,
+                    70,
+                    41,
+                    38,
+                    51,
+                    20,
+                    101,
+                    40
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 62.5,
+                "D": 50.0,
+                "H": 56.84596577017115,
+                "R": 59.61538461538461
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    99,
+                    29
+                ]
+            },
+            "summ": [
+                [
+                    4,
+                    8,
+                    77,
+                    84,
+                    56
+                ],
+                [
+                    13,
+                    70,
+                    20,
+                    79,
+                    71
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 62.5,
+                "D": 50.0,
+                "H": 56.84596577017115,
+                "R": 59.61538461538461
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    95,
+                    74
+                ]
+            },
+            "summ": [
+                [
+                    4,
+                    57,
+                    84,
+                    122,
+                    28,
+                    8,
+                    24,
+                    56
+                ],
+                [
+                    13,
+                    70,
+                    50,
+                    101,
+                    23,
+                    40,
+                    15,
+                    63
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 62.5,
+                "D": 50.0,
+                "H": 56.84596577017115,
+                "R": 59.61538461538461
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    99,
+                    50
+                ]
+            },
+            "summ": [
+                [
+                    4,
+                    56,
+                    77,
+                    84,
+                    24,
+                    122,
+                    27
+                ],
+                [
+                    13,
+                    71,
+                    23,
+                    38,
+                    101,
+                    40,
+                    50
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 62.5,
+                "D": 50.0,
+                "H": 56.84596577017115,
+                "R": 59.61538461538461
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    95,
+                    44
+                ]
+            },
+            "summ": [
+                [
+                    4,
+                    57,
+                    108,
+                    122,
+                    84,
+                    8,
+                    24
+                ],
+                [
+                    13,
+                    71,
+                    79,
+                    40,
+                    51,
+                    38,
+                    50
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 62.5,
+                "D": 50.0,
+                "H": 56.84596577017115,
+                "R": 59.61538461538461
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    100,
+                    35
+                ]
+            },
+            "summ": [
+                [
+                    4,
+                    108,
+                    24,
+                    61,
+                    27,
+                    57
+                ],
+                [
+                    13,
+                    70,
+                    41,
+                    79,
+                    15,
+                    50
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 62.5,
+                "D": 50.0,
+                "H": 56.84596577017115,
+                "R": 59.61538461538461
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    99,
+                    23
+                ]
+            },
+            "summ": [
+                [
+                    4,
+                    56,
+                    108,
+                    77,
+                    84
+                ],
+                [
+                    13,
+                    70,
+                    79,
+                    50,
+                    51
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 62.5,
+                "D": 50.0,
+                "H": 56.84596577017115,
+                "R": 59.61538461538461
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    100,
+                    41
+                ]
+            },
+            "summ": [
+                [
+                    4,
+                    122,
+                    29,
+                    27,
+                    108,
+                    57,
+                    56
+                ],
+                [
+                    13,
+                    70,
+                    38,
+                    79,
+                    101,
+                    51,
+                    50
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 62.5,
+                "D": 50.0,
+                "H": 56.84596577017115,
+                "R": 59.61538461538461
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    96,
+                    52
+                ]
+            },
+            "summ": [
+                [
+                    4,
+                    84,
+                    27,
+                    122,
+                    8,
+                    57,
+                    56,
+                    24
+                ],
+                [
+                    13,
+                    71,
+                    50,
+                    23,
+                    70,
+                    51,
+                    79,
+                    41
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 62.5,
+                "D": 50.0,
+                "H": 56.84596577017115,
+                "R": 59.61538461538461
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    99,
+                    82
+                ]
+            },
+            "summ": [
+                [
+                    4,
+                    122,
+                    29,
+                    108,
+                    28,
+                    56,
+                    57
+                ],
+                [
+                    13,
+                    71,
+                    23,
+                    63,
+                    15,
+                    20,
+                    41
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 62.5,
+                "D": 50.0,
+                "H": 56.84596577017115,
+                "R": 59.61538461538461
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    94,
+                    47
+                ]
+            },
+            "summ": [
+                [
+                    4,
+                    14,
+                    61,
+                    56,
+                    84,
+                    122,
+                    24,
+                    57
+                ],
+                [
+                    13,
+                    71,
+                    23,
+                    20,
+                    40,
+                    51,
+                    79,
+                    50
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 62.5,
+                "D": 50.0,
+                "H": 56.84596577017115,
+                "R": 59.61538461538461
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    96,
+                    53
+                ]
+            },
+            "summ": [
+                [
+                    4,
+                    122,
+                    27,
+                    8,
+                    57,
+                    56,
+                    84,
+                    24
+                ],
+                [
+                    13,
+                    71,
+                    51,
+                    50,
+                    20,
+                    15,
+                    79,
+                    23
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 62.5,
+                "D": 50.0,
+                "H": 56.84596577017115,
+                "R": 59.61538461538461
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    97,
+                    50
+                ]
+            },
+            "summ": [
+                [
+                    4,
+                    108,
+                    28,
+                    57,
+                    14,
+                    122,
+                    24
+                ],
+                [
+                    13,
+                    71,
+                    15,
+                    79,
+                    101,
+                    23,
+                    20
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 62.5,
+                "D": 50.0,
+                "H": 56.84596577017115,
+                "R": 59.61538461538461
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    98,
+                    83
+                ]
+            },
+            "summ": [
+                [
+                    4,
+                    56,
+                    14,
+                    27,
+                    28,
+                    122,
+                    57,
+                    24
+                ],
+                [
+                    13,
+                    70,
+                    20,
+                    38,
+                    71,
+                    50,
+                    63,
+                    23
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 62.5,
+                "D": 50.0,
+                "H": 56.84596577017115,
+                "R": 59.61538461538461
+            },
+            "parameters": {
+                "alpha": 20,
+                "aspect detection": "manual",
+                "method": "contrastive",
+                "polarity attribution": "manual",
+                "summization": "greedy"
+            },
+            "size": {
+                "word count": [
+                    93,
+                    50
+                ]
+            },
+            "summ": [
+                [
+                    4,
+                    24,
+                    29,
+                    57,
+                    108,
+                    56,
+                    84,
+                    122
+                ],
+                [
+                    13,
+                    71,
+                    38,
+                    101,
+                    79,
+                    50,
+                    40,
+                    51
+                ]
+            ]
+        }
+    ]
+}

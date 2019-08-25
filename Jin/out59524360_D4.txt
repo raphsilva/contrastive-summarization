@@ -1,0 +1,42 @@
+
+A tela é bem brilhante. 
+Bonito e leve. 
+Mas o sistema é rápido e display é bastante resistente. 
+Fácil de usar e com vários recurso que são encontrados na linha premium. 
+Pratico. 
+Review speaker ruim. 
+Recebi o produto mas o mesmo não carregava. 
+Para um uso simples, apenas internet, redes sociais, email e uma ou outro ligação o aparelho atende, mas um uso um pouco mais intenso dos recursos o aparelho não suporta. 
+Muito bom deixa a desejar só a bateria e designer. 
+Já resetei o produto mas não resolveu o problema. 
+
+
+Só achei um pouco pesado. 
+Quanto ao software, muito poluído. 
+Mas acredito que em breve me adaptarei ao produto, e essa questão será passado. 
+A cor prata é bem enjoativa. 
+Bateria horrível. 
+É à prova d&squote&água mesmo. 
+Produto de otima qualidade, produto feito para durar. 
+Para armazená-las possui ótimo espaço (32gb), além de permitir expandir o espaço utilizando o cartão de memória. 
+A memória é ótima e ainda é expansível. 
+Interface diferente dos demais androids, porém é agradável. 
+Bom! A ROM da Samsung me surpreendeu... 
+A PLATAFORMA ANDROIDE DA SAMSUNG É IMBARÍVEL! 
+Imagem top. 
+Graficos impressionam pela qualidade. 
+
+
+
+sentences:    10   14
+    words:    92   98
+
+
+( 42  21)      32    44    46   [[ 40]]  
+
+               40    47    48    [ 44]      ~  6
+
+[309, 221, 8, 85, 481, 609, 567, 366, 278, 552]
+[58, 254, 256, 211, 677, 305, 33, 561, 132, 220, 216, 171, 81, 530]
+
+

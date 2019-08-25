@@ -1,0 +1,41 @@
+
+Muito bom custo/benefício. 
+Smartphone com custo-benefício muito bom. 
+Excelente custo-benefício. 
+Bom custo/benefício. 
+Bom custo benefício. 
+Otimo custo beneficio. 
+Aparelhjo simples, moderno e com ótimo custo-benefício. 
+Ótimo custo-beneficio com destaque para sua câmera, e o moto gestos!!!! 
+Boa durabilidade da bateria e câmeras perfeitas. 
+Mas o sistema é rápido e display é bastante resistente. 
+Câmera muito boa. 
+Também percebi um bug que quando se carrega o celular, dependendo da capa de proteção não dá pra usar a tela touch (a voltagem interfere na detecção dos toques) 
+Só acho que devem melhorar a qualidade da câmera tanto traseira quanto frontal. 
+
+
+Poderia custar mais barato. 
+O aparelho poderia ser um pouco mais barato. 
+Celular Bom mas poderia ser mais barato e resistente. 
+No momento posso dizer q a bateria não dura como especificado no produto. 
+Entretanto, na primeira semana de uso já ralou facilmente, esquenta muito com os dados móveis ligados e trava, mesmo que raramente. 
+Bom pra quem gosta de ler, pois a tela é grande. 
+Imagem top. 
+Processamento rápido e câmera boa. 
+Por enquanto não tenho do que reclamar, é lindo e cumpre todas as funções, e a câmera é espetacular! 
+Ótimo celular. Câmera excelente. 
+
+
+
+sentences:    13   10
+    words:    98   96
+
+
+( 67  61)      64    59    46   [[ 55]]  
+
+               64    59    46    [ 55]      ~  2
+
+[2, 65, 71, 1, 6, 61, 66, 37, 46, 8, 25, 76, 55]
+[79, 104, 99, 69, 94, 57, 81, 56, 27, 3]
+
+

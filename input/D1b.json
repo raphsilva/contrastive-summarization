@@ -1,0 +1,3339 @@
+{
+    "data": [
+        {
+            "id": 3,
+            "opinions": [
+                [
+                    "PRODUTO",
+                    100
+                ],
+                [
+                    "CÂMERA",
+                    100
+                ]
+            ],
+            "sentence": "Ótimo celular. Câmera excelente."
+        },
+        {
+            "id": 4,
+            "opinions": [
+                [
+                    "PRODUTO",
+                    100
+                ],
+                [
+                    "CÂMERA",
+                    100
+                ]
+            ],
+            "sentence": "Celular muito bom no geral, se destacando pela câmera."
+        },
+        {
+            "id": 6,
+            "opinions": [
+                [
+                    "BATERIA",
+                    100
+                ]
+            ],
+            "sentence": "Igual aos outros a única coisa que é melhor a bateria carrega muito rápido."
+        },
+        {
+            "id": 15,
+            "opinions": [
+                [
+                    "PRODUTO",
+                    0
+                ],
+                [
+                    "TAMANHO",
+                    100
+                ],
+                [
+                    "DESEMPENHO",
+                    100
+                ]
+            ],
+            "sentence": "Sempre quis um aparelho da linha S e o S7 tem o tamanho perfeito para nao chamar muita atencao e desempenho fantástico."
+        },
+        {
+            "id": 18,
+            "opinions": [
+                [
+                    "PRODUTO",
+                    -100
+                ],
+                [
+                    "DESIGN",
+                    -100
+                ],
+                [
+                    "OUTRO",
+                    -100
+                ]
+            ],
+            "sentence": "Produto deixa a desejar, bordas metalicas riscam com facilidade, botão home então nem se fala."
+        },
+        {
+            "id": 19,
+            "opinions": [
+                [
+                    "ACESSÓRIO",
+                    -100
+                ]
+            ],
+            "sentence": "Complicado de encontrar películas compatíveis com a tela toda."
+        },
+        {
+            "id": 21,
+            "opinions": [
+                [
+                    "PRODUTO",
+                    100
+                ],
+                [
+                    "PREÇO",
+                    100
+                ]
+            ],
+            "sentence": "O Galaxy S7 é um excelente aparelho e agora com um bom preço."
+        },
+        {
+            "id": 23,
+            "opinions": [
+                [
+                    "PRODUTO",
+                    100
+                ]
+            ],
+            "sentence": "Comprei um S7 ano passado porém perdi, comprei outro igual pois achei maravilhoso!"
+        },
+        {
+            "id": 27,
+            "opinions": [
+                [
+                    "PRODUTO",
+                    100
+                ],
+                [
+                    "CÂMERA",
+                    100
+                ]
+            ],
+            "sentence": "Por enquanto não tenho do que reclamar, é lindo e cumpre todas as funções, e a câmera é espetacular!"
+        },
+        {
+            "id": 28,
+            "opinions": [
+                [
+                    "PRODUTO",
+                    100
+                ]
+            ],
+            "sentence": "Galaxy S7 é um dos tops do mercado."
+        },
+        {
+            "id": 33,
+            "opinions": [
+                [
+                    "RESISTÊNCIA",
+                    100
+                ]
+            ],
+            "sentence": "Produto de otima qualidade, produto feito para durar."
+        },
+        {
+            "id": 39,
+            "opinions": [
+                [
+                    "PRODUTO",
+                    100
+                ],
+                [
+                    "DESEMPENHO",
+                    100
+                ],
+                [
+                    "CÂMERA",
+                    100
+                ]
+            ],
+            "sentence": "Otimo produto uma otima esperiencia em jogos camera perfeita."
+        },
+        {
+            "id": 47,
+            "opinions": [
+                [
+                    "PREÇO",
+                    100
+                ]
+            ],
+            "sentence": "Vale o que custa."
+        },
+        {
+            "id": 54,
+            "opinions": [
+                [
+                    "BATERIA",
+                    100
+                ]
+            ],
+            "sentence": "Excelente bateria."
+        },
+        {
+            "id": 55,
+            "opinions": [
+                [
+                    "BATERIA",
+                    100
+                ]
+            ],
+            "sentence": "Bateria dura até 2 dias, muito boa."
+        },
+        {
+            "id": 56,
+            "opinions": [
+                [
+                    "DESEMPENHO",
+                    100
+                ],
+                [
+                    "CÂMERA",
+                    100
+                ]
+            ],
+            "sentence": "Processamento rápido e câmera boa."
+        },
+        {
+            "id": 57,
+            "opinions": [
+                [
+                    "TELA",
+                    100
+                ]
+            ],
+            "sentence": "Bom pra quem gosta de ler, pois a tela é grande."
+        },
+        {
+            "id": 58,
+            "opinions": [
+                [
+                    "PESO",
+                    -100
+                ]
+            ],
+            "sentence": "Só achei um pouco pesado."
+        },
+        {
+            "id": 59,
+            "opinions": [
+                [
+                    "PRODUTO",
+                    100
+                ],
+                [
+                    "PREÇO",
+                    100
+                ]
+            ],
+            "sentence": "Top de linha, excelente custo beneficio."
+        },
+        {
+            "id": 62,
+            "opinions": [
+                [
+                    "DESIGN",
+                    100
+                ],
+                [
+                    "DESEMPENHO",
+                    100
+                ]
+            ],
+            "sentence": "Exelente acabamento, desempenho imbatível."
+        },
+        {
+            "id": 66,
+            "opinions": [
+                [
+                    "DESEMPENHO",
+                    100
+                ]
+            ],
+            "sentence": "Estou impressionado com o desempenho do celular!"
+        },
+        {
+            "id": 69,
+            "opinions": [
+                [
+                    "BATERIA",
+                    -100
+                ]
+            ],
+            "sentence": "No momento posso dizer q a bateria não dura como especificado no produto."
+        },
+        {
+            "id": 74,
+            "opinions": [
+                [
+                    "USABILIDADE",
+                    100
+                ],
+                [
+                    "DESEMPENHO",
+                    100
+                ],
+                [
+                    "DESIGN",
+                    100
+                ]
+            ],
+            "sentence": "Amigável, rapido, excelente acabamento."
+        },
+        {
+            "id": 77,
+            "opinions": [
+                [
+                    "PRODUTO",
+                    100
+                ],
+                [
+                    "PREÇO",
+                    -100
+                ]
+            ],
+            "sentence": "Bom e caro."
+        },
+        {
+            "id": 78,
+            "opinions": [
+                [
+                    "PRODUTO",
+                    100
+                ],
+                [
+                    "PRODUTO",
+                    0
+                ]
+            ],
+            "sentence": "Excelente celular, mas não tenho mais."
+        },
+        {
+            "id": 79,
+            "opinions": [
+                [
+                    "PREÇO",
+                    -100
+                ]
+            ],
+            "sentence": "Poderia custar mais barato."
+        },
+        {
+            "id": 81,
+            "opinions": [
+                [
+                    "TELA",
+                    100
+                ]
+            ],
+            "sentence": "Imagem top."
+        },
+        {
+            "id": 92,
+            "opinions": [
+                [
+                    "PRODUTO",
+                    100
+                ],
+                [
+                    "RESISTÊNCIA",
+                    -100
+                ]
+            ],
+            "sentence": "Bom, porem frágil."
+        },
+        {
+            "id": 94,
+            "opinions": [
+                [
+                    "RESISTÊNCIA",
+                    -100
+                ],
+                [
+                    "DESEMPENHO",
+                    -100
+                ],
+                [
+                    "DESEMPENHO",
+                    -100
+                ]
+            ],
+            "sentence": "Entretanto, na primeira semana de uso já ralou facilmente, esquenta muito com os dados móveis ligados e trava, mesmo que raramente."
+        },
+        {
+            "id": 99,
+            "opinions": [
+                [
+                    "PRODUTO",
+                    100
+                ],
+                [
+                    "PREÇO",
+                    -100
+                ],
+                [
+                    "RESISTÊNCIA",
+                    -100
+                ]
+            ],
+            "sentence": "Celular Bom mas poderia ser mais barato e resistente."
+        },
+        {
+            "id": 103,
+            "opinions": [
+                [
+                    "RESISTÊNCIA",
+                    0
+                ]
+            ],
+            "sentence": "Comprei uma capa reforçada p/ protege-lo contra impactos e evitar danos pois falam da fragilidade do Aparelho."
+        },
+        {
+            "id": 104,
+            "opinions": [
+                [
+                    "PREÇO",
+                    -100
+                ]
+            ],
+            "sentence": "O aparelho poderia ser um pouco mais barato."
+        },
+        {
+            "id": 107,
+            "opinions": [
+                [
+                    "PRODUTO",
+                    100
+                ]
+            ],
+            "sentence": "Um celular de ponta pra durar varios anos."
+        },
+        {
+            "id": 108,
+            "opinions": [
+                [
+                    "DESEMPENHO",
+                    100
+                ]
+            ],
+            "sentence": "O sistema é estável, rápido e sem firulas."
+        },
+        {
+            "id": 109,
+            "opinions": [
+                [
+                    "DESEMPENHO",
+                    100
+                ]
+            ],
+            "sentence": "O hardware é potente e passa a impressão de que durará vários anos sem se tornar obsoleto."
+        },
+        {
+            "id": 110,
+            "opinions": [
+                [
+                    "CÂMERA",
+                    100
+                ]
+            ],
+            "sentence": "A câmera é ótima para fotos em alta velocidade."
+        },
+        {
+            "id": 111,
+            "opinions": [
+                [
+                    "CÂMERA",
+                    100
+                ]
+            ],
+            "sentence": "A qualidade da imagem com pouca luz também impressiona."
+        },
+        {
+            "id": 112,
+            "opinions": [
+                [
+                    "BATERIA",
+                    100
+                ]
+            ],
+            "sentence": "A bateria, comigo, dura um dia inteiro de uso moderado, ou dez horas de uso intenso, O que satisfaz minhas necessidades."
+        },
+        {
+            "id": 113,
+            "opinions": [
+                [
+                    "PREÇO",
+                    -100
+                ]
+            ],
+            "sentence": "O preço é alto, Mas eu espero que a durabilidade compense o alto investimento."
+        },
+        {
+            "id": 115,
+            "opinions": [
+                [
+                    "DESEMPENHO",
+                    100
+                ]
+            ],
+            "sentence": "PRODUTO COM O PROCESSADOR MUITO RAPIDO."
+        },
+        {
+            "id": 117,
+            "opinions": [
+                [
+                    "PRODUTO",
+                    100
+                ],
+                [
+                    "CÂMERA",
+                    100
+                ]
+            ],
+            "sentence": "Aparelho premium, com câmera impressionante."
+        },
+        {
+            "id": 118,
+            "opinions": [
+                [
+                    "DESIGN",
+                    0
+                ]
+            ],
+            "sentence": "Design discreto, não chama tanto a atenção quanto o Edge."
+        },
+        {
+            "id": 119,
+            "opinions": [
+                [
+                    "DESEMPENHO",
+                    100
+                ]
+            ],
+            "sentence": "Mostrou-se muito rápido, em meu uso nunca travou."
+        },
+        {
+            "id": 120,
+            "opinions": [
+                [
+                    "PREÇO",
+                    100
+                ]
+            ],
+            "sentence": "Agora com o lançamento do S8 e consequente queda de preço tornou-se um dos melhores custo-benefício do mercado."
+        },
+        {
+            "id": 122,
+            "opinions": [
+                [
+                    "PRODUTO",
+                    100
+                ]
+            ],
+            "sentence": "Adquiri em menos de um mês, a experiência esta sendo ótima."
+        },
+        {
+            "id": 123,
+            "opinions": [
+                [
+                    "CÂMERA",
+                    100
+                ],
+                [
+                    "OUTRO",
+                    100
+                ],
+                [
+                    "DESIGN",
+                    100
+                ],
+                [
+                    "DESEMPENHO",
+                    100
+                ],
+                [
+                    "BATERIA",
+                    100
+                ]
+            ],
+            "sentence": "Câmera, sensor de digital, desing, desempenho e bateria excelentes."
+        },
+        {
+            "id": 127,
+            "opinions": [
+                [
+                    "PRODUTO",
+                    100
+                ]
+            ],
+            "sentence": "A melhor experiência com smartphone flagship."
+        },
+        {
+            "id": 128,
+            "opinions": [
+                [
+                    "BATERIA",
+                    -100
+                ],
+                [
+                    "CÂMERA",
+                    -100
+                ],
+                [
+                    "PRODUTO",
+                    100
+                ]
+            ],
+            "sentence": "Com a atualizacao a bateria deu uma diminuída na duração, e o zoom da camera infelizmente perde a definição, Fora isso, com certeza o melhor até agora."
+        },
+        {
+            "id": 130,
+            "opinions": [
+                [
+                    "PRODUTO",
+                    100
+                ]
+            ],
+            "sentence": "Troquei um iPhone 5S pelo Galaxy S7 e estou muito satisfeita."
+        },
+        {
+            "id": 131,
+            "opinions": [
+                [
+                    "TELA",
+                    100
+                ],
+                [
+                    "CÂMERA",
+                    100
+                ]
+            ],
+            "sentence": "A tela e a câmera têm muita qualidade."
+        },
+        {
+            "id": 132,
+            "opinions": [
+                [
+                    "ARMAZENAMENTO",
+                    100
+                ]
+            ],
+            "sentence": "A memória é ótima e ainda é expansível."
+        },
+        {
+            "id": 136,
+            "opinions": [
+                [
+                    "PRODUTO",
+                    100
+                ],
+                [
+                    "PRODUTO",
+                    0
+                ]
+            ],
+            "sentence": "Gostei de tudo, minha mãe já tinha um e resolvi comprar também."
+        },
+        {
+            "id": 139,
+            "opinions": [
+                [
+                    "DESEMPENHO",
+                    100
+                ]
+            ],
+            "sentence": "Rápido ótima velocidade de processamento."
+        },
+        {
+            "id": 140,
+            "opinions": [
+                [
+                    "DESEMPENHO",
+                    100
+                ],
+                [
+                    "BATERIA",
+                    100
+                ],
+                [
+                    "CÂMERA",
+                    100
+                ]
+            ],
+            "sentence": "Jogabilidade excelente, bateria muito boa, camera muito boa."
+        },
+        {
+            "id": 143,
+            "opinions": [
+                [
+                    "DESEMPENHO",
+                    100
+                ]
+            ],
+            "sentence": "Smartphone muito bom, o processador até agora não decepcionou."
+        },
+        {
+            "id": 144,
+            "opinions": [
+                [
+                    "CÂMERA",
+                    100
+                ]
+            ],
+            "sentence": "A câmera é excepcional."
+        },
+        {
+            "id": 145,
+            "opinions": [
+                [
+                    "BATERIA",
+                    -100
+                ],
+                [
+                    "PREÇO",
+                    -100
+                ],
+                [
+                    "OUTRO",
+                    -100
+                ]
+            ],
+            "sentence": "O problema pra mim é a bateria, custo e não ser dual chip."
+        },
+        {
+            "id": 155,
+            "opinions": [
+                [
+                    "PRODUTO",
+                    100
+                ]
+            ],
+            "sentence": "A linha Galaxy S7, é simplesmente poderosa e perfeita em sua montagem Software - Hardware."
+        },
+        {
+            "id": 156,
+            "opinions": [
+                [
+                    "DESIGN",
+                    100
+                ],
+                [
+                    "SISTEMA",
+                    100
+                ],
+                [
+                    "CÂMERA",
+                    100
+                ],
+                [
+                    "PREÇO",
+                    100
+                ]
+            ],
+            "sentence": "Elegante (em vidro), com um Android funcional e leve, excelentes câmeras, vale todo o investimento para quem busca um produto premium."
+        },
+        {
+            "id": 159,
+            "opinions": [
+                [
+                    "PRODUTO",
+                    100
+                ]
+            ],
+            "sentence": "Uma experiência incrível na forma de celular! Simplesmente lindo e incrível, a linha S7 é fantástica."
+        },
+        {
+            "id": 160,
+            "opinions": [
+                [
+                    "DESEMPENHO",
+                    100
+                ],
+                [
+                    "CÂMERA",
+                    100
+                ],
+                [
+                    "SISTEMA",
+                    100
+                ],
+                [
+                    "PRODUTO",
+                    100
+                ]
+            ],
+            "sentence": "Potente e com ótima câmera, e um Android super funcional e leve, o Galaxy S7 não decepciona."
+        },
+        {
+            "id": 171,
+            "opinions": [
+                [
+                    "SISTEMA",
+                    100
+                ]
+            ],
+            "sentence": "A PLATAFORMA ANDROIDE DA SAMSUNG É IMBARÍVEL!"
+        },
+        {
+            "id": 175,
+            "opinions": [
+                [
+                    "DESIGN",
+                    100
+                ],
+                [
+                    "DESEMPENHO",
+                    100
+                ],
+                [
+                    "TELA",
+                    100
+                ]
+            ],
+            "sentence": "Aparelho bonito, processador poderoso, ótima tela."
+        },
+        {
+            "id": 177,
+            "opinions": [
+                [
+                    "PREÇO",
+                    100
+                ]
+            ],
+            "sentence": "Excelente custo beneficio..."
+        },
+        {
+            "id": 178,
+            "opinions": [
+                [
+                    "PRODUTO",
+                    100
+                ],
+                [
+                    "PREÇO",
+                    -100
+                ],
+                [
+                    "BATERIA",
+                    -100
+                ]
+            ],
+            "sentence": "Ótimo Aparelho. Porém Caríssimo, Bateria meia boca."
+        },
+        {
+            "id": 179,
+            "opinions": [
+                [
+                    "DESEMPENHO",
+                    100
+                ]
+            ],
+            "sentence": "O aparelho é fantástico e não trava."
+        },
+        {
+            "id": 180,
+            "opinions": [
+                [
+                    "BATERIA",
+                    -100
+                ]
+            ],
+            "sentence": "Porém, a bateria é um lixo e antes das 15hs eu já preciso recarregar."
+        },
+        {
+            "id": 181,
+            "opinions": [
+                [
+                    "PREÇO",
+                    -100
+                ]
+            ],
+            "sentence": "Além disso, é caro demais."
+        },
+        {
+            "id": 182,
+            "opinions": [
+                [
+                    "PREÇO",
+                    -100
+                ]
+            ],
+            "sentence": "Paguei R$ 2.000 porque realmente eu precisava de um aparelho TOP, uma vez que meu S5 travava demais."
+        },
+        {
+            "id": 183,
+            "opinions": [
+                [
+                    "ACESSÓRIO",
+                    -100
+                ],
+                [
+                    "PRODUTO",
+                    100
+                ]
+            ],
+            "sentence": "Mas só indico gastar essa pequena fortuna pra quem dependa de um celular de alta performance ou quem esteja nadando no dinheiro.Outro ponto negativo é não achar em lugar nenhum película protetora de tela pro modelo flat.Não me arrependo não."
+        },
+        {
+            "id": 185,
+            "opinions": [
+                [
+                    "PRODUTO",
+                    100
+                ],
+                [
+                    "PREÇO",
+                    100
+                ]
+            ],
+            "sentence": "O S7 Edge é um telefone excepcional que, a R$2200,00 na promoção da Fast, é o melhor custo-benefício do mercado até o momento."
+        },
+        {
+            "id": 186,
+            "opinions": [
+                [
+                    "PREÇO",
+                    -100
+                ]
+            ],
+            "sentence": "Em seu preço original de $4200,00 não mesmo."
+        },
+        {
+            "id": 187,
+            "opinions": [
+                [
+                    "DESEMPENHO",
+                    100
+                ],
+                [
+                    "DESIGN",
+                    100
+                ],
+                [
+                    "PRODUTO",
+                    100
+                ],
+                [
+                    "CÂMERA",
+                    100
+                ]
+            ],
+            "sentence": "É rápido, muito bonito, funcional, ótima câmera."
+        },
+        {
+            "id": 188,
+            "opinions": [
+                [
+                    "BATERIA",
+                    -100
+                ]
+            ],
+            "sentence": "A bateria não aguenta a tela e o processador em uso prolongado."
+        },
+        {
+            "id": 189,
+            "opinions": [
+                [
+                    "RESISTÊNCIA",
+                    -100
+                ]
+            ],
+            "sentence": "Ponto de dúvida é durabilidade: Samsung é famosa por ter perda sensível de performance depois de 6 meses."
+        },
+        {
+            "id": 192,
+            "opinions": [
+                [
+                    "PRODUTO",
+                    100
+                ],
+                [
+                    "BATERIA",
+                    100
+                ]
+            ],
+            "sentence": "O Galaxy S7 é surpreendente com uma bateria que, se utilizada corretamente, pode durar até 24h."
+        },
+        {
+            "id": 193,
+            "opinions": [
+                [
+                    "CÂMERA",
+                    100
+                ]
+            ],
+            "sentence": "A camera é sensacional!"
+        },
+        {
+            "id": 197,
+            "opinions": [
+                [
+                    "SISTEMA",
+                    100
+                ],
+                [
+                    "DESEMPENHO",
+                    100
+                ],
+                [
+                    "BATERIA",
+                    100
+                ]
+            ],
+            "sentence": "Interface mais fluida que a versão anterior, rápido e econômico na bateria!"
+        },
+        {
+            "id": 203,
+            "opinions": [
+                [
+                    "DESEMPENHO",
+                    100
+                ]
+            ],
+            "sentence": "Comparando com outro Galaxy que tive anteriormente, esse aparelho ainda não travou.."
+        },
+        {
+            "id": 204,
+            "opinions": [
+                [
+                    "DESEMPENHO",
+                    100
+                ],
+                [
+                    "ARMAZENAMENTO",
+                    100
+                ]
+            ],
+            "sentence": "Tem ótima resposta (tempo), capacidade de armazenamento muito bom..."
+        },
+        {
+            "id": 207,
+            "opinions": [
+                [
+                    "CÂMERA",
+                    100
+                ]
+            ],
+            "sentence": "As fotos são perfeitas."
+        },
+        {
+            "id": 208,
+            "opinions": [
+                [
+                    "DESIGN",
+                    100
+                ],
+                [
+                    "DESEMPENHO",
+                    100
+                ],
+                [
+                    "DESEMPENHO",
+                    100
+                ],
+                [
+                    "USABILIDADE",
+                    100
+                ]
+            ],
+            "sentence": "O aparelho é bonito, não trava, é bastante rápido e de fácil manuseio."
+        },
+        {
+            "id": 211,
+            "opinions": [
+                [
+                    "DESIGN",
+                    -100
+                ]
+            ],
+            "sentence": "A cor prata é bem enjoativa."
+        },
+        {
+            "id": 215,
+            "opinions": [
+                [
+                    "CÂMERA",
+                    100
+                ],
+                [
+                    "TELA",
+                    100
+                ],
+                [
+                    "DESIGN",
+                    100
+                ]
+            ],
+            "sentence": "Tira fotos surpreendentes, possui uma ótima tela e tem um acabamento perfeito."
+        },
+        {
+            "id": 216,
+            "opinions": [
+                [
+                    "SISTEMA",
+                    100
+                ]
+            ],
+            "sentence": "Bom! A ROM da Samsung me surpreendeu..."
+        },
+        {
+            "id": 220,
+            "opinions": [
+                [
+                    "SISTEMA",
+                    100
+                ]
+            ],
+            "sentence": "Interface diferente dos demais androids, porém é agradável."
+        },
+        {
+            "id": 222,
+            "opinions": [
+                [
+                    "CÂMERA",
+                    100
+                ]
+            ],
+            "sentence": "Câmera espetacular."
+        },
+        {
+            "id": 223,
+            "opinions": [
+                [
+                    "PRODUTO",
+                    100
+                ],
+                [
+                    "CÂMERA",
+                    100
+                ]
+            ],
+            "sentence": "Celular de acordo com todas as espectativas, sua câmera é excelente, principalmente em situações com baixa luminosidade."
+        },
+        {
+            "id": 227,
+            "opinions": [
+                [
+                    "PRODUTO",
+                    100
+                ]
+            ],
+            "sentence": "Celular como qualquer outro nesta faixa de preço, troquei meu Nexus por ele, demorei um pouco para acostumar, mas é bom..."
+        },
+        {
+            "id": 231,
+            "opinions": [
+                [
+                    "DESEMPENHO",
+                    100
+                ],
+                [
+                    "CÂMERA",
+                    100
+                ]
+            ],
+            "sentence": "Celular muito rápido e com excelente câmera frontal."
+        },
+        {
+            "id": 235,
+            "opinions": [
+                [
+                    "PRODUTO",
+                    0
+                ]
+            ],
+            "sentence": "Deixei de comprar o S6 para pegar um mais atual."
+        },
+        {
+            "id": 237,
+            "opinions": [
+                [
+                    "OUTRO",
+                    -100
+                ]
+            ],
+            "sentence": "O S6 tinha Infravermelho e podia emular controles remotos, o S7 não tem mais."
+        },
+        {
+            "id": 238,
+            "opinions": [
+                [
+                    "ARMAZENAMENTO",
+                    0
+                ]
+            ],
+            "sentence": "O S7 aceita SD mas não expande a memória interna."
+        },
+        {
+            "id": 239,
+            "opinions": [
+                [
+                    "OUTRO",
+                    -100
+                ]
+            ],
+            "sentence": "O NFC não é compatível com os cartões Mirafire, ou seja não é compatível com o aplicativo da SPTrans e tantas outras aplicações que utilizam este cartão."
+        },
+        {
+            "id": 240,
+            "opinions": [
+                [
+                    "TELA",
+                    100
+                ]
+            ],
+            "sentence": "A resolução da tela é ótima."
+        },
+        {
+            "id": 241,
+            "opinions": [
+                [
+                    "CÂMERA",
+                    100
+                ],
+                [
+                    "DESEMPENHO",
+                    100
+                ],
+                [
+                    "PRODUTO",
+                    100
+                ]
+            ],
+            "sentence": "As câmeras são boas, a velocidade de processamento é boa, enfim o resto é tudo de bom."
+        },
+        {
+            "id": 242,
+            "opinions": [
+                [
+                    "BATERIA",
+                    100
+                ]
+            ],
+            "sentence": "Algumas pessoas falam da bateria, mas pra mim está durando um dia inteiro."
+        },
+        {
+            "id": 249,
+            "opinions": [
+                [
+                    "PRODUTO",
+                    100
+                ],
+                [
+                    "CÂMERA",
+                    100
+                ],
+                [
+                    "DESEMPENHO",
+                    100
+                ],
+                [
+                    "BATERIA",
+                    100
+                ],
+                [
+                    "TELA",
+                    100
+                ],
+                [
+                    "RESISTÊNCIA",
+                    100
+                ]
+            ],
+            "sentence": "Não tem nada que falte neste celular: câmera ótima, performance excelente, bateria dura mais que um dia (é só não instalar o Facebook rsss), tela grande com melhor qualidade do mercado, à prova d&squote&água."
+        },
+        {
+            "id": 250,
+            "opinions": [
+                [
+                    "PRODUTO",
+                    100
+                ]
+            ],
+            "sentence": "Não tem modelo melhor no mercado brasileiro que o S7 e seu irmão maior, o Edge."
+        },
+        {
+            "id": 252,
+            "opinions": [
+                [
+                    "PRODUTO",
+                    0
+                ]
+            ],
+            "sentence": "Tinha um Iphone 6 e a baixa duração da bateria me fez procurar outra solução."
+        },
+        {
+            "id": 254,
+            "opinions": [
+                [
+                    "SISTEMA",
+                    -100
+                ]
+            ],
+            "sentence": "Quanto ao software, muito poluído."
+        },
+        {
+            "id": 256,
+            "opinions": [
+                [
+                    "SISTEMA",
+                    -100
+                ]
+            ],
+            "sentence": "Mas acredito que em breve me adaptarei ao produto, e essa questão será passado."
+        },
+        {
+            "id": 257,
+            "opinions": [
+                [
+                    "RESISTÊNCIA",
+                    100
+                ],
+                [
+                    "CÂMERA",
+                    100
+                ],
+                [
+                    "BATERIA",
+                    100
+                ]
+            ],
+            "sentence": "Realmente resistente a água e a câmera e a duração da bateria me surpreende."
+        },
+        {
+            "id": 268,
+            "opinions": [
+                [
+                    "PRODUTO",
+                    100
+                ]
+            ],
+            "sentence": "O melhor que a Samsung já conseguiu montar, celular perfeito para todos os usuários."
+        },
+        {
+            "id": 271,
+            "opinions": [
+                [
+                    "DESIGN",
+                    100
+                ],
+                [
+                    "TELA",
+                    100
+                ],
+                [
+                    "DESEMPENHO",
+                    100
+                ],
+                [
+                    "CÂMERA",
+                    100
+                ],
+                [
+                    "PRODUTO",
+                    100
+                ]
+            ],
+            "sentence": "Design invocado, tela espetacular, processador brutal, câmera sensacional e vários outros recursos positivos."
+        },
+        {
+            "id": 274,
+            "opinions": [
+                [
+                    "PRODUTO",
+                    100
+                ]
+            ],
+            "sentence": "SUPER RECOMENDO, POIS A BATERIA DE TODOS SÃO RUINS, NO MAIS ELE É MARAVILHOSO."
+        },
+        {
+            "id": 280,
+            "opinions": [
+                [
+                    "DESIGN",
+                    100
+                ],
+                [
+                    "USABILIDADE",
+                    100
+                ],
+                [
+                    "PESO",
+                    100
+                ],
+                [
+                    "TAMANHO",
+                    100
+                ]
+            ],
+            "sentence": "Adorei o design, super fácil de mexer, fino e leve."
+        },
+        {
+            "id": 281,
+            "opinions": [
+                [
+                    "RESISTÊNCIA",
+                    -100
+                ]
+            ],
+            "sentence": "Só não deixe cair, quebra fácil."
+        },
+        {
+            "id": 283,
+            "opinions": [
+                [
+                    "DESEMPENHO",
+                    100
+                ],
+                [
+                    "DESIGN",
+                    100
+                ],
+                [
+                    "ACESSÓRIO",
+                    -100
+                ],
+                [
+                    "PRODUTO",
+                    100
+                ]
+            ],
+            "sentence": "Velocidade de processamento boa e design agradável.O único defeito é que a películas protetoras disponíveis no mercado não protegem toda a tela por conta do design ligeiramente curvo."
+        },
+        {
+            "id": 291,
+            "opinions": [
+                [
+                    "PRODUTO",
+                    100
+                ],
+                [
+                    "DESEMPENHO",
+                    100
+                ],
+                [
+                    "CÂMERA",
+                    100
+                ],
+                [
+                    "PRODUTO",
+                    100
+                ]
+            ],
+            "sentence": "Um bom produto, com um bom desempenho, câmera e funcionalidades."
+        },
+        {
+            "id": 299,
+            "opinions": [
+                [
+                    "CÂMERA",
+                    100
+                ],
+                [
+                    "TELA",
+                    100
+                ]
+            ],
+            "sentence": "A câmera é excelente e a tela fantástica."
+        },
+        {
+            "id": 303,
+            "opinions": [
+                [
+                    "DESEMPENHO",
+                    100
+                ],
+                [
+                    "ARMAZENAMENTO",
+                    100
+                ],
+                [
+                    "BATERIA",
+                    100
+                ]
+            ],
+            "sentence": "Comparando com S4 e S5, é muito mais rápido, tem mais memória e a bateria dura muito mais."
+        },
+        {
+            "id": 304,
+            "opinions": [
+                [
+                    "OUTRO",
+                    100
+                ]
+            ],
+            "sentence": "Não tem aquela portinha chata do S5."
+        },
+        {
+            "id": 305,
+            "opinions": [
+                [
+                    "RESISTÊNCIA",
+                    100
+                ]
+            ],
+            "sentence": "É à prova d&squote&água mesmo."
+        },
+        {
+            "id": 312,
+            "opinions": [
+                [
+                    "BATERIA",
+                    -100
+                ]
+            ],
+            "sentence": "A bateria é misteriosa, hora parece que nunca acabará, já em outros momentos, não dura nada.."
+        },
+        {
+            "id": 313,
+            "opinions": [
+                [
+                    "DESIGN",
+                    100
+                ],
+                [
+                    "TELA",
+                    100
+                ],
+                [
+                    "CÂMERA",
+                    100
+                ],
+                [
+                    "OUTRO",
+                    100
+                ],
+                [
+                    "OUTRO",
+                    100
+                ]
+            ],
+            "sentence": "Porém, design perfeito, a tela perfeita, uma ótima câmera, leitor de digital super rápido, e liberdade para configurar o aparelho do jeito que quiser..."
+        },
+        {
+            "id": 317,
+            "opinions": [
+                [
+                    "PRODUTO",
+                    100
+                ],
+                [
+                    "ACESSÓRIO",
+                    -100
+                ],
+                [
+                    "ACESSÓRIO",
+                    -100
+                ]
+            ],
+            "sentence": "Excelente produto acessórios um pouco carros para ter todos, mais o óculos foi brinde foi menos um para compra, a capa que protege a lente e um pouco frágil."
+        },
+        {
+            "id": 320,
+            "opinions": [
+                [
+                    "PRODUTO",
+                    100
+                ]
+            ],
+            "sentence": "Uma versão top dos aparelhos da samsung, que hoje está com um ótimo custo/benefício comparando com os concorrentes."
+        },
+        {
+            "id": 321,
+            "opinions": [
+                [
+                    "PRODUTO",
+                    100
+                ]
+            ],
+            "sentence": "Reune uma gama imensa de recursos em um único aparelho, corrigindo problemas que tinham as versões anteriores."
+        },
+        {
+            "id": 322,
+            "opinions": [
+                [
+                    "PRODUTO",
+                    100
+                ],
+                [
+                    "PREÇO",
+                    -100
+                ]
+            ],
+            "sentence": "Celular bom. Porem caro."
+        },
+        {
+            "id": 326,
+            "opinions": [
+                [
+                    "PRODUTO",
+                    100
+                ],
+                [
+                    "DESEMPENHO",
+                    100
+                ],
+                [
+                    "BATERIA",
+                    100
+                ],
+                [
+                    "BATERIA",
+                    100
+                ],
+                [
+                    "CÂMERA",
+                    100
+                ]
+            ],
+            "sentence": "Não falta nada no celular: ótima performance, bateria, carrega rápido, câmera é top."
+        },
+        {
+            "id": 327,
+            "opinions": [
+                [
+                    "PRODUTO",
+                    100
+                ]
+            ],
+            "sentence": "Melhor que ele só os da próxima geração que ainda não chegaram aqui (LG G6, Galaxy S8, etc.)."
+        },
+        {
+            "id": 330,
+            "opinions": [
+                [
+                    "DESEMPENHO",
+                    100
+                ]
+            ],
+            "sentence": "Não trava nunca e isso é essencial."
+        },
+        {
+            "id": 333,
+            "opinions": [
+                [
+                    "DESEMPENHO",
+                    100
+                ],
+                [
+                    "CÂMERA",
+                    100
+                ],
+                [
+                    "PRODUTO",
+                    100
+                ]
+            ],
+            "sentence": "Rápido, câmera excelente,muitas funções."
+        },
+        {
+            "id": 336,
+            "opinions": [
+                [
+                    "PREÇO",
+                    100
+                ]
+            ],
+            "sentence": "Eu tinha um iphone e pelo alto custo optei pela S7 Samsung."
+        },
+        {
+            "id": 340,
+            "opinions": [
+                [
+                    "PRODUTO",
+                    100
+                ]
+            ],
+            "sentence": "Muito bom, excelente produto. Me surpreendeu."
+        },
+        {
+            "id": 341,
+            "opinions": [
+                [
+                    "PRODUTO",
+                    0
+                ]
+            ],
+            "sentence": "Troquei um S4 octa core por esse S7."
+        },
+        {
+            "id": 342,
+            "opinions": [
+                [
+                    "PRODUTO",
+                    100
+                ]
+            ],
+            "sentence": "Estava muito satisfeito com o antigo, porém esse aparelho conseguiu me surpreender em todos os aspectos."
+        },
+        {
+            "id": 344,
+            "opinions": [
+                [
+                    "DESEMPENHO",
+                    100
+                ],
+                [
+                    "USABILIDADE",
+                    100
+                ]
+            ],
+            "sentence": "Rápido, fácil de usar etc."
+        },
+        {
+            "id": 350,
+            "opinions": [
+                [
+                    "PRODUTO",
+                    100
+                ],
+                [
+                    "PRODUTO",
+                    100
+                ]
+            ],
+            "sentence": "Produto de boa qualidade, supera as expectativas."
+        },
+        {
+            "id": 352,
+            "opinions": [
+                [
+                    "PRODUTO",
+                    0
+                ]
+            ],
+            "sentence": "Ainda não possui um só vi o do meu amigo."
+        },
+        {
+            "id": 357,
+            "opinions": [
+                [
+                    "PRODUTO",
+                    100
+                ],
+                [
+                    "DESEMPENHO",
+                    100
+                ],
+                [
+                    "CÂMERA",
+                    100
+                ]
+            ],
+            "sentence": "Produto atende às expectativas, sem travamentos, câmera bacana."
+        },
+        {
+            "id": 359,
+            "opinions": [
+                [
+                    "PRODUTO",
+                    100
+                ],
+                [
+                    "CÂMERA",
+                    100
+                ]
+            ],
+            "sentence": "Aparelho muito bom, câmera fantástica."
+        },
+        {
+            "id": 360,
+            "opinions": [
+                [
+                    "DESEMPENHO",
+                    100
+                ],
+                [
+                    "BATERIA",
+                    100
+                ]
+            ],
+            "sentence": "Rápido e com boa duração de bateria."
+        },
+        {
+            "id": 364,
+            "opinions": [
+                [
+                    "USABILIDADE",
+                    100
+                ],
+                [
+                    "CÂMERA",
+                    100
+                ],
+                [
+                    "ARMAZENAMENTO",
+                    100
+                ]
+            ],
+            "sentence": "Fácil de usar, câmera excelente, a possibilidade de expansão de memória veio a calhar."
+        },
+        {
+            "id": 367,
+            "opinions": [
+                [
+                    "PRODUTO",
+                    100
+                ]
+            ],
+            "sentence": "A cada dia o celular me surpreende com funções que facilita no meu meu dia a dia."
+        },
+        {
+            "id": 368,
+            "opinions": [
+                [
+                    "OUTRO",
+                    100
+                ]
+            ],
+            "sentence": "Um exemplo e ele informar que tipo de ligação você está recebendo (telemarketing / golpe / propaganda) sem uso de um app especial para isso."
+        },
+        {
+            "id": 369,
+            "opinions": [
+                [
+                    "CÂMERA",
+                    100
+                ]
+            ],
+            "sentence": "A câmera é incrivelmente sensacional."
+        },
+        {
+            "id": 375,
+            "opinions": [
+                [
+                    "BATERIA",
+                    0
+                ]
+            ],
+            "sentence": "Bateria é igual de qq smart ."
+        },
+        {
+            "id": 376,
+            "opinions": [
+                [
+                    "BATERIA",
+                    100
+                ],
+                [
+                    "CÂMERA",
+                    100
+                ],
+                [
+                    "ARMAZENAMENTO",
+                    100
+                ],
+                [
+                    "OUTRO",
+                    100
+                ]
+            ],
+            "sentence": "Quanto mais vc usa ela descarrega mesmo porem esse modelo usando o carregador dele faz recarga rapida e carrega rapidão (testei com outro carregador e demora mais) Não aconselho.Achei as fotos perfeitas, naao vi deferença entre a superioridade que falam do S6 e vamos combinar que se quer fotos profissionais vc deve comprar uma camera fotografica.Optei pelo S7 pela possibilidade de utilizar cartao de memoria, o que ja nao era possivel no S6 e quem trabalha com o aparelho e precisa instalar varios apps, alguns podem ser colocados no cartao de memoria, liberando a memoria internaA transferencia dos dados do meu cel ant pra esse foi hiper tranquila em 10 minutos apenas encostando um ap no outro.Uma coisinha ou outra com app da marca mas isso é o de menos."
+        },
+        {
+            "id": 378,
+            "opinions": [
+                [
+                    "BATERIA",
+                    0
+                ],
+                [
+                    "PRODUTO",
+                    100
+                ]
+            ],
+            "sentence": "Vamos ver a bateria daqui um tempo.Tudo show de bola.."
+        },
+        {
+            "id": 380,
+            "opinions": [
+                [
+                    "RESISTÊNCIA",
+                    0
+                ]
+            ],
+            "sentence": "Comprei no sabado e recebi na terça.Uma dica ."
+        },
+        {
+            "id": 383,
+            "opinions": [
+                [
+                    "PRODUTO",
+                    100
+                ]
+            ],
+            "sentence": "Estou usando o aparelho a 2 semanas, e ate agora tem sido perfeito."
+        },
+        {
+            "id": 384,
+            "opinions": [
+                [
+                    "DESEMPENHO",
+                    100
+                ],
+                [
+                    "CÂMERA",
+                    100
+                ],
+                [
+                    "BATERIA",
+                    100
+                ],
+                [
+                    "TELA",
+                    100
+                ],
+                [
+                    "PRODUTO",
+                    100
+                ]
+            ],
+            "sentence": "Rápido, com fotos de alta resolução, ótima bateria, display de alta resolução.Até agora, não vi pontos negativos."
+        },
+        {
+            "id": 386,
+            "opinions": [
+                [
+                    "DESEMPENHO",
+                    100
+                ],
+                [
+                    "TELA",
+                    100
+                ]
+            ],
+            "sentence": "Eu procurava um celular veloz com uma tela grande."
+        },
+        {
+            "id": 387,
+            "opinions": [
+                [
+                    "OUTRO",
+                    100
+                ]
+            ],
+            "sentence": "Encontrei.Além disso, o leitor de impressões digitais facilita muito o uso e passa tranquilidade pela segurança."
+        },
+        {
+            "id": 391,
+            "opinions": [
+                [
+                    "CÂMERA",
+                    100
+                ],
+                [
+                    "DESIGN",
+                    100
+                ],
+                [
+                    "PRODUTO",
+                    100
+                ]
+            ],
+            "sentence": "Excelente câmera, acabamento Premium, um perfeito aparelho!"
+        },
+        {
+            "id": 397,
+            "opinions": [
+                [
+                    "DESEMPENHO",
+                    100
+                ],
+                [
+                    "TELA",
+                    100
+                ]
+            ],
+            "sentence": "Boa fluidez e ótima tela."
+        },
+        {
+            "id": 398,
+            "opinions": [
+                [
+                    "PREÇO",
+                    100
+                ]
+            ],
+            "sentence": "É um valor caro a se pagar, mas vale a pena."
+        },
+        {
+            "id": 400,
+            "opinions": [
+                [
+                    "DESEMPENHO",
+                    100
+                ]
+            ],
+            "sentence": "Gosto do processamento extremamente rápido."
+        },
+        {
+            "id": 406,
+            "opinions": [
+                [
+                    "PREÇO",
+                    100
+                ]
+            ],
+            "sentence": "Melhor custo beneficio."
+        },
+        {
+            "id": 407,
+            "opinions": [
+                [
+                    "PREÇO",
+                    100
+                ]
+            ],
+            "sentence": "Depois de pesquisar, achei que esse seria o melhor custo benefício."
+        },
+        {
+            "id": 408,
+            "opinions": [
+                [
+                    "PRODUTO",
+                    100
+                ]
+            ],
+            "sentence": "Recomendo o produto e.mbora eu não tenho mas conheço."
+        },
+        {
+            "id": 412,
+            "opinions": [
+                [
+                    "ACESSÓRIO",
+                    -100
+                ]
+            ],
+            "sentence": "Só não dei nota máxima, porque ele não vem com película protetora, como o J7, e no mercado NÃO existe uma que ajuste 100%, devido a tela ser um pouco curva."
+        },
+        {
+            "id": 415,
+            "opinions": [
+                [
+                    "PRODUTO",
+                    100
+                ],
+                [
+                    "BATERIA",
+                    100
+                ]
+            ],
+            "sentence": "Produto muito bom, a bateria dura muito e o carregador carrega muito mais rapido que os normais."
+        },
+        {
+            "id": 417,
+            "opinions": [
+                [
+                    "PRODUTO",
+                    100
+                ],
+                [
+                    "DESEMPENHO",
+                    100
+                ],
+                [
+                    "BATERIA",
+                    -100
+                ],
+                [
+                    "PREÇO",
+                    -100
+                ]
+            ],
+            "sentence": "Um ótimo Smartphone com ótimo desempenho, peca um pouco na duração de bateria e custo benefício."
+        },
+        {
+            "id": 419,
+            "opinions": [
+                [
+                    "ACESSÓRIO",
+                    -100
+                ]
+            ],
+            "sentence": "Só não dei 5 estrelas porque devido o mesmo ser curvo, desnecessário, não é possível encontrar no mercado nenhuma película que fica perfeita nele."
+        },
+        {
+            "id": 425,
+            "opinions": [
+                [
+                    "PRODUTO",
+                    100
+                ]
+            ],
+            "sentence": "Excelente produto para o uso do dia a dia."
+        },
+        {
+            "id": 427,
+            "opinions": [
+                [
+                    "PRODUTO",
+                    100
+                ],
+                [
+                    "CÂMERA",
+                    100
+                ],
+                [
+                    "BATERIA",
+                    100
+                ]
+            ],
+            "sentence": "Não há do que reclamar! Só isso! Camera excelente, bateria excelente!"
+        },
+        {
+            "id": 433,
+            "opinions": [
+                [
+                    "PRODUTO",
+                    100
+                ]
+            ],
+            "sentence": "Eu já possuia o S7 Edge e resolvi comprar o S7 como alternativa porque gostei da experiência."
+        },
+        {
+            "id": 435,
+            "opinions": [
+                [
+                    "DESEMPENHO",
+                    100
+                ],
+                [
+                    "PRODUTO",
+                    100
+                ]
+            ],
+            "sentence": "Rápido e moderno."
+        },
+        {
+            "id": 436,
+            "opinions": [
+                [
+                    "CÂMERA",
+                    100
+                ]
+            ],
+            "sentence": "Câmara excelente."
+        },
+        {
+            "id": 439,
+            "opinions": [
+                [
+                    "PRODUTO",
+                    100
+                ]
+            ],
+            "sentence": "O aparelho corresponde as expectativas, estou muito feliz em ter comprado este produto!"
+        },
+        {
+            "id": 441,
+            "opinions": [
+                [
+                    "DESEMPENHO",
+                    100
+                ],
+                [
+                    "DESIGN",
+                    100
+                ],
+                [
+                    "PESO",
+                    100
+                ],
+                [
+                    "CÂMERA",
+                    100
+                ]
+            ],
+            "sentence": "Aparelho muito rápido, bonito, leve e com uma câmara ótima."
+        },
+        {
+            "id": 442,
+            "opinions": [
+                [
+                    "BATERIA",
+                    -100
+                ],
+                [
+                    "ARMAZENAMENTO",
+                    -100
+                ]
+            ],
+            "sentence": "A bateria poderia durar mais e também ter um pouco mais de memória."
+        },
+        {
+            "id": 449,
+            "opinions": [
+                [
+                    "DESEMPENHO",
+                    100
+                ],
+                [
+                    "PRODUTO",
+                    100
+                ]
+            ],
+            "sentence": "Moderno e rápido."
+        },
+        {
+            "id": 450,
+            "opinions": [
+                [
+                    "PREÇO",
+                    100
+                ]
+            ],
+            "sentence": "O custo é alto, mas ainda é menor do que dia iPhone equivalentes."
+        },
+        {
+            "id": 452,
+            "opinions": [
+                [
+                    "PRODUTO",
+                    100
+                ],
+                [
+                    "PREÇO",
+                    -100
+                ]
+            ],
+            "sentence": "Um ótimo smartphone, porém com baixo custo-benefício (como os demais high-ends)"
+        },
+        {
+            "id": 453,
+            "opinions": [
+                [
+                    "DESIGN",
+                    100
+                ]
+            ],
+            "sentence": "O celular possui design bastante sofisticado, com as bordas metálicas e todo revestido de vidro."
+        },
+        {
+            "id": 454,
+            "opinions": [
+                [
+                    "DESIGN",
+                    100
+                ]
+            ],
+            "sentence": "Isso, porém, traz um desconforto relacionado às impressões digitais que marcam todo o aparelho."
+        },
+        {
+            "id": 455,
+            "opinions": [
+                [
+                    "DESIGN",
+                    100
+                ],
+                [
+                    "CÂMERA",
+                    100
+                ]
+            ],
+            "sentence": "Para evitar isso comprei uma capa da ClearView da própria Samsung. A câmera traseira é muito boa, porém em condições de baixa luminosidade a perda de qualidade é absurda."
+        },
+        {
+            "id": 457,
+            "opinions": [
+                [
+                    "PREÇO",
+                    -100
+                ]
+            ],
+            "sentence": "Tem dias que dura apenas 10 horas de uso moderado. O preço ainda é salgado, como tudo que é bom no Brasil."
+        },
+        {
+            "id": 459,
+            "opinions": [
+                [
+                    "PRODUTO",
+                    100
+                ]
+            ],
+            "sentence": "No mais, é um ótimo smartphone, realmente topo de linha."
+        },
+        {
+            "id": 464,
+            "opinions": [
+                [
+                    "PRODUTO",
+                    100
+                ],
+                [
+                    "PREÇO",
+                    100
+                ]
+            ],
+            "sentence": "Excelente smartphone, um pouco mais caro que a maioria porém vale cada centavo."
+        },
+        {
+            "id": 482,
+            "opinions": [
+                [
+                    "PRODUTO",
+                    100
+                ],
+                [
+                    "BATERIA",
+                    100
+                ]
+            ],
+            "sentence": "Ótimo celular com bateria de duração que chega quase 1 dia."
+        },
+        {
+            "id": 484,
+            "opinions": [
+                [
+                    "DESEMPENHO",
+                    100
+                ]
+            ],
+            "sentence": "Alta qualidade e performance."
+        },
+        {
+            "id": 487,
+            "opinions": [
+                [
+                    "PRODUTO",
+                    100
+                ]
+            ],
+            "sentence": "Aparelho excelente, cumpre com o prometido."
+        },
+        {
+            "id": 489,
+            "opinions": [
+                [
+                    "PRODUTO",
+                    100
+                ]
+            ],
+            "sentence": "Não há aparelho melhor no mercado."
+        },
+        {
+            "id": 493,
+            "opinions": [
+                [
+                    "PRODUTO",
+                    100
+                ]
+            ],
+            "sentence": "Não deixou nada a desejar."
+        },
+        {
+            "id": 494,
+            "opinions": [
+                [
+                    "SISTEMA",
+                    100
+                ],
+                [
+                    "DESEMPENHO",
+                    100
+                ],
+                [
+                    "CÂMERA",
+                    100
+                ],
+                [
+                    "OUTRO",
+                    100
+                ]
+            ],
+            "sentence": "Sistema muito limpo, fluido, camera muito boa e oferece atualizações frequentes."
+        },
+        {
+            "id": 496,
+            "opinions": [
+                [
+                    "PRODUTO",
+                    100
+                ],
+                [
+                    "DESEMPENHO",
+                    100
+                ]
+            ],
+            "sentence": "O aparelho é excelente, o desempenho me surpreendeu muito."
+        },
+        {
+            "id": 497,
+            "opinions": [
+                [
+                    "CÂMERA",
+                    0
+                ]
+            ],
+            "sentence": "O que eu mais busco num celular é a qualidade e possibilidade de edição nas configurações da câmera."
+        },
+        {
+            "id": 499,
+            "opinions": [
+                [
+                    "CÂMERA",
+                    100
+                ]
+            ],
+            "sentence": "Já tive o S5 e a Samsung mantem o padrão alto na qualidade da câmera."
+        },
+        {
+            "id": 500,
+            "opinions": [
+                [
+                    "OUTRO",
+                    -100
+                ]
+            ],
+            "sentence": "O que me frustou foi o fato da empresa ter resolvido retirar a função de infravermelho (eu sempre usava o S5 como controle remoto da TV, ar condicionado, etc."
+        },
+        {
+            "id": 502,
+            "opinions": [
+                [
+                    "DESIGN",
+                    -100
+                ]
+            ],
+            "sentence": "O prata suja bastante na parte de trás do aparelho."
+        },
+        {
+            "id": 503,
+            "opinions": [
+                [
+                    "OUTRO",
+                    100
+                ]
+            ],
+            "sentence": "O leitor de digital é muito rápido e eficiente."
+        },
+        {
+            "id": 504,
+            "opinions": [
+                [
+                    "PRODUTO",
+                    100
+                ]
+            ],
+            "sentence": "No geral, exceto o preço e a duração da bateria, o celular é fantástico!!"
+        },
+        {
+            "id": 506,
+            "opinions": [
+                [
+                    "PRODUTO",
+                    100
+                ]
+            ],
+            "sentence": "Aparelho top da linha Galaxy, só isso já diz tudo."
+        },
+        {
+            "id": 507,
+            "opinions": [
+                [
+                    "DESIGN",
+                    100
+                ],
+                [
+                    "PRODUTO",
+                    100
+                ],
+                [
+                    "DESEMPENHO",
+                    100
+                ],
+                [
+                    "RESISTÊNCIA",
+                    100
+                ],
+                [
+                    "DESEMPENHO",
+                    100
+                ]
+            ],
+            "sentence": "Bonito, funcional, rápido, a prova d´água e com 4 GB de memória RAM (um exagero, sobra!)"
+        },
+        {
+            "id": 508,
+            "opinions": [
+                [
+                    "OUTRO",
+                    -100
+                ]
+            ],
+            "sentence": "Único ponto negativo é a impossibilidade de trocar a bateria (ou seja, tem vida útil contada, de 2-3 anos, fora isso, só alegria."
+        },
+        {
+            "id": 513,
+            "opinions": [
+                [
+                    "PRODUTO",
+                    100
+                ],
+                [
+                    "CÂMERA",
+                    100
+                ]
+            ],
+            "sentence": "Adorei o produto, estou curtindo bastante, as fotos são ótimas."
+        },
+        {
+            "id": 515,
+            "opinions": [
+                [
+                    "PRODUTO",
+                    100
+                ]
+            ],
+            "sentence": "Aparelho bem moderno e rapido com funções de ultima geração."
+        },
+        {
+            "id": 516,
+            "opinions": [
+                [
+                    "PRODUTO",
+                    100
+                ]
+            ],
+            "sentence": "Produto excelente e sem arrependimento."
+        },
+        {
+            "id": 517,
+            "opinions": [
+                [
+                    "PRODUTO",
+                    100
+                ],
+                [
+                    "DESEMPENHO",
+                    100
+                ],
+                [
+                    "USABILIDADE",
+                    100
+                ]
+            ],
+            "sentence": "Produto dispensa comparativos, sem nenhum sinal de travamento.Bastante simplificado."
+        },
+        {
+            "id": 525,
+            "opinions": [
+                [
+                    "DESEMPENHO",
+                    100
+                ],
+                [
+                    "TELA",
+                    100
+                ],
+                [
+                    "CÂMERA",
+                    100
+                ],
+                [
+                    "DESEMPENHO",
+                    -100
+                ]
+            ],
+            "sentence": "Aparelho rápido, ótimo display e fotos, achei que esquenta quando utilizo o gear vr."
+        },
+        {
+            "id": 528,
+            "opinions": [
+                [
+                    "PRODUTO",
+                    100
+                ]
+            ],
+            "sentence": "Um bom aparelho, caro por sinal."
+        },
+        {
+            "id": 529,
+            "opinions": [
+                [
+                    "PRODUTO",
+                    100
+                ]
+            ],
+            "sentence": "Gostei bastante pela inovação nas características e velocidade."
+        },
+        {
+            "id": 530,
+            "opinions": [
+                [
+                    "TELA",
+                    100
+                ]
+            ],
+            "sentence": "Graficos impressionam pela qualidade."
+        },
+        {
+            "id": 533,
+            "opinions": [
+                [
+                    "PRODUTO",
+                    100
+                ],
+                [
+                    "SISTEMA",
+                    100
+                ]
+            ],
+            "sentence": "Ótimo produto, apesar do android ser basante modificado apresenta boa fluidez."
+        },
+        {
+            "id": 534,
+            "opinions": [
+                [
+                    "ARMAZENAMENTO",
+                    100
+                ],
+                [
+                    "TELA",
+                    100
+                ]
+            ],
+            "sentence": "Alta capacidade de memória, tela amoled e quad hd dispensa comentários."
+        },
+        {
+            "id": 535,
+            "opinions": [
+                [
+                    "CÂMERA",
+                    100
+                ]
+            ],
+            "sentence": "A câmera é um dos diferenciais."
+        },
+        {
+            "id": 537,
+            "opinions": [
+                [
+                    "PRODUTO",
+                    100
+                ],
+                [
+                    "TELA",
+                    100
+                ],
+                [
+                    "DESEMPENHO",
+                    100
+                ],
+                [
+                    "PRODUTO",
+                    100
+                ]
+            ],
+            "sentence": "Rápido, excelente resolução, não trava, perfeito."
+        },
+        {
+            "id": 546,
+            "opinions": [
+                [
+                    "PRODUTO",
+                    -100
+                ]
+            ],
+            "sentence": "O celular é muito bom, pesquisei muito antes de compra-lo, mas não fazia ideia do maior problema deste modelo."
+        },
+        {
+            "id": 547,
+            "opinions": [
+                [
+                    "ACESSÓRIO",
+                    -100
+                ]
+            ],
+            "sentence": "A tela do aparelho é levemente curvada na lateral(sim estamos falando do Flat não do Edge), o que impede de haver uma película que cubra toda a tela do celular."
+        },
+        {
+            "id": 548,
+            "opinions": [
+                [
+                    "ACESSÓRIO",
+                    -100
+                ]
+            ],
+            "sentence": "O mais estranho é que existe película para o Edge, mas para o flat não.."
+        },
+        {
+            "id": 549,
+            "opinions": [
+                [
+                    "ACESSÓRIO",
+                    -100
+                ]
+            ],
+            "sentence": "Os modelos de película disponíveis tem uma margem de uns 4mm, o que torna uma luta a experiência de manipular o menu e selecionar um aplicativo e jogar para o canto da tela para ele ir para a página do lado."
+        },
+        {
+            "id": 555,
+            "opinions": [
+                [
+                    "PRODUTO",
+                    0
+                ]
+            ],
+            "sentence": "Aguardar mais algum tempo para dar uma resposta mais concreta."
+        },
+        {
+            "id": 557,
+            "opinions": [
+                [
+                    "CÂMERA",
+                    100
+                ]
+            ],
+            "sentence": "Facilidade, produtividade, comprei para gravar vídeos, muito satisfeitp."
+        },
+        {
+            "id": 560,
+            "opinions": [
+                [
+                    "CÂMERA",
+                    100
+                ]
+            ],
+            "sentence": "As fotos e vídeos possuem imagem perfeitas."
+        },
+        {
+            "id": 561,
+            "opinions": [
+                [
+                    "ARMAZENAMENTO",
+                    100
+                ]
+            ],
+            "sentence": "Para armazená-las possui ótimo espaço (32gb), além de permitir expandir o espaço utilizando o cartão de memória."
+        },
+        {
+            "id": 566,
+            "opinions": [
+                [
+                    "PRODUTO",
+                    100
+                ],
+                [
+                    "DESEMPENHO",
+                    100
+                ],
+                [
+                    "TELA",
+                    100
+                ],
+                [
+                    "TELA",
+                    100
+                ],
+                [
+                    "TAMANHO",
+                    100
+                ],
+                [
+                    "PRODUTO",
+                    100
+                ]
+            ],
+            "sentence": "TINHA O GALAXY S6 E AMAVA DE PAIXÃO, ACABEI VENDENDO E TROQUEI POR UM GALAXY A7, DO QUAL ME ARREPENDO ATÉ HOJE, CELULAR MUITO INFERIOR A LINHA &dquote&S&dquote&.FIQUEI APENAS 03 MESES E ENTÃO DECIDI COMPRAR O GALAXY S7 E ESTOU AMANDOOOO! INCRIVEL, NÃO TRAVA DE FORMA ALGUMA, A QUALIDADE DAS IMAGENS SÃO EXCELENTES, O TOQUE DO DISPLAY É MARAVILHOSO E SUPER DELICADO, O FORMATO DO APARELHO CABE CERTINHO E CONFORTAVELMENTE NA PALMA DA MÃO, TUDO O QUE EU QUERIA E ESPERAVAPODE PARECER UM POUCO CARO, MAS FAZ TODA DIFERENÇA PARA QUEM PROCURA RAPIDEZ E AGILIDADE ASSIM COMO EU, POIS GARANTO QUE NÃO VAI SE ARREPENDER.QUANDO EU TROQUEI MEU S6 PELO A7, FIQUEI 03 MESES SOFRENDO!!! CELULAR TRAVAVA DEMAIS, QUALIDADE RUIM E EU FICAVA MUITO ESTRESSADA, COISA QUE NÃO PASSO HOJE EM DIA COM O GALAXS S7AMANDOOOOO ???"
+        },
+        {
+            "id": 567,
+            "opinions": [
+                [
+                    "DESIGN",
+                    100
+                ],
+                [
+                    "BATERIA",
+                    -100
+                ]
+            ],
+            "sentence": "Design lindo, mas bateria poderia ser melhor."
+        },
+        {
+            "id": 568,
+            "opinions": [
+                [
+                    "USABILIDADE",
+                    100
+                ],
+                [
+                    "DESIGN",
+                    100
+                ],
+                [
+                    "BATERIA",
+                    -100
+                ]
+            ],
+            "sentence": "Fácil de usar, ótimo design, mas como utilizo basicamente para redes sociais e agenda, achei que a bateria pudesse durar um pouco mais - dura no máximo um dia e meio."
+        },
+        {
+            "id": 569,
+            "opinions": [
+                [
+                    "ARMAZENAMENTO",
+                    100
+                ],
+                [
+                    "CÂMERA",
+                    100
+                ],
+                [
+                    "OUTRO",
+                    100
+                ]
+            ],
+            "sentence": "Fora isso tem uma boa memória, uma câmera de ótima qualidade e não vem com um monte de aplicativos já instalados - e que você não usa."
+        },
+        {
+            "id": 570,
+            "opinions": [
+                [
+                    "DESIGN",
+                    100
+                ],
+                [
+                    "USABILIDADE",
+                    100
+                ]
+            ],
+            "sentence": "Super indico para quem busca design e praticidade no uso."
+        },
+        {
+            "id": 572,
+            "opinions": [
+                [
+                    "PRODUTO",
+                    100
+                ],
+                [
+                    "BATERIA",
+                    -100
+                ],
+                [
+                    "PRODUTO",
+                    100
+                ],
+                [
+                    "DESIGN",
+                    100
+                ]
+            ],
+            "sentence": "Até agora não tive nenhum problema com o celular, apenas achei que a bateria fosse durar um pouco mais, mas fora isso o celular é excelente e o acabamento dele é ótimo."
+        },
+        {
+            "id": 573,
+            "opinions": [
+                [
+                    "DESIGN",
+                    -100
+                ]
+            ],
+            "sentence": "Por ser todo em vidro suja um pouco, mas nada que uma capinha não resolva."
+        },
+        {
+            "id": 576,
+            "opinions": [
+                [
+                    "PREÇO",
+                    -100
+                ]
+            ],
+            "sentence": "Podia ter melhor custo-benefício."
+        },
+        {
+            "id": 578,
+            "opinions": [
+                [
+                    "PRODUTO",
+                    100
+                ],
+                [
+                    "PRODUTO",
+                    -100
+                ]
+            ],
+            "sentence": "Produto maravilhoso! Lindo! Estou amando! Comprei 2 s7, o meu veio perfeito, já o do meu marido veio com problema, travamento, não lê a digital, desliga.."
+        },
+        {
+            "id": 584,
+            "opinions": [
+                [
+                    "PRODUTO",
+                    100
+                ],
+                [
+                    "PREÇO",
+                    -100
+                ],
+                [
+                    "OUTRO",
+                    -100
+                ]
+            ],
+            "sentence": "Excelente aparelho! Só o preço que é alto demais e a Samsung que enche de APPs que não se utiliza que não tem como apagar."
+        },
+        {
+            "id": 589,
+            "opinions": [
+                [
+                    "DESEMPENHO",
+                    100
+                ],
+                [
+                    "USABILIDADE",
+                    100
+                ]
+            ],
+            "sentence": "Um produto com um grande desempenho e de fácil manuseio."
+        },
+        {
+            "id": 593,
+            "opinions": [
+                [
+                    "PRODUTO",
+                    100
+                ],
+                [
+                    "DESEMPENHO",
+                    100
+                ],
+                [
+                    "BATERIA",
+                    -100
+                ]
+            ],
+            "sentence": "Gostei muito do s7, desempenho excelente, apenas a bateria ruim."
+        },
+        {
+            "id": 598,
+            "opinions": [
+                [
+                    "PRODUTO",
+                    100
+                ]
+            ],
+            "sentence": "Adorei o celular, além de lindo é toop."
+        },
+        {
+            "id": 603,
+            "opinions": [
+                [
+                    "PRODUTO",
+                    100
+                ]
+            ],
+            "sentence": "Realizei a troca do galaxy 5 para o galaxy s7."
+        },
+        {
+            "id": 604,
+            "opinions": [
+                [
+                    "PRODUTO",
+                    100
+                ],
+                [
+                    "BATERIA",
+                    -100
+                ],
+                [
+                    "RESISTÊNCIA",
+                    100
+                ],
+                [
+                    "DESIGN",
+                    -100
+                ],
+                [
+                    "PESO",
+                    -100
+                ],
+                [
+                    "CÂMERA",
+                    100
+                ],
+                [
+                    "CÂMERA",
+                    100
+                ]
+            ],
+            "sentence": "Por hora estou gostando muito, exceto a bateria pois não vi melhoria.O material parece de qualidade, apesar de ser um ímã para impressão digital e ser um pouco pesado.A câmera esta me surpreendendo a cada dia."
+        },
+        {
+            "id": 605,
+            "opinions": [
+                [
+                    "OUTRO",
+                    100
+                ],
+                [
+                    "OUTRO",
+                    -100
+                ],
+                [
+                    "OUTRO",
+                    100
+                ],
+                [
+                    "OUTRO",
+                    0
+                ]
+            ],
+            "sentence": "As fotos noturnas ficam boas e as funcionalidades e opções de personalização são muito úteis para o dia a dia.O always on é uma inovação no aparelho, mas poderia exibir os ícones de outros apps como facebook, whatsapp, instagram...O leitor de digital é outro fator positivo, pois ele é rápido e prático.A certificação de resistência à agua eu não testei, pois no S5 essa resistência, seguindo todas as recomendações e verificações, não funcionou."
+        },
+        {
+            "id": 606,
+            "opinions": [
+                [
+                    "PRODUTO",
+                    100
+                ]
+            ],
+            "sentence": "Excluindo o valor e a bateria, estou satisfeita com o aparelho."
+        },
+        {
+            "id": 608,
+            "opinions": [
+                [
+                    "PRODUTO",
+                    0
+                ]
+            ],
+            "sentence": "Realizei a troca do galaxy s5 para o galaxy s7."
+        },
+        {
+            "id": 609,
+            "opinions": [
+                [
+                    "PRODUTO",
+                    100
+                ]
+            ],
+            "sentence": "Tirando a bateria que para mim não melhorou, por hora estou amando."
+        },
+        {
+            "id": 610,
+            "opinions": [
+                [
+                    "PESO",
+                    -100
+                ],
+                [
+                    "RESISTÊNCIA",
+                    100
+                ]
+            ],
+            "sentence": "Achei o aparelho um pouco pesado, porem, o material parece de qualidade."
+        },
+        {
+            "id": 611,
+            "opinions": [
+                [
+                    "CÂMERA",
+                    100
+                ]
+            ],
+            "sentence": "A câmera e suas funcionalidades estão me surpreendendo."
+        },
+        {
+            "id": 612,
+            "opinions": [
+                [
+                    "OUTRO",
+                    100
+                ]
+            ],
+            "sentence": "A rapidez do leitor de digital também é um ponto positivo."
+        },
+        {
+            "id": 613,
+            "opinions": [
+                [
+                    "OUTRO",
+                    100
+                ],
+                [
+                    "OUTRO",
+                    -100
+                ]
+            ],
+            "sentence": "Always On é uma função inovadora e muito útil, uma vez que não precisamos mais acender a tela do dispositivo para ver as horas."
+        },
+        {
+            "id": 618,
+            "opinions": [
+                [
+                    "PRODUTO",
+                    100
+                ],
+                [
+                    "RESISTÊNCIA",
+                    -100
+                ]
+            ],
+            "sentence": "Produto maravilhoso, pra quem reclama da fragilidade recomendo que use uma pelicula de vidro nele e uma capa, pois todo aparelho é quebravel, o moto force se sobressai, mas é feio, então pelicula nele, vale a pena."
+        },
+        {
+            "id": 619,
+            "opinions": [
+                [
+                    "RESISTÊNCIA",
+                    -100
+                ]
+            ],
+            "sentence": "Dislpay quebra-fácil."
+        },
+        {
+            "id": 623,
+            "opinions": [
+                [
+                    "DESEMPENHO",
+                    100
+                ],
+                [
+                    "BATERIA",
+                    100
+                ]
+            ],
+            "sentence": "Muito rápido! Não trava! Bateria dura muito!"
+        },
+        {
+            "id": 625,
+            "opinions": [
+                [
+                    "DESIGN",
+                    100
+                ],
+                [
+                    "DESEMPENHO",
+                    100
+                ],
+                [
+                    "CÂMERA",
+                    100
+                ]
+            ],
+            "sentence": "Smartphone bonito, elegante, com ótima performance e que tira fotos com qualidade."
+        },
+        {
+            "id": 626,
+            "opinions": [
+                [
+                    "PRODUTO",
+                    100
+                ]
+            ],
+            "sentence": "O melhor da samsung, em qualidade e funcionalidade de imagem e recursos."
+        },
+        {
+            "id": 627,
+            "opinions": [
+                [
+                    "RESISTÊNCIA",
+                    -100
+                ],
+                [
+                    "RESISTÊNCIA",
+                    -100
+                ]
+            ],
+            "sentence": "Trincou fácio o display e câmera na traseina apesar de mais interna, continua sujeita a danos."
+        },
+        {
+            "id": 629,
+            "opinions": [
+                [
+                    "PRODUTO",
+                    100
+                ]
+            ],
+            "sentence": "Ainda não usei todas as funções que possui, mas já percebi que o aparelho é excelente."
+        },
+        {
+            "id": 636,
+            "opinions": [
+                [
+                    "RESISTÊNCIA",
+                    -100
+                ]
+            ],
+            "sentence": "Em menos de 24horas, no dia 13/01/18, ocorreu a primeira queda do aparelho do meu bolso (o mesmo é muito liso e escorrega do bolso ao se sentar) e o aparelho trincou a tela."
+        },
+        {
+            "id": 641,
+            "opinions": [
+                [
+                    "RESISTÊNCIA",
+                    -100
+                ]
+            ],
+            "sentence": "O Celular é alérgico a agua, já vi celulares sem proteção resistir melhor."
+        },
+        {
+            "id": 650,
+            "opinions": [
+                [
+                    "PRODUTO",
+                    100
+                ],
+                [
+                    "CÂMERA",
+                    100
+                ],
+                [
+                    "PRODUTO",
+                    100
+                ],
+                [
+                    "BATERIA",
+                    -100
+                ],
+                [
+                    "TELA",
+                    -100
+                ]
+            ],
+            "sentence": "Sempre adquiri celulares dessa marca, pela confiança e qualidade e dessa vez o aparelho de mostrou muito bom, com grande performance e muitos pontos positivos como qualidade da câmera, ótima configuração do celular, mas pecou na bateria e no touchscreen que não se apresentaram tão bem no uso..."
+        },
+        {
+            "id": 651,
+            "opinions": [
+                [
+                    "PRODUTO",
+                    -100
+                ]
+            ],
+            "sentence": "Por isso acabei devolvendo o aparelho para tentar adquirir outro."
+        },
+        {
+            "id": 652,
+            "opinions": [
+                [
+                    "PRODUTO",
+                    0
+                ],
+                [
+                    "PREÇO",
+                    -100
+                ]
+            ],
+            "sentence": "S7 razoavel."
+        },
+        {
+            "id": 656,
+            "opinions": [
+                [
+                    "PRODUTO",
+                    100
+                ],
+                [
+                    "RESISTÊNCIA",
+                    -100
+                ]
+            ],
+            "sentence": "Ótima tecnologia, péssima resistência."
+        },
+        {
+            "id": 659,
+            "opinions": [
+                [
+                    "RESISTÊNCIA",
+                    -100
+                ]
+            ],
+            "sentence": "Recentemente comprei um Galaxy S7, em 3 dias, numa pequena queda trincou parte do display (falo pequena queda porque os outros modelos que tive, sofreram quedas piores e permaneceram intactos)"
+        },
+        {
+            "id": 661,
+            "opinions": [
+                [
+                    "PRODUTO",
+                    -100
+                ]
+            ],
+            "sentence": "Enfim, este modelo da Samsung deixou muito a desejar comparado a outros aparelhos que tive."
+        },
+        {
+            "id": 672,
+            "opinions": [
+                [
+                    "RESISTÊNCIA",
+                    -100
+                ]
+            ],
+            "sentence": "DEVERIA SE CHAMAR SAMSUNG TRINCA RAPIDO."
+        },
+        {
+            "id": 673,
+            "opinions": [
+                [
+                    "RESISTÊNCIA",
+                    -100
+                ]
+            ],
+            "sentence": "PÉSSIMA COM DOIS MESES DE USO TRINCOU O DISPLAY DE LCD DENTRO DA BOLSA."
+        },
+        {
+            "id": 676,
+            "opinions": [
+                [
+                    "ACESSÓRIO",
+                    -100
+                ]
+            ],
+            "sentence": "Achei ruim a tela ter as bordas curvas, pois nao se encontra o protetor de tela, o que é muito complicado."
+        },
+        {
+            "id": 677,
+            "opinions": [
+                [
+                    "BATERIA",
+                    -100
+                ]
+            ],
+            "sentence": "Bateria horrível."
+        },
+        {
+            "id": 678,
+            "opinions": [
+                [
+                    "PRODUTO",
+                    100
+                ],
+                [
+                    "BATERIA",
+                    -100
+                ],
+                [
+                    "PREÇO",
+                    -100
+                ]
+            ],
+            "sentence": "O celular é ótimo, mas a BATERIA dele é horrível, ainda consegue ser pior que o a do Galaxy S6, que já era péssima, comprei 2 e devolvi por causa da bateria, um celular caro desse com uma bateria péssima, se usar acaba rapidinho mesmo."
+        }
+    ],
+    "meta": {
+        "Average rating": "9/10 ",
+        "Crawl date": "17/may/2018 ",
+        "File generation date": "2019-03-01",
+        "Format": "sentences_multiasp_vertical",
+        "ID": "11",
+        "Product": "Smartphone Samsung Galaxy S7 SM-G930 32GB",
+        "Source": "www.buscape.com.br/smartphone-samsung-galaxy-j5-prime-sm-g570m",
+        "Total of opinions": "755",
+        "Total of reviews": "221",
+        "Total of sentences": "641",
+        "Type": "Celular"
+    }
+}

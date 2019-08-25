@@ -1,0 +1,40 @@
+
+O display giratório que possui em alguns modelos diferentes não interfere na qualidade do T5!!! Recomendo. 
+Sobre a anatomia, seu desenho é bom. 
+E ótima tem um foco excelente. 
+Os tutoriais online Canon ajudam muito. 
+A qualidade das imagens são muito boas. 
+A qualidade de imagem é incrível! 
+Ótimo custo benefício! Fotos em alta definição. 
+Ótimo custo-benefício. 
+O peso e o tamanho atrapalham um pouco, mas para este tipo de equipamento é comum, se comparado aos outros modelos de câmera. 
+A abertura de diafragma das lentes do kit não são das melhores, mas pelo preço proposto é satisfatório. 
+
+
+Algumas informações não viram no Manual. 
+Porém, me incomodou o ruído presente no momento de gravação de videos. 
+É necessário aprender a usar as funções. 
+Não dá para focar e o flash só acende na hora do disparo. 
+Fotograr à noite ou locais com pouca luminosidade é difícil. 
+Foto ruim pouca luminosidade. 
+Já vai fazer 1 ano que tenho ela, nunca tive problema, super recomendo! 
+Uma ótima câmera para quem gosta de fotos. 
+Ótimo zoon. 
+Nossa o zoom dela é incrível, muito boa! 
+Imagem de ótima qualidade. 
+Fácil manuseio e não tão grande. 
+
+
+
+sentences:    10   12
+    words:    98   93
+
+
+( 71  75)      73    67    60   [[ 66]]  
+
+               73    67    60    [ 66]      ~  0
+
+[55, 6, 126, 5, 72, 67, 84, 24, 7, 10]
+[13, 24, 97, 72, 71, 70, 31, 48, 45, 47, 52, 101]
+
+

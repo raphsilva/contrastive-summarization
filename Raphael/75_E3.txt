@@ -1,0 +1,290 @@
+100 tests, discard 10(x2) best and worst
+
+
+
+============  D1a D1b ============
+
+
+
+               76    44    39   [  49 ]    ( 49)      ~  3
+
+             ~  3  ~  4  ~  3               ~  3
+
+
+max            79    50    44                 54
+
+min            70    37    33                 42
+
+
+simple mean    75    44    39      49       ' 49'      ~  3
+
+
+
+
+ avg words 1:   75.00 
+ avg words 2:   74.71 
+
+ avg sentences 1:    7.31 
+ avg sentences 2:    7.17 
+
+ time   5.15 
+ diff summs: 82
+
+
+
+
+
+
+
+
+
+============  D2a D2b ============
+
+
+
+               87    51    49   [  58 ]    ( 58)      ~  5
+
+             ~  2  ~  7  ~  5               ~  5
+
+
+max            90    61    55                 66
+
+min            80    39    38                 47
+
+
+simple mean    86    51    48      58       ' 57'      ~  5
+
+
+
+
+ avg words 1:   74.70 
+ avg words 2:   74.73 
+
+ avg sentences 1:    6.02 
+ avg sentences 2:    8.37 
+
+ time   0.53 
+ diff summs: 81
+
+
+
+
+
+
+
+
+
+============  D3a D3b ============
+
+
+
+               72    64    54   [  63 ]    ( 63)      ~  4
+
+             ~  3  ~  5  ~  4               ~  4
+
+
+max            78    75    63                 70
+
+min            65    55    48                 55
+
+
+simple mean    72    64    54      63       ' 62'      ~  4
+
+
+
+
+ avg words 1:   75.00 
+ avg words 2:   74.59 
+
+ avg sentences 1:    7.61 
+ avg sentences 2:    6.71 
+
+ time   1.38 
+ diff summs: 100
+
+
+
+
+
+
+
+
+
+============  D4a D4b ============
+
+
+
+               74    42    39   [  48 ]    ( 48)      ~  4
+
+             ~  3  ~  4  ~  3               ~  4
+
+
+max            79    50    46                 55
+
+min            70    35    33                 42
+
+
+simple mean    74    43    39      48       ' 48'      ~  4
+
+
+
+
+ avg words 1:   74.88 
+ avg words 2:   74.56 
+
+ avg sentences 1:    6.36 
+ avg sentences 2:    6.98 
+
+ time   1.60 
+ diff summs: 100
+
+
+
+
+
+
+
+
+
+============  D5a D5b ============
+
+
+
+               74    91    51   [  68 ]    ( 68)      ~  3
+
+             ~  3  ~ 12  ~  2               ~  3
+
+
+max            78   100    55                 73
+
+min            70    75    46                 62
+
+
+simple mean    74    90    51      68       ' 67'      ~  3
+
+
+
+
+ avg words 1:   74.43 
+ avg words 2:   74.66 
+
+ avg sentences 1:    3.30 
+ avg sentences 2:    9.22 
+
+ time   0.29 
+ diff summs: 95
+
+
+
+
+
+
+
+
+
+============  D6a D6b ============
+
+
+
+               89    94    73   [  84 ]    ( 84)      ~  5
+
+             ~  3  ~  8  ~  6               ~  5
+
+
+max            93   100    82                 91
+
+min            84    83    64                 76
+
+
+simple mean    89    93    73      84       ' 84'      ~  5
+
+
+
+
+ avg words 1:   73.48 
+ avg words 2:   74.12 
+
+ avg sentences 1:    5.51 
+ avg sentences 2:    6.23 
+
+ time   0.21 
+ diff summs: 37
+
+
+
+
+
+
+
+
+
+============  D7a D7b ============
+
+
+
+               97    88    90   [  90 ]    ( 91)      ~  2
+
+             ~  3  ~  0  ~  3               ~  2
+
+
+max            99    88    92                 92
+
+min            91    88    83                 87
+
+
+simple mean    96    87    89      90       ' 90'      ~  2
+
+
+
+
+ avg words 1:   74.54 
+ avg words 2:   74.70 
+
+ avg sentences 1:    5.60 
+ avg sentences 2:    9.43 
+
+ time   0.25 
+ diff summs: 88
+
+
+
+
+
+
+
+
+
+============  D8a D8b ============
+
+
+
+               84    67    62   [  70 ]    ( 70)      ~  3
+
+             ~  2  ~  4  ~  3               ~  3
+
+
+max            87    75    68                 76
+
+min            80    58    55                 63
+
+
+simple mean    84    67    62      70       ' 69'      ~  3
+
+
+
+
+ avg words 1:   74.67 
+ avg words 2:   74.59 
+
+ avg sentences 1:    7.08 
+ avg sentences 2:    7.95 
+
+ time   0.40 
+ diff summs: 98
+
+
+
+
+
+
+

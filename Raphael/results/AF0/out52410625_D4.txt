@@ -1,0 +1,34 @@
+
+Òtimo aparelho.Custo-benefício excelente.Leve e fácil de usar.Fotos maravilhosas,. 
+Um bom produto,com muita memória,aparelho muito bonito e recomendo por ter algo a mais que é através da digital a sua segurança,foi o que me chamou a minha atenção. 
+Já resetei o produto mas não resolveu o problema. 
+Para um uso simples, apenas internet, redes sociais, email e uma ou outro ligação o aparelho atende, mas um uso um pouco mais intenso dos recursos o aparelho não suporta. 
+Compra recente não testei muito, mas a bateria está durando bastante! A câmera com zoom perde bastante qualidade. 
+Otimo desempenho e camera. 
+Bom custo/beneficio. 
+
+
+Podia ter melhor custo-benefício. 
+Um celular de ponta pra durar varios anos. 
+As câmeras são boas, a velocidade de processamento é boa, enfim o resto é tudo de bom. 
+Para evitar isso comprei uma capa da ClearView da própria Samsung. A câmera traseira é muito boa, porém em condições de baixa luminosidade a perda de qualidade é absurda. 
+Enfim, este modelo da Samsung deixou muito a desejar comparado a outros aparelhos que tive. 
+Produto muito bom, a bateria dura muito e o carregador carrega muito mais rapido que os normais. 
+Rápido, excelente resolução, não trava, perfeito. 
+Bateria horrível. 
+Dislpay quebra-fácil. 
+
+
+
+sentences:     7    9
+    words:   100  100
+
+
+( 84  78)      81    52    48   [[ 57]]  
+
+               81    52    49    [ 58]      ~  4
+
+[64, 316, 552, 366, 524, 127, 256]
+[576, 107, 241, 455, 661, 415, 537, 677, 619]
+
+

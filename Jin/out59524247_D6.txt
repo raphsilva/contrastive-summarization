@@ -1,0 +1,30 @@
+
+E ótima tem um foco excelente. 
+Depois que comprei esta câmera minhas fotos melhoraram Muito, Agora tenho fotos a nível profissional, com ela já fiz ate alguns ensaios e adquiri uma renda extra. 
+Ótimo custo benefício. 
+Ótimo custo benefício! Fotos em alta definição. 
+Para quem procura uma câmera de entrada ela é muito boa! 
+Produto muito bom, ótima qualidade, fácil manuseio. 
+
+
+Não dá para focar e o flash só acende na hora do disparo. 
+É necessário aprender a usar as funções. 
+Fotograr à noite ou locais com pouca luminosidade é difícil. 
+Foto ruim pouca luminosidade. 
+Está em ótimo custo beneficio garanto que quem adquirir esse produto não vai se arrepender e se você ama registrar momentos noturno essa câmera não deixa a desejar. 
+Excelente custo benefício para um iniciante. 
+
+
+
+sentences:     6    6
+    words:    61   68
+
+
+( 85  32)      58   100    53   [[ 65]]  
+
+               58   100    53    [ 65]      ~  0
+
+[126, 77, 122, 84, 95, 121]
+[72, 97, 71, 70, 105, 65]
+
+

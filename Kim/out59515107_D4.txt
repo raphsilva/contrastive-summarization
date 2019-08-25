@@ -1,0 +1,36 @@
+
+Excelente custo-benefício. 
+Bom custo/beneficio. 
+A tela é bem brilhante. 
+Mas o sistema é rápido e display é bastante resistente. 
+Muito bom deixa a desejar só a bateria e designer. 
+Recebi o produto mas o mesmo não carregava. 
+Foi o pior aparelho que já comprei, não recomendo para ninguem. 
+Já resetei o produto mas não resolveu o problema. 
+Gostei, eu tava com Windows phone, então percebi que Android é menos fluido, em alguns animações se percebe atraso, mas é bom, uma coisa que falta é a função nativa da transmitir arquivos via Wi-Fi direct. 
+
+
+Podia ter melhor custo-benefício. 
+Poderia custar mais barato. 
+Achei ruim a tela ter as bordas curvas, pois nao se encontra o protetor de tela, o que é muito complicado. 
+Além disso, é caro demais. 
+Não deixou nada a desejar. 
+Produto muito bom, a bateria dura muito e o carregador carrega muito mais rapido que os normais. 
+Aparelho muito bom, câmera fantástica. 
+Produto excelente e sem arrependimento. 
+Não falta nada no celular: ótima performance, bateria, carrega rápido, câmera é top. 
+
+
+
+sentences:     9    9
+    words:    93   79
+
+
+( 56  50)      53    42    38   [[ 43]]  
+
+               52    41    36    [ 42]      ~  3
+
+[71, 256, 309, 8, 278, 567, 545, 552, 43]
+[576, 79, 676, 181, 493, 415, 359, 516, 326]
+
+

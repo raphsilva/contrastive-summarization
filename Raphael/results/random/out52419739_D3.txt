@@ -1,0 +1,28 @@
+
+Compra recente não testei muito, mas a bateria está durando bastante! A câmera com zoom perde bastante qualidade. 
+Adquiri há 1 mês.Aparelho mais bonito pessoalmente (dourado).Câmera incrível, designer perfeito, super rápido, carrega mais rápido ainda e a bateria dura muito (uso muito celular, jogos, aplicativos, redes sociais).O diferencial dele é a TV, foi por isso que adquiri esse modelo. 
+A câmera tem menos estabilidade, sinto de alguns app&squote&s exclusivos da série Galaxy. 
+A tv não tem boa recepção. 
+Troca de bateria só pode ser feita na assistência técnica, pois não é possível abrir a tampa do aparelho. 
+
+
+Ótimo celular com bateria de duração que chega quase 1 dia. 
+Os modelos de película disponíveis tem uma margem de uns 4mm, o que torna uma luta a experiência de manipular o menu e selecionar um aplicativo e jogar para o canto da tela para ele ir para a página do lado. 
+Tem dias que dura apenas 10 horas de uso moderado. O preço ainda é salgado, como tudo que é bom no Brasil. 
+Bom, porem frágil. 
+Eu tinha um iphone e pelo alto custo optei pela S7 Samsung. 
+
+
+
+sentences:     5    5
+    words:    97   89
+
+
+( 45  60)      52    40    39   [[ 43]]  
+
+               51    42    40    [ 44]      ~  5
+
+[524, 442, 305, 306, 604]
+[482, 549, 457, 92, 336]
+
+

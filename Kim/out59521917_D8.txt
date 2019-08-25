@@ -1,0 +1,34 @@
+
+Excelente custo-benefício. 
+Um celular excelente, rápido, câmera boa e funcionalidade boa. 
+Ótimo aparelho, está entre os melhores smartphones da linha mediana da atualidad. 
+Boa durabilidade da bateria e câmeras perfeitas. 
+A câmera não é das melhores, nem o design. 
+Só acho que devem melhorar a qualidade da câmera tanto traseira quanto frontal. 
+Gostei, eu tava com Windows phone, então percebi que Android é menos fluido, em alguns animações se percebe atraso, mas é bom, uma coisa que falta é a função nativa da transmitir arquivos via Wi-Fi direct. 
+Também percebi um bug que quando se carrega o celular, dependendo da capa de proteção não dá pra usar a tela touch (a voltagem interfere na detecção dos toques) 
+
+
+Poderia custar mais barato. 
+Celular Bom mas poderia ser mais barato e resistente. 
+O aparelho poderia ser um pouco mais barato. 
+No momento posso dizer q a bateria não dura como especificado no produto. 
+Por enquanto não tenho do que reclamar, é lindo e cumpre todas as funções, e a câmera é espetacular! 
+Ótimo celular. Câmera excelente. 
+O Galaxy S7 é um excelente aparelho e agora com um bom preço. 
+Excelente celular, mas não tenho mais. 
+
+
+
+sentences:     8    8
+    words:   117   76
+
+
+( 70  42)      56    50    42   [[ 49]]  
+
+               56    48    41    [ 48]      ~  4
+
+[71, 72, 84, 46, 7, 55, 43, 76]
+[79, 99, 104, 69, 27, 3, 21, 78]
+
+
