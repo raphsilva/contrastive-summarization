@@ -4,6 +4,10 @@
 # From Python standard library:
 import statistics # For mean and stdev
 
+from time import time
+exec_code = str(int(time())%100000000) # Execution code (will be in the results file name)
+FILE_RESULTS = 'results_'+exec_code+'.txt'
+
 # From this project:
 import method
 from read_input import read_input
@@ -11,7 +15,7 @@ import evaluation.evaluation as evalu
 import output_format as out
 import structure as struct 
 from structure import word_count
-
+from writefiles import underwrite_file
 
 from summarization import summarize
 
@@ -20,7 +24,6 @@ from setup import LIM_SENTENCES     # Sets the maximum number of SENTENCES in ea
 from setup import LIM_WORDS         # Sets the maximum number of WORDS in each side of the summary
 from setup import MIN_INTENS_IN_SUMMARY         
 from setup import DATA_DIR
-from setup import SOURCE1, SOURCE2
 from setup import filepath          # Get full path for the file with data of target 
 
 from setup import VERBOSE_MODE
@@ -35,128 +38,64 @@ from setup import ALPHA
 from setup import ASPECT_DETECTION
 from setup import POLARITY_ATTRIBUTION
 
+from setup import REPEAT_TESTS 
+from setup import DISCARD_TESTS 
 
-from writefiles import underwrite_file
+from setup import DATASETS_TO_TEST
+
+from setup import DEBUGGING
+
+if DEBUGGING:
+    out.setDebugPrints(True)     # Choose whether or not to display information for debugging.
+from pprint import pprint
 
 
-
-
-results = {}
+results = {} 
 results['meta'] = {}
 results['meta']['source'] = []
-results['meta']['source'].append(SOURCE1)
-results['meta']['source'].append(SOURCE2)
+results['meta']['source'].append(DATASETS_TO_TEST[0])
+results['meta']['source'].append(DATASETS_TO_TEST)
 results['meta']['limits (per side)'] = {}
 results['meta']['limits (per side)']['sentences'] = LIM_SENTENCES
 results['meta']['limits (per side)']['words'] = LIM_WORDS
 results['output'] = []
-
-
-
-from setup import DEBUGGING
-
-
-if DEBUGGING:
-    # For debugging
-    out.setDebugPrints(True)     # Choose whether or not to display information for debugging.
-    #out.setDebugPrints(False)   # Choose whether or not to display information for debugging.
-from pprint import pprint
-            
-
-
-
 
 def print_verbose(*msg):
     if not VERBOSE_MODE:
         return
     out.printMessage(*msg)
 
-
-
 def print_result(*msg):
     print(*msg, end='', flush=True)
 
-
-
-def remove_low_intensity(source):    
-
+def remove_low_intensity(source): 
     # Remove sentences with low intensity. 
     # Will bypass any sentence which the intensity is lower than MIN_INTENS_IN_SUMMARY.
     for i in dict(source):
         if source[i]['intensity'] < MIN_INTENS_IN_SUMMARY: 
-            #pprint(source[i])
-            #input()
-            #print()
             del source[i]
-            
-    #input()
     return source
 
-
-
-
-from time import time
-
-
-exec_code = str(int(time())%100000000)
-
-
-FILE_RESULTS = 'results_'+exec_code+'.txt'
-
-
-
-RTESTS = 100
-DTESTS = int(RTESTS/10)
-
-print('Will perform %d tests and discard %d(x2) best and worst\n\n' % (RTESTS, DTESTS))
-
-
-
+print('Will perform %d tests and discard %d(x2) best and worst\n\n' % (REPEAT_TESTS, DISCARD_TESTS))
 
 f = open(FILE_RESULTS, 'a')
-f.write('%d tests, discard %d(x2) best and worst\n\n' % (RTESTS, DTESTS))
+f.write('%d tests, discard %d(x2) best and worst\n\n' % (REPEAT_TESTS, DISCARD_TESTS))
 f.close()
 
 
-SHOW_ALL_ITERAT = False
-
-
-
-
-def sqdiff (l1, l2):
-    r = 0
-    for i in range(len(l1)):
-        r += pow(l1[i]-l2[i], 2)
-    return r
-
-
-
-
-
-
-
-
-#for SOURCE1, SOURCE2 in reversed([('D1a','D1b'), ('D2a','D2b'), ('D3a','D3b'), ('D4a','D4b'), ('D5a','D5b'), ('D6a','D6b'), ('D7a','D7b'), ('D8a','D8b')]):
-for SOURCE1, SOURCE2 in reversed([('D5a','D5b'), ('D6a','D6b'), ('D7a','D7b'), ('D8a','D8b')]):
-#for SOURCE1, SOURCE2 in reversed([('D1a','D1b'), ('D2a','D2b'), ('D3a','D3b'), ('D4a','D4b')]):
-#for SOURCE1, SOURCE2 in [ ('D2a','D2b')]:
-    
+for SOURCE1, SOURCE2 in DATASETS_TO_TEST:   
     
     summScoresList = {}
-    
+
+    total_time = 0
     
     OUTPUT_FILE = 'out'+exec_code+'_'+SOURCE1[:-1]+'.txt'
     print(OUTPUT_FILE)
     #exit()
 
     print ('\n\n\n\n ============  ', SOURCE1, SOURCE2)
-    print('\n\n')
+    print('\n\n')    
     
-    total_time = 0
-
-
-
-
     print_verbose('Loading input')
     source1 = read_input(filepath(SOURCE1))
     source2 = read_input(filepath(SOURCE2))
@@ -165,12 +104,10 @@ for SOURCE1, SOURCE2 in reversed([('D5a','D5b'), ('D6a','D6b'), ('D7a','D7b'), (
     source2 = remove_low_intensity(source2)
     print_verbose('Sizes of datasets after cleaning: ', len(source1), len(source2))
 
-
     wc1 = struct.word_count(source1)
     wc2 = struct.word_count(source2)
 
     print('Words: ', wc1, wc2)
-
 
     # /source.../ are structures of the form
     '''
@@ -215,65 +152,13 @@ for SOURCE1, SOURCE2 in reversed([('D5a','D5b'), ('D6a','D6b'), ('D7a','D7b'), (
         {'tela': {'mean':  83, 'prob': 0.07, 'std': 0},
         'cor':  {'mean': -87, 'prob': 0.21, 'std': 1.73}}
     '''
-
-
-
-        
-
-    #source1 = dict(source1)
-    #source2 = dict(source2)
-        
-
         
     stats_source_1 = struct.aspects_stats(source1)
     stats_source_2 = struct.aspects_stats(source2)
-        
-
-   
-
-    #print(len(source1))
-    #print(len(source1))
-    #print(len(source2))
-    #print(len(source2))
-    #print()
-
-    #c1 = {}
-    #c1['data'] = [source1[i] for i in source1]
-    #c2 = {}
-    #c2['data'] = [source2[i] for i in source2]
-
-    #from writefiles import underwrite_file
-    #underwrite_file('30-clean.json', c1)
-    #underwrite_file('31-clean.json', c2)
-
-    #exit()
-
-    #print(len(source1), len(source1))
-    #print(len(source2), len(source2))
-    #exit()
-
-    #from setup import PRESET
-
+      
     all_summaries = []
 
-
-    #for alpha_choice in [10*i+1 for i in range(6)]:
-    #for METHOD in ['CONTRASTIVE']:
-
-
-    #for METHOD in ['NONCONTRASTIVE', 'CONTRASTIVE']:
-    #for METHOD in ['NONCONTRASTIVE']:
-
-
     ini_time = time()
-
-
-
-
-
-
-    #stats_source_1 = struct.aspects_stats(source1)
-    #stats_source_2 = struct.aspects_stats(source2)
 
     if VERBOSE_MODE:
         print_verbose('\nOpinions in the summary for each entity:')
@@ -281,22 +166,9 @@ for SOURCE1, SOURCE2 in reversed([('D5a','D5b'), ('D6a','D6b'), ('D7a','D7b'), (
         struct.printOverview(stats_source_1)
         struct.printOverview(stats_source_2)
 
-        
-
-
     print_verbose('Sizes of datasets without low intensity sentences: ', len(source1), len(source2))
 
-
-
-
-
-
-
     print_verbose('Making summary')
-
-
-    #Make contrastive summary
-
 
     hr = []
     hc = []
@@ -306,22 +178,17 @@ for SOURCE1, SOURCE2 in reversed([('D5a','D5b'), ('D6a','D6b'), ('D7a','D7b'), (
     h_words1 = []
     h_words2 = []
     h_sentences1 = []
-    h_sentences2 = []
-            
-    
+    h_sentences2 = []    
 
-    for repeat in range(RTESTS):
+    for repeat in range(REPEAT_TESTS):
         
-        pr = repeat/RTESTS
+        pr = repeat/REPEAT_TESTS
         out.printProgress('   %3d%% ' % (100*pr), end="\r")
-        
-        
+                
         summ_idx_1, summ_idx_2 = summarize(source1, source2, stats_source_1, stats_source_2, METHOD, OPTM_MODE)
         
         summ1 = {i: source1[i] for i in summ_idx_1}
-        summ2 = {i: source2[i] for i in summ_idx_2}
-        
-            
+        summ2 = {i: source2[i] for i in summ_idx_2}            
             
         s_id = (sorted(summ_idx_1), sorted(summ_idx_2))            
         if s_id not in all_summaries:
@@ -331,33 +198,14 @@ for SOURCE1, SOURCE2 in reversed([('D5a','D5b'), ('D6a','D6b'), ('D7a','D7b'), (
         elaps_time = fin_time - ini_time 
         total_time += elaps_time 
 
-
-
-        
-
-        
-        
-        
-        
-                    
-
-
         if VERBOSE_MODE:
             print_verbose('\nOverview of opinions in the summary for each entity:')
             sum_stats_1 = struct.aspects_stats(summ1)
             sum_stats_2 = struct.aspects_stats(summ2)
             struct.printOverview(sum_stats_1)
             struct.printOverview(sum_stats_2)
-
-
-
             
-                
-            
-            
-        # Display the results     
-
-
+        # Display the results    
 
         if OVERVIEW_MODE:
             print_verbose('\nOpinions in the summary for each entity:')
@@ -366,7 +214,6 @@ for SOURCE1, SOURCE2 in reversed([('D5a','D5b'), ('D6a','D6b'), ('D7a','D7b'), (
             print()
             for i in summ_idx_2:
                 out.printinfo("      %4d)   %s " % (i, source2[i]['opinions']))        
-
 
         if OUTPUT_MODE:
             print("\nCONTRASTIVE SUMMARY\n")
@@ -379,7 +226,6 @@ for SOURCE1, SOURCE2 in reversed([('D5a','D5b'), ('D6a','D6b'), ('D7a','D7b'), (
                 print ("%s " % (source2[i]['verbatim']))        
                 #print ("      %4d)   %s " % (i, source2[i]['verbatim']))        
 
-        
         def harmonic_mean(l):
             s = 0
             if min(l) == 0:
@@ -389,7 +235,6 @@ for SOURCE1, SOURCE2 in reversed([('D5a','D5b'), ('D6a','D6b'), ('D7a','D7b'), (
             m = s/len(l)
             return 1/m
         
-
         if EVALUATION_MODE: 
             
             evals = {}
@@ -405,56 +250,25 @@ for SOURCE1, SOURCE2 in reversed([('D5a','D5b'), ('D6a','D6b'), ('D7a','D7b'), (
             
             evals['D'] = (evals['d1']+evals['d2'])/2
             
-            
             evals['H'] = harmonic_mean([evals['R'],evals['C'],evals['D']])
-            
-            
-            #for i in evals:
-                #evals[i] = int('%3.0lf'%(evals[i]))
-                
-                
+
             w1 = sum([summ1[i]['word_count'] for i in summ1])
             w2 = sum([summ2[i]['word_count'] for i in summ2])
-   
-            
-            #print()
-            #print_result("%3.0lf)   %s %3.0lf    " % (repeat+1, METHOD[:4], ALPHA))
-            #print_result('(%3.0lf %3.0lf) %3.0lf   ' % (evals['r1'], evals['r2'], evals['R']))
-            #print_result('%3.0lf   ' % ( evals['C']))
-            #print_result('    %3.0lf' % (evals['D']))
-            #print_result('    [[%3.0lf]]' % (evals['H']))
-            #print_result('    %3.0lfs' % elaps_time)
-            #print_result('\n')
-            #print_result('\n')
-            
-            
-            
-            
-            #print('sentences: ', len(summ1), len(summ2))
-            #print('words: ', w1, w2)
-            #print('diff summs: ', len(all_summaries))
-            
-            #print('\n')
-            #print('\n')
             
             h_words1.append(w1)
             h_words2.append(w2)
             h_sentences1.append(len(summ1))
             h_sentences2.append(len(summ2))
             
-            
             hr.append(evals['R'])
             hc.append(evals['C'])
             hd.append(evals['D'])
             hh.append(evals['H'])
-            
 
-            
             n = {}
             n['parameters'] = {}
             n['parameters']['method'] = METHOD
             n['parameters']['summization'] = OPTM_MODE
-            #n['parameters']['similarity'] = KEY_MEASURE
             n['parameters']['alpha'] = ALPHA
             n['parameters']['aspect detection'] = ASPECT_DETECTION
             n['parameters']['polarity attribution'] = POLARITY_ATTRIBUTION
@@ -471,35 +285,26 @@ for SOURCE1, SOURCE2 in reversed([('D5a','D5b'), ('D6a','D6b'), ('D7a','D7b'), (
             n['size']['word count'].append(word_count(summ1))
             n['size']['word count'].append(word_count(summ2))
             results['output'].append(n)
-            
-            
-            
-            summScoresList[(evals['R'],evals['C'],evals['D'])] = (summ_idx_1, summ_idx_2)
-            
-    #pprint(summScoresList)
-            
-    from statistics import stdev
-        
-                
-    hr_medians = sorted(hr)[DTESTS:-DTESTS]
-    hc_medians = sorted(hc)[DTESTS:-DTESTS]
-    hd_medians = sorted(hd)[DTESTS:-DTESTS]
-    hh_medians = sorted(hh)[DTESTS:-DTESTS]
 
+            summScoresList[(evals['R'],evals['C'],evals['D'])] = (summ_idx_1, summ_idx_2)
+
+    from statistics import stdev
+
+    hr_medians = sorted(hr)[DISCARD_TESTS:-DISCARD_TESTS]
+    hc_medians = sorted(hc)[DISCARD_TESTS:-DISCARD_TESTS]
+    hd_medians = sorted(hd)[DISCARD_TESTS:-DISCARD_TESTS]
+    hh_medians = sorted(hh)[DISCARD_TESTS:-DISCARD_TESTS]
 
     sthh = stdev(hh_medians)
     sthc = stdev(hc_medians)
     sthr = stdev(hr_medians)
     sthd = stdev(hd_medians)
 
-
-        
     r = sum(hr)/len(hr)
     c = sum(hc)/len(hc)
     d = sum(hd)/len(hd)
     h = harmonic_mean([r,c,d])
-    
-    
+
     r_median_mean = sum(hr_medians)/len(hr_medians)
     c_median_mean = sum(hc_medians)/len(hc_medians)
     d_median_mean = sum(hd_medians)/len(hd_medians)
@@ -507,7 +312,6 @@ for SOURCE1, SOURCE2 in reversed([('D5a','D5b'), ('D6a','D6b'), ('D7a','D7b'), (
 
     ht = sum(hh)/len(hh)
     ht_median_mean = sum(hh_medians)/len(hh_medians)
-    
     
     results_msg = ''
     results_msg += '\n\n'
@@ -522,14 +326,10 @@ for SOURCE1, SOURCE2 in reversed([('D5a','D5b'), ('D6a','D6b'), ('D7a','D7b'), (
     results_msg += 'simple mean   %3.0lf   %3.0lf   %3.0lf     %3.0lf       \'%3.0lf\'      ~%3.0lf' % (r, c, d, h, ht, sthh)
     results_msg += '\n\n\n'
     
-
-
     avg_words1 = sum(h_words1)/len(h_words1)
     avg_words2 = sum(h_words2)/len(h_words2)
     avg_sentences1 = sum(h_sentences1)/len(h_sentences1)
     avg_sentences2 = sum(h_sentences2)/len(h_sentences2)
-    
-    
     
     results_msg += '\n\n'
     results_msg += ' avg words 1:  %6.2lf ' % (avg_words1)
@@ -547,7 +347,6 @@ for SOURCE1, SOURCE2 in reversed([('D5a','D5b'), ('D6a','D6b'), ('D7a','D7b'), (
     
     print(results_msg)
     
-    
     f = open(FILE_RESULTS, 'a')
     f.write('\n\n')
     f.write('============  %s %s ============' % (SOURCE1, SOURCE2))
@@ -556,39 +355,31 @@ for SOURCE1, SOURCE2 in reversed([('D5a','D5b'), ('D6a','D6b'), ('D7a','D7b'), (
     f.write('\n\n\n\n\n\n')
     f.close()
 
+    def sqdiff (l1, l2):
+        r = 0
+        for i in range(len(l1)):
+            r += pow(l1[i]-l2[i], 2)
+        return r
 
-        
     fairness_rank = sorted(summScoresList.keys(), key= lambda k : sqdiff(k, [r_median_mean, c_median_mean, d_median_mean]))
-    #pprint(fairness_rank)
-    #for i in fairness_rank:
-        #print(sqdiff(i, [r_median_mean, c_median_mean, d_median_mean]))
-    #print([r_median_mean, c_median_mean, d_median_mean])
-    #exit()
-    
+        
     summ_idx_f_1 = summScoresList[fairness_rank[0]][0]
     summ_idx_f_2 = summScoresList[fairness_rank[0]][1]
-    
     
     summ1 = {i: source1[i] for i in summ_idx_f_1}
     summ2 = {i: source2[i] for i in summ_idx_f_2}
     
-    
-    
     print("\nMOST FAIR SUMMARY\n")
     summ_out = '\n'
-    #summ_out += " = Produto A = \n"
     for i in summ_idx_f_1:
         summ_out += "%s " % (source1[i]['verbatim'])
         summ_out += "\n"
-        #print ("      %4d)   %s " % (i, source1[i]['verbatim']))    
         
     summ_out += '\n\n'
     
-    #summ_out += " = Produto B = \n"
     for i in summ_idx_f_2:
         summ_out += "%s " % (source2[i]['verbatim'])
         summ_out += "\n"
-        #print ("      %4d)   %s " % (i, source2[i]['verbatim']))  
         
     w1 = sum([summ1[i]['word_count'] for i in summ1])
     w2 = sum([summ2[i]['word_count'] for i in summ2])
@@ -598,8 +389,7 @@ for SOURCE1, SOURCE2 in reversed([('D5a','D5b'), ('D6a','D6b'), ('D7a','D7b'), (
     summ_out += 'sentences:   %3d  %3d\n' % (len(summ1), len(summ2))
     summ_out += '    words:   %3d  %3d' % (w1, w2)
     summ_out += '\n'
-    
-    
+        
     evals = {}
             
     evals['r1'] = 100*evalu.representativiness(source1, summ1)
@@ -612,20 +402,12 @@ for SOURCE1, SOURCE2 in reversed([('D5a','D5b'), ('D6a','D6b'), ('D7a','D7b'), (
     evals['d2'] = 100*evalu.diversity(source2, summ2)
     
     evals['D'] = (evals['d1']+evals['d2'])/2
-    
-    
-    evals['H'] = harmonic_mean([evals['R'],evals['C'],evals['D']])
-    
-    
-    #for i in evals:
-        #evals[i] = int('%3.0lf'%(evals[i]))
         
+    evals['H'] = harmonic_mean([evals['R'],evals['C'],evals['D']])    
         
     w1 = sum([summ1[i]['word_count'] for i in summ1])
     w2 = sum([summ2[i]['word_count'] for i in summ2])
 
-    
-    #print()
     summ_out += '\n\n'
     summ_out += '(%3.0lf %3.0lf)     %3.0lf   %3.0lf   %3.0lf   [[%3.0lf]]  ' % (evals['r1'], evals['r2'], evals['R'], evals['C'], evals['D'],  evals['H'])
     summ_out += '\n\n'
@@ -633,16 +415,12 @@ for SOURCE1, SOURCE2 in reversed([('D5a','D5b'), ('D6a','D6b'), ('D7a','D7b'), (
     summ_out += '              %3.0lf   %3.0lf   %3.0lf    [%3.0lf]      ~%3.0lf' % (r_median_mean, c_median_mean, d_median_mean, ht_median_mean, sthh)    
     
     summ_out += '\n'
-    summ_out += '\n'
-    
+    summ_out += '\n'    
     
     summ_out += str(summ_idx_f_1) + '\n'
     summ_out += str(summ_idx_f_2) + '\n'
     summ_out += '\n'
     summ_out += '\n'
-    
-    
-    
     
     print('sentences: ', len(summ1), len(summ2))
     print('words: ', w1, w2)
@@ -650,16 +428,12 @@ for SOURCE1, SOURCE2 in reversed([('D5a','D5b'), ('D6a','D6b'), ('D7a','D7b'), (
     
     print('\n')
     print('\n')
-            
-            
     
     print(summ_out)
     
     f = open(OUTPUT_FILE, 'w')
     f.write(summ_out)
     f.close()
-
-
 
     results['meta']['size'] = {}
     results['meta']['size']['source'] = {}
