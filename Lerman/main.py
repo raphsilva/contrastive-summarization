@@ -20,7 +20,6 @@ from setup import filepath  # Get full path for the file with data of target
 from setup import VERBOSE_MODE
 from setup import EVALUATION_MODE
 from setup import OUTPUT_MODE
-from setup import OVERVIEW_MODE
 
 from setup import METHOD
 from setup import OPTM_MODE
@@ -34,12 +33,12 @@ from setup import DISCARD_TESTS
 
 from setup import DATASETS_TO_TEST
 
-from setup import DEBUGGING
+from setup import DEBUG_MODE
 
 exec_code = str(int(time()) % 100000000)  # Execution code (will be in the results file name)
 FILE_RESULTS = 'results_' + exec_code + '.txt'  # Name of file that will save the results
 
-if DEBUGGING:
+if DEBUG_MODE:
     out.setDebugPrints(True)  # Choose whether or not to display information for debugging.
 
 results = {'meta': {}}
@@ -81,7 +80,7 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
 
     summScoresList = {}
 
-    total_time = 0
+    time_total = 0
 
     OUTPUT_FILE = 'out' + exec_code + '_' + SOURCE1[:-1] + '.txt'
     print(OUTPUT_FILE)
@@ -102,24 +101,14 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
 
     print('Words: ', wc1, wc2)
 
-    # /source.../ are structures of the form
     '''
+    /source.../ are structures of the form
     {
     0: {'intensity': 80.0,
         'opinions': [('CÂMERA', 80.0)],
         'sent': {'CÂMERA': 88},
         'word_count': 2,
         'verbatim': 'Câmera boa.'},
-    1: {'intensity': 80.0,
-        'opinions': [('CÂMERA', 80.0)],
-        'sent': {'CÂMERA': 88},
-        'word_count': 3,
-        'verbatim': 'Gostei da câmera.'}
-    5: {'intensity': 80.0,
-        'opinions': [('BATERIA', 80.0), ('DESEMPENHO', 80.0)],
-        'sent': {'BATERIA': 88, 'DESEMPENHO': 88},
-        'verbatim': 'Muito rápido! Não trava! Bateria dura muito!',
-        'word_count': 7},
     2: {'intensity': 80.0,
         'opinions': [('DESEMPENHO', -80.0),
                     ('DESEMPENHO', -80.0),
@@ -140,21 +129,15 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
     stats_source_1 = struct.aspects_stats(source1)
     stats_source_2 = struct.aspects_stats(source2)
 
-    # /stats_.../ are structures of the form: 
     '''
+     /stats_.../ are structures of the form: 
         {'tela': {'mean':  83, 'prob': 0.07, 'std': 0},
         'cor':  {'mean': -87, 'prob': 0.21, 'std': 1.73}}
     '''
 
-    stats_source_1 = struct.aspects_stats(source1)
-    stats_source_2 = struct.aspects_stats(source2)
-
     all_summaries = []
 
-    ini_time = time()
-
     if VERBOSE_MODE:
-        print_verbose('\nOpinions in the summary for each entity:')
         print_verbose('\nOverview of opinions in the source for each entity:')
         struct.printOverview(stats_source_1)
         struct.printOverview(stats_source_2)
@@ -175,21 +158,27 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
 
     for repeat in range(REPEAT_TESTS):
 
-        pr = repeat / REPEAT_TESTS
-        out.printProgress('   %3d%% ' % (100 * pr), end="\r")
+        # Display progress
+        out.printProgress('   %3d%% ' % (100 * repeat / REPEAT_TESTS), end="\r")
 
+        time_initial = time()
+
+        # Make summary
         summ_idx_1, summ_idx_2 = summarize(source1, source2, stats_source_1, stats_source_2, METHOD, OPTM_MODE)
 
         summ1 = {i: source1[i] for i in summ_idx_1}
         summ2 = {i: source2[i] for i in summ_idx_2}
 
+        # Register all summaries generated, ignoring order of sentences.
         s_id = (sorted(summ_idx_1), sorted(summ_idx_2))
         if s_id not in all_summaries:
             all_summaries.append(s_id)
 
-        fin_time = time()
-        elaps_time = fin_time - ini_time
-        total_time += elaps_time
+        # Register time elapsed
+        time_final = time()
+        time_total += time_final - time_initial
+
+        # Display the results
 
         if VERBOSE_MODE:
             print_verbose('\nOverview of opinions in the summary for each entity:')
@@ -197,10 +186,6 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
             sum_stats_2 = struct.aspects_stats(summ2)
             struct.printOverview(sum_stats_1)
             struct.printOverview(sum_stats_2)
-
-        # Display the results    
-
-        if OVERVIEW_MODE:
             print_verbose('\nOpinions in the summary for each entity:')
             for i in summ_idx_1:
                 out.printinfo("      %4d)   %s " % (i, source1[i]['opinions']))
@@ -210,14 +195,12 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
 
         if OUTPUT_MODE:
             print("\nCONTRASTIVE SUMMARY\n")
-            print("\n___ Produto 1\n")
+            print("\n___ Entity 1\n")
             for i in summ_idx_1:
                 print("%s " % (source1[i]['verbatim']))
-                # print ("      %4d)   %s " % (i, source1[i]['verbatim']))
-            print("\n___ Produto 2\n")
+            print("\n___ Entity 2\n")
             for i in summ_idx_2:
                 print("%s " % (source2[i]['verbatim']))
-                # print ("      %4d)   %s " % (i, source2[i]['verbatim']))
 
 
         def harmonic_mean(l):
@@ -338,7 +321,7 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
     results_msg += '\n'
     results_msg += ' avg sentences 2:  %6.2lf ' % (avg_sentences2)
     results_msg += '\n\n'
-    results_msg += ' time %6.2lf ' % (elaps_time)
+    results_msg += ' time %6.2lf ' % (time_total)
     results_msg += '\n'
     results_msg += ' diff summs: %d' % (len(all_summaries))
     results_msg += '\n\n'
@@ -354,7 +337,11 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
     f.close()
 
 
-    def sqdiff(l1, l2):
+    # Choose the summary that best reflects the method's evaluation
+    # (based on the scores gotten after running the method several times for this dataset)
+
+
+    def sqdiff(l1, l2):  # To determine difference between two summaries scores
         r = 0
         for i in range(len(l1)):
             r += pow(l1[i] - l2[i], 2)
@@ -370,7 +357,7 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
     summ1 = {i: source1[i] for i in summ_idx_f_1}
     summ2 = {i: source2[i] for i in summ_idx_f_2}
 
-    print("\nMOST FAIR SUMMARY\n")
+    print("\nSUMMARY THAT BEST REFLECTS THIS METHOD'S EVALUATION (based on %d executions that were performed)\n" % (REPEAT_TESTS))
     summ_out = '\n'
     for i in summ_idx_f_1:
         summ_out += "%s " % (source1[i]['verbatim'])
@@ -446,7 +433,7 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
     results['meta']['size']['source']['words'] = []
     results['meta']['size']['source']['words'].append(word_count(source1))
     results['meta']['size']['source']['words'].append(word_count(source2))
-    results['meta']['run time'] = round(total_time, 2)
+    results['meta']['run time'] = round(time_total, 2)
 
     underwrite_file('output/' + SOURCE1 + ' ' + SOURCE2 + ' (' + str(int(time())) + ').json', results)
 
