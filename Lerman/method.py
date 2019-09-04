@@ -15,15 +15,14 @@ from setup import POLARITY_ATTRIBUTION
 import re, string
 
 #from language import stem
-from language import lemma
-from language import getSentimentLexicon
-from language import negation_words
+#from language import getSentimentLexicon
+#from language import negation_words
 
 from writefiles import underwrite_file
 from writefiles import get_variable_from_file
 
-from language import getSentimentLexicon_ontopt
-from language import getSentimentLexicon_sqrt
+#from language import getSentimentLexicon_ontopt
+#from language import getSentimentLexicon_sqrt
 
 
 
@@ -54,22 +53,22 @@ def divergence_measure(d1, d2):
         #if aspects_dict[typ][k] not in possible_aspects:
             #possible_aspects.append(aspects_dict[typ][k])
 
-possible_aspects = []
-aspects_list = get_variable_from_file('language/portuguese/aspects.json')
-for typ in aspects_list:
-    for k in aspects_list[typ]:
-        possible_aspects.append(k)
-        possible_aspects.append(lemma(k))
+# possible_aspects = []
+# aspects_list = get_variable_from_file('language/portuguese/aspects.json')
+# for typ in aspects_list:
+#     for k in aspects_list[typ]:
+#         possible_aspects.append(k)
+#         possible_aspects.append(lemma(k))
 
             
 
 
 
-sentiment_lexicon = getSentimentLexicon()
+# sentiment_lexicon = getSentimentLexicon()
 
 
-sentiment_lexicon_ontopt = getSentimentLexicon_ontopt()
-sentiment_lexicon_sqrt = getSentimentLexicon_sqrt()
+# sentiment_lexicon_ontopt = getSentimentLexicon_ontopt()
+# sentiment_lexicon_sqrt = getSentimentLexicon_sqrt()
 
 
 def pol_ontopt(term):
