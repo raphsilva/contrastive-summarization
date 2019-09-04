@@ -17,7 +17,7 @@ from setup import LIM_WORDS
 from setup import GREEDY_CANDS_SELECTED
 from setup import VERBOSE_MODE
 
-from setup import DEBUGGING
+from setup import DEBUG_MODE
 
 import random
 
