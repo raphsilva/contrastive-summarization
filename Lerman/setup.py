@@ -14,7 +14,7 @@ DISCARD_TESTS = int(0.1*REPEAT_TESTS) # Amount of top-rated and bottom-rated tes
 
 VERBOSE_MODE = True    # To print statistics and status information (progress is always shown)
 EVALUATION_MODE = True  # To print evaluation metrics results
-OUTPUT_MODE = False     # To print the summaries
+OUTPUT_MODE = True     # To print the summaries
 DEBUG_MODE = False
 
 

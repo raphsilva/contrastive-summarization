@@ -18,7 +18,7 @@ import re, string
 #from language import getSentimentLexicon
 #from language import negation_words
 
-from writefiles import underwrite_file
+from writefiles import overwrite_json
 from writefiles import get_variable_from_file
 
 #from language import getSentimentLexicon_ontopt
@@ -413,8 +413,8 @@ def SAM_contrastive (original_stats_1, original_stats_2, stats_cand_1, stats_can
 
 
 def save_caches():
-    underwrite_file('cache/SAM.cache', cache_SAM)
-    underwrite_file('cache/distance.cache', cache_distance)
+    overwrite_json('cache/SAM.cache', cache_SAM)
+    overwrite_json('cache/distance.cache', cache_distance)
 
 
     
