@@ -1,5 +1,6 @@
 # From Python standard library:
 from time import time
+import json
 
 # From this project:
 import method
@@ -8,7 +9,6 @@ import evaluation.evaluation as evalu
 import output_format as out
 import structure as struct
 from structure import word_count
-from writefiles import underwrite_file
 from summarization import summarize
 
 # Setup options
@@ -35,8 +35,16 @@ from setup import DATASETS_TO_TEST
 
 from setup import DEBUG_MODE
 
+from os import mkdir
+
+try:
+    mkdir('RESULTS')
+    mkdir('EVALUATION')
+except:
+    pass
+
 exec_code = str(int(time()) % 100000000)  # Execution code (will be in the results file name)
-FILE_RESULTS = 'results_' + exec_code + '.txt'  # Name of file that will save the results
+TABLE_RESULTS_FILENAME = 'RESULTS/table_results_' + exec_code + '.txt'  # Name of file that will save the results
 
 if DEBUG_MODE:
     out.setDebugPrints(True)  # Choose whether or not to display information for debugging.
@@ -72,7 +80,7 @@ def remove_low_intensity(source):
 
 print('Will perform %d tests and discard %d(x2) best and worst\n\n' % (REPEAT_TESTS, DISCARD_TESTS))
 
-f = open(FILE_RESULTS, 'a')
+f = open(TABLE_RESULTS_FILENAME, 'a')
 f.write('%d tests, discard %d(x2) best and worst\n\n' % (REPEAT_TESTS, DISCARD_TESTS))
 f.close()
 
@@ -82,7 +90,7 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
 
     time_total = 0
 
-    OUTPUT_FILE = 'out' + exec_code + '_' + SOURCE1[:-1] + '.txt'
+    OUTPUT_FILE = 'OUTPUT/out_' + exec_code + '_' + SOURCE1[:-1] + '.txt'
     print(OUTPUT_FILE)
 
     print('\n\n\n\n ============  ', SOURCE1, SOURCE2)
@@ -288,24 +296,20 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
     h_median_mean = harmonic_mean([r, c, d])
 
     ht = sum(hh) / len(hh)
-    ht_median_mean = sum(hh_medians) / len(hh_medians)
 
-    results_msg = ''
+    results_msg = 'SCORES'
     results_msg += '\n\n'
-    results_msg += '              %3.0lf   %3.0lf   %3.0lf   [ %3.0lf ]    (%3.0lf)      ~%3.0lf' % (
-        r_median_mean, c_median_mean, d_median_mean, h_median_mean, ht_median_mean, sthh)
+    results_msg += '                R     C     D   harm mean '
     results_msg += '\n\n'
-    results_msg += '             ~%3.0lf  ~%3.0lf  ~%3.0lf               ~%3.0lf' % (sthr, sthc, sthd, sthh)
-    results_msg += '\n\n\n'
-    results_msg += 'max           %3.0lf   %3.0lf   %3.0lf                %3.0lf' % (
-        (max(hr_medians)), (max(hc_medians)), (max(hd_medians)), (max(hh_medians)))
+    results_msg += 'mean          %3.0lf   %3.0lf   %3.0lf   [ %3.0lf ]' % (r_median_mean, c_median_mean, d_median_mean, h_median_mean)
     results_msg += '\n\n'
-    results_msg += 'min           %3.0lf   %3.0lf   %3.0lf                %3.0lf' % (
-        (min(hr_medians)), (min(hc_medians)), (min(hd_medians)), (min(hh_medians)))
+    results_msg += 'stdevs       ~%3.0lf  ~%3.0lf  ~%3.0lf    ~%3.0lf' % (sthr, sthc, sthd, sthh)
     results_msg += '\n\n\n'
-    results_msg += 'simple mean   %3.0lf   %3.0lf   %3.0lf     %3.0lf       \'%3.0lf\'      ~%3.0lf' % (
-        r, c, d, h, ht, sthh)
+    results_msg += 'max           %3.0lf   %3.0lf   %3.0lf     %3.0lf' % ((max(hr_medians)), (max(hc_medians)), (max(hd_medians)), (max(hh_medians)))
+    results_msg += '\n\n'
+    results_msg += 'min           %3.0lf   %3.0lf   %3.0lf     %3.0lf' % ((min(hr_medians)), (min(hc_medians)), (min(hd_medians)), (min(hh_medians)))
     results_msg += '\n\n\n'
+
 
     avg_words1 = sum(h_words1) / len(h_words1)
     avg_words2 = sum(h_words2) / len(h_words2)
@@ -328,7 +332,7 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
 
     print(results_msg)
 
-    f = open(FILE_RESULTS, 'a')
+    f = open(TABLE_RESULTS_FILENAME, 'a')
     f.write('\n\n')
     f.write('============  %s %s ============' % (SOURCE1, SOURCE2))
     f.write('\n\n')
@@ -396,22 +400,6 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
     w1 = sum([summ1[i]['word_count'] for i in summ1])
     w2 = sum([summ2[i]['word_count'] for i in summ2])
 
-    summ_out += '\n\n'
-    summ_out += '(%3.0lf %3.0lf)     %3.0lf   %3.0lf   %3.0lf   [[%3.0lf]]  ' % (
-        evals['r1'], evals['r2'], evals['R'], evals['C'], evals['D'], evals['H'])
-    summ_out += '\n\n'
-
-    summ_out += '              %3.0lf   %3.0lf   %3.0lf    [%3.0lf]      ~%3.0lf' % (
-        r_median_mean, c_median_mean, d_median_mean, ht_median_mean, sthh)
-
-    summ_out += '\n'
-    summ_out += '\n'
-
-    summ_out += str(summ_idx_f_1) + '\n'
-    summ_out += str(summ_idx_f_2) + '\n'
-    summ_out += '\n'
-    summ_out += '\n'
-
     print('sentences: ', len(summ1), len(summ2))
     print('words: ', w1, w2)
     print('diff summs: ', len(all_summaries))
@@ -435,6 +423,8 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
     results['meta']['size']['source']['words'].append(word_count(source2))
     results['meta']['run time'] = round(time_total, 2)
 
-    underwrite_file('output/' + SOURCE1 + ' ' + SOURCE2 + ' (' + str(int(time())) + ').json', results)
+    f = open('RESULTS/' + SOURCE1 + '_' + SOURCE2 + '_' + exec_code + '.json', 'w')
+    f.write(json.dumps(results, sort_keys=True, indent=4, separators=(',', ': '), ensure_ascii=False))
+    f.close()
 
     method.save_caches()
