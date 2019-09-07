@@ -1,5 +1,4 @@
 
-DEBUGGING = False
 
 
 # Execution options
@@ -7,25 +6,25 @@ METHOD = ['contrastive', 'noncontrastive'][0]
 
 OPTM_MODE = 'greedy'
 
+REPEAT_TESTS = 10 # Times to repeat each test
+DISCARD_TESTS = int(0.1*REPEAT_TESTS) # Amount of top-rated and bottom-rated tests to be discarded to compute average
+
 
 # Display options
 
-VERBOSE_MODE = False    # To print statistics and status information (progress is always shown)
-EVALUATION_MODE = True # To print evaluation metrics results 
-OUTPUT_MODE = False # To print the summaries
-OVERVIEW_MODE = False
+VERBOSE_MODE = True    # To print statistics and status information (progress is always shown)
+EVALUATION_MODE = False  # To print evaluation metrics results
+OUTPUT_MODE = False     # To print the summaries
+DEBUG_MODE = False
 
 
 # Input files 
 
 DATA_DIR = "../input"
 
-SOURCE1, SOURCE2= [ (), ('10','11'), ('30','31'), ('10-sel', '11-sel'), ('10-chop', '11'), ('30a', '31a'), ('30b', '31b')][2]
+INPUT_FILES = [(), ('D1a','D1b'), ('D2a','D2b'), ('D3a','D3b'), ('D4a','D4b'), ('D5a','D5b'), ('D6a','D6b'), ('D7a','D7b'), ('D8a','D8b')]
 
-
-#SOURCE1 = '10'
-#SOURCE2 = '11'
-
+DATASETS_TO_TEST = [INPUT_FILES[2]]
 
 # Scale options
 
@@ -37,45 +36,14 @@ MAXPOLARITY = 100 # Sets the polarity scale (from -MAXPOLARITY to +MAXPOLARITY)
 LIM_SENTENCES =  20     # Sets the maximum number of SENTENCES in each side of the summary
 LIM_WORDS     =  100     # Sets the maximum number of WORDS in each side of the summary
 
-MIN_INTENS_IN_SUMMARY = 1*MAXPOLARITY # If (the absolute value of) a sentence is lower than that, that sentence will not be in the summary. 
+MIN_INTENS_IN_SUMMARY = 1*MAXPOLARITY # If (the absolute value of) the intensity of a sentence is lower than that, that sentence will not be in the summary. 
 
 # Method parameters
 
 ALPHA = 20
 
-
-#preset = [0,1,2][2]
-
-#PRESET = [
-            #{'KEY_MEASURE': 'aspects',
-             #'setting': 0},
-            #{'KEY_MEASURE': 'aspects',
-             #'setting': 1},
-            
-        #]
-            
-#config = {'KEY_MEASURE': 'corpus',
-             #'setting': 1}
-
-
-#KEY_MEASURE = 'corpus'
-
-#setting = 1
-
 ASPECT_DETECTION =   'manual'
 POLARITY_ATTRIBUTION = 'manual'
-
-#BYPASS_GENERIC =   [True, False][setting]
-#BYPASS_UNRELATAD = [False, True][setting]
-#BYPASS_SHORT =     [False, True][setting]
-    
-
-
-#BYPASS_GENERIC =   False
-#BYPASS_UNRELATAD = False
-#BYPASS_SHORT =     False
-
-
 POLARITY_LEXICON = 'sentilex'
 
 # Optimization options
@@ -90,31 +58,24 @@ GREEDY_CANDS_SELECTED = 1  #5#1#5#0.0002
 # GREEDY_CANDS_SELECTED = 1 would run a brute force algorithm (won't discard any candidate) NOTICE: this takes a lot and does lots of unecessary computing; it's better to use the brute force algorithm that is implemented in this project (which, of course, also takes a lot, but doesn't do unecessary computing)
 
 
-# If true, in the greedy algorithm, chooses all candidates (not just one) with score equal to the best one. MUCH SLOWER! May deliever a better result.
-
-
 # Get full path for the file with data of target 
 def filepath(target):
     return DATA_DIR+'/'+target+'.json'
 
 
-
-
-
-#if VERBOSE_MODE or EVALUATION_MODE:
-    #import output_format as out
-    #out.printMessage('Datasets: ', SOURCE1, SOURCE2)
-    #out.printMessage()
-    #out.printMessage('Method: ', METHOD)
-    ##out.printMessage('Key measure: ', KEY_MEASURE)
-    #out.printMessage('Limit of sentences (per side): ', LIM_SENTENCES)
-    #out.printMessage('Limit of words (per side): ', LIM_WORDS)
-    #out.printMessage()
-    #out.printMessage('Low sentiment: ', MIN_INTENS_IN_SUMMARY)
-    #out.printMessage('alpha: ', ALPHA)
-    #out.printMessage('Candidates selected: ', GREEDY_CANDS_SELECTED)
-    #out.printMessage()
-    #out.printMessage('Aspect detection: ', ASPECT_DETECTION)
-    #out.printMessage('Polarity attribution: ', POLARITY_ATTRIBUTION)
-    #out.printMessage('Polarity lexicon: ', POLARITY_LEXICON)
-    #out.printMessage()
+if VERBOSE_MODE or EVALUATION_MODE:
+    import output_format as out
+    out.printMessage('Datasets: ', DATASETS_TO_TEST)
+    out.printMessage()
+    out.printMessage('Method: ', METHOD)
+    out.printMessage('Limit of sentences (per side): ', LIM_SENTENCES)
+    out.printMessage('Limit of words (per side): ', LIM_WORDS)
+    out.printMessage()
+    out.printMessage('Low sentiment: ', MIN_INTENS_IN_SUMMARY)
+    out.printMessage('alpha: ', ALPHA)
+    out.printMessage('Candidates selected: ', GREEDY_CANDS_SELECTED)
+    out.printMessage()
+    out.printMessage('Aspect detection: ', ASPECT_DETECTION)
+    out.printMessage('Polarity attribution: ', POLARITY_ATTRIBUTION)
+    out.printMessage('Polarity lexicon: ', POLARITY_LEXICON)
+    out.printMessage()
