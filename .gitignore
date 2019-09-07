@@ -9,6 +9,8 @@ RESULTS
 
 language
 output
-results
 out*
+!output_format.py
+!*.py
+results
 results_*
