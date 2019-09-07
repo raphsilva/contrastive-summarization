@@ -1,8 +1,6 @@
 __pycache__
-lemmas.dic
-results_*
-__*
-*OUTPUT*
+OUTPUT
 RESULTS
+cache
 .*
 !.gitignore
