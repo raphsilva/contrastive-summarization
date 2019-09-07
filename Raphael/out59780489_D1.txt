@@ -1,0 +1,39 @@
+
+Produto bonito, câmera boa, Android puro, fora detalhes de isso fazem dele o melhor custo benefício da categoria. 
+Moto g 5 , não indico pra ninguém. 
+Um bom aparelho porém baixo desempenho. 
+Compra recente não testei muito, mas a bateria está durando bastante! A câmera com zoom perde bastante qualidade. 
+Todos aqui em casa temos algum modelo da Motorola,mas o G5 plus é um passo à frente de todos os outros. 
+Gostei do produto, apenas a bateria a bateria podia ser melhor. 
+A tv não tem boa recepção. 
+A câmera não é das melhores, nem o design. 
+Gostei do fato de ter a televisão e o rádio, pois as vezes em elas são uteis. 
+Sem conserto, mesmo porque a bateria é lacrada. 
+O aparelho é show.se desempenho é excelente, principalmente pelo seu valor, porém ele poderia ser um pouco menor. 
+Mas o sistema é rápido e display é bastante resistente. 
+
+
+Paguei R$ 2.000 porque realmente eu precisava de um aparelho TOP, uma vez que meu S5 travava demais. 
+Velocidade de processamento boa e design agradável.O único defeito é que a películas protetoras disponíveis no mercado não protegem toda a tela por conta do design ligeiramente curvo. 
+A camera é sensacional! 
+O celular é muito bom, pesquisei muito antes de compra-lo, mas não fazia ideia do maior problema deste modelo. 
+O celular é ótimo, mas a BATERIA dele é horrível, ainda consegue ser pior que o a do Galaxy S6, que já era péssima, comprei 2 e devolvi por causa da bateria, um celular caro desse com uma bateria péssima, se usar acaba rapidinho mesmo. 
+Algumas pessoas falam da bateria, mas pra mim está durando um dia inteiro. 
+Câmera, sensor de digital, desing, desempenho e bateria excelentes. 
+A cor prata é bem enjoativa. 
+Produto de otima qualidade, produto feito para durar. 
+
+
+
+sentences:    12    9
+    words:   150  150
+
+
+( 89  78)      83    63    56   [[ 65]]  
+
+               83    64    56    [ 66]      ~  5
+
+[533, 600, 555, 524, 59, 328, 306, 7, 421, 569, 265, 8]
+[182, 283, 193, 546, 678, 242, 123, 211, 33]
+
+

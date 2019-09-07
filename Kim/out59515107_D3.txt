@@ -1,0 +1,38 @@
+
+Melhor Custo Beneficio. 
+Ele é rápido e tem boa memória. 
+Ótimo aparelho, bateria dura até o fim do dia tranquilo. 
+Meu terceiro aparelho da Motorola, não me arrependo! 
+Processador rápido, duração da bateria excelente! 
+Bateria já estava ruim. 
+A bateria mal da pra um dia completo. 
+O celular é bom, mas bateria dura pouco e a camera deixa bastante a desejar. 
+O produto após duas semanas não carrega mais. 
+Um bom aparelho porém baixo desempenho. 
+
+
+Podia ter melhor custo-benefício. 
+Além disso, é caro demais. 
+Ótimo Aparelho. Porém Caríssimo, Bateria meia boca. 
+O aparelho poderia ser um pouco mais barato. 
+A bateria não aguenta a tela e o processador em uso prolongado. 
+Excelente bateria. 
+Bateria dura até 2 dias, muito boa. 
+Até agora não tive nenhum problema com o celular, apenas achei que a bateria fosse durar um pouco mais, mas fora isso o celular é excelente e o acabamento dele é ótimo. 
+Produto muito bom, a bateria dura muito e o carregador carrega muito mais rapido que os normais. 
+Gostei muito do s7, desempenho excelente, apenas a bateria ruim. 
+
+
+
+sentences:    10   10
+    words:    75  104
+
+
+( 50  45)      47    56    41   [[ 48]]  
+
+               51    56    43    [ 50]      ~  3
+
+[482, 311, 500, 492, 375, 568, 598, 252, 572, 555]
+[576, 181, 178, 104, 188, 54, 55, 572, 415, 593]
+
+

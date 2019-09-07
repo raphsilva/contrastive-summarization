@@ -1,0 +1,39 @@
+
+Lindo. 
+O Android 7.0 é muito bom. 
+Gosto do Android quase puro e a Motorola atualiza o sistema operacional mais rápido que os demais fabricantes. 
+Sempre inovando e como sempre, Androide puro. 
+Dura bastane tempo. 
+A diferença é que esse aqui não trava e a bateria dura, DE FATO, 1 dia inteiro. 
+Fácil manuseio. 
+A câmera tem menos estabilidade, sinto de alguns app&squote&s exclusivos da série Galaxy. 
+Só acho que devem melhorar a qualidade da câmera tanto traseira quanto frontal. 
+O celular realmente é bom mas o fone de ouvido deixa a desejar, machuca o ouvido e incomoda bastante. 
+
+
+O prata suja bastante na parte de trás do aparelho. 
+Por ser todo em vidro suja um pouco, mas nada que uma capinha não resolva. 
+A cor prata é bem enjoativa. 
+O S6 tinha Infravermelho e podia emular controles remotos, o S7 não tem mais. 
+Bateria horrível. 
+DEVERIA SE CHAMAR SAMSUNG TRINCA RAPIDO. 
+Um produto com um grande desempenho e de fácil manuseio. 
+Bom! A ROM da Samsung me surpreendeu... 
+A PLATAFORMA ANDROIDE DA SAMSUNG É IMBARÍVEL! 
+O celular possui design bastante sofisticado, com as bordas metálicas e todo revestido de vidro. 
+A câmera é um dos diferenciais. 
+
+
+
+sentences:    10   11
+    words:    99   98
+
+
+( 27  53)      40    50    52   [[ 47]]  
+
+               40    52    53    [ 48]      ~  4
+
+[525, 378, 377, 234, 299, 435, 210, 305, 55, 490]
+[502, 573, 211, 237, 677, 672, 589, 216, 171, 453, 535]
+
+

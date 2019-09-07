@@ -1,0 +1,555 @@
+{
+    "data": [
+        {
+            "id": 1,
+            "opinions": [
+                [
+                    "PREÇO",
+                    100
+                ]
+            ],
+            "sentence": "Bom custo/benefício."
+        },
+        {
+            "id": 8,
+            "opinions": [
+                [
+                    "DESEMPENHO",
+                    100
+                ],
+                [
+                    "SISTEMA",
+                    100
+                ],
+                [
+                    "TELA",
+                    100
+                ],
+                [
+                    "RESISTÊNCIA",
+                    100
+                ]
+            ],
+            "sentence": "Mas o sistema é rápido e display é bastante resistente."
+        },
+        {
+            "id": 43,
+            "opinions": [
+                [
+                    "PRODUTO",
+                    100
+                ],
+                [
+                    "DESEMPENHO",
+                    -100
+                ],
+                [
+                    "SISTEMA",
+                    -100
+                ],
+                [
+                    "OUTRO",
+                    -100
+                ]
+            ],
+            "sentence": "Gostei, eu tava com Windows phone, então percebi que Android é menos fluido, em alguns animações se percebe atraso, mas é bom, uma coisa que falta é a função nativa da transmitir arquivos via Wi-Fi direct."
+        },
+        {
+            "id": 64,
+            "opinions": [
+                [
+                    "PRODUTO",
+                    100
+                ],
+                [
+                    "PREÇO",
+                    100
+                ],
+                [
+                    "PESO",
+                    100
+                ],
+                [
+                    "USABILIDADE",
+                    100
+                ],
+                [
+                    "CÂMERA",
+                    100
+                ]
+            ],
+            "sentence": "Òtimo aparelho.Custo-benefício excelente.Leve e fácil de usar.Fotos maravilhosas,."
+        },
+        {
+            "id": 71,
+            "opinions": [
+                [
+                    "PREÇO",
+                    100
+                ]
+            ],
+            "sentence": "Excelente custo-benefício."
+        },
+        {
+            "id": 85,
+            "opinions": [
+                [
+                    "USABILIDADE",
+                    100
+                ]
+            ],
+            "sentence": "Fácil de usar e com vários recurso que são encontrados na linha premium."
+        },
+        {
+            "id": 92,
+            "opinions": [
+                [
+                    "PREÇO",
+                    100
+                ]
+            ],
+            "sentence": "Muito superior ao esperado pelo preço."
+        },
+        {
+            "id": 99,
+            "opinions": [
+                [
+                    "PREÇO",
+                    100
+                ]
+            ],
+            "sentence": "Mto barato e de qualidade."
+        },
+        {
+            "id": 113,
+            "opinions": [
+                [
+                    "PREÇO",
+                    100
+                ]
+            ],
+            "sentence": "Comparado com outras marcas, atualmente achei que este celular tem o melhor custo-benefício."
+        },
+        {
+            "id": 120,
+            "opinions": [
+                [
+                    "USABILIDADE",
+                    100
+                ]
+            ],
+            "sentence": "Praticidade e qualidade."
+        },
+        {
+            "id": 127,
+            "opinions": [
+                [
+                    "DESEMPENHO",
+                    100
+                ],
+                [
+                    "CÂMERA",
+                    100
+                ]
+            ],
+            "sentence": "Otimo desempenho e camera."
+        },
+        {
+            "id": 149,
+            "opinions": [
+                [
+                    "PRODUTO",
+                    100
+                ],
+                [
+                    "OUTRO",
+                    100
+                ],
+                [
+                    "DESEMPENHO",
+                    -100
+                ],
+                [
+                    "CÂMERA",
+                    100
+                ],
+                [
+                    "PRODUTO",
+                    100
+                ]
+            ],
+            "sentence": "Foi meu primeiro Moto que tenho, até o momento estou satisfeito.O sensor digital é muito bem vindo,pois facilita o acesso ao Celular e até alguns aplicativo de bancos.Estava usando o Crome que veio instalado e nao sei porque estava travando muito o Celular,instalei o Firefox acabou o problema.Câmera é bem rápida e de boa qualidade.Recomendo."
+        },
+        {
+            "id": 157,
+            "opinions": [
+                [
+                    "PREÇO",
+                    100
+                ]
+            ],
+            "sentence": "Ótimo custo-benifício."
+        },
+        {
+            "id": 165,
+            "opinions": [
+                [
+                    "PRODUTO",
+                    100
+                ]
+            ],
+            "sentence": "Faz pouco tempo de uso mas parece um bom aparelho."
+        },
+        {
+            "id": 172,
+            "opinions": [
+                [
+                    "PRODUTO",
+                    100
+                ]
+            ],
+            "sentence": "Bom aparelho, atende na maioria dos requisitos!"
+        },
+        {
+            "id": 193,
+            "opinions": [
+                [
+                    "PRODUTO",
+                    100
+                ]
+            ],
+            "sentence": "Vale a pena a compra no segmento de intermediários."
+        },
+        {
+            "id": 200,
+            "opinions": [
+                [
+                    "PREÇO",
+                    100
+                ]
+            ],
+            "sentence": "Não é tão caro quanto os tops de linha, mas atende muito bem a minha necessidade."
+        },
+        {
+            "id": 221,
+            "opinions": [
+                [
+                    "DESIGN",
+                    100
+                ],
+                [
+                    "PESO",
+                    100
+                ]
+            ],
+            "sentence": "Bonito e leve."
+        },
+        {
+            "id": 235,
+            "opinions": [
+                [
+                    "PREÇO",
+                    100
+                ]
+            ],
+            "sentence": "Bom celular pelo custo."
+        },
+        {
+            "id": 242,
+            "opinions": [
+                [
+                    "PRODUTO",
+                    100
+                ]
+            ],
+            "sentence": "Como é um produto que adquiri a pouco tempo, até o momento não me deu problermas."
+        },
+        {
+            "id": 256,
+            "opinions": [
+                [
+                    "PREÇO",
+                    100
+                ]
+            ],
+            "sentence": "Bom custo/beneficio."
+        },
+        {
+            "id": 278,
+            "opinions": [
+                [
+                    "PRODUTO",
+                    100
+                ],
+                [
+                    "BATERIA",
+                    -100
+                ],
+                [
+                    "DESIGN",
+                    -100
+                ]
+            ],
+            "sentence": "Muito bom deixa a desejar só a bateria e designer."
+        },
+        {
+            "id": 293,
+            "opinions": [
+                [
+                    "CÂMERA",
+                    100
+                ],
+                [
+                    "OUTRO",
+                    100
+                ]
+            ],
+            "sentence": "A resolução da câmera é perfeita, o audio é muito bom."
+        },
+        {
+            "id": 301,
+            "opinions": [
+                [
+                    "PRODUTO",
+                    100
+                ],
+                [
+                    "OUTRO",
+                    100
+                ]
+            ],
+            "sentence": "O meu Smartphone só tem um mês, então minha avaliação ainda é superficial, por enquanto me surpreendeu eu tinha o Smartphone Motorola G4 Plus que eu gostava muito também, mas fui assaltada, e na hora de comprar um novo optei em comprar a nova versão e me surpreendi, estou gostando muito ele tem mais precisão e o reconhecimento digital e bem superior ao G4plus."
+        },
+        {
+            "id": 309,
+            "opinions": [
+                [
+                    "TELA",
+                    100
+                ]
+            ],
+            "sentence": "A tela é bem brilhante."
+        },
+        {
+            "id": 316,
+            "opinions": [
+                [
+                    "PRODUTO",
+                    100
+                ],
+                [
+                    "ARMAZENAMENTO",
+                    100
+                ],
+                [
+                    "DESIGN",
+                    100
+                ],
+                [
+                    "OUTRO",
+                    100
+                ]
+            ],
+            "sentence": "Um bom produto,com muita memória,aparelho muito bonito e recomendo por ter algo a mais que é através da digital a sua segurança,foi o que me chamou a minha atenção."
+        },
+        {
+            "id": 366,
+            "opinions": [
+                [
+                    "DESEMPENHO",
+                    -100
+                ]
+            ],
+            "sentence": "Para um uso simples, apenas internet, redes sociais, email e uma ou outro ligação o aparelho atende, mas um uso um pouco mais intenso dos recursos o aparelho não suporta."
+        },
+        {
+            "id": 410,
+            "opinions": [
+                [
+                    "PRODUTO",
+                    100
+                ],
+                [
+                    "CÂMERA",
+                    100
+                ]
+            ],
+            "sentence": "Celular bem completo, com ponto forte na qualidade das fotos."
+        },
+        {
+            "id": 418,
+            "opinions": [
+                [
+                    "PRODUTO",
+                    100
+                ],
+                [
+                    "PREÇO",
+                    100
+                ]
+            ],
+            "sentence": "O Aparelho é bom, e no tocante ao preço quando comparado aos outros da mesma categoria possui um relação custo beneficio melhor."
+        },
+        {
+            "id": 425,
+            "opinions": [
+                [
+                    "CÂMERA",
+                    100
+                ]
+            ],
+            "sentence": "Muito bem sua câmera."
+        },
+        {
+            "id": 432,
+            "opinions": [
+                [
+                    "PRODUTO",
+                    0
+                ]
+            ],
+            "sentence": "Meu primeiro Moto G foi o Moto G3 Turbo."
+        },
+        {
+            "id": 446,
+            "opinions": [
+                [
+                    "PRODUTO",
+                    100
+                ]
+            ],
+            "sentence": "Excelente produto, atende todas as minhas necessidades."
+        },
+        {
+            "id": 460,
+            "opinions": [
+                [
+                    "PREÇO",
+                    100
+                ],
+                [
+                    "DESIGN",
+                    -100
+                ]
+            ],
+            "sentence": "Um dos melhores aparelhos pelo preço mas deveria ter acabamento mais refinado."
+        },
+        {
+            "id": 474,
+            "opinions": [
+                [
+                    "CÂMERA",
+                    100
+                ]
+            ],
+            "sentence": "Destaque para a camera traseira que tira ótimas fotos."
+        },
+        {
+            "id": 481,
+            "opinions": [
+                [
+                    "USABILIDADE",
+                    100
+                ]
+            ],
+            "sentence": "Pratico."
+        },
+        {
+            "id": 496,
+            "opinions": [
+                [
+                    "PREÇO",
+                    100
+                ]
+            ],
+            "sentence": "Eu recomendo, custo beneficio são ótimo."
+        },
+        {
+            "id": 503,
+            "opinions": [
+                [
+                    "PREÇO",
+                    100
+                ]
+            ],
+            "sentence": "Custo Benefício Bom."
+        },
+        {
+            "id": 524,
+            "opinions": [
+                [
+                    "BATERIA",
+                    100
+                ],
+                [
+                    "CÂMERA",
+                    -100
+                ]
+            ],
+            "sentence": "Compra recente não testei muito, mas a bateria está durando bastante! A câmera com zoom perde bastante qualidade."
+        },
+        {
+            "id": 531,
+            "opinions": [
+                [
+                    "PRODUTO",
+                    100
+                ]
+            ],
+            "sentence": "Ainda não conheço todos os recursos tecnológicos, mas estou muito satisfeito!"
+        },
+        {
+            "id": 545,
+            "opinions": [
+                [
+                    "PRODUTO",
+                    -100
+                ]
+            ],
+            "sentence": "Foi o pior aparelho que já comprei, não recomendo para ninguem."
+        },
+        {
+            "id": 552,
+            "opinions": [
+                [
+                    "PRODUTO",
+                    -100
+                ]
+            ],
+            "sentence": "Já resetei o produto mas não resolveu o problema."
+        },
+        {
+            "id": 567,
+            "opinions": [
+                [
+                    "RESISTÊNCIA",
+                    -100
+                ]
+            ],
+            "sentence": "Recebi o produto mas o mesmo não carregava."
+        },
+        {
+            "id": 609,
+            "opinions": [
+                [
+                    "SOM",
+                    -100
+                ]
+            ],
+            "sentence": "Review speaker ruim."
+        }
+    ],
+    "meta": {
+        "Average rating": "9/10 ",
+        "Crawl date": "17/may/2018 ",
+        "File generation date": "2019-03-01",
+        "Format": "sentences_multiasp_vertical",
+        "ID": "10",
+        "Product": "Smartphone Motorola Moto G 5 Plus XT1683",
+        "Source": "www.buscape.com.br/smartphone-motorola-moto-g-5-plus-xt1683",
+        "Total of opinions": "106",
+        "Total of reviews": "229",
+        "Total of sentences": "86",
+        "Type": "Celular"
+    }
+}

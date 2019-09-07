@@ -1,0 +1,5227 @@
+{
+    "meta": {
+        "implementation": "Kim",
+        "language": "portuguese",
+        "limits": {
+            "pairs": null
+        },
+        "run time": 4.4,
+        "size": {
+            "source": {
+                "sentences": [
+                    68,
+                    52
+                ],
+                "words": [
+                    1108,
+                    594
+                ]
+            }
+        },
+        "source": [
+            "D8a",
+            "D8b"
+        ]
+    },
+    "output": [
+        {
+            "parameters": {
+                "centroid": null,
+                "hungarian": null,
+                "lambda": 0.5,
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    148,
+                    96
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    95,
+                    126,
+                    7,
+                    62,
+                    17,
+                    10
+                ],
+                [
+                    70,
+                    71,
+                    97,
+                    72,
+                    55,
+                    26,
+                    49,
+                    23
+                ]
+            ]
+        },
+        {
+            "parameters": {
+                "centroid": null,
+                "hungarian": null,
+                "lambda": 0.5,
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    130,
+                    75
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    95,
+                    126,
+                    7,
+                    62,
+                    17
+                ],
+                [
+                    70,
+                    97,
+                    71,
+                    72,
+                    55,
+                    26,
+                    48
+                ]
+            ]
+        },
+        {
+            "parameters": {
+                "centroid": null,
+                "hungarian": null,
+                "lambda": 0.5,
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    130,
+                    75
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    95,
+                    126,
+                    7,
+                    62,
+                    17
+                ],
+                [
+                    70,
+                    71,
+                    97,
+                    72,
+                    55,
+                    26,
+                    48
+                ]
+            ]
+        },
+        {
+            "parameters": {
+                "centroid": null,
+                "hungarian": null,
+                "lambda": 0.5,
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    130,
+                    75
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    95,
+                    126,
+                    7,
+                    62,
+                    17
+                ],
+                [
+                    70,
+                    97,
+                    71,
+                    72,
+                    55,
+                    26,
+                    48
+                ]
+            ]
+        },
+        {
+            "parameters": {
+                "centroid": null,
+                "hungarian": null,
+                "lambda": 0.5,
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    124,
+                    62
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    95,
+                    7,
+                    62,
+                    17
+                ],
+                [
+                    70,
+                    97,
+                    71,
+                    55,
+                    26,
+                    48
+                ]
+            ]
+        },
+        {
+            "parameters": {
+                "centroid": null,
+                "hungarian": null,
+                "lambda": 0.5,
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    124,
+                    62
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    95,
+                    7,
+                    62,
+                    17
+                ],
+                [
+                    70,
+                    71,
+                    97,
+                    55,
+                    26,
+                    48
+                ]
+            ]
+        },
+        {
+            "parameters": {
+                "centroid": null,
+                "hungarian": null,
+                "lambda": 0.5,
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    124,
+                    62
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    95,
+                    7,
+                    62,
+                    17
+                ],
+                [
+                    70,
+                    97,
+                    71,
+                    55,
+                    26,
+                    48
+                ]
+            ]
+        },
+        {
+            "parameters": {
+                "centroid": null,
+                "hungarian": null,
+                "lambda": 0.5,
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    113,
+                    54
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    95,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    97,
+                    71,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "parameters": {
+                "centroid": null,
+                "hungarian": null,
+                "lambda": 0.5,
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    113,
+                    54
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    95,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    71,
+                    97,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "parameters": {
+                "centroid": null,
+                "hungarian": null,
+                "lambda": 0.5,
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    113,
+                    54
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    95,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    97,
+                    71,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "parameters": {
+                "centroid": null,
+                "hungarian": null,
+                "lambda": 0.5,
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    102,
+                    44
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    97,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 38.88888888888889,
+                "D": 31.535947712418302,
+                "H": 36.31551700106858,
+                "R": 39.705882352941174
+            },
+            "parameters": {
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    102,
+                    44
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    97,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "parameters": {
+                "centroid": null,
+                "hungarian": null,
+                "lambda": 0.5,
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    102,
+                    44
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    97,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 38.88888888888889,
+                "D": 31.535947712418302,
+                "H": 36.31551700106858,
+                "R": 39.705882352941174
+            },
+            "parameters": {
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    102,
+                    44
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    97,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "parameters": {
+                "centroid": null,
+                "hungarian": null,
+                "lambda": 0.5,
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    102,
+                    44
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    97,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 38.88888888888889,
+                "D": 31.535947712418302,
+                "H": 36.31551700106858,
+                "R": 39.705882352941174
+            },
+            "parameters": {
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    102,
+                    44
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    97,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "parameters": {
+                "centroid": null,
+                "hungarian": null,
+                "lambda": 0.5,
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    113,
+                    54
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    95,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    97,
+                    71,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "parameters": {
+                "centroid": null,
+                "hungarian": null,
+                "lambda": 0.5,
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    102,
+                    47
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    71,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 33.33333333333333,
+                "D": 28.758169934640524,
+                "H": 33.11422311136515,
+                "R": 38.725490196078425
+            },
+            "parameters": {
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    102,
+                    47
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    71,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "parameters": {
+                "centroid": null,
+                "hungarian": null,
+                "lambda": 0.5,
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    102,
+                    44
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    97,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 38.88888888888889,
+                "D": 31.535947712418302,
+                "H": 36.31551700106858,
+                "R": 39.705882352941174
+            },
+            "parameters": {
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    102,
+                    44
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    97,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "parameters": {
+                "centroid": null,
+                "hungarian": null,
+                "lambda": 0.5,
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    102,
+                    44
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    97,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 38.88888888888889,
+                "D": 31.535947712418302,
+                "H": 36.31551700106858,
+                "R": 39.705882352941174
+            },
+            "parameters": {
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    102,
+                    44
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    97,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "parameters": {
+                "centroid": null,
+                "hungarian": null,
+                "lambda": 0.5,
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    102,
+                    44
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    97,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 38.88888888888889,
+                "D": 31.535947712418302,
+                "H": 36.31551700106858,
+                "R": 39.705882352941174
+            },
+            "parameters": {
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    102,
+                    44
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    97,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "parameters": {
+                "centroid": null,
+                "hungarian": null,
+                "lambda": 0.5,
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    102,
+                    44
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    97,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 38.88888888888889,
+                "D": 31.535947712418302,
+                "H": 36.31551700106858,
+                "R": 39.705882352941174
+            },
+            "parameters": {
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    102,
+                    44
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    97,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "parameters": {
+                "centroid": null,
+                "hungarian": null,
+                "lambda": 0.5,
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    113,
+                    54
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    95,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    97,
+                    71,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "parameters": {
+                "centroid": null,
+                "hungarian": null,
+                "lambda": 0.5,
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    102,
+                    47
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    71,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 33.33333333333333,
+                "D": 28.758169934640524,
+                "H": 33.11422311136515,
+                "R": 38.725490196078425
+            },
+            "parameters": {
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    102,
+                    47
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    71,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "parameters": {
+                "centroid": null,
+                "hungarian": null,
+                "lambda": 0.5,
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    102,
+                    44
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    97,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 38.88888888888889,
+                "D": 31.535947712418302,
+                "H": 36.31551700106858,
+                "R": 39.705882352941174
+            },
+            "parameters": {
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    102,
+                    44
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    97,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "parameters": {
+                "centroid": null,
+                "hungarian": null,
+                "lambda": 0.5,
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    102,
+                    47
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    71,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 33.33333333333333,
+                "D": 28.758169934640524,
+                "H": 33.11422311136515,
+                "R": 38.725490196078425
+            },
+            "parameters": {
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    102,
+                    47
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    71,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "parameters": {
+                "centroid": null,
+                "hungarian": null,
+                "lambda": 0.5,
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    102,
+                    44
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    97,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 38.88888888888889,
+                "D": 31.535947712418302,
+                "H": 36.31551700106858,
+                "R": 39.705882352941174
+            },
+            "parameters": {
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    102,
+                    44
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    97,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "parameters": {
+                "centroid": null,
+                "hungarian": null,
+                "lambda": 0.5,
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    102,
+                    44
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    97,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 38.88888888888889,
+                "D": 31.535947712418302,
+                "H": 36.31551700106858,
+                "R": 39.705882352941174
+            },
+            "parameters": {
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    102,
+                    44
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    97,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "parameters": {
+                "centroid": null,
+                "hungarian": null,
+                "lambda": 0.5,
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    113,
+                    54
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    95,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    97,
+                    71,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "parameters": {
+                "centroid": null,
+                "hungarian": null,
+                "lambda": 0.5,
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    102,
+                    44
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    97,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 38.88888888888889,
+                "D": 31.535947712418302,
+                "H": 36.31551700106858,
+                "R": 39.705882352941174
+            },
+            "parameters": {
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    102,
+                    44
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    97,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "parameters": {
+                "centroid": null,
+                "hungarian": null,
+                "lambda": 0.5,
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    102,
+                    47
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    71,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 33.33333333333333,
+                "D": 28.758169934640524,
+                "H": 33.11422311136515,
+                "R": 38.725490196078425
+            },
+            "parameters": {
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    102,
+                    47
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    71,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "parameters": {
+                "centroid": null,
+                "hungarian": null,
+                "lambda": 0.5,
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    102,
+                    44
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    97,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 38.88888888888889,
+                "D": 31.535947712418302,
+                "H": 36.31551700106858,
+                "R": 39.705882352941174
+            },
+            "parameters": {
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    102,
+                    44
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    97,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "parameters": {
+                "centroid": null,
+                "hungarian": null,
+                "lambda": 0.5,
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    102,
+                    47
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    71,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 33.33333333333333,
+                "D": 28.758169934640524,
+                "H": 33.11422311136515,
+                "R": 38.725490196078425
+            },
+            "parameters": {
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    102,
+                    47
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    71,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "parameters": {
+                "centroid": null,
+                "hungarian": null,
+                "lambda": 0.5,
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    102,
+                    44
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    97,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 38.88888888888889,
+                "D": 31.535947712418302,
+                "H": 36.31551700106858,
+                "R": 39.705882352941174
+            },
+            "parameters": {
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    102,
+                    44
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    97,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "parameters": {
+                "centroid": null,
+                "hungarian": null,
+                "lambda": 0.5,
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    113,
+                    54
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    95,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    71,
+                    97,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "parameters": {
+                "centroid": null,
+                "hungarian": null,
+                "lambda": 0.5,
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    102,
+                    44
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    97,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 38.88888888888889,
+                "D": 31.535947712418302,
+                "H": 36.31551700106858,
+                "R": 39.705882352941174
+            },
+            "parameters": {
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    102,
+                    44
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    97,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "parameters": {
+                "centroid": null,
+                "hungarian": null,
+                "lambda": 0.5,
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    102,
+                    44
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    97,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 38.88888888888889,
+                "D": 31.535947712418302,
+                "H": 36.31551700106858,
+                "R": 39.705882352941174
+            },
+            "parameters": {
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    102,
+                    44
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    97,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "parameters": {
+                "centroid": null,
+                "hungarian": null,
+                "lambda": 0.5,
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    102,
+                    47
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    71,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 33.33333333333333,
+                "D": 28.758169934640524,
+                "H": 33.11422311136515,
+                "R": 38.725490196078425
+            },
+            "parameters": {
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    102,
+                    47
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    71,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "parameters": {
+                "centroid": null,
+                "hungarian": null,
+                "lambda": 0.5,
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    102,
+                    47
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    71,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 33.33333333333333,
+                "D": 28.758169934640524,
+                "H": 33.11422311136515,
+                "R": 38.725490196078425
+            },
+            "parameters": {
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    102,
+                    47
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    71,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "parameters": {
+                "centroid": null,
+                "hungarian": null,
+                "lambda": 0.5,
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    102,
+                    47
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    71,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 33.33333333333333,
+                "D": 28.758169934640524,
+                "H": 33.11422311136515,
+                "R": 38.725490196078425
+            },
+            "parameters": {
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    102,
+                    47
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    71,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "parameters": {
+                "centroid": null,
+                "hungarian": null,
+                "lambda": 0.5,
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    113,
+                    54
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    95,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    71,
+                    97,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "parameters": {
+                "centroid": null,
+                "hungarian": null,
+                "lambda": 0.5,
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    102,
+                    47
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    71,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 33.33333333333333,
+                "D": 28.758169934640524,
+                "H": 33.11422311136515,
+                "R": 38.725490196078425
+            },
+            "parameters": {
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    102,
+                    47
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    71,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "parameters": {
+                "centroid": null,
+                "hungarian": null,
+                "lambda": 0.5,
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    102,
+                    47
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    71,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 33.33333333333333,
+                "D": 28.758169934640524,
+                "H": 33.11422311136515,
+                "R": 38.725490196078425
+            },
+            "parameters": {
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    102,
+                    47
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    71,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "parameters": {
+                "centroid": null,
+                "hungarian": null,
+                "lambda": 0.5,
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    102,
+                    47
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    71,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 33.33333333333333,
+                "D": 28.758169934640524,
+                "H": 33.11422311136515,
+                "R": 38.725490196078425
+            },
+            "parameters": {
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    102,
+                    47
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    71,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "parameters": {
+                "centroid": null,
+                "hungarian": null,
+                "lambda": 0.5,
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    102,
+                    47
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    71,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 33.33333333333333,
+                "D": 28.758169934640524,
+                "H": 33.11422311136515,
+                "R": 38.725490196078425
+            },
+            "parameters": {
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    102,
+                    47
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    71,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "parameters": {
+                "centroid": null,
+                "hungarian": null,
+                "lambda": 0.5,
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    102,
+                    47
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    71,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 33.33333333333333,
+                "D": 28.758169934640524,
+                "H": 33.11422311136515,
+                "R": 38.725490196078425
+            },
+            "parameters": {
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    102,
+                    47
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    71,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "parameters": {
+                "centroid": null,
+                "hungarian": null,
+                "lambda": 0.5,
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    102,
+                    44
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    97,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 38.88888888888889,
+                "D": 31.535947712418302,
+                "H": 36.31551700106858,
+                "R": 39.705882352941174
+            },
+            "parameters": {
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    102,
+                    44
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    97,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "parameters": {
+                "centroid": null,
+                "hungarian": null,
+                "lambda": 0.5,
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    113,
+                    54
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    95,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    97,
+                    71,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "parameters": {
+                "centroid": null,
+                "hungarian": null,
+                "lambda": 0.5,
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    102,
+                    47
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    71,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 33.33333333333333,
+                "D": 28.758169934640524,
+                "H": 33.11422311136515,
+                "R": 38.725490196078425
+            },
+            "parameters": {
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    102,
+                    47
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    71,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "parameters": {
+                "centroid": null,
+                "hungarian": null,
+                "lambda": 0.5,
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    102,
+                    47
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    71,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 33.33333333333333,
+                "D": 28.758169934640524,
+                "H": 33.11422311136515,
+                "R": 38.725490196078425
+            },
+            "parameters": {
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    102,
+                    47
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    71,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "parameters": {
+                "centroid": null,
+                "hungarian": null,
+                "lambda": 0.5,
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    102,
+                    44
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    97,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 38.88888888888889,
+                "D": 31.535947712418302,
+                "H": 36.31551700106858,
+                "R": 39.705882352941174
+            },
+            "parameters": {
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    102,
+                    44
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    97,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "parameters": {
+                "centroid": null,
+                "hungarian": null,
+                "lambda": 0.5,
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    102,
+                    47
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    71,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 33.33333333333333,
+                "D": 28.758169934640524,
+                "H": 33.11422311136515,
+                "R": 38.725490196078425
+            },
+            "parameters": {
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    102,
+                    47
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    71,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "parameters": {
+                "centroid": null,
+                "hungarian": null,
+                "lambda": 0.5,
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    102,
+                    44
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    97,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 38.88888888888889,
+                "D": 31.535947712418302,
+                "H": 36.31551700106858,
+                "R": 39.705882352941174
+            },
+            "parameters": {
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    102,
+                    44
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    97,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "parameters": {
+                "centroid": null,
+                "hungarian": null,
+                "lambda": 0.5,
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    113,
+                    54
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    95,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    97,
+                    71,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "parameters": {
+                "centroid": null,
+                "hungarian": null,
+                "lambda": 0.5,
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    102,
+                    47
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    71,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 33.33333333333333,
+                "D": 28.758169934640524,
+                "H": 33.11422311136515,
+                "R": 38.725490196078425
+            },
+            "parameters": {
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    102,
+                    47
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    71,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "parameters": {
+                "centroid": null,
+                "hungarian": null,
+                "lambda": 0.5,
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    102,
+                    47
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    71,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 33.33333333333333,
+                "D": 28.758169934640524,
+                "H": 33.11422311136515,
+                "R": 38.725490196078425
+            },
+            "parameters": {
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    102,
+                    47
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    71,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "parameters": {
+                "centroid": null,
+                "hungarian": null,
+                "lambda": 0.5,
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    102,
+                    47
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    71,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 33.33333333333333,
+                "D": 28.758169934640524,
+                "H": 33.11422311136515,
+                "R": 38.725490196078425
+            },
+            "parameters": {
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    102,
+                    47
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    71,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "parameters": {
+                "centroid": null,
+                "hungarian": null,
+                "lambda": 0.5,
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    102,
+                    44
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    97,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 38.88888888888889,
+                "D": 31.535947712418302,
+                "H": 36.31551700106858,
+                "R": 39.705882352941174
+            },
+            "parameters": {
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    102,
+                    44
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    97,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "parameters": {
+                "centroid": null,
+                "hungarian": null,
+                "lambda": 0.5,
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    102,
+                    47
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    71,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 33.33333333333333,
+                "D": 28.758169934640524,
+                "H": 33.11422311136515,
+                "R": 38.725490196078425
+            },
+            "parameters": {
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    102,
+                    47
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    71,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "parameters": {
+                "centroid": null,
+                "hungarian": null,
+                "lambda": 0.5,
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    113,
+                    54
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    95,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    71,
+                    97,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "parameters": {
+                "centroid": null,
+                "hungarian": null,
+                "lambda": 0.5,
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    102,
+                    44
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    97,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 38.88888888888889,
+                "D": 31.535947712418302,
+                "H": 36.31551700106858,
+                "R": 39.705882352941174
+            },
+            "parameters": {
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    102,
+                    44
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    97,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "parameters": {
+                "centroid": null,
+                "hungarian": null,
+                "lambda": 0.5,
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    102,
+                    47
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    71,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 33.33333333333333,
+                "D": 28.758169934640524,
+                "H": 33.11422311136515,
+                "R": 38.725490196078425
+            },
+            "parameters": {
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    102,
+                    47
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    71,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "parameters": {
+                "centroid": null,
+                "hungarian": null,
+                "lambda": 0.5,
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    102,
+                    47
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    71,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 33.33333333333333,
+                "D": 28.758169934640524,
+                "H": 33.11422311136515,
+                "R": 38.725490196078425
+            },
+            "parameters": {
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    102,
+                    47
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    71,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "parameters": {
+                "centroid": null,
+                "hungarian": null,
+                "lambda": 0.5,
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    102,
+                    44
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    97,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 38.88888888888889,
+                "D": 31.535947712418302,
+                "H": 36.31551700106858,
+                "R": 39.705882352941174
+            },
+            "parameters": {
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    102,
+                    44
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    97,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "parameters": {
+                "centroid": null,
+                "hungarian": null,
+                "lambda": 0.5,
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    102,
+                    47
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    71,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 33.33333333333333,
+                "D": 28.758169934640524,
+                "H": 33.11422311136515,
+                "R": 38.725490196078425
+            },
+            "parameters": {
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    102,
+                    47
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    71,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "parameters": {
+                "centroid": null,
+                "hungarian": null,
+                "lambda": 0.5,
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    113,
+                    54
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    95,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    97,
+                    71,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "parameters": {
+                "centroid": null,
+                "hungarian": null,
+                "lambda": 0.5,
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    102,
+                    47
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    71,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 33.33333333333333,
+                "D": 28.758169934640524,
+                "H": 33.11422311136515,
+                "R": 38.725490196078425
+            },
+            "parameters": {
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    102,
+                    47
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    71,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "parameters": {
+                "centroid": null,
+                "hungarian": null,
+                "lambda": 0.5,
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    102,
+                    47
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    71,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 33.33333333333333,
+                "D": 28.758169934640524,
+                "H": 33.11422311136515,
+                "R": 38.725490196078425
+            },
+            "parameters": {
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    102,
+                    47
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    71,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "parameters": {
+                "centroid": null,
+                "hungarian": null,
+                "lambda": 0.5,
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    102,
+                    47
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    71,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 33.33333333333333,
+                "D": 28.758169934640524,
+                "H": 33.11422311136515,
+                "R": 38.725490196078425
+            },
+            "parameters": {
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    102,
+                    47
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    71,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "parameters": {
+                "centroid": null,
+                "hungarian": null,
+                "lambda": 0.5,
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    102,
+                    44
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    97,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 38.88888888888889,
+                "D": 31.535947712418302,
+                "H": 36.31551700106858,
+                "R": 39.705882352941174
+            },
+            "parameters": {
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    102,
+                    44
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    97,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "parameters": {
+                "centroid": null,
+                "hungarian": null,
+                "lambda": 0.5,
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    102,
+                    44
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    97,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 38.88888888888889,
+                "D": 31.535947712418302,
+                "H": 36.31551700106858,
+                "R": 39.705882352941174
+            },
+            "parameters": {
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    102,
+                    44
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    97,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "parameters": {
+                "centroid": null,
+                "hungarian": null,
+                "lambda": 0.5,
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    113,
+                    54
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    95,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    71,
+                    97,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "parameters": {
+                "centroid": null,
+                "hungarian": null,
+                "lambda": 0.5,
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    102,
+                    44
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    97,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 38.88888888888889,
+                "D": 31.535947712418302,
+                "H": 36.31551700106858,
+                "R": 39.705882352941174
+            },
+            "parameters": {
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    102,
+                    44
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    97,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "parameters": {
+                "centroid": null,
+                "hungarian": null,
+                "lambda": 0.5,
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    102,
+                    44
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    97,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 38.88888888888889,
+                "D": 31.535947712418302,
+                "H": 36.31551700106858,
+                "R": 39.705882352941174
+            },
+            "parameters": {
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    102,
+                    44
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    97,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "parameters": {
+                "centroid": null,
+                "hungarian": null,
+                "lambda": 0.5,
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    102,
+                    44
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    97,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 38.88888888888889,
+                "D": 31.535947712418302,
+                "H": 36.31551700106858,
+                "R": 39.705882352941174
+            },
+            "parameters": {
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    102,
+                    44
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    97,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "parameters": {
+                "centroid": null,
+                "hungarian": null,
+                "lambda": 0.5,
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    102,
+                    47
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    71,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 33.33333333333333,
+                "D": 28.758169934640524,
+                "H": 33.11422311136515,
+                "R": 38.725490196078425
+            },
+            "parameters": {
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    102,
+                    47
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    71,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "parameters": {
+                "centroid": null,
+                "hungarian": null,
+                "lambda": 0.5,
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    102,
+                    44
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    97,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 38.88888888888889,
+                "D": 31.535947712418302,
+                "H": 36.31551700106858,
+                "R": 39.705882352941174
+            },
+            "parameters": {
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    102,
+                    44
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    97,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "parameters": {
+                "centroid": null,
+                "hungarian": null,
+                "lambda": 0.5,
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    113,
+                    54
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    95,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    71,
+                    97,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "parameters": {
+                "centroid": null,
+                "hungarian": null,
+                "lambda": 0.5,
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    102,
+                    47
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    71,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 33.33333333333333,
+                "D": 28.758169934640524,
+                "H": 33.11422311136515,
+                "R": 38.725490196078425
+            },
+            "parameters": {
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    102,
+                    47
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    71,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "parameters": {
+                "centroid": null,
+                "hungarian": null,
+                "lambda": 0.5,
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    102,
+                    44
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    97,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 38.88888888888889,
+                "D": 31.535947712418302,
+                "H": 36.31551700106858,
+                "R": 39.705882352941174
+            },
+            "parameters": {
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    102,
+                    44
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    97,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "parameters": {
+                "centroid": null,
+                "hungarian": null,
+                "lambda": 0.5,
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    102,
+                    44
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    97,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 38.88888888888889,
+                "D": 31.535947712418302,
+                "H": 36.31551700106858,
+                "R": 39.705882352941174
+            },
+            "parameters": {
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    102,
+                    44
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    97,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "parameters": {
+                "centroid": null,
+                "hungarian": null,
+                "lambda": 0.5,
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    102,
+                    44
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    97,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 38.88888888888889,
+                "D": 31.535947712418302,
+                "H": 36.31551700106858,
+                "R": 39.705882352941174
+            },
+            "parameters": {
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    102,
+                    44
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    97,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "parameters": {
+                "centroid": null,
+                "hungarian": null,
+                "lambda": 0.5,
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    102,
+                    44
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    97,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 38.88888888888889,
+                "D": 31.535947712418302,
+                "H": 36.31551700106858,
+                "R": 39.705882352941174
+            },
+            "parameters": {
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    102,
+                    44
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    97,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "parameters": {
+                "centroid": null,
+                "hungarian": null,
+                "lambda": 0.5,
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    113,
+                    54
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    95,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    97,
+                    71,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "parameters": {
+                "centroid": null,
+                "hungarian": null,
+                "lambda": 0.5,
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    102,
+                    44
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    97,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 38.88888888888889,
+                "D": 31.535947712418302,
+                "H": 36.31551700106858,
+                "R": 39.705882352941174
+            },
+            "parameters": {
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    102,
+                    44
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    97,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "parameters": {
+                "centroid": null,
+                "hungarian": null,
+                "lambda": 0.5,
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    102,
+                    44
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    97,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 38.88888888888889,
+                "D": 31.535947712418302,
+                "H": 36.31551700106858,
+                "R": 39.705882352941174
+            },
+            "parameters": {
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    102,
+                    44
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    97,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "parameters": {
+                "centroid": null,
+                "hungarian": null,
+                "lambda": 0.5,
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    102,
+                    44
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    97,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 38.88888888888889,
+                "D": 31.535947712418302,
+                "H": 36.31551700106858,
+                "R": 39.705882352941174
+            },
+            "parameters": {
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    102,
+                    44
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    97,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "parameters": {
+                "centroid": null,
+                "hungarian": null,
+                "lambda": 0.5,
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    102,
+                    44
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    97,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 38.88888888888889,
+                "D": 31.535947712418302,
+                "H": 36.31551700106858,
+                "R": 39.705882352941174
+            },
+            "parameters": {
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    102,
+                    44
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    97,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "parameters": {
+                "centroid": null,
+                "hungarian": null,
+                "lambda": 0.5,
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    102,
+                    47
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    71,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 33.33333333333333,
+                "D": 28.758169934640524,
+                "H": 33.11422311136515,
+                "R": 38.725490196078425
+            },
+            "parameters": {
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    102,
+                    47
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    71,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "parameters": {
+                "centroid": null,
+                "hungarian": null,
+                "lambda": 0.5,
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    102,
+                    47
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    71,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 33.33333333333333,
+                "D": 28.758169934640524,
+                "H": 33.11422311136515,
+                "R": 38.725490196078425
+            },
+            "parameters": {
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    102,
+                    47
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    71,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "parameters": {
+                "centroid": null,
+                "hungarian": null,
+                "lambda": 0.5,
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    113,
+                    54
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    95,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    71,
+                    97,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "parameters": {
+                "centroid": null,
+                "hungarian": null,
+                "lambda": 0.5,
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    102,
+                    47
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    71,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 33.33333333333333,
+                "D": 28.758169934640524,
+                "H": 33.11422311136515,
+                "R": 38.725490196078425
+            },
+            "parameters": {
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    102,
+                    47
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    71,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "parameters": {
+                "centroid": null,
+                "hungarian": null,
+                "lambda": 0.5,
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    102,
+                    47
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    71,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 33.33333333333333,
+                "D": 28.758169934640524,
+                "H": 33.11422311136515,
+                "R": 38.725490196078425
+            },
+            "parameters": {
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    102,
+                    47
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    71,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "parameters": {
+                "centroid": null,
+                "hungarian": null,
+                "lambda": 0.5,
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    102,
+                    47
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    71,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 33.33333333333333,
+                "D": 28.758169934640524,
+                "H": 33.11422311136515,
+                "R": 38.725490196078425
+            },
+            "parameters": {
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    102,
+                    47
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    71,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "parameters": {
+                "centroid": null,
+                "hungarian": null,
+                "lambda": 0.5,
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    102,
+                    44
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    97,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 38.88888888888889,
+                "D": 31.535947712418302,
+                "H": 36.31551700106858,
+                "R": 39.705882352941174
+            },
+            "parameters": {
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    102,
+                    44
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    97,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "parameters": {
+                "centroid": null,
+                "hungarian": null,
+                "lambda": 0.5,
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    102,
+                    44
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    97,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 38.88888888888889,
+                "D": 31.535947712418302,
+                "H": 36.31551700106858,
+                "R": 39.705882352941174
+            },
+            "parameters": {
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    102,
+                    44
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    97,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "parameters": {
+                "centroid": null,
+                "hungarian": null,
+                "lambda": 0.5,
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    113,
+                    54
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    95,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    71,
+                    97,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "parameters": {
+                "centroid": null,
+                "hungarian": null,
+                "lambda": 0.5,
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    102,
+                    44
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    97,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 38.88888888888889,
+                "D": 31.535947712418302,
+                "H": 36.31551700106858,
+                "R": 39.705882352941174
+            },
+            "parameters": {
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    102,
+                    44
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    97,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "parameters": {
+                "centroid": null,
+                "hungarian": null,
+                "lambda": 0.5,
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    102,
+                    44
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    97,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 38.88888888888889,
+                "D": 31.535947712418302,
+                "H": 36.31551700106858,
+                "R": 39.705882352941174
+            },
+            "parameters": {
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    102,
+                    44
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    97,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "parameters": {
+                "centroid": null,
+                "hungarian": null,
+                "lambda": 0.5,
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    102,
+                    44
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    97,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 38.88888888888889,
+                "D": 31.535947712418302,
+                "H": 36.31551700106858,
+                "R": 39.705882352941174
+            },
+            "parameters": {
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    102,
+                    44
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    97,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "parameters": {
+                "centroid": null,
+                "hungarian": null,
+                "lambda": 0.5,
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    102,
+                    47
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    71,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 33.33333333333333,
+                "D": 28.758169934640524,
+                "H": 33.11422311136515,
+                "R": 38.725490196078425
+            },
+            "parameters": {
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    102,
+                    47
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    71,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "parameters": {
+                "centroid": null,
+                "hungarian": null,
+                "lambda": 0.5,
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    102,
+                    47
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    71,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "evaluation": {
+                "C": 33.33333333333333,
+                "D": 28.758169934640524,
+                "H": 33.11422311136515,
+                "R": 38.725490196078425
+            },
+            "parameters": {
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    102,
+                    47
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    71,
+                    55,
+                    26
+                ]
+            ]
+        },
+        {
+            "parameters": {
+                "centroid": null,
+                "hungarian": null,
+                "lambda": 0.5,
+                "method": "CF"
+            },
+            "size": {
+                "word count": [
+                    113,
+                    54
+                ]
+            },
+            "summ": [
+                [
+                    84,
+                    18,
+                    95,
+                    7,
+                    62
+                ],
+                [
+                    70,
+                    71,
+                    97,
+                    55,
+                    26
+                ]
+            ]
+        }
+    ]
+}

@@ -1,0 +1,30 @@
+
+Ele é rápido e tem boa memória. 
+Pratico e simples. 
+Funciona com desenvoltura, tem bons recursos, não trava (diferente de alguns comentários que li, não sei o que possa ter acontecido), design elegante, enfim, estou contentíssimo com o produto. 
+A bateria mal da pra um dia completo. 
+Os sub ícones como sinal do wi fi poderia ser mais destacados e amigáveis. 
+O produto após duas semanas não carrega mais. 
+
+
+Além disso, é caro demais. 
+Bateria horrível. 
+Recentemente comprei um Galaxy S7, em 3 dias, numa pequena queda trincou parte do display (falo pequena queda porque os outros modelos que tive, sofreram quedas piores e permaneceram intactos) 
+Bateria dura até 2 dias, muito boa. 
+Produto dispensa comparativos, sem nenhum sinal de travamento.Bastante simplificado. 
+Realizei a troca do galaxy 5 para o galaxy s7. 
+
+
+
+sentences:     6    6
+    words:    69   63
+
+
+( 45  51)      48    44    41   [[ 44]]  
+
+               49    45    40    [ 44]      ~  5
+
+[311, 480, 429, 598, 310, 572]
+[181, 677, 659, 55, 517, 603]
+
+

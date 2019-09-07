@@ -1,0 +1,31 @@
+
+Tem ISO relativamente bom, mas apresenta uma limitação em qualidade a partir do ISO 1600. 
+Amei o produto! É uma câmera de entrada no mundo DSLR, com funções pré-programadas e a possibilidade de fazer configurações próprias, à medida que o usuário vai se familiarizando com esse tipo de equipamento. 
+Com ISO acima disso as fotos ficam boas, mas apresentam algumas granulações leves. 
+Achei os comandos bem intuitivos e consigo fotos muito bonitas sem muito trabalho de ajuste fino. 
+A abertura de diafragma das lentes do kit não são das melhores, mas pelo preço proposto é satisfatório. 
+
+
+Adquiri o produto e avalio ótimo custo-benefício. 
+Imagem com resolução muito boa, bateria com duração razoável, fácil de manusear. 
+Fotograr à noite ou locais com pouca luminosidade é difícil. 
+Ótimo custo-benefício. 
+Qualidade da imagem, facilidade no uso. 
+Não recomento a câmera para quem queira fazer videos profissionais, fora isso, é uma boa câmera, e a qualidade de imagem para fotos é incrível. 
+Câmera leve e fácil manuseio, manual completo, além do display e qualidade das fotos perfeitas. 
+Correspondente com todas as características citadas, muito fácil manuseio.. 
+
+
+
+sentences:     5    8
+    words:    96   86
+
+
+( 60  92)      76    50    58   [[ 60]]  
+
+               76    51    59    [ 59]      ~ 10
+
+[28, 26, 29, 31, 10]
+[43, 38, 71, 36, 51, 26, 81, 15]
+
+

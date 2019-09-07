@@ -1,0 +1,43 @@
+
+Sem muitos rodeios, o aparelho tem me agradado bastante em praticamente todos os aspectos. 
+Bom custo/benefício. 
+Melhor Custo Beneficio. 
+Eu sempre comprei Samsung e fiquei apreensivo quanto a um Motorola. 
+Custo Benefício Bom. 
+Excelente produto, atende todas as minhas necessidades. 
+Dura bastane tempo. 
+Lindo. 
+Custo beneficio muito bom. 
+Eu recomendo, custo beneficio são ótimo. 
+O alarme-despertador não toca se o aparelho estiver desligado. 
+Infeliz foi o projetista que desenhou aquela maldita bandejinha para a colocação dos 2 chips e do cartão de memória. 
+Bandeja de chips é fraca, de plástico, dificulta inserção do cartão micro SD. 
+Aparelbo com problema. 
+
+
+Por isso acabei devolvendo o aparelho para tentar adquirir outro. 
+Podia ter melhor custo-benefício. 
+Tem dias que dura apenas 10 horas de uso moderado. O preço ainda é salgado, como tudo que é bom no Brasil. 
+Em seu preço original de $4200,00 não mesmo. 
+O aparelho poderia ser um pouco mais barato. 
+Bateria horrível. 
+Encontrei.Além disso, o leitor de impressões digitais facilita muito o uso e passa tranquilidade pela segurança. 
+Gostei de tudo, minha mãe já tinha um e resolvi comprar também. 
+O leitor de digital é muito rápido e eficiente. 
+Excelente bateria. 
+Excelente celular, mas não tenho mais. 
+
+
+
+sentences:    14   11
+    words:    99   99
+
+
+( 34  39)      37    50    31   [[ 38]]  
+
+               37    53    31    [ 38]      ~  4
+
+[473, 1, 482, 427, 503, 446, 299, 525, 471, 496, 593, 594, 603, 571]
+[651, 576, 457, 186, 104, 677, 387, 136, 503, 54, 78]
+
+

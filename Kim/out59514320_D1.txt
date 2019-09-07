@@ -1,0 +1,30 @@
+
+Design muito bonito, rápido e com uma boa duração de bateria. 
+Agora eu comprei o Moto G5 Plus, e não fica a dever a 99% dos aparelhos do mercado. 
+Aparelho eficiente, sem frescuras e bem performático. 
+Um bom aparelho porém baixo desempenho. 
+Sem conserto, mesmo porque a bateria é lacrada. 
+Recomendo que seja compara uma capa de proteção, pois o aparelho e muito liso e facilmente escapa da mão, e com certeza uma película de proteção. 
+
+
+A bateria poderia durar mais e também ter um pouco mais de memória. 
+Excelente produto acessórios um pouco carros para ter todos, mais o óculos foi brinde foi menos um para compra, a capa que protege a lente e um pouco frágil. 
+O aparelho poderia ser um pouco mais barato. 
+O aparelho é excelente, o desempenho me surpreendeu muito. 
+A câmera é ótima para fotos em alta velocidade. 
+Aparelho bonito, processador poderoso, ótima tela. 
+
+
+
+sentences:     6    6
+    words:    76   74
+
+
+( 31  62)      46    29    26   [[ 32]]  
+
+               46    28    25    [ 31]      ~  4
+
+[384, 433, 504, 555, 569, 367]
+[442, 317, 104, 496, 110, 175]
+
+

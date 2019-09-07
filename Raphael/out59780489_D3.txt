@@ -1,0 +1,38 @@
+
+MOTO G ou MOTO Z NUNCA MAIS! 
+Boa relação custo-benefício. 
+Ótimo aparelho, bateria dura até o fim do dia tranquilo. 
+A bateria mal da pra um dia completo. 
+Adquiri há 1 mês.Aparelho mais bonito pessoalmente (dourado).Câmera incrível, designer perfeito, super rápido, carrega mais rápido ainda e a bateria dura muito (uso muito celular, jogos, aplicativos, redes sociais).O diferencial dele é a TV, foi por isso que adquiri esse modelo. 
+Bandeja de chips é fraca, de plástico, dificulta inserção do cartão micro SD. 
+Desligue e ligue;Não funciona bem conectado pelo bluetooth nos carros, tenho iPhones e Galaxys na família que funcionam bem nos carros, o Moto G5 não funciona;Possui 8 núcleos e não suporta a capacidade, superaquece e desliga quando usa GPS+Bluetooth juntos, faça o teste e verá: ele esquenta até desligar;O fone que vem junto é descartável de tão ruim, não vale R$10;Não possui &dquote&área de transferência&dquote&, como todo android. 
+
+
+Tirando a bateria que para mim não melhorou, por hora estou amando. 
+Além disso, é caro demais. 
+Enfim, este modelo da Samsung deixou muito a desejar comparado a outros aparelhos que tive. 
+Bateria horrível. 
+Muito rápido! Não trava! Bateria dura muito! 
+O que me frustou foi o fato da empresa ter resolvido retirar a função de infravermelho (eu sempre usava o S5 como controle remoto da TV, ar condicionado, etc. 
+O leitor de digital é muito rápido e eficiente. 
+Por ser todo em vidro suja um pouco, mas nada que uma capinha não resolva. 
+A câmera e suas funcionalidades estão me surpreendendo. 
+Excelente celular, mas não tenho mais. 
+Excelente aparelho! Só o preço que é alto demais e a Samsung que enche de APPs que não se utiliza que não tem como apagar. 
+Por isso acabei devolvendo o aparelho para tentar adquirir outro. 
+Design lindo, mas bateria poderia ser melhor. 
+
+
+
+sentences:     7   13
+    words:   150  150
+
+
+( 84  73)      79    95    70   [[ 80]]  
+
+               79    97    70    [ 80]      ~  4
+
+[607, 590, 500, 598, 442, 603, 563]
+[609, 181, 661, 677, 623, 500, 503, 573, 611, 78, 584, 651, 567]
+
+
