@@ -1,5 +1,5 @@
 
-DEBUGGING = False
+DEBUG_MODE = False
 
 
 # Execution options
