@@ -2,7 +2,7 @@
 
 
 # Execution options
-METHOD = ['contrastive', 'noncontrastive'][1]
+METHOD = ['contrastive', 'noncontrastive'][0]
 
 OPTM_MODE = 'greedy'
 
@@ -13,8 +13,8 @@ DISCARD_TESTS = int(0.1*REPEAT_TESTS) # Amount of top-rated and bottom-rated tes
 # Display options
 
 VERBOSE_MODE = True    # To print statistics and status information (progress is always shown)
-EVALUATION_MODE = True  # To print evaluation metrics results
-OUTPUT_MODE = True     # To print the summaries
+EVALUATION_MODE = False  # To print evaluation metrics results
+OUTPUT_MODE = False     # To print the summaries
 DEBUG_MODE = False
 
 
