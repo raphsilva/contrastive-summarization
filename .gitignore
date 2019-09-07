@@ -4,3 +4,10 @@ RESULTS
 cache
 .*
 !.gitignore
+
+language
+output
+results
+out*
+results_*
+
