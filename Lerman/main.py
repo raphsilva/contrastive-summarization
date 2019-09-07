@@ -5,7 +5,7 @@ import json
 # From this project:
 import method
 from read_input import read_input
-import evaluation.evaluation as evalu
+import evaluation as evalu
 import output_format as out
 import structure as struct
 from structure import word_count
@@ -18,7 +18,6 @@ from setup import MIN_INTENS_IN_SUMMARY  # Sets the minimum intensity that a sen
 from setup import filepath  # Get full path for the file with data of target
 
 from setup import VERBOSE_MODE
-from setup import EVALUATION_MODE
 from setup import OUTPUT_MODE
 
 from setup import METHOD
