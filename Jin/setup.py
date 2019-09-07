@@ -53,25 +53,6 @@ PRESET = [
             
 config = PRESET[preset]
 
-
-#KEY_MEASURE = preset['KEY_MEASURE']
-
-#setting = preset['setting']
-
-#ASPECT_DETECTION =   ['keywords', 'clues'][setting]
-#POLARITY_ATTRIBUTION = ['pure', 'complex', 'manual'][setting]
-
-#BYPASS_GENERIC =   [True, False][setting]
-#BYPASS_UNRELATAD = [False, True][setting]
-#BYPASS_SHORT =     [False, True][setting]
-            
-
-#KEY_MEASURE = 'aspects'
-#KEY_MEASURE = 'lexicon'
-#KEY_MEASURE = 'corpus'
-
-#def update_settings(preset=preset):
-
 KEY_MEASURE = config['KEY_MEASURE']
 
 setting = config['setting']
@@ -82,13 +63,6 @@ POLARITY_ATTRIBUTION = ['pure', 'complex', 'manual'][2]
 BYPASS_GENERIC =   [True, False][setting]
 BYPASS_UNRELATAD = [False, True][setting]
 BYPASS_SHORT =     [False, True][setting]
-    
-
-
-#BYPASS_GENERIC =   False
-#BYPASS_UNRELATAD = False
-#BYPASS_SHORT =     False
-
 
 POLARITY_LEXICON = 'sentilex'
 
