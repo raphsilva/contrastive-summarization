@@ -6,3 +6,10 @@ __*
 RESULTS
 .*
 !.gitignore
+
+language
+output
+results
+out*
+results_*
+
