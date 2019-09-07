@@ -221,57 +221,57 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
             return 1 / m
 
 
-        if EVALUATION_MODE:
-            evals = {}
+        evals = {}
 
-            evals['r1'] = 100 * evalu.representativiness(source1, summ1)
-            evals['r2'] = 100 * evalu.representativiness(source2, summ2)
-            evals['R'] = (evals['r1'] + evals['r2']) / 2
+        evals['r1'] = 100 * evalu.representativiness(source1, summ1)
+        evals['r2'] = 100 * evalu.representativiness(source2, summ2)
+        evals['R'] = (evals['r1'] + evals['r2']) / 2
 
-            evals['C'] = 100 * evalu.contrastiviness(source1, source2, summ1, summ2)
+        evals['C'] = 100 * evalu.contrastiviness(source1, source2, summ1, summ2)
 
-            evals['d1'] = 100 * evalu.diversity(source1, summ1)
-            evals['d2'] = 100 * evalu.diversity(source2, summ2)
+        evals['d1'] = 100 * evalu.diversity(source1, summ1)
+        evals['d2'] = 100 * evalu.diversity(source2, summ2)
 
-            evals['D'] = (evals['d1'] + evals['d2']) / 2
+        evals['D'] = (evals['d1'] + evals['d2']) / 2
 
-            evals['H'] = harmonic_mean([evals['R'], evals['C'], evals['D']])
+        evals['H'] = harmonic_mean([evals['R'], evals['C'], evals['D']])
 
-            w1 = sum([summ1[i]['word_count'] for i in summ1])
-            w2 = sum([summ2[i]['word_count'] for i in summ2])
+        w1 = sum([summ1[i]['word_count'] for i in summ1])
+        w2 = sum([summ2[i]['word_count'] for i in summ2])
 
-            h_words1.append(w1)
-            h_words2.append(w2)
-            h_sentences1.append(len(summ1))
-            h_sentences2.append(len(summ2))
+        h_words1.append(w1)
+        h_words2.append(w2)
+        h_sentences1.append(len(summ1))
+        h_sentences2.append(len(summ2))
 
-            hr.append(evals['R'])
-            hc.append(evals['C'])
-            hd.append(evals['D'])
-            hh.append(evals['H'])
+        hr.append(evals['R'])
+        hc.append(evals['C'])
+        hd.append(evals['D'])
+        hh.append(evals['H'])
 
-            n = {}
-            n['parameters'] = {}
-            n['parameters']['method'] = METHOD
-            n['parameters']['summization'] = OPTM_MODE
-            n['parameters']['alpha'] = ALPHA
-            n['parameters']['aspect detection'] = ASPECT_DETECTION
-            n['parameters']['polarity attribution'] = POLARITY_ATTRIBUTION
-            n['evaluation'] = {}
-            n['evaluation']['R'] = evals['R']
-            n['evaluation']['C'] = evals['C']
-            n['evaluation']['D'] = evals['D']
-            n['evaluation']['H'] = evals['H']
-            n['summ'] = []
-            n['summ'].append(summ_idx_1)
-            n['summ'].append(summ_idx_2)
-            n['size'] = {}
-            n['size']['word count'] = []
-            n['size']['word count'].append(word_count(summ1))
-            n['size']['word count'].append(word_count(summ2))
-            results['output'].append(n)
+        n = {}
+        n['parameters'] = {}
+        n['parameters']['method'] = METHOD
+        n['parameters']['summization'] = OPTM_MODE
+        n['parameters']['alpha'] = ALPHA
+        n['parameters']['aspect detection'] = ASPECT_DETECTION
+        n['parameters']['polarity attribution'] = POLARITY_ATTRIBUTION
+        n['evaluation'] = {}
+        n['evaluation']['R'] = evals['R']
+        n['evaluation']['C'] = evals['C']
+        n['evaluation']['D'] = evals['D']
+        n['evaluation']['H'] = evals['H']
+        n['summ'] = []
+        n['summ'].append(summ_idx_1)
+        n['summ'].append(summ_idx_2)
+        n['size'] = {}
+        n['size']['word count'] = []
+        n['size']['word count'].append(word_count(summ1))
+        n['size']['word count'].append(word_count(summ2))
+        results['output'].append(n)
 
-            summScoresList[(evals['R'], evals['C'], evals['D'])] = (summ_idx_1, summ_idx_2)
+        summScoresList[(evals['R'], evals['C'], evals['D'])] = (summ_idx_1, summ_idx_2)
+
 
     from statistics import stdev
 
