@@ -17,7 +17,7 @@ from setup import LIM_WORDS
 from setup import GREEDY_CANDS_SELECTED
 from setup import VERBOSE_MODE
 
-from setup import DEBUGGING
+from setup import DEBUG_MODE
 
 from setup import METHOD
 
@@ -258,7 +258,7 @@ def MakeContrastiveSummary_greedy(source1, source2, stats_source_1, stats_source
                 c += 1
                 #if GREEDY_CANDS_SELECTED != 0:
                 
-                if not DEBUGGING:
+                if not DEBUG_MODE:
                     pr = (s-1)/LIM_SENTENCES + (c_searched_paths-1)/search_paths/LIM_SENTENCES + c/len(source1)/search_paths/LIM_SENTENCES
                     out.printProgress (" %6.2lf%%   ( path %3d/%d  of  size  %2d/%d )  %16.2lf     (%d %d)" % (100*pr, c_searched_paths, search_paths, s, LIM_SENTENCES, best_score, len(idx_best_for_size1), len(idx_best_for_size2)), end="\r")
                     out.printdebug()
