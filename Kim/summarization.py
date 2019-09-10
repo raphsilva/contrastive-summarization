@@ -6,7 +6,6 @@ import math
 from setup import SUMLEN
 from setup import ALLOW_REPETITION
 
-import debug
 
 
 # clustering algorithm used in the implementation of RF method
