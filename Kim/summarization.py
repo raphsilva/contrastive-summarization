@@ -41,24 +41,6 @@ def summSize(side1, side2):
     k = int(k*SIZE_FAC[ASPECTS_TAGS][METHOD][DATASET_ID])
     
     print(SIZE_FAC[ASPECTS_TAGS][METHOD][DATASET_ID])
-     
-    #if ASPECTS_TAGS == 'none':
-        #if METHOD == 'CF':
-            #k = int(k*[0, 0.7, 0.45, 0.8, 0.7, 0.8, 1][DATASET_ID])   
-        #if METHOD == 'RF':
-            #k = int(k*[0, 0.68, .8, 0.8, 0.7, 0.8, 1][DATASET_ID])  
-    
-    #if ASPECTS_TAGS == 'join':
-        #if METHOD == 'CF':
-            #k = int(k*[0, 0.6, 0.7, 0.8, 0.7, 0.8, 1][DATASET_ID])   
-        #if METHOD == 'RF':
-            #k = int(k*[0, 0.6, .85, 0.8, 0.7, 0.8, 1][DATASET_ID])  
-   
-    #if ASPECTS_TAGS == 'only':
-        #if METHOD == 'CF':
-            #k = int(k*[0, 0.4, 0.7, 0.6, 0.7, 0.8, 1][DATASET_ID])   
-        #if METHOD == 'RF':
-            #k = int(k*[0, 0.45, .85, 0.8, 0.7, 0.8, 1][DATASET_ID])  
     
     
     return min(k, l1, l2) # Don't allow summaries bigger than original sets (error would occur)
@@ -118,9 +100,6 @@ def representativeness_first(side1, side2, polarity1, polarity2, LAMBDA=0.5, CEN
     # distance_matrix[i, j] = 1.0 - phi(i, j)
     distance_matrix_x = [[(1.0 - phi(text_info_1[i], text_info_1[j])) for j in range(len(side1))] for i in range(len(side1))]
     distance_matrix_y = [[(1.0 - phi(text_info_2[i], text_info_2[j])) for j in range(len(side2))] for i in range(len(side2))]
-    
-    #pprint(distance_matrix_x)
-    #exit()
 
     # each one below is gonna be a list of clusters (list of lists)
     clusters_x = [list() for i in range(k)]
@@ -221,11 +200,6 @@ def representativeness_first(side1, side2, polarity1, polarity2, LAMBDA=0.5, CEN
 
             # adding the sentence pair with highest gi to the summary
             contrastive_pairs.append(best_pair)
-            
-    #for i in contrastive_pairs: 
-        #print(i)
-        #pprint(side1[i[0]])
-        #pprint(side2[i[1]])
         
     r = []
     # Convert local IDs to the IDs on the source
@@ -265,37 +239,15 @@ def contrastiveness_first(side1, side2, polarity1, polarity2, LAMBDA=0.5, CENTRO
         for j in range(len(side2)):
             psi_i_j = round(psi(text_info_1[i], text_info_2[j]),2)
             
-            #print(side1[i])
-            #print(side2[j])
-            #print(psi_i_j)
-            #print()
-            #input()
-            
             if (len(psis) == 0 or max(psis.values()) == 0) or psi_i_j > 0: # Threshold (saves a lot of time)
                 if psi_i_j not in psis:
                     psis[psi_i_j] = []
                 psis[psi_i_j].append((i,j))    
-                
-    #print(psis)
-    #input()
 
     # Sort pairs in order of contrastiviness
     pairs_rank = []
     for key in sorted(psis.keys(), reverse=True):
         pairs_rank += psis[key]
-        #print(key)
-        #print()
-        
-        #for i in psis[key]:
-            #print(side1[i[0]])
-            #print(side2[i[1]])
-            #print()
-            
-        #print()
-    #input()
-        
-    #pprint(psis)
-    #input()
     
     best_pair = pairs_rank[0]
     
