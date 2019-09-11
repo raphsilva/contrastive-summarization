@@ -24,14 +24,8 @@ from load_data import preprocess
 
 from setup import SOURCE1
 from setup import SOURCE2
-from setup import LANGUAGE
 from setup import filepath
 from setup import LANGUAGE
-from setup import LAMBDA
-from setup import METHOD
-from setup import CENTROIDS_AS_SUMMARY
-from setup import USE_HUNGARIAN_METHOD
-from setup import ALLOW_REPETITION
 from setup import SHOW_SUMMARY
 from setup import SHOW_EVALUATION
 from setup import SHOW_INDEXES
@@ -59,17 +53,6 @@ def print_result(*msg):
 # <-----> Common Modules <----->
 # <---------------------------->
 
-
-# basic functions and constants were used
-import sys
-import getopt
-import math
-
-# used in data preprocessing
-import unicodedata
-
-from pprint import pprint
-from time import time
 
 from writefiles import underwrite_file
 

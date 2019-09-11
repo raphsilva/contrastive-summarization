@@ -1,4 +1,3 @@
-#from setup import *
 from language import *
 from similarity import psi, phi
 import math
@@ -18,7 +17,6 @@ from itertools import permutations
 from operator import itemgetter
 
 
-from pprint import pprint
 
 
 from setup import SIZE_FAC

@@ -1,14 +1,10 @@
 MAXSENT = 100
-from pprint import pprint
 
 import structure as struct
 
 from language import *
 from similarity import psi, phi
 from setup import *
-from scipy import stats
-
-from pprint import pprint
 
 BYPASS_ASPECTS = ['EMPRESA', 'PRODUTO', '_GENERIC', '_NONE', 'x', 'X']
 
