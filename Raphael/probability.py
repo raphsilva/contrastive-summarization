@@ -111,5 +111,3 @@ def plotDistribution(d, title="", label=""):
 
 def clearChart():
     ax1.cla()
-
-

@@ -28,6 +28,7 @@ def set_ALPHA(value):
 def divergence_measure(d1, d2):
     return KLdivergence(d1, d2)
 
+
 possible_aspects = []
 aspects_list = get_variable_from_file('language/portuguese/aspects.json')
 for typ in aspects_list:
@@ -142,7 +143,6 @@ def score_comp_summ(source1, source2, candidate1, candidate2):
     r = 0.5 * (r1 + r2)
     a = 2 * (c * r) / (c + r)
     return a
-
 
 
 def score_representativity(source1, source2, candidate1, candidate2):

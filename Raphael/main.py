@@ -336,18 +336,18 @@ for SOURCE1, SOURCE2 in [('D1a', 'D1b'), ('D2a', 'D2b'), ('D3a', 'D3b'), ('D4a',
     results_msg = ''
     results_msg += '\n\n'
     results_msg += '              %3.0lf   %3.0lf   %3.0lf   [ %3.0lf ]    (%3.0lf)      ~%3.0lf' % (
-    r_median_mean, c_median_mean, d_median_mean, h_median_mean, ht_median_mean, sthh)
+        r_median_mean, c_median_mean, d_median_mean, h_median_mean, ht_median_mean, sthh)
     results_msg += '\n\n'
     results_msg += '             ~%3.0lf  ~%3.0lf  ~%3.0lf               ~%3.0lf' % (sthr, sthc, sthd, sthh)
     results_msg += '\n\n\n'
     results_msg += 'max           %3.0lf   %3.0lf   %3.0lf                %3.0lf' % (
-    (max(hr_medians)), (max(hc_medians)), (max(hd_medians)), (max(hh_medians)))
+        (max(hr_medians)), (max(hc_medians)), (max(hd_medians)), (max(hh_medians)))
     results_msg += '\n\n'
     results_msg += 'min           %3.0lf   %3.0lf   %3.0lf                %3.0lf' % (
-    (min(hr_medians)), (min(hc_medians)), (min(hd_medians)), (min(hh_medians)))
+        (min(hr_medians)), (min(hc_medians)), (min(hd_medians)), (min(hh_medians)))
     results_msg += '\n\n\n'
     results_msg += 'simple mean   %3.0lf   %3.0lf   %3.0lf     %3.0lf       \'%3.0lf\'      ~%3.0lf' % (
-    r, c, d, h, ht, sthh)
+        r, c, d, h, ht, sthh)
     results_msg += '\n\n\n'
 
     avg_words1 = sum(h_words1) / len(h_words1)
@@ -430,11 +430,11 @@ for SOURCE1, SOURCE2 in [('D1a', 'D1b'), ('D2a', 'D2b'), ('D3a', 'D3b'), ('D4a',
     # print()
     summ_out += '\n\n'
     summ_out += '(%3.0lf %3.0lf)     %3.0lf   %3.0lf   %3.0lf   [[%3.0lf]]  ' % (
-    evals['r1'], evals['r2'], evals['R'], evals['C'], evals['D'], evals['H'])
+        evals['r1'], evals['r2'], evals['R'], evals['C'], evals['D'], evals['H'])
     summ_out += '\n\n'
 
     summ_out += '              %3.0lf   %3.0lf   %3.0lf    [%3.0lf]      ~%3.0lf' % (
-    r_median_mean, c_median_mean, d_median_mean, ht_median_mean, sthh)
+        r_median_mean, c_median_mean, d_median_mean, ht_median_mean, sthh)
 
     summ_out += '\n'
     summ_out += '\n'
