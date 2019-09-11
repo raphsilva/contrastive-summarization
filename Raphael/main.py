@@ -86,95 +86,6 @@ def load_input():
     return source1, source2
 
 
-# def remove_low_intensity(source):
-
-## Remove sentences with low intensity.
-## Will bypass any sentence which the intensity is lower than MIN_INTENS_IN_SUMMARY.
-# for i in dict(source):
-# if source[i]['intensity'][KEY_MEASURE] < MIN_INTENS_IN_SUMMARY:
-##pprint(source[i])
-##input()
-##print()
-# del source[i]
-
-##input()
-# return source
-
-
-# def remove_generic(source):
-
-# for i in dict(source):
-# if len(source[i]['sent'][KEY_MEASURE]) == 1 and ('produto' in source[i]['sent'][KEY_MEASURE] or 'PRODUTO' in source[i]['sent'][KEY_MEASURE] or '_GENERIC' in source[i]['sent'][KEY_MEASURE]):
-# del source[i]
-# elif 'PRODUTO' in source[i]['sent'][KEY_MEASURE]:
-# del source[i]['sent'][KEY_MEASURE]['PRODUTO']
-
-# return source
-
-# def remove_short_length(source):
-
-# for i in dict(source):
-# if len(source[i]['sent'][KEY_MEASURE]) == 1 and ('produto' in source[i]['sent'][KEY_MEASURE] or 'PRODUTO' in source[i]['sent'][KEY_MEASURE] or '_GENERIC' in source[i]['sent'][KEY_MEASURE]):
-# if len(source[i]['words']) <= 3:
-# del source[i]
-
-# return source
-
-# def remove_aspects(source, aspect):
-
-# for i in dict(source):
-# if aspect in source[i]['sent'][KEY_MEASURE] or aspect.upper() in source[i]['sent'][KEY_MEASURE]:
-# del source[i]
-
-# return source
-
-
-# def remove_low_prob(source, stats):
-
-
-## Remove sentences with low intensity.
-## Will bypass any sentence which the intensity is lower than MIN_INTENS_IN_SUMMARY.
-# for i in dict(source):
-##print()
-##print()
-##pprint(source[i])
-##print()
-# for idx in reversed(range(len(source[i]['words']))):
-# o = source[i]['words'][idx]
-# if o in stats and stats[o]['prob'] < 0.01:
-##pprint(source[i])
-# if o in source[i]['sent']['lexicon']:
-# del source[i]['sent']['lexicon'][o]
-# if o in source[i]['sent']['aspects']:
-# del source[i]['sent']['aspects'][o]
-# del source[i]['words'][idx]
-
-
-##print()
-
-# return source
-
-
-from time import time
-
-# total_time = 0
-
-
-# METHOD = 'NONCONTRASTIVE'
-
-
-# if BYPASS_UNRELATAD:
-# source1 = remove_aspects(source1, 'empresa')
-# source2 = remove_aspects(source2, 'empresa')
-# source1 = remove_aspects(source1, 'x')
-# source2 = remove_aspects(source2, 'x')
-# source1 = remove_aspects(source1, '_NONE')
-# source2 = remove_aspects(source2, '_NONE')
-
-# if VERBOSE_MODE:
-# print("Size after removing unrelated 1: ", len(source1))
-# print("Size after removing unrelated 2: ", len(source2))
-
 # /source.../ are structures of the form
 '''
 {
@@ -204,14 +115,6 @@ from time import time
     'word_count': 21}
 }
 '''
-
-# Estimate overall sentiment about targets
-# overall_rate_1 = struct.avgSent(source1)
-# overall_rate_2 = struct.avgSent(source2)
-
-# Get statistics about aspects in the source (mean, stdev, probability)
-# stats_source_1 = struct.aspects_stats(source1)
-# stats_source_2 = struct.aspects_stats(source2)
 
 # /stats_.../ are structures of the form: 
 '''
@@ -279,12 +182,6 @@ for SOURCE1, SOURCE2 in [('D1a', 'D1b'), ('D2a', 'D2b'), ('D3a', 'D3b'), ('D4a',
     stats_source_1 = struct.aspects_stats(source1)
     stats_source_2 = struct.aspects_stats(source2)
 
-    # if VERBOSE_MODE:
-    # print_verbose('\nOpinions in the summary for each entity:')
-    # print_verbose('\nOverview of opinions in the source for each entity:')
-    # struct.printOverview(stats_source_1)
-    # struct.printOverview(stats_source_2)
-
     print_verbose('Sizes of datasets without low intensity sentences: ', len(source1), len(source2))
 
     print_verbose('Making summary')
@@ -348,14 +245,10 @@ for SOURCE1, SOURCE2 in [('D1a', 'D1b'), ('D2a', 'D2b'), ('D3a', 'D3b'), ('D4a',
             print("\n___ Produto 1\n")
             for i in summ_idx_1:
                 print("%s " % (source1[i]['verbatim']))
-                # print ("      %4d)   %s " % (i, source1[i]['verbatim']))
             print("\n___ Produto 2\n")
             for i in summ_idx_2:
                 print("%s " % (source2[i]['verbatim']))
-                # print ("      %4d)   %s " % (i, source2[i]['verbatim']))
 
-
-        # if OUTPUT_AVG_ONLY:
 
         def harmonic_mean(l):
             s = 0
@@ -383,28 +276,8 @@ for SOURCE1, SOURCE2 in [('D1a', 'D1b'), ('D2a', 'D2b'), ('D3a', 'D3b'), ('D4a',
 
             evals['H'] = harmonic_mean([evals['R'], evals['C'], evals['D']])
 
-            # for i in evals:
-            # evals[i] = int('%3.0lf'%(evals[i]))
-
             w1 = sum([summ1[i]['word_count'] for i in summ1])
             w2 = sum([summ2[i]['word_count'] for i in summ2])
-
-            # print()
-            # print_result("%3.0lf)   %s %3.0lf    " % (repeat+1, METHOD[:4], ALPHA))
-            # print_result('(%3.0lf %3.0lf) %3.0lf   ' % (evals['r1'], evals['r2'], evals['R']))
-            # print_result('%3.0lf   ' % ( evals['C']))
-            # print_result('    %3.0lf' % (evals['D']))
-            # print_result('    [[%3.0lf]]' % (evals['H']))
-            # print_result('    %3.0lfs' % elaps_time)
-            # print_result('\n')
-            # print_result('\n')
-
-            # print('sentences: ', len(summ1), len(summ2))
-            # print('words: ', w1, w2)
-            # print('diff summs: ', len(all_summaries))
-
-            # print('\n')
-            # print('\n')
 
             h_words1.append(w1)
             h_words2.append(w2)
@@ -434,8 +307,6 @@ for SOURCE1, SOURCE2 in [('D1a', 'D1b'), ('D2a', 'D2b'), ('D3a', 'D3b'), ('D4a',
             results['output'].append(n)
 
             summScoresList[(evals['R'], evals['C'], evals['D'])] = (summ_idx_1, summ_idx_2)
-
-    # pprint(summScoresList)
 
     from statistics import stdev
 
@@ -510,11 +381,6 @@ for SOURCE1, SOURCE2 in [('D1a', 'D1b'), ('D2a', 'D2b'), ('D3a', 'D3b'), ('D4a',
 
     fairness_rank = sorted(summScoresList.keys(),
                            key=lambda k: sqdiff(k, [r_median_mean, c_median_mean, d_median_mean]))
-    # pprint(fairness_rank)
-    # for i in fairness_rank:
-    # print(sqdiff(i, [r_median_mean, c_median_mean, d_median_mean]))
-    # print([r_median_mean, c_median_mean, d_median_mean])
-    # exit()
 
     summ_idx_f_1 = summScoresList[fairness_rank[0]][0]
     summ_idx_f_2 = summScoresList[fairness_rank[0]][1]
@@ -524,19 +390,15 @@ for SOURCE1, SOURCE2 in [('D1a', 'D1b'), ('D2a', 'D2b'), ('D3a', 'D3b'), ('D4a',
 
     print("\nMOST FAIR SUMMARY\n")
     summ_out = '\n'
-    # summ_out += " = Produto A = \n"
     for i in summ_idx_f_1:
         summ_out += "%s " % (source1[i]['verbatim'])
         summ_out += '\n'
-        # print ("      %4d)   %s " % (i, source1[i]['verbatim']))
 
     summ_out += '\n\n'
 
-    # summ_out += " = Produto B = \n"
     for i in summ_idx_f_2:
         summ_out += "%s " % (source2[i]['verbatim'])
         summ_out += '\n'
-        # print ("      %4d)   %s " % (i, source2[i]['verbatim']))
 
     w1 = sum([summ1[i]['word_count'] for i in summ1])
     w2 = sum([summ2[i]['word_count'] for i in summ2])
@@ -561,9 +423,6 @@ for SOURCE1, SOURCE2 in [('D1a', 'D1b'), ('D2a', 'D2b'), ('D3a', 'D3b'), ('D4a',
     evals['D'] = (evals['d1'] + evals['d2']) / 2
 
     evals['H'] = harmonic_mean([evals['R'], evals['C'], evals['D']])
-
-    # for i in evals:
-    # evals[i] = int('%3.0lf'%(evals[i]))
 
     w1 = sum([summ1[i]['word_count'] for i in summ1])
     w2 = sum([summ2[i]['word_count'] for i in summ2])
