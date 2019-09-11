@@ -91,6 +91,7 @@ def contrastive_pair_count(pair, op1, op2):
             c2 += 1
     return c1 * c2
 
+
 def get_contrastive_pairs_rank(source1, source2):
     if INDEPENDENT_RANK:
         return get_contrastive_pairs_rank_independent(source1, source2)  # ATTENTION
@@ -444,7 +445,7 @@ def MakeContrastiveSummary_greedy(source1, source2, stats_source_1, stats_source
                 pr = (s - 1) / LIM_SENTENCES + (c_searched_paths - 1) / search_paths / LIM_SENTENCES + c / len(
                     source1) / search_paths / LIM_SENTENCES
                 out.printProgress(" %6.2lf%%   ( path %3d/%d  of  size  %2d/%d )  %16.2lf" % (
-                100 * pr, c_searched_paths, search_paths, s, LIM_SENTENCES, best_score), end="\r")
+                    100 * pr, c_searched_paths, search_paths, s, LIM_SENTENCES, best_score), end="\r")
                 out.printdebug()
 
                 if i in idx_best_for_size1:
@@ -519,7 +520,6 @@ def MakeContrastiveSummary_greedy(source1, source2, stats_source_1, stats_source
 
 
 def MakeContrastiveSummary_greedy_SELECT(source1, source2, stats_source_1, stats_source_2):
-
     best_score = -INFINITY
 
     total_candidates = len(source1) * len(source2)  # number of new candidates at each iteration
@@ -575,7 +575,7 @@ def MakeContrastiveSummary_greedy_SELECT(source1, source2, stats_source_1, stats
                 pr = (s - 1) / LIM_SENTENCES + (c_searched_paths - 1) / search_paths / LIM_SENTENCES + c / len(
                     source1) / search_paths / LIM_SENTENCES
                 out.printProgress(" %6.2lf%%   ( path %3d/%d  of  size  %2d/%d )  %16.2lf" % (
-                100 * pr, c_searched_paths, search_paths, s, LIM_SENTENCES, best_score), end="\r")
+                    100 * pr, c_searched_paths, search_paths, s, LIM_SENTENCES, best_score), end="\r")
                 out.printdebug()
 
                 if i in idx_best_for_size1:
@@ -624,8 +624,6 @@ def MakeContrastiveSummary_greedy_SELECT(source1, source2, stats_source_1, stats
 
                     score = d / len(all_possibles)
 
-
-
                     if len(top_candidates) < GREEDY_CANDS_SELECTED:
 
                         top_candidates.append(((idx_cand_1, idx_cand_2), score))
@@ -639,8 +637,6 @@ def MakeContrastiveSummary_greedy_SELECT(source1, source2, stats_source_1, stats
 
                     elif score >= top_candidates[0][-1]:
 
-
-
                         x = len(top_candidates) - 1
                         while x > 0 and top_candidates[x][1] < score:
                             x -= 1
@@ -649,14 +645,12 @@ def MakeContrastiveSummary_greedy_SELECT(source1, source2, stats_source_1, stats
 
                         del top_candidates[-1]
 
-
                         out.printdebug("   best candidates:  ", idx_cand_1, idx_cand_2)
                         out.printdebug("   score: ", score)
                         out.printdebug("   sizes: ", size_cand_1, size_cand_2)
                         out.printdebug()
 
                     best_score = top_candidates[0][1]
-
 
     if VERBOSE_MODE:
         out.printinfo('Best score: ', best_score)
@@ -728,7 +722,7 @@ def MakeContrastiveSummary_brute(source1, source2, stats_source_1, stats_source_
                     if p % 1000 == 0:
                         pr = float(p / togo)
                         out.printProgress("  %6.2lf%%   %10s %10s   %6.2lf   /   %10s %10s %6.2lf" % (
-                        100 * pr, subset1, subset2, score, best_summ1, best_summ2, best))
+                            100 * pr, subset1, subset2, score, best_summ1, best_summ2, best))
 
                     if score >= best:
                         best = score
@@ -878,7 +872,6 @@ def MakeContrastiveSummary_fast(source1, source2, stats_source1, stats_source2):
 
 
 def makeSummary_greedy(source, stats_source):
-
     best_score = -INFINITY
 
     total_candidates = len(source)
@@ -914,7 +907,7 @@ def makeSummary_greedy(source, stats_source):
                 pr = (s - 1) / LIM_SENTENCES + (c_searched_paths - 1) / search_paths / LIM_SENTENCES + c / len(
                     source) / search_paths / LIM_SENTENCES
                 out.printProgress(" %6.2lf%%   ( path %3d/%d  of  size  %2d/%d )  %16.2lf" % (
-                100 * pr, c_searched_paths, search_paths, s, LIM_SENTENCES, best_score), end="\r")
+                    100 * pr, c_searched_paths, search_paths, s, LIM_SENTENCES, best_score), end="\r")
                 out.printdebug()
 
                 i = candidate_opinion
@@ -1061,6 +1054,6 @@ def makeSummary_brute(source, stats_source):
             if pr_cur % 100 == 0:
                 out.printProgress("  %6.2lf%% " % (100 * pr), end="\r")
                 out.printdebug(" cur subset: %20s   score:  %6.2lf   /  best subset: %10s  score: %6.5lf" % (
-                idx_cand, score, best_idx, best_score))
+                    idx_cand, score, best_idx, best_score))
 
     return best_idx
