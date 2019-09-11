@@ -1,10 +1,8 @@
 # Raphael Rocha da Silva
 # 2018/02/04 
 
-import numpy as np
 import scipy.stats as stats
 import matplotlib.pyplot as plt
-from pprint import pprint
 
 from setup import MAXPOLARITY
 
@@ -82,8 +80,6 @@ def integralDivergence(d1, d2):  # não sei se isso existe
 
 
 import numpy as np
-from scipy.linalg import norm
-from scipy.spatial.distance import euclidean
 
 _SQRT2 = np.sqrt(2)  # sqrt(2) with default precision np.float64
 
