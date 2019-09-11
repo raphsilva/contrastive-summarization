@@ -20,12 +20,10 @@ from writefiles import underwrite_file
 # lists of negation words
 negation_words = ["sem", "jamais", "nada", "nem", "nenhum", "ninguém", "nunca", "não", "tampouco", "nao", "ñ",
                   "ninguem", "longe", "evitar", "impedir", "perder", "tirar"]
-# negation_words = [ "não", "nao", "ñ"]
 
 LANGUAGE_DIR = 'language'
 
 stopwords = []
-# from setup import LANGUAGE
 
 LANGUAGE = 'portuguese'
 
@@ -37,15 +35,6 @@ def setLanguage(language):
     DIR = LANGUAGE_DIR + '/' + LANGUAGE
 
     stopwords = open(DIR + '/' + 'stopwords.txt').read().split()
-    # print(f.split())
-    # exit()
-
-    # LANGUAGE = language
-    # print(LANGUAGE)
-    # stopwords = nltk.corpus.stopwords.words(LANGUAGE)
-    # print(stopwords)
-    # input()
-
 
 setLanguage(LANGUAGE)
 
@@ -54,7 +43,6 @@ got_all_lemmas = False
 
 def readLemmaDic():
     global got_all_lemmas
-    # return []
     r = {}
     f = open('language/portuguese/lemmas.dic', 'r')
     for i in f:
@@ -118,8 +106,6 @@ def getSentimentLexicon():
         w = i.split(',')[0]
         s = i.split(',')[1]
         r[w] = float(s)
-        # if w == 'bom':
-        # print(w, s)
 
     return r
 
@@ -131,8 +117,6 @@ def getSentimentLexicon_ontopt():
         w = i.split(',')[0]
         s = i.split(',')[1]
         r[w] = float(s)
-        # if w == 'bom':
-        # print(w, s)
 
     return r
 
@@ -144,8 +128,6 @@ def getSentimentLexicon_sqrt():
         w = i.split(',')[0]
         s = i.split(',')[1]
         r[w] = float(s)
-        # if w == 'bom':
-        # print(w, s)
 
     return r
 
