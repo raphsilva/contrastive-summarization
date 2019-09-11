@@ -3,8 +3,6 @@ import statistics
 
 from setup import MAXPOLARITY
 
-from pprint import pprint
-
 
 def trinary_polarity(num):
     if num < -0.25 * MAXPOLARITY:

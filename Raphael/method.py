@@ -1,11 +1,5 @@
-import math
-
 from probability import *
 
-import structure as struct
-import output_format as out
-
-from setup import ALPHA
 from setup import MAXPOLARITY
 from setup import POLARITY_ATTRIBUTION
 from setup import KEY_MEASURE
