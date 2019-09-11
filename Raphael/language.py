@@ -13,7 +13,6 @@ stemmer = dict(portuguese=RSLPStemmer(), english=PorterStemmer())
 nlpnet.set_data_dir("language/portuguese")
 nlpnet_POSTagger = nlpnet.POSTagger()
 
-from writefiles import save_to_file
 from writefiles import get_variable_from_file
 from writefiles import underwrite_file
 

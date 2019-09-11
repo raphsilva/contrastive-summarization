@@ -1,5 +1,3 @@
-import math
-
 import method
 
 import structure as struct
@@ -32,8 +30,6 @@ def random_seed():
     global RANDOM_SEED
     RANDOM_SEED = random.randint(0, 10000)
 
-
-from setup import KEY_MEASURE
 
 
 def summarize(t1, t2, d1, d2, method, mode='greedy'):
@@ -224,8 +220,6 @@ def MakeContrastiveSummary_selection_side(source, opinions_rank, side):
 
     return summ
 
-
-from math import ceil
 
 
 def MakeContrastiveSummary_selection(source1, source2):
