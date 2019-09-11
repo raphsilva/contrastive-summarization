@@ -1,5 +1,4 @@
 
-
 import re
 import string
 
@@ -20,7 +19,6 @@ nlpnet_POSTagger = nlpnet.POSTagger()
 
 # lists of negation words
 negation_words = {
-    #'portuguese': ["jamais", "nada", "nem", "nenhum", "ninguém", "nunca", "não", "tampouco", "nao", "ñ", "ninguem", "longe"],
     'portuguese': ["sem", "jamais", "nada", "nem", "nenhum", "ninguém", "nunca", "não", "tampouco", "nao", "ñ", "ninguem", "longe", "evitar", "impedir", "perder", "tirar"],
     'english': ["never", "neither", "nobody", "no", "none", "nor", "nothing", "nowhere", "not", 'n\'t']
 }
@@ -35,20 +33,9 @@ def setLanguage(language):
     global LANGUAGE
     global stopwords
     
-    DIR = LANGUAGE_DIR+'/'+LANGUAGE
+    DIR = LANGUAGE_DI R +'/ ' +LANGUAGE
 
-    
-    stopwords = open(DIR+'/'+'stopwords.txt').read().split()
-    #print(f.split())
-    #exit()
-    
-    
-    #LANGUAGE = language
-    #print(LANGUAGE)    
-    #stopwords = nltk.corpus.stopwords.words(LANGUAGE)
-    #print(stopwords)
-    #input()
-        
+    stopwords = open(DI R +'/ ' +'stopwords.txt').read().split()
     
 
 
@@ -60,21 +47,14 @@ def simplify_characters(my_string):
     """
 
     # normalize and transform characters into lowercase
-    #normalized_string = unicodedata.normalize('NFKD', my_string.casefold())
+    # normalized_string = unicodedata.normalize('NFKD', my_string.casefold())
     normalized_string = my_string.lower()
 
     # simplify characters in a way that ç becomes c, á becomes a, etc.
-    #normalized_string = u"".join([c for c in normalized_string if not unicodedata.combining(c)])
+    # normalized_string = u"".join([c for c in normalized_string if not unicodedata.combining(c)])
 
     # remove punctuation and special characters
     return re.sub('[' + string.punctuation + ']', ' ', normalized_string)
-
-
-
-
-
-
-
 
 
 
@@ -100,14 +80,14 @@ def makecache_remove_negs_adjs(sentence):
     s = nltk.word_tokenize(s, language=LANGUAGE)
     
     r = s
-    
-    #removing adjectives from both sentences
+
+    # removing adjectives from both sentences
     if LANGUAGE == 'english':
         r = [token for (token, tag) in nltk.pos_tag(s, tagset='universal') if (tag != 'ADJ')]
     elif LANGUAGE == 'portuguese':
         r = [token for (token, tag) in nlpnet_POSTagger.tag_tokens(s, return_tokens=True) if (tag == 'N' or tag == 'V')]
-        
-    #removing negation words from sentence
+
+    # removing negation words from sentence
     r = [word for word in r if (word not in negation_words[LANGUAGE])]
     
     r = [word for word in r if (word not in stopwords)]
@@ -131,7 +111,7 @@ def removeNegsAndAdjs(sentence_proc):
         return sentence_proc
     
     aspects = []
-    while(sentence_proc[-1][0]) == '_':
+    whil e(sentence_proc[-1][0]) == '_':
         aspects.append(sentence_proc[-1])
         sentence_proc = sentence_proc[:-1]
         if sentence_proc == []:
@@ -148,11 +128,11 @@ from writefiles import underwrite_file
 got_all_lemmas = False        
 def readLemmaDic():
     global got_all_lemmas
-    #return []
+    # return []
     r = {}
     f = open('language/portuguese/lemmas.dic', 'r')
     for i in f:
-        if len(i)==0:
+        if len(i )= =0:
             continue
         if '#' in i:
             continue
