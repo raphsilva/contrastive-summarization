@@ -38,8 +38,6 @@ def remove_old_file(path, filename):
     new_name = filename
     while os.path.isfile(new_path + '/' + new_name) == True:
         new_name += '-'
-    # print('Will rename %s to %s' % (path+'/'+filename, new_path+'/'+new_name))
-    # input()
     os.rename(path + '/' + filename, new_path + '/' + new_name)
 
 

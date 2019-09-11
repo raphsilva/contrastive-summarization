@@ -59,13 +59,6 @@ def get_contrastive_pairs(opinions_source1, opinions_source2, REPETITION=False):
 def idx_to_summ(source, indexes):
     return {i: source[i] for i in indexes}
 
-    # s = {}
-    # c = 0
-    # for i in indexes:
-    # s[c] = source[i]
-    # c += 1
-    # return s
-
 
 # Rounds a number (to optimize use of cache and display of information)
 def round_num(n):
@@ -121,14 +114,9 @@ def bagOfWordsAndScores(info):
         for a in info[n]['sent']:
             b = {}
             b['aspect'] = a
-            # b['sentiment']  =   info[n]['opinions'][a]
             b['value'] = info[n]['sent'][a]
-            # b['intensity']  =   info[n]['intensity']
 
             r.append(b)
-
-    # pprint(r)
-    # input()
 
     return r
 
@@ -182,9 +170,6 @@ def aspects_stats(info):
     total = 0
     for i in pairs:
         total += len(pairs[i])
-
-    # if total < 10:
-    # total = 10
 
     for i in pairs:
         if i not in r:
