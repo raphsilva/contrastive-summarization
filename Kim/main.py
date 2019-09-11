@@ -14,8 +14,6 @@
 from language import setLanguage
 
 
-from hashcode import summary as hash_summary
-from hashcode import summaryIDs as hash_summaryIDs
 from summarization import representativeness_first
 from summarization import contrastiveness_first
 from interface import *
