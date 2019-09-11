@@ -12,8 +12,6 @@ from setup import KEY_MEASURE
 
 import re, string
 
-# from language import stem
-# from language import lemma
 from language import getSentimentLexicon
 from language import negation_words
 
@@ -28,19 +26,7 @@ def set_ALPHA(value):
 
 
 def divergence_measure(d1, d2):
-    # return integralDivergence(d1, d2)
-    # return hellingerDistance(d1, d2)
     return KLdivergence(d1, d2)
-
-
-# aspects_dict = get_variable_from_file('language/portuguese/aspects_clues.json')
-# possible_aspects = []
-
-
-# for typ in aspects_dict:
-# for k in aspects_dict[typ]:
-# if aspects_dict[typ][k] not in possible_aspects:
-# possible_aspects.append(aspects_dict[typ][k])
 
 possible_aspects = []
 aspects_list = get_variable_from_file('language/portuguese/aspects.json')
@@ -52,8 +38,6 @@ sentiment_lexicon = getSentimentLexicon()
 
 
 def lex_sent(term):
-    # from language import process_sentence
-    # term = process_sentence(term)[0]
     term = term.lower()
     term = re.sub('[' + string.punctuation + ']', '', term)  # Remove punctuation
     if POLARITY_ATTRIBUTION == 'complex':
@@ -90,40 +74,13 @@ def find_polarities(words):
                 if any(i - j <= 3 and i - j > 0 for j in neg_pos):
                     l.append((words[i], -lex_sent(words[i])))
 
-                    # print(neg_pos)
-                    # print(words, i)
-                    # print()
-                    # input()
-
                 else:
                     l.append((words[i], lex_sent(words[i])))
-
-        # print(l)
 
         else:
             l = [(i, lex_sent(i)) for i in words]
 
         return l
-
-    ##print('BOM', lex_sent('bom'), sentiment_lexicon['bom'])
-
-    ##print(l)
-
-    # pol = sum(l)
-
-    ##print('\nPolaridades das palavras:')
-    # intens = sum([abs(lex_sent(i)) for i in words])
-
-    # sent = MAXPOLARITY*pol/(intens+ALPHA+0.00001)
-    # sent_rounded = float('%.2g' % (sent)) # Rounded to 2 significant digits (to optimize use of cache)
-
-    ##print()
-    ##print('\"'+sentence+'\"')
-    ##print()
-    ##print('Avaliação automática (de -100 a +100):\n', sent_rounded)
-    ##input()
-
-    # return sent_rounded
 
 
 def sent(words_polarities):
@@ -186,14 +143,6 @@ def score_comp_summ(source1, source2, candidate1, candidate2):
     a = 2 * (c * r) / (c + r)
     return a
 
-    # score11 = +SAM(original_stats_1, stats_cand_1)
-    # score22 = +SAM(original_stats_2, stats_cand_2)
-    # score12 = -SAM(original_stats_1, stats_cand_2)
-    # score21 = -SAM(original_stats_2, stats_cand_1)
-
-    # score = (score11 + score12 + score21 + score22)/4      # Using average instead of sum (doesn't affect anything, only makes it prettier)
-
-    # return score
 
 
 def score_representativity(source1, source2, candidate1, candidate2):

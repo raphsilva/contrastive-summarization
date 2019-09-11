@@ -22,8 +22,6 @@ def read_input(filename):
 
         n['word_count'] = len((n['verbatim']).split())  # Number of words
 
-        # n['words'] = len(([i for i in n['verbatim']).split() if len(i) > 2]) # Number of words
-
         n['words'] = [i for i in n['verbatim'].split() if len(i) > 2]
 
         n['sent'] = {}
@@ -32,10 +30,6 @@ def read_input(filename):
                 n['sent'][o[0]] = o[1]
             else:
                 n['sent'][o[0]] += o[1]
-
-        # pprint(n['opinions'])
-        # pprint(n['sent'])
-        # input()
 
         r[n['id']] = n
     return r
