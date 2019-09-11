@@ -25,9 +25,6 @@ import random
 
 RANDOMIZE_DRAW = False  # If two candidates have the same score, chooses random (if true) or chooses the last found (false)
 
-# RANDOM_SEED = [0,4,5,7,8][0]
-# RANDOM_SEED = random.randint(0,10000)
-
 RANDOM_SEED = 7
 
 
@@ -92,13 +89,7 @@ def contrastive_pair_count(pair, op1, op2):
         if o[0] == pair[0] and o[1] == pair[2]:
             f2 += 1 / len(op2)
             c2 += 1
-
-    # return 1
     return c1 * c2
-    # return (f1+f2)/2
-    # return min(c1, c2)
-    # return max(f1, f2)
-
 
 def get_contrastive_pairs_rank(source1, source2):
     if INDEPENDENT_RANK:
@@ -115,13 +106,6 @@ def get_contrastive_pairs_rank(source1, source2):
 
     contr_rank = [i[0] for i in sorted(cpairs_stats.items(), key=lambda kv: kv[1], reverse=True)]
 
-    # contr_rank_p = [(i[0], i[1]) for i in sorted(cpairs_stats.items(), key=lambda kv: kv[1], reverse=True)]
-    # pprint(contr_rank_p)
-    # exit()
-
-    # from random import shuffle
-    # shuffle(contr_rank)
-
     contr_rank_1 = [(i[0], i[1]) for i in contr_rank]
     contr_rank_2 = [(i[0], i[2]) for i in contr_rank]
 
@@ -135,11 +119,7 @@ def contrastive_pair_count_independent(pair, op):
         if o[0] == pair[0] and o[1] == pair[1]:
             c1 += 1
 
-    # return 1
     return c1
-    # return (c1+c2)/2
-    # return min(c1, c2)
-    # return max(c1, c2)
 
 
 def get_contrastive_pairs_rank_independent(source1, source2):
@@ -181,8 +161,6 @@ def MakeContrastiveSummary_selection_side(source, opinions_rank, side):
             e = q_desired_opinions[i]
             del q_desired_opinions[i]
             q_desired_opinions.append(e)
-
-    # pprint(q_desired_opinions)
 
     while c_words < LIM_WORDS:
 
@@ -281,25 +259,15 @@ def MakeContrastiveSummary_alternate_side(source, repr_rank, contr_rank, side):
 
     # Send generic to end of queue
     for Q in [q_contr, q_repr]:
-        # pprint(Q)
         for i in reversed(range(len(Q))):
             if Q[i][0] == '_GENERIC':
                 e = Q[i]
                 del Q[i]
                 Q.append(e)
-        # pprint(Q)
-        # print()
-
-    # pprint(q_contr)
-    # print()
-    # exit()
 
     turn = 0
 
     while c_words < LIM_WORDS:
-
-        # if c_words == c_words_prev: # If didn't add more words, finish
-        # break
 
         c_words_prev = c_words
 
@@ -311,23 +279,8 @@ def MakeContrastiveSummary_alternate_side(source, repr_rank, contr_rank, side):
             q_turn = q_contr
         if turn % 2 == 1:
             q_turn = q_repr
-        # if turn%4 == 3:
-        # q_turn = q_div
 
         turn += 1
-
-        # print()
-        # print()
-        # print()
-        # print()
-        # print('---------')
-        # print(turn%3)
-        # pprint(q_turn)
-        # print()
-        # print(len(summ))
-        # print(c_words)
-        # print()
-        # input()
 
         if q_turn == []:
             continue
@@ -353,18 +306,6 @@ def MakeContrastiveSummary_alternate_side(source, repr_rank, contr_rank, side):
 
             if c_words + source[i]['word_count'] <= LIM_WORDS:
                 oo = [(i[0], 100 * i[1]) for i in q_turn]
-
-                # if len(cand_sentences) == 0:
-                # cand_sentences.append(source[i])
-                # continue
-
-                ## Não colocar se alguma opinião da sentença não estiver na fila
-                # if any(j not in oo for j in source[i]['opinions']):
-                # continue
-
-                ## Não colocar se houve mais de uma opinião 
-                # if len(source[i]['sent']) != 1:
-                # continue
 
                 cand_sentences.append(source[i])
 
@@ -396,10 +337,6 @@ def MakeContrastiveSummary_alternate_side(source, repr_rank, contr_rank, side):
                 for aspect in s['sent']:
                     s_opinions.append((aspect, trinary_polarity(s['sent'][aspect])))
 
-                # print()
-                # pprint(s_opinions)
-                # print()
-
                 # Opinions covered in the selected sentence go to the end of queue
                 for e in s_opinions:
 
@@ -412,11 +349,6 @@ def MakeContrastiveSummary_alternate_side(source, repr_rank, contr_rank, side):
                         if e in q_repr:
                             q_repr.remove(e)
                         q_repr.append(e)
-
-                # pprint(q_desired_opinions)
-
-                # input()
-                # for
 
                 break
 
@@ -434,18 +366,9 @@ def MakeContrastiveSummary_alternate(source1, source2):
     op_c_1 = get_elements_count(op1)
     op_c_2 = get_elements_count(op2)
 
-    # print()
-    # pprint(op_c_1)
-    # print()
-
     # contr_rank = [i[0] for i in sorted(cpairs_c.items(), key=lambda kv: kv[1], reverse=True)]
     repr1_rank = [i[0] for i in sorted(op_c_1.items(), key=lambda kv: kv[1], reverse=True)]
     repr2_rank = [i[0] for i in sorted(op_c_2.items(), key=lambda kv: kv[1], reverse=True)]
-
-    # pprint(contr_rank_1)
-    # print()
-    # pprint(repr1_rank)
-    # exit()
 
     summ1 = MakeContrastiveSummary_alternate_side(source1, repr1_rank, contr_rank_1, 1)
     summ2 = MakeContrastiveSummary_alternate_side(source2, repr2_rank, contr_rank_2, 2)
@@ -454,16 +377,6 @@ def MakeContrastiveSummary_alternate(source1, source2):
     summ2_idx = [e['id'] for e in summ2]
 
     return summ1_idx, summ2_idx
-
-    # Side 1
-
-    # SUMM_ESTIMATE_SIZE = LIM_WORDS/SENTENCE_IDEAL_LENGTH
-
-    # count_to_summ = {}
-    # for i in cpairs_stats:
-    # count_to_summ[i] = ceil(SUMM_ESTIMATE_SIZE*cpairs_stats[i])
-
-    # pprint(count_to_summ)
 
     exit()
 
@@ -606,7 +519,6 @@ def MakeContrastiveSummary_greedy(source1, source2, stats_source_1, stats_source
 
 
 def MakeContrastiveSummary_greedy_SELECT(source1, source2, stats_source_1, stats_source_2):
-    # return MakeContrastiveSummary_greedy_DEPREC(source1, source2, stats_source_1, stats_source_2, LIM_SENTENCES, LIM_WORDS)
 
     best_score = -INFINITY
 
@@ -659,7 +571,6 @@ def MakeContrastiveSummary_greedy_SELECT(source1, source2, stats_source_1, stats
             for i in source1:
 
                 c += 1
-                # if GREEDY_CANDS_SELECTED != 0:
 
                 pr = (s - 1) / LIM_SENTENCES + (c_searched_paths - 1) / search_paths / LIM_SENTENCES + c / len(
                     source1) / search_paths / LIM_SENTENCES
@@ -679,18 +590,7 @@ def MakeContrastiveSummary_greedy_SELECT(source1, source2, stats_source_1, stats
                 if size_cand_1 > LIM_WORDS:
                     continue  # Candidate not considered because it is too long.
 
-                # stats_cand_1 = struct.aspects_stats(summ_cand_1)
-                # If there's not enough data to calculate stdev
-                # for i in stats_cand_1:
-                # if stats_cand_1[i]['std'] == None:
-                # stats_cand_1[i]['std'] = 0 #stats_source_1[i]['std']
-
                 for j in source2:
-
-                    # if GREEDY_CANDS_SELECTED == 0:
-                    # pr = pr_cur/pr_tot
-                    # out.printProgress ("  %.2lf%%    %10.2lf" % (100*pr, best_score), end="\r")
-                    # pr_cur += 1
 
                     if j in idx_best_for_size2:
                         continue
@@ -703,12 +603,6 @@ def MakeContrastiveSummary_greedy_SELECT(source1, source2, stats_source_1, stats
 
                     if size_cand_2 > LIM_WORDS:
                         continue
-
-                    # stats_cand_2 = struct.aspects_stats(summ_cand_2)
-                    # If there's not enough data to calculate stdev
-                    # for i in stats_cand_2:
-                    # if stats_cand_2[i]['std'] == None:
-                    # stats_cand_2[i]['std'] = 0 #stats_source_2[i]['std']
 
                     opinions_summ1 = []
                     for j in summ_cand_1:
@@ -730,51 +624,7 @@ def MakeContrastiveSummary_greedy_SELECT(source1, source2, stats_source_1, stats
 
                     score = d / len(all_possibles)
 
-                    # r1 = method.score_repr_summ (source1, summ_cand_1)
-                    # r2 = method.score_repr_summ (source2, summ_cand_2)
 
-                    # r = 0.5*(r1+r2)
-
-                    # score = 2*(c*r)/(c+r)
-
-                    # score = c
-
-                    # score = method.score_comp_summ(source1, source2, summ_cand_1, summ_cand_2)#*((len(idx_cand_1)+len(idx_cand_2))**0.1)
-
-                    # score /= LIM_SENTENCES # Normalize by limit of sentences (doesn't affect anything, only makes it prettier)
-
-                    # out.printdebug("   candidates:  ", idx_cand_1, idx_cand_2)
-                    # out.printdebug("   score: ", score)
-                    # out.printdebug("   sizes: ", size_cand_1, size_cand_2)
-                    # out.printdebug()
-
-                    # if score > best_score:
-
-                    # best_score = score
-
-                    ##idx_best_for_size[s] = [(idx_cand_1, idx_cand_2)]
-
-                    # top_candidates = [((idx_cand_1, idx_cand_2), score)]
-
-                    ##idx_best_for_size1[s] = idx_cand_1
-                    ##idx_best_for_size2[s] = idx_cand_2
-
-                    ## Display information
-                    # out.printdebug("   best candidates:  ", idx_cand_1, idx_cand_2)
-                    # out.printdebug("   score: ", score)
-                    # out.printdebug("   sizes: ", size_cand_1, size_cand_2)
-                    # out.printdebug()
-
-                    # out.printdebug("   length top cands ", len(top_candidates), 0.001*total_candidates)
-                    # out.printdebug()
-
-                    # prob = 10/(max(len(source1),len(source2)))
-                    # draw = random.uniform(0,1)
-
-                    # if score == top_candidates[0][-1] :
-                    # print(draw)
-                    # print(prob)
-                    # print()
 
                     if len(top_candidates) < GREEDY_CANDS_SELECTED:
 
@@ -787,16 +637,9 @@ def MakeContrastiveSummary_greedy_SELECT(source1, source2, stats_source_1, stats
                         out.printdebug("   sizes: ", size_cand_1, size_cand_2)
                         out.printdebug()
 
-                    # elif score > top_candidates[0][-1] or (not RANDOMIZE_DRAW and score == top_candidates[0][-1]) or (RANDOMIZE_DRAW and score == top_candidates[0][-1] and draw<prob):
                     elif score >= top_candidates[0][-1]:
 
-                        # if score == top_candidates[0][-1] :
-                        # print('***')
-                        # print()
-                        # print()
 
-                        # del top_candidates[-1]
-                        # top_candidates.append(((idx_cand_1, idx_cand_2), score))
 
                         x = len(top_candidates) - 1
                         while x > 0 and top_candidates[x][1] < score:
@@ -806,8 +649,6 @@ def MakeContrastiveSummary_greedy_SELECT(source1, source2, stats_source_1, stats
 
                         del top_candidates[-1]
 
-                        # top_candidates[-1] = ((idx_cand_1, idx_cand_2), score)
-                        # top_candidates = sorted(top_candidates, key=lambda x: x[1], reverse=True)
 
                         out.printdebug("   best candidates:  ", idx_cand_1, idx_cand_2)
                         out.printdebug("   score: ", score)
@@ -816,29 +657,9 @@ def MakeContrastiveSummary_greedy_SELECT(source1, source2, stats_source_1, stats
 
                     best_score = top_candidates[0][1]
 
-                    # print(top_candidates)
-                    # input()
-
-                    # elif score > OPTM_GREEDY_TOLERANCE * best_score:
-                    # out.printdebug("   GOT A DRAW ", idx_cand_1, idx_cand_2, score)
-                    # out.printdebug("   best: ", best_score)
-                    # out.printdebug("   sizes: ", size_cand_1, size_cand_2)
-                    # out.printdebug()
-                    # idx_best_for_size[s].append((idx_cand_1, idx_cand_2))
-
-                    # if len(idx_best_for_size[s]):
-                    # pprint(idx_best_for_size[s])
-                    # input()
-
-            # idx_best_for_size[s] = [i[0] for i in top_candidates]
-
-    # out.printMessage('Sumários empatados: ', len(idx_best_for_size[LIM_SENTENCES]))
 
     if VERBOSE_MODE:
         out.printinfo('Best score: ', best_score)
-
-    # print(top_candidates)
-    # print(idx_best_for_size)
 
     best_summ1 = top_candidates[0][0][0]
     best_summ2 = top_candidates[0][0][1]
@@ -929,22 +750,12 @@ def makeSummary_fast(source, stats_source):
 
     for s in range(1, LIM_SENTENCES + 1):
 
-        # pprint(idx_best)
-        # pprint(score_gain)
-
         best_score_prev = best_score
         idx_best_prev = idx_best
 
         if len(idx_best_prev) < s - 1:
             # print('not finding best', len(idx_best_prev), s-1)
             break
-
-        # m_gain = max(score_gain.values())
-        # lim_gain = sorted([i[1] for i in score_gain], reverse=True)[int(len(score_gain)/2)]
-        # if m_gain > 0:
-        # min_gain = 0.9*m_gain
-        # else:
-        # min_gain = 1.1*m_gain
 
         score_gain = sorted(score_gain, key=lambda x: x[1], reverse=True)
 
@@ -954,17 +765,9 @@ def makeSummary_fast(source, stats_source):
             if len(idx_best_prev) >= 1 and len(idx_best) > len(idx_best_prev):
                 break
 
-            # print(c)
-
             p = score_gain[i]
 
             c = p[0]
-
-            # if score_gain[c] < lim_gain:
-            ##print ('skipping')
-            # continue
-
-            # print ('%5d  :  %10d ' % (c, p[1]))
 
             idx_cand = idx_best_prev + [c]
 
@@ -978,8 +781,6 @@ def makeSummary_fast(source, stats_source):
             stats_cand = struct.aspects_stats(summ_cand)
 
             score = method.score_repr_summ(stats_source, stats_cand)
-
-            # score /= LIM_SENTENCES # Normalize by limit of sentences (doesn't affect anything, only makes it prettier)
 
             g = score - best_score_prev
             score_gain[i][1] += g
@@ -1001,9 +802,6 @@ def MakeContrastiveSummary_fast(source1, source2, stats_source1, stats_source2):
 
     for s in range(1, LIM_SENTENCES + 1):
 
-        # pprint(idx_best)
-        # pprint(score_gain)
-
         best_score_prev = best_score
         idx_best_prev1 = idx_best1
         idx_best_prev2 = idx_best2
@@ -1011,13 +809,6 @@ def MakeContrastiveSummary_fast(source1, source2, stats_source1, stats_source2):
         if max(len(idx_best_prev1), len(idx_best_prev2)) < s - 1:
             # print('not finding best', len(idx_best_prev), s-1)
             break
-
-        # m_gain = max(score_gain.values())
-        # lim_gain = sorted([i[1] for i in score_gain], reverse=True)[int(len(score_gain)/2)]
-        # if m_gain > 0:
-        # min_gain = 0.9*m_gain
-        # else:
-        # min_gain = 1.1*m_gain
 
         score_gain1 = sorted(score_gain1, key=lambda x: x[1], reverse=True)
         score_gain2 = sorted(score_gain2, key=lambda x: x[1], reverse=True)
@@ -1029,8 +820,6 @@ def MakeContrastiveSummary_fast(source1, source2, stats_source1, stats_source2):
 
             if len(idx_best_prev1) >= 1 and len(idx_best1) > len(idx_best_prev1):
                 break
-
-            # print(c)
 
             p1 = score_gain1[i]
 
@@ -1052,13 +841,8 @@ def MakeContrastiveSummary_fast(source1, source2, stats_source1, stats_source2):
 
             for j in range(int(len(score_gain2))):
 
-                # pr = i/len(score_gain1) + j/len(score_gain2)/len(score_gain1)
-                # out.printProgress("  %3d%% " % (100*pr), end='\r')
-
                 if len(idx_best_prev2) >= 1 and len(idx_best2) > len(idx_best_prev2):
                     break
-
-                # print(c)
 
                 p2 = score_gain2[j]
 
@@ -1080,8 +864,6 @@ def MakeContrastiveSummary_fast(source1, source2, stats_source1, stats_source2):
 
                 score = method.score_comp_summ(stats_source1, stats_source2, stats_cand1, stats_cand2)
 
-                # score /= LIM_SENTENCES # Normalize by limit of sentences (doesn't affect anything, only makes it prettier)
-
                 g = score - best_score_prev
                 score_gain2[j][1] += g
                 score_gain1[i][1] += g / len(score_gain2)
@@ -1096,7 +878,6 @@ def MakeContrastiveSummary_fast(source1, source2, stats_source1, stats_source2):
 
 
 def makeSummary_greedy(source, stats_source):
-    # return makeSummary_greedy_DEPREC (source, stats_source)
 
     best_score = -INFINITY
 
@@ -1115,8 +896,6 @@ def makeSummary_greedy(source, stats_source):
                 pprint(top_candidates)
                 out.printMessage('\nWon\'t find any larger summary', s)
             break
-
-        # idx_best_for_size[s] = idx_best_for_size[s-1]
 
         best_for_size_prev = [i[0] for i in top_candidates]
 
@@ -1140,11 +919,8 @@ def makeSummary_greedy(source, stats_source):
 
                 i = candidate_opinion
 
-                # pprint(source[candidate_opinion])
                 sent_density = source[candidate_opinion]['intensity']['aspects'] / source[candidate_opinion][
                     'word_count']
-                # print(sent_density)
-                # input()
 
                 if i in idx_best_for_size:  # Candidate opinion already in the summary
                     continue
@@ -1162,8 +938,6 @@ def makeSummary_greedy(source, stats_source):
 
                 score = method.score_repr_summ(source, summ_cand)
 
-                # score /= LIM_SENTEdNCES # Normalize by limit of sentences (doesn't affect anything, only makes it prettier)
-
                 prob = 10 / len(source)
                 draw = random.uniform(0, 1)
 
@@ -1179,15 +953,10 @@ def makeSummary_greedy(source, stats_source):
                     out.printdebug()
 
 
-
-                # elif score > top_candidates[0][-1] or (not RANDOMIZE_DRAW and score == top_candidates[0][-1]) or (RANDOMIZE_DRAW and score == top_candidates[0][-1] and draw<prob):
                 elif score >= top_candidates[0][-1]:
 
                     # If score is best than the worst top candidate, the worse is replaced by the new.
                     # If score is equal than the worst top candidate, it may be replaced or not based on random decision
-
-                    # del top_candidates[-1]
-                    # top_candidates.append(((idx_cand_1, idx_cand_2), score))
 
                     x = len(top_candidates) - 1
                     while x > 0 and top_candidates[x][1] < score:
@@ -1197,27 +966,12 @@ def makeSummary_greedy(source, stats_source):
 
                     del top_candidates[-1]
 
-                    # top_candidates[-1] = ((idx_cand_1, idx_cand_2), score)
-                    # top_candidates = sorted(top_candidates, key=lambda x: x[1], reverse=True)
-
                     out.printdebug("   best candidate:  ", idx_cand)
                     out.printdebug("   score: ", score)
                     out.printdebug("   size: ", size_cand)
                     out.printdebug()
 
                 best_score = top_candidates[0][1]
-
-                # if score >= best_score:
-                # best_score = score
-                # idx_best_for_size[s] = idx_cand
-
-                # out.printdebug ('*', idx_cand, score)
-
-                # else:
-                # out.printdebug (idx_cand, score)
-
-                # pprint(stats_cand)
-                # pprint(stats_source)
 
     best_idx = top_candidates[0][0]
 
@@ -1266,9 +1020,6 @@ def makeSummary_greedy_DEPREC(source, stats_source):
 
             else:
                 out.printdebug(idx_cand, score)
-
-            # pprint(stats_cand)
-            # pprint(stats_source)
 
     best_idx = idx_best_for_size[LIM_SENTENCES]
 
