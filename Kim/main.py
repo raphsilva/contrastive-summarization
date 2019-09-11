@@ -333,6 +333,7 @@ for SOURCE1, SOURCE2 in reversed([('D1a', 'D1b'), ('D2a', 'D2b'), ('D3a', 'D3b')
 
                         print(" %3d %3d [%2d] " % (10 0 * pair, 10 0 * cove, 10 0 * h_mean), end='')
 
+
                         def harmonic_mean(l):
                             s = 0
                             if min(l) == 0:
