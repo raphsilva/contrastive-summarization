@@ -17,8 +17,6 @@ import optimization as optm
 # Setup options
 from setup import LIM_SENTENCES  # Sets the maximum number of SENTENCES in each side of the summary
 from setup import LIM_WORDS  # Sets the maximum number of WORDS in each side of the summary
-from setup import MIN_INTENS_IN_SUMMARY
-from setup import DATA_DIR
 from setup import SOURCE1, SOURCE2
 from setup import filepath  # Get full path for the file with data of target
 
@@ -27,17 +25,7 @@ from setup import EVALUATION_MODE
 from setup import OUTPUT_MODE
 from setup import OVERVIEW_MODE
 
-from setup import BYPASS_GENERIC
-from setup import BYPASS_SHORT
-from setup import BYPASS_UNRELATAD
-
 from setup import OPTM_MODE
-from setup import ALPHA
-
-from setup import KEY_MEASURE
-
-from setup import ASPECT_DETECTION
-from setup import POLARITY_ATTRIBUTION
 
 from writefiles import underwrite_file
 
@@ -59,7 +47,6 @@ if DEBUGGING:
     # For debugging
     out.setDebugPrints(True)  # Choose whether or not to display information for debugging.
     # out.setDebugPrints(False)   # Choose whether or not to display information for debugging.
-from pprint import pprint
 
 
 def print_verbose(*msg):
@@ -122,7 +109,6 @@ def load_input():
     'cor':  {'mean': -87, 'prob': 0.21, 'std': 1.73}}
 '''
 
-from setup import PRESET
 
 from time import time
 
