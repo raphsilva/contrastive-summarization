@@ -27,8 +27,8 @@ METHOD = [OPTM_MODE, INDEPENDENT_RANK, SENTENCE_IDEAL_LENGTH]
 DATA_DIR = "../input"
 
 SOURCE1, SOURCE2 = \
-[(), ('10', '11'), ('30', '31'), ('10-sel', '11-sel'), ('10-chop', '11'), ('30a', '31a'), ('30b', '31b'),
- ('30f', '31f')][1]
+    [(), ('10', '11'), ('30', '31'), ('10-sel', '11-sel'), ('10-chop', '11'), ('30a', '31a'), ('30b', '31b'),
+     ('30f', '31f')][1]
 
 # SOURCE1 = '10'
 # SOURCE2 = '11'

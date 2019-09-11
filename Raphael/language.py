@@ -36,6 +36,7 @@ def setLanguage(language):
 
     stopwords = open(DIR + '/' + 'stopwords.txt').read().split()
 
+
 setLanguage(LANGUAGE)
 
 got_all_lemmas = False
