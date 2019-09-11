@@ -111,7 +111,7 @@ def contrastiviness(source1, source2, summ1, summ2):
                 pol2 = (op2[1])
                 if op1[0] == op2[0] and pol1 == -pol2 and pol1 != 0:
                     asp_cont = (
-                    op1[0], pol1, pol2)  # This aspect has the possibility to form a possible contrastive pair.
+                        op1[0], pol1, pol2)  # This aspect has the possibility to form a possible contrastive pair.
 
                     if asp_cont not in all_possibles:
                         all_possibles.append(asp_cont)
@@ -133,9 +133,7 @@ def contrastiviness(source1, source2, summ1, summ2):
                 if (p[0], p[2]) not in debug_found_2:
                     debug_found_2.append((p[0], p[2]))
 
-
         points += c / len(all_possibles)
-
 
     return points / 2
 
@@ -593,7 +591,6 @@ def contrastiviness_repr(source1, source2, summ1, summ2):
                     idx1_used.append(idx1)
                     idx2_used.append(idx2)
 
-
         pairs_formed = []
 
         idx1_used = []
@@ -612,7 +609,7 @@ def contrastiviness_repr(source1, source2, summ1, summ2):
                 pol2 = trinary_polarity(op2[1])
                 if op1[0] == op2[0] and pol1 == -pol2:
                     asp_cont = (
-                    op1[0], pol1, pol2)  # This aspect has the possibility to form a possible contrastive pair.
+                        op1[0], pol1, pol2)  # This aspect has the possibility to form a possible contrastive pair.
                     pairs_formed.append(asp_cont)
                     idx1_used.append(idx1)
                     idx2_used.append(idx2)
