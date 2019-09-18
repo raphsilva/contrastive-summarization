@@ -1,11 +1,10 @@
-
-DEBUGGING = False
-
-
 # Execution options
 METHOD = ['R', 'C', 'D'][1]
 
 OPTM_METHOD = 'greedy'
+
+REPEAT_TESTS = 10 # Times to repeat each test
+DISCARD_TESTS = int(0.1*REPEAT_TESTS) # Amount of top-rated and bottom-rated tests to be discarded to compute average
 
 
 # Display options
@@ -13,19 +12,16 @@ OPTM_METHOD = 'greedy'
 VERBOSE_MODE = False    # To print statistics and status information (progress is always shown)
 EVALUATION_MODE = True # To print evaluation metrics results 
 OUTPUT_MODE = True # To print the summaries
-OVERVIEW_MODE = False
+DEBUG_MODE = False
 
 
 # Input files 
 
 DATA_DIR = "../input"
 
-SOURCE1, SOURCE2= [(), ('D1a','D1b'), ('D2a','D2b'), ('D3a','D3b'), ('D4a','D4b'), ('D5a','D5b'), ('D6a','D6b'), ('D7a','D7b'), ('D8a','D8b')][3]
+INPUT_FILES = [(), ('D1a','D1b'), ('D2a','D2b'), ('D3a','D3b'), ('D4a','D4b'), ('D5a','D5b'), ('D6a','D6b'), ('D7a','D7b'), ('D8a','D8b')]
 
-
-#SOURCE1 = '10'
-#SOURCE2 = '11'
-
+DATASETS_TO_TEST = [INPUT_FILES[2]]
 
 # Scale options
 
@@ -57,25 +53,6 @@ PRESET = [
             
 config = PRESET[preset]
 
-
-#KEY_MEASURE = preset['KEY_MEASURE']
-
-#setting = preset['setting']
-
-#ASPECT_DETECTION =   ['keywords', 'clues'][setting]
-#POLARITY_ATTRIBUTION = ['pure', 'complex', 'manual'][setting]
-
-#BYPASS_GENERIC =   [True, False][setting]
-#BYPASS_UNRELATAD = [False, True][setting]
-#BYPASS_SHORT =     [False, True][setting]
-            
-
-#KEY_MEASURE = 'aspects'
-#KEY_MEASURE = 'lexicon'
-#KEY_MEASURE = 'corpus'
-
-#def update_settings(preset=preset):
-
 KEY_MEASURE = config['KEY_MEASURE']
 
 setting = config['setting']
@@ -86,13 +63,6 @@ POLARITY_ATTRIBUTION = ['pure', 'complex', 'manual'][2]
 BYPASS_GENERIC =   [True, False][setting]
 BYPASS_UNRELATAD = [False, True][setting]
 BYPASS_SHORT =     [False, True][setting]
-    
-
-
-#BYPASS_GENERIC =   False
-#BYPASS_UNRELATAD = False
-#BYPASS_SHORT =     False
-
 
 POLARITY_LEXICON = 'sentilex'
 
@@ -121,7 +91,7 @@ def filepath(target):
 
 if VERBOSE_MODE or EVALUATION_MODE:
     import output_format as out
-    out.printMessage('Datasets: ', SOURCE1, SOURCE2)
+    out.printMessage('Datasets: ', DATASETS_TO_TEST)
     out.printMessage()
     out.printMessage('Method: ', METHOD)
     out.printMessage('Key measure: ', KEY_MEASURE)
