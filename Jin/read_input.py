@@ -1,11 +1,5 @@
-
-
 from writefiles import get_variable_from_file
-
-
-
-
-from pprint import pprint 
+from pprint import pprint
 
 # Reads input files
 def read_input (filename): 
@@ -25,9 +19,7 @@ def read_input (filename):
             
         n['verbatim'] = i['sentence']
         
-        n['word_count'] = len((n['verbatim']).split()) # Number of words        
-        
-        
+        n['word_count'] = len((n['verbatim']).split()) # Number of words
         
         n['sent'] = {}
         for o in n['opinions']:
@@ -35,11 +27,6 @@ def read_input (filename):
                 n['sent'][o[0]] = o[1]
             else:
                 n['sent'][o[0]] += o[1]
-        
-        #pprint(n['opinions'])
-        #pprint(n['sent'])
-        #input()
-               
                     
         r[n['id']] = n
     return r

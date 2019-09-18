@@ -7,7 +7,12 @@ cache
 
 language
 output
+<<<<<<< HEAD
 results
 out*
 results_*
-
+out*
+!output_format.py
+!*.py
+results
+results_*
