@@ -235,6 +235,9 @@ def makeSummary_greedy(source, stats_source, LIM_WORDS=LIM_WORDS):
                 if size_cand > LIM_WORDS:
                     continue
 
+                stats_cand = struct.aspects_stats(summ_cand)
+                score = method.SAM(stats_source, stats_cand)
+
                 if len(top_candidates) < GREEDY_CANDS_SELECTED:  # There's space for more candidates
 
                     top_candidates.append((idx_cand, score))
