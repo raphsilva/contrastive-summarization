@@ -1,9 +1,19 @@
-from setup import ALPHA
 from probability import *
+from setup import ALPHA
 from setup import MAXPOLARITY
 from writefiles import get_variable_from_file
 from writefiles import overwrite_json
 
+cache_distance = get_variable_from_file('cache/distance.cache')
+cache_SAM = get_variable_from_file('cache/SAM.cache')
+
+if cache_distance == False:
+    cache_distance = {}
+
+if cache_SAM == False:
+    cache_SAM = {}
+
+normal_distribution_zero = normalDistributionZero()
 
 
 def divergence_measure(d1, d2):
@@ -22,18 +32,6 @@ def sent(words_polarities):
     sent_rounded = float('%.2g' % (sent))  # Rounded to 2 significant digits (to optimize use of cache)
 
     return sent_rounded
-
-
-cache_distance = get_variable_from_file('cache/distance.cache')
-cache_SAM = get_variable_from_file('cache/SAM.cache')
-
-if cache_distance == False:
-    cache_distance = {}
-
-if cache_SAM == False:
-    cache_SAM = {}
-
-normal_distribution_zero = normalDistributionZero()
 
 
 def SAM(source, candidate):
@@ -84,7 +82,6 @@ def SAM(source, candidate):
             score += distance  # add up entropy to make the score
             debug_score[aspect] = distance
 
-
     for aspect in source:
         if aspect not in candidate:
 
@@ -118,7 +115,7 @@ def SAM_contrastive(original_stats_1, original_stats_2, stats_cand_1, stats_cand
     score21 = -SAM(original_stats_2, stats_cand_1)
 
     score = (
-                        score11 + score12 + score21 + score22) / 4  # Using average instead of sum (doesn't affect anything, only makes it prettier)
+                    score11 + score12 + score21 + score22) / 4  # Using average instead of sum (doesn't affect anything, only makes it prettier)
 
     score = float('%.4g' % (score))
 
