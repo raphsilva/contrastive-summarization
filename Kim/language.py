@@ -30,11 +30,9 @@ def setLanguage(language):
     global LANGUAGE
     global stopwords
 
-    DIR = LANGUAGE_DI
-    R + '/ ' + LANGUAGE
+    DIR = LANGUAGE_DIR + '/ ' + LANGUAGE
 
-    stopwords = open(DI
-    R + '/ ' + 'stopwords.txt').read().split()
+    stopwords = open(DIR + '/ ' + 'stopwords.txt').read().split()
 
 
 def simplify_characters(my_string):
@@ -104,15 +102,14 @@ def removeNegsAndAdjs(sentence_proc):
         return sentence_proc
 
     aspects = []
-    whil
-    e(sentence_proc[-1][0]) == '_':
-    aspects.append(sentence_proc[-1])
-    sentence_proc = sentence_proc[:-1]
-    if sentence_proc == []:
-        break
+    while(sentence_proc[-1][0]) == '_':
+        aspects.append(sentence_proc[-1])
+        sentence_proc = sentence_proc[:-1]
+        if sentence_proc == []:
+            break
 
 
-return aspects + cache_removed_negs_adjs[str(sentence_proc)]  # This cache is made right when data is loaded
+    return aspects + cache_removed_negs_adjs[str(sentence_proc)]  # This cache is made right when data is loaded
 
 from writefiles import save_to_file
 from writefiles import get_variable_from_file
@@ -127,7 +124,7 @@ def readLemmaDic():
     r = {}
     f = open('language/portuguese/lemmas.dic', 'r')
     for i in f:
-        if len(i)= =0:
+        if len(i)==0:
             continue
         if '#' in i:
             continue
