@@ -30,9 +30,9 @@ def setLanguage(language):
     global LANGUAGE
     global stopwords
 
-    DIR = LANGUAGE_DIR + '/ ' + LANGUAGE
+    DIR = LANGUAGE_DIR + '/' + LANGUAGE
 
-    stopwords = open(DIR + '/ ' + 'stopwords.txt').read().split()
+    stopwords = open(DIR + '/' + 'stopwords.txt').read().split()
 
 
 def simplify_characters(my_string):
