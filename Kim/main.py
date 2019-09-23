@@ -15,6 +15,7 @@ from language import setLanguage
 from load_data import preprocess
 from load_data import read_input
 from setup import LANGUAGE
+from setup import MAX_WORDS
 from setup import SHOW_EVALUATION
 from setup import SHOW_INDEXES
 from setup import SHOW_SUMMARY
