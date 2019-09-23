@@ -2,9 +2,7 @@ MAXSENT = 100
 
 import structure as struct
 
-from language import *
 from similarity import psi, phi
-from setup import *
 
 BYPASS_ASPECTS = ['EMPRESA', 'PRODUTO', '_GENERIC', '_NONE', 'x', 'X']
 
