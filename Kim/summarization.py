@@ -107,8 +107,6 @@ def representativeness_first(side1, side2, polarity1, polarity2, LAMBDA=0.5, CEN
     for j in range(len(side2)):
         clusters_y[model_labels_y[j]].append(j)
 
-    # debug.print_cluster(clusters_x, side1, k)
-
     # structures to store the centroids for each cluster
     centroids_x = findCentroids(clusters_x, text_info_1, polarity1, k)
     centroids_y = findCentroids(clusters_y, text_info_2, polarity2, k)

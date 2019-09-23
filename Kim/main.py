@@ -73,12 +73,7 @@ def sqdiff(l1, l2):
     return r
 
 
-# SHOW_ALL_ITERAT = False
-
-# for SOURCE1, SOURCE2 in reversed([('D1a','D1b'), ('D2a','D2b'), ('D3a','D3b'), ('D4a','D4b'), ('D5a','D5b'), ('D6a','D6b'), ('D7a','D7b'), ('D8a','D8b')]):
-# for SOURCE1, SOURCE2 in reversed([('D5a','D5b'), ('D6a','D6b'), ('D7a','D7b'), ('D8a','D8b')]):
 for SOURCE1, SOURCE2 in reversed([('D1a', 'D1b'), ('D2a', 'D2b'), ('D3a', 'D3b'), ('D4a', 'D4b')]):
-    # for SOURCE1, SOURCE2 in reversed([('D2a','D2b'), ('D6a','D6b')]):
 
     summScoresList = {}
 
@@ -87,22 +82,6 @@ for SOURCE1, SOURCE2 in reversed([('D1a', 'D1b'), ('D2a', 'D2b'), ('D3a', 'D3b')
     print('\n\n\n\n ============  ', SOURCE1, SOURCE2)
     print('\n\n')
 
-    # global PAR
-
-    # print(PAR['ID1'], PAR['ID2'], PAR['ASPECT'])
-
-    # define the parameters according to what was given in the command line arguments;
-    # if there are none, the program will consider the predefined parameters in the beginning of this code.
-    # try:
-    # opts, args = getopt.getopt(argv, "", ["dataset=", "language=", "lambda=", "method=", "centroids_as_summary=",
-    # "use_hungarian_method=", "allow_repetition="])
-    # for opt, arg in opts:
-    # PAR[opt[2:].upper()] = arg
-
-    # except (getopt.GetoptError, ValueError):
-    # print('Error: please see the documentation in order to provide parameters correctly.')
-    # sys.exit(2)
-
     # setup language functions
     setLanguage(LANGUAGE)
 
@@ -110,31 +89,20 @@ for SOURCE1, SOURCE2 in reversed([('D1a', 'D1b'), ('D2a', 'D2b'), ('D3a', 'D3b')
     source1 = read_input(filepath(SOURCE1))
     source2 = read_input(filepath(SOURCE2))
 
-    # pprint(source1)
-    # input()
-
     source1_proc = preprocess(source1)
     source2_proc = preprocess(source2)
 
     print(len(source1), len(source1_proc['+'] + source1_proc['-']))
     print(len(source2), len(source2_proc['+'] + source2_proc['-']))
 
-    # exit()
-
     # <----------------------------------------->
     # <--------> executing the methods <-------->
     # <----------------------------------------->
-
-    # t1 = datasets[SOURCE1]
-    # t2 = datasets[SOURCE2]
 
     set1_pos = source1_proc['+']
     set1_neg = source1_proc['-']
     set2_pos = source2_proc['+']
     set2_neg = source2_proc['-']
-
-    # pprint(set1_pos)
-    # input()
 
     # Make contrastive summary
 
@@ -338,9 +306,6 @@ for SOURCE1, SOURCE2 in reversed([('D1a', 'D1b'), ('D2a', 'D2b'), ('D3a', 'D3b')
                         evals['D'] = (evals['d1'] + evals['d2']) / 2
 
                         evals['H'] = harmonic_mean([evals['R'], evals['C'], evals['D']])
-
-                        # for i in evals:
-                        # evals[i] = int('%3.0lf'%(evals[i]))
 
                         w1 = sum([summ1[i]['word_count'] for i in summ1])
                         w2 = sum([summ2[i]['word_count'] for i in summ2])
