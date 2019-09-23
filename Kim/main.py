@@ -8,30 +8,24 @@
 
 """
 
-from language import setLanguage
-
-from summarization import representativeness_first
-from summarization import contrastiveness_first
-from interface import *
-
-from structure import idx_to_summ
-from structure import word_count
-
 import evaluation as evalu
-
-from load_data import read_input
+import output_format as out
+from interface import *
+from language import setLanguage
 from load_data import preprocess
-
-from setup import SOURCE1
-from setup import SOURCE2
-from setup import filepath
+from load_data import read_input
 from setup import LANGUAGE
-from setup import SHOW_SUMMARY
 from setup import SHOW_EVALUATION
 from setup import SHOW_INDEXES
+from setup import SHOW_SUMMARY
+from setup import SOURCE1
+from setup import SOURCE2
 from setup import SUMLEN
-
-import output_format as out
+from setup import filepath
+from structure import idx_to_summ
+from structure import word_count
+from summarization import contrastiveness_first
+from summarization import representativeness_first
 
 results = {}
 results['meta'] = {}
@@ -67,12 +61,10 @@ from time import time
 
 exec_code = str(int(time()) % 100000000)
 
-FILE_RESULTS = 'results_ ' + exec_cod
-e + '.txt'
+FILE_RESULTS = 'results_ ' + exec_code + '.txt'
 
 RTESTS = 100
-DTESTS = int(RTEST
-S / 10)
+DTESTS = int(RTESTS / 10)
 
 print('Will perform %d tests and discard %d(x2) best and worst\n\n' % (RTESTS, DTESTS))
 
@@ -99,8 +91,7 @@ for SOURCE1, SOURCE2 in reversed([('D1a', 'D1b'), ('D2a', 'D2b'), ('D3a', 'D3b')
 
     summScoresList = {}
 
-    OUTPUT_FILE = 'out ' + exec_cod
-    e + '_ ' + SOURCE1[:-1] + '.txt'
+    OUTPUT_FILE = 'out ' + exec_code + '_ ' + SOURCE1[:-1] + '.txt'
 
     print('\n\n\n\n ============  ', SOURCE1, SOURCE2)
     print('\n\n')
@@ -168,8 +159,7 @@ for SOURCE1, SOURCE2 in reversed([('D1a', 'D1b'), ('D2a', 'D2b'), ('D3a', 'D3b')
     h_sentences2 = []
 
     RTESTS = 100
-    DTESTS = int(RTEST
-    S / 10)
+    DTESTS = int(RTESTS / 10)
 
     print('Will perform %d tests and discard %d(x2) best and worst\n\n' % (RTESTS, DTESTS))
 
@@ -183,9 +173,8 @@ for SOURCE1, SOURCE2 in reversed([('D1a', 'D1b'), ('D2a', 'D2b'), ('D3a', 'D3b')
 
     for repeat in range(RTESTS):
 
-        pr = repea
-        t / RTESTS
-        out.printProgress('   %3d%% ' % (10 0 * pr), end="\r")
+        pr = repeat / RTESTS
+        out.printProgress('   %3d%% ' % (100 * pr), end="\r")
 
         # não faz diferença
         from random import shuffle
@@ -290,7 +279,7 @@ for SOURCE1, SOURCE2 in reversed([('D1a', 'D1b'), ('D2a', 'D2b'), ('D3a', 'D3b')
 
                     print(w1, w2)
 
-                    if w 1 +w2 > MAX_WORDS:
+                    if w1 + w2 > MAX_WORDS:
                         print('TOO LARGE')
                         repeat -= 1
                         SIZE_FAC[ASPECTS_TAGS][METHOD][DATASET_ID] *= 0.95
@@ -323,15 +312,15 @@ for SOURCE1, SOURCE2 in reversed([('D1a', 'D1b'), ('D2a', 'D2b'), ('D3a', 'D3b')
 
                         from scipy.stats import hmean
 
-                        h_mean = hmean([repre s + .00001, contr s + .00001])  # Sums 0.00001 to avoid 0
+                        h_mean = hmean([repres + .00001, contrs + .00001])  # Sums 0.00001 to avoid 0
                         h_mean = round_num(h_mean)
 
-                        print("   %3d %3d [%2d]  " % (10 0 * repres, 10 0 * contrs, 10 0 * h_mean), end='')
+                        print("   %3d %3d [%2d]  " % (100 * repres, 100 * contrs, 100 * h_mean), end='')
 
-                        h_mean = hmean([pai r + .00001, cov e + .00001])  # Sums 0.00001 to avoid 0
+                        h_mean = hmean([pair + .00001, cove + .00001])  # Sums 0.00001 to avoid 0
                         h_mean = round_num(h_mean)
 
-                        print(" %3d %3d [%2d] " % (10 0 * pair, 10 0 * cove, 10 0 * h_mean), end='')
+                        print(" %3d %3d [%2d] " % (100 * pair, 100 * cove, 100 * h_mean), end='')
 
 
                         def harmonic_mean(l):
