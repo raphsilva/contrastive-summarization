@@ -135,7 +135,6 @@ for SOURCE1, SOURCE2 in reversed([('D4a', 'D4b')]):
         pr = repeat / RTESTS
         out.printProgress('   %3d%% ' % (100 * pr), end="\r")
 
-        # não faz diferença
         from random import shuffle
 
         shuffle(set1_pos)
