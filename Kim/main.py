@@ -54,7 +54,7 @@ exec_code = str(int(time()) % 100000000)
 
 FILE_RESULTS = 'results_ ' + exec_code + '.txt'
 
-RTESTS = 100
+RTESTS = 10
 DTESTS = int(RTESTS / 10)
 
 print('Will perform %d tests and discard %d(x2) best and worst\n\n' % (RTESTS, DTESTS))
@@ -73,7 +73,7 @@ def sqdiff(l1, l2):
     return r
 
 
-for SOURCE1, SOURCE2 in reversed([('D1a', 'D1b'), ('D2a', 'D2b'), ('D3a', 'D3b'), ('D4a', 'D4b')]):
+for SOURCE1, SOURCE2 in reversed([('D4a', 'D4b')]):
 
     summScoresList = {}
 
