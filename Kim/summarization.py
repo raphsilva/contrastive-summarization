@@ -30,8 +30,6 @@ def summSize(side1, side2):
 
     k = int(k * SIZE_FAC[ASPECTS_TAGS][METHOD][DATASET_ID])
 
-    print(SIZE_FAC[ASPECTS_TAGS][METHOD][DATASET_ID])
-
     return min(k, l1, l2)  # Don't allow summaries bigger than original sets (error would occur)
 
 
