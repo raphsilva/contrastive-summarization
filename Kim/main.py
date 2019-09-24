@@ -73,7 +73,7 @@ def sqdiff(l1, l2):
     return r
 
 
-for SOURCE1, SOURCE2 in reversed([('D4a', 'D4b')]):
+for SOURCE1, SOURCE2 in reversed([('D2a', 'D2b')]):
 
     summScoresList = {}
 
@@ -193,9 +193,6 @@ for SOURCE1, SOURCE2 in reversed([('D4a', 'D4b')]):
                     elaps_time = fin_time - ini_time
                     total_time += elaps_time
 
-                    print('SIZE 1:  ', word_count(summ1))
-                    print('SIZE 2:  ', word_count(summ2))
-
                     # IDs of sentences in the summary (gotten from original dataset)
                     summ_idx_A1 = [source1[i[0]]['id'] for i in summ_idx_A]
                     summ_idx_A2 = [source2[i[1]]['id'] for i in summ_idx_A]
@@ -235,17 +232,13 @@ for SOURCE1, SOURCE2 in reversed([('D4a', 'D4b')]):
                     w1 = sum([summ1[i]['word_count'] for i in summ1])
                     w2 = sum([summ2[i]['word_count'] for i in summ2])
 
-                    print(w1, w2)
-
-                    if w1 + w2 > MAX_WORDS:
-                        print('TOO LARGE')
+                    if w1 + w2 > MAX_WORDS: # Summary is too large; will repeat with smaller size factor.
                         repeat -= 1
                         SIZE_FAC[ASPECTS_TAGS][METHOD][DATASET_ID] *= 0.95
                         break
                     else:
                         SIZE_FAC[ASPECTS_TAGS][METHOD][DATASET_ID] *= 1.01
 
-                    print(SIZE_FAC[ASPECTS_TAGS][METHOD][DATASET_ID])
 
                     if SHOW_EVALUATION:
 
