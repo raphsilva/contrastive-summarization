@@ -33,20 +33,12 @@ results['output'] = []
 def print_result(*msg):
     print(*msg, end='', flush=True)
 
-
-# <---------------------------->
-# <-----> Common Modules <----->
-# <---------------------------->
-
-
 from writefiles import underwrite_file
-
 
 def round_num(num):
     return float('%.2g' % (num))
 
-
-from setup import SIZE_FAC, ASPECTS_TAGS, METHOD, DATASET_ID
+from setup import SIZE_FAC, METHOD, DATASET_ID
 
 from time import time
 
@@ -82,10 +74,10 @@ for SOURCE1, SOURCE2 in reversed([('D2a', 'D2b')]):
     print('\n\n\n\n ============  ', SOURCE1, SOURCE2)
     print('\n\n')
 
-    # setup language functions
+    # Setup language functions
     setLanguage(LANGUAGE)
 
-    # load dataset 
+    # Load dataset
     source1 = read_input(filepath(SOURCE1))
     source2 = read_input(filepath(SOURCE2))
 
@@ -95,16 +87,10 @@ for SOURCE1, SOURCE2 in reversed([('D2a', 'D2b')]):
     print(len(source1), len(source1_proc['+'] + source1_proc['-']))
     print(len(source2), len(source2_proc['+'] + source2_proc['-']))
 
-    # <----------------------------------------->
-    # <--------> executing the methods <-------->
-    # <----------------------------------------->
-
     set1_pos = source1_proc['+']
     set1_neg = source1_proc['-']
     set2_pos = source2_proc['+']
     set2_neg = source2_proc['-']
-
-    # Make contrastive summary
 
     hr = []
     hc = []
@@ -162,17 +148,13 @@ for SOURCE1, SOURCE2 in reversed([('D2a', 'D2b')]):
 
                     if METHOD == 'CF':
 
-                        summ_idx_A = contrastiveness_first(set1_pos, set2_neg, '+', '-', LAMBDA, CENTROIDS_AS_SUMMARY,
-                                                           USE_HUNGARIAN_METHOD)
-                        summ_idx_B = contrastiveness_first(set1_neg, set2_pos, '-', '+', LAMBDA, CENTROIDS_AS_SUMMARY,
-                                                           USE_HUNGARIAN_METHOD)
+                        summ_idx_A = contrastiveness_first(set1_pos, set2_neg, '+', '-', LAMBDA, CENTROIDS_AS_SUMMARY, USE_HUNGARIAN_METHOD)
+                        summ_idx_B = contrastiveness_first(set1_neg, set2_pos, '-', '+', LAMBDA, CENTROIDS_AS_SUMMARY, USE_HUNGARIAN_METHOD)
 
                     elif METHOD == 'RF':
 
-                        summ_idx_A = representativeness_first(set1_pos, set2_neg, '+', '-', LAMBDA,
-                                                              CENTROIDS_AS_SUMMARY, USE_HUNGARIAN_METHOD)
-                        summ_idx_B = representativeness_first(set1_neg, set2_pos, '-', '+', LAMBDA,
-                                                              CENTROIDS_AS_SUMMARY, USE_HUNGARIAN_METHOD)
+                        summ_idx_A = representativeness_first(set1_pos, set2_neg, '+', '-', LAMBDA, CENTROIDS_AS_SUMMARY, USE_HUNGARIAN_METHOD)
+                        summ_idx_B = representativeness_first(set1_neg, set2_pos, '-', '+', LAMBDA, CENTROIDS_AS_SUMMARY, USE_HUNGARIAN_METHOD)
 
                     fin_time = time()
                     elaps_time = fin_time - ini_time
@@ -234,11 +216,10 @@ for SOURCE1, SOURCE2 in reversed([('D2a', 'D2b')]):
 
                     if w1 + w2 > MAX_WORDS: # Summary is too large; will repeat with smaller size factor.
                         repeat -= 1
-                        SIZE_FAC[ASPECTS_TAGS][METHOD][DATASET_ID] *= 0.95
+                        SIZE_FAC[METHOD][DATASET_ID] *= 0.95
                         break
                     else:
-                        SIZE_FAC[ASPECTS_TAGS][METHOD][DATASET_ID] *= 1.01
-
+                        SIZE_FAC[METHOD][DATASET_ID] *= 1.01
 
                     if SHOW_EVALUATION:
 
