@@ -13,14 +13,12 @@ ALLOW_REPETITION = False
 
 DATASET_ID = 8
 
-ASPECTS_TAGS = ['none', 'join', 'only'][0]
-
 SOURCE1, SOURCE2 = \
     [(), ('D1a', 'D1b'), ('D2a', 'D2b'), ('D3a', 'D3b'), ('D4a', 'D4b'), ('D5a', 'D5b'), ('D6a', 'D6b'), ('D7a', 'D7b'),
      ('D8a', 'D8b')][DATASET_ID]
 
 
-SIZE_FAC = defaultdict(lambda : defaultdict (lambda : defaultdict(lambda : 0.7)))
+SIZE_FAC = defaultdict (lambda : defaultdict(lambda : 0.7))
 
 DATAPATH = '../input'
 
