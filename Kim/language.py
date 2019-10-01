@@ -95,21 +95,8 @@ def makecache_remove_negs_adjs(sentence):
 
 
 def removeNegsAndAdjs(sentence_proc):
-    from setup import ASPECTS_TAGS
-    if ASPECTS_TAGS == 'none':
-        return cache_removed_negs_adjs[str(sentence_proc)]
-    if ASPECTS_TAGS == 'only':
-        return sentence_proc
+    return cache_removed_negs_adjs[str(sentence_proc)]
 
-    aspects = []
-    while(sentence_proc[-1][0]) == '_':
-        aspects.append(sentence_proc[-1])
-        sentence_proc = sentence_proc[:-1]
-        if sentence_proc == []:
-            break
-
-
-    return aspects + cache_removed_negs_adjs[str(sentence_proc)]  # This cache is made right when data is loaded
 
 from writefiles import save_to_file
 from writefiles import get_variable_from_file

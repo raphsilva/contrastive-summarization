@@ -20,7 +20,7 @@ from setup import SIZE_FAC
 # Defines the size of the summary of the sets 'side1' and 'side2'.
 def summSize(side1, side2):
     from setup import DATASET_ID
-    from setup import METHOD, ASPECTS_TAGS
+    from setup import METHOD
     l1 = len(side1)
     l2 = len(side2)
     if SUMLEN != None:  # Force size to the value specified in the setup
@@ -28,7 +28,7 @@ def summSize(side1, side2):
     else:
         k = 1 + int(math.floor(math.log2(l1 + l2)))
 
-    k = int(k * SIZE_FAC[ASPECTS_TAGS][METHOD][DATASET_ID])
+    k = int(k * SIZE_FAC[METHOD][DATASET_ID])
 
     return min(k, l1, l2)  # Don't allow summaries bigger than original sets (error would occur)
 
