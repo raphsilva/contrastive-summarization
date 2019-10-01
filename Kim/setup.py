@@ -1,8 +1,8 @@
 from collections import defaultdict
 
-SUMLEN = None  # Summary length (number of sentences on each side). Set 'None' for automatic.
+LIMIT_PAIRS = None  # Summary length (number of sentences on each side). Set 'None' for automatic.
 
-MAX_WORDS = 2 * 100
+LIMIT_WORDS = 2 * 100
 
 LANGUAGE = 'portuguese'
 LAMBDA = '0.5'
