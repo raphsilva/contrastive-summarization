@@ -1,3 +1,5 @@
+from collections import defaultdict
+
 SUMLEN = None  # Summary length (number of sentences on each side). Set 'None' for automatic.
 
 MAX_WORDS = 2 * 100
@@ -17,16 +19,8 @@ SOURCE1, SOURCE2 = \
     [(), ('D1a', 'D1b'), ('D2a', 'D2b'), ('D3a', 'D3b'), ('D4a', 'D4b'), ('D5a', 'D5b'), ('D6a', 'D6b'), ('D7a', 'D7b'),
      ('D8a', 'D8b')][DATASET_ID]
 
-SIZE_FAC = {}
-SIZE_FAC['none'] = {}
-SIZE_FAC['none']['CF'] = [0.7, 0.7, 0.7, 0.7, 0.7, 0.7, 0.7, 0.7, 0.7]
-SIZE_FAC['none']['RF'] = [0.7, 0.7, 0.7, 0.7, 0.7, 0.7, 0.7, 0.7, 0.7]
-SIZE_FAC['join'] = {}
-SIZE_FAC['join']['CF'] = [0.7, 0.7, 0.7, 0.7, 0.7, 0.7, 0.7, 0.7, 0.7]
-SIZE_FAC['join']['RF'] = [0.7, 0.7, 0.7, 0.7, 0.7, 0.7, 0.7, 0.7, 0.7]
-SIZE_FAC['only'] = {}
-SIZE_FAC['only']['CF'] = [0.7, 0.7, 0.7, 0.7, 0.7, 0.7, 0.7, 0.7, 0.7]
-SIZE_FAC['only']['RF'] = [0.7, 0.7, 0.7, 0.7, 0.7, 0.7, 0.7, 0.7, 0.7]
+
+SIZE_FAC = defaultdict(lambda : defaultdict (lambda : defaultdict(lambda : 0.7)))
 
 DATAPATH = '../input'
 
