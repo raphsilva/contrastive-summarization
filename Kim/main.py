@@ -5,30 +5,19 @@ from language import setLanguage
 from load_data import preprocess
 from load_data import read_input
 from setup import LANGUAGE
-from setup import MAX_WORDS
+from setup import LIMIT_WORDS
+from setup import REPEAT_TESTS
+from setup import DISCARD_TESTS
 from setup import SHOW_EVALUATION
 from setup import SHOW_INDEXES
 from setup import SHOW_SUMMARY
-from setup import SOURCE1
-from setup import SOURCE2
-from setup import SUMLEN
+from setup import DATASETS_TO_TEST
+from setup import LIMIT_PAIRS
 from setup import filepath
 from structure import idx_to_summ
 from structure import word_count
 from summarization import contrastiveness_first
 from summarization import representativeness_first
-
-results = {}
-results['meta'] = {}
-results['meta']['implementation'] = 'Kim'
-results['meta']['source'] = []
-results['meta']['source'].append(SOURCE1)
-results['meta']['source'].append(SOURCE2)
-results['meta']['language'] = LANGUAGE
-results['meta']['limits'] = {}
-results['meta']['limits']['pairs'] = SUMLEN
-results['output'] = []
-
 
 def print_result(*msg):
     print(*msg, end='', flush=True)
@@ -38,7 +27,7 @@ from writefiles import underwrite_file
 def round_num(num):
     return float('%.2g' % (num))
 
-from setup import SIZE_FAC, METHOD, DATASET_ID
+from setup import SIZE_FAC, METHOD
 
 from time import time
 
@@ -46,13 +35,10 @@ exec_code = str(int(time()) % 100000000)
 
 FILE_RESULTS = 'results_ ' + exec_code + '.txt'
 
-RTESTS = 10
-DTESTS = int(RTESTS / 10)
-
-print('Will perform %d tests and discard %d(x2) best and worst\n\n' % (RTESTS, DTESTS))
+print('Will perform %d tests and discard %d(x2) best and worst\n\n' % (REPEAT_TESTS, DISCARD_TESTS))
 
 f = open(FILE_RESULTS, 'a')
-f.write('%d tests, discard %d(x2) best and worst\n\n' % (RTESTS, DTESTS))
+f.write('%d tests, discard %d(x2) best and worst\n\n' % (REPEAT_TESTS, DISCARD_TESTS))
 f.close()
 
 SHOW_ALL_ITERAT = False
@@ -64,8 +50,23 @@ def sqdiff(l1, l2):
         r += pow(l1[i] - l2[i], 2)
     return r
 
+SIZE_FAC_DEFAULT = SIZE_FAC
 
-for SOURCE1, SOURCE2 in reversed([('D2a', 'D2b')]):
+for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
+
+    SIZE_FAC = SIZE_FAC_DEFAULT
+
+    results = {}
+    results['meta'] = {}
+    results['meta']['implementation'] = 'Kim'
+    results['meta']['source'] = []
+    results['meta']['source'].append(SOURCE1)
+    results['meta']['source'].append(SOURCE2)
+    results['meta']['language'] = LANGUAGE
+    results['meta']['limits'] = {}
+    results['meta']['limits']['pairs'] = LIMIT_PAIRS
+    results['meta']['limits']['words'] = LIMIT_WORDS
+    results['output'] = []
 
     summScoresList = {}
 
@@ -103,10 +104,7 @@ for SOURCE1, SOURCE2 in reversed([('D2a', 'D2b')]):
     h_sentences1 = []
     h_sentences2 = []
 
-    RTESTS = 100
-    DTESTS = int(RTESTS / 10)
-
-    print('Will perform %d tests and discard %d(x2) best and worst\n\n' % (RTESTS, DTESTS))
+    print('Will perform %d tests and discard %d(x2) best and worst\n\n' % (REPEAT_TESTS, DISCARD_TESTS))
 
     total_time = 0
 
@@ -118,7 +116,7 @@ for SOURCE1, SOURCE2 in reversed([('D2a', 'D2b')]):
 
     for repeat in range(RTESTS):
 
-        pr = repeat / RTESTS
+        pr = repeat / REPEAT_TESTS
         out.printProgress('   %3d%% ' % (100 * pr), end="\r")
 
         from random import shuffle
@@ -214,12 +212,12 @@ for SOURCE1, SOURCE2 in reversed([('D2a', 'D2b')]):
                     w1 = sum([summ1[i]['word_count'] for i in summ1])
                     w2 = sum([summ2[i]['word_count'] for i in summ2])
 
-                    if w1 + w2 > MAX_WORDS: # Summary is too large; will repeat with smaller size factor.
+                    if w1 + w2 > LIMIT_WORDS: # Summary is too large; will repeat with smaller size factor.
                         repeat -= 1
-                        SIZE_FAC[METHOD][DATASET_ID] *= 0.95
+                        SIZE_FAC *= 0.95
                         break
                     else:
-                        SIZE_FAC[METHOD][DATASET_ID] *= 1.01
+                        SIZE_FAC *= 1.01
 
                     if SHOW_EVALUATION:
 
@@ -314,10 +312,10 @@ for SOURCE1, SOURCE2 in reversed([('D2a', 'D2b')]):
 
     from statistics import stdev
 
-    hr_medians = sorted(hr)[DTESTS:-DTESTS]
-    hc_medians = sorted(hc)[DTESTS:-DTESTS]
-    hd_medians = sorted(hd)[DTESTS:-DTESTS]
-    hh_medians = sorted(hh)[DTESTS:-DTESTS]
+    hr_medians = sorted(hr)[DISCARD_TESTS:-DISCARD_TESTS]
+    hc_medians = sorted(hc)[DISCARD_TESTS:-DISCARD_TESTS]
+    hd_medians = sorted(hd)[DISCARD_TESTS:-DISCARD_TESTS]
+    hh_medians = sorted(hh)[DISCARD_TESTS:-DISCARD_TESTS]
 
     print()
     print(hh_medians)
