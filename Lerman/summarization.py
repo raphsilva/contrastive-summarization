@@ -235,6 +235,9 @@ def makeSummary_greedy(source, stats_source, LIM_WORDS=LIM_WORDS):
                 if size_cand > LIM_WORDS:
                     continue
 
+                stats_cand = struct.aspects_stats(summ_cand)
+                score = method.SAM(stats_source, stats_cand)
+
                 if len(top_candidates) < GREEDY_CANDS_SELECTED:  # There's space for more candidates
 
                     top_candidates.append((idx_cand, score))
@@ -335,9 +338,6 @@ def MakeContrastiveSummary_brute(source1, source2, stats_source_1, stats_source_
                         best = score
                         best_summ1 = subset1
                         best_summ2 = subset2
-
-    sum1 = getSum(source1, list(best_summ1))
-    sum2 = getSum(source2, list(best_summ2))
 
     return best_summ1, best_summ2
 
