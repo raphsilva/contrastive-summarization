@@ -114,7 +114,8 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
 
     repeat = 0
 
-    for repeat in range(RTESTS):
+    while repeat <  REPEAT_TESTS:
+        repeat += 1
 
         pr = repeat / REPEAT_TESTS
         out.printProgress('   %3d%% ' % (100 * pr), end="\r")
