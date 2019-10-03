@@ -100,7 +100,7 @@ def removeNegsAndAdjs(sentence_proc):
 
 from writefiles import save_to_file
 from writefiles import get_variable_from_file
-from writefiles import underwrite_file
+from writefiles import overwrite_json
 
 got_all_lemmas = False
 
@@ -148,7 +148,7 @@ def lemma(word):
         r = lemmas_exceptions[word]
     if word not in lemmas_cache:
         lemmas_cache[word] = r
-        underwrite_file('cache/lemmas.cache', lemmas_cache)
+        overwrite_json('cache/lemmas.cache', lemmas_cache)
     return r
 
 
