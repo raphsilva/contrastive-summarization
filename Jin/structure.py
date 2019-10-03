@@ -1,5 +1,4 @@
 import output_format
-import statistics
 
 
 def idx_to_summ(source, indexes):
