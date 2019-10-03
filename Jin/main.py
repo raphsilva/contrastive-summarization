@@ -1,29 +1,21 @@
-# From Python standard library:
-
 # From this project:
-from read_input import read_input
 import evaluation as evalu
+import optimization as optm
 import output_format as out
 import structure as struct
-from structure import word_count
-
-import optimization as optm
-
+from read_input import read_input
+from setup import DATASETS_TO_TEST
+from setup import DEBUG_MODE
+from setup import EVALUATION_MODE
 # Setup options
 from setup import LIM_SENTENCES  # Sets the maximum number of SENTENCES in each side of the summary
 from setup import LIM_WORDS  # Sets the maximum number of WORDS in each side of the summary
-from setup import filepath  # Get full path for the file with data of target
-
-from setup import VERBOSE_MODE
-from setup import EVALUATION_MODE
-from setup import OUTPUT_MODE
-from setup import DATASETS_TO_TEST
-
 from setup import OPTM_METHOD
-
+from setup import OUTPUT_MODE
+from setup import VERBOSE_MODE
+from setup import filepath  # Get full path for the file with data of target
+from structure import word_count
 from writefiles import underwrite_file
-
-from setup import DEBUG_MODE
 
 if DEBUG_MODE:
     out.setDebugPrints(True)
@@ -344,19 +336,15 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
 
         results_msg = ''
         results_msg += '\n\n'
-        results_msg += '              %3.0lf   %3.0lf   %3.0lf   [ %3.0lf ]    (%3.0lf)      ~%3.0lf' % (
-        r_median_mean, c_median_mean, d_median_mean, h_median_mean, ht_median_mean, sthh)
+        results_msg += '              %3.0lf   %3.0lf   %3.0lf   [ %3.0lf ]    (%3.0lf)      ~%3.0lf' % (r_median_mean, c_median_mean, d_median_mean, h_median_mean, ht_median_mean, sthh)
         results_msg += '\n\n'
         results_msg += '             ~%3.0lf  ~%3.0lf  ~%3.0lf               ~%3.0lf' % (sthr, sthc, sthd, sthh)
         results_msg += '\n\n\n'
-        results_msg += 'max           %3.0lf   %3.0lf   %3.0lf                %3.0lf' % (
-        (max(hr_medians)), (max(hc_medians)), (max(hd_medians)), (max(hh_medians)))
+        results_msg += 'max           %3.0lf   %3.0lf   %3.0lf                %3.0lf' % ((max(hr_medians)), (max(hc_medians)), (max(hd_medians)), (max(hh_medians)))
         results_msg += '\n\n'
-        results_msg += 'min           %3.0lf   %3.0lf   %3.0lf                %3.0lf' % (
-        (min(hr_medians)), (min(hc_medians)), (min(hd_medians)), (min(hh_medians)))
+        results_msg += 'min           %3.0lf   %3.0lf   %3.0lf                %3.0lf' % ((min(hr_medians)), (min(hc_medians)), (min(hd_medians)), (min(hh_medians)))
         results_msg += '\n\n\n'
-        results_msg += 'simple mean   %3.0lf   %3.0lf   %3.0lf     %3.0lf       \'%3.0lf\'      ~%3.0lf' % (
-        r, c, d, h, ht, sthh)
+        results_msg += 'simple mean   %3.0lf   %3.0lf   %3.0lf     %3.0lf       \'%3.0lf\'      ~%3.0lf' % (r, c, d, h, ht, sthh)
         results_msg += '\n\n\n'
 
         avg_words1 = sum(h_words1) / len(h_words1)
@@ -437,11 +425,11 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
 
         summ_out += '\n\n'
         summ_out += '(%3.0lf %3.0lf)     %3.0lf   %3.0lf   %3.0lf   [[%3.0lf]]  ' % (
-        evals['r1'], evals['r2'], evals['R'], evals['C'], evals['D'], evals['H'])
+            evals['r1'], evals['r2'], evals['R'], evals['C'], evals['D'], evals['H'])
         summ_out += '\n\n'
 
         summ_out += '              %3.0lf   %3.0lf   %3.0lf    [%3.0lf]      ~%3.0lf' % (
-        r_median_mean, c_median_mean, d_median_mean, ht_median_mean, sthh)
+            r_median_mean, c_median_mean, d_median_mean, ht_median_mean, sthh)
 
         summ_out += '\n'
         summ_out += '\n'
