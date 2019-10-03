@@ -1,4 +1,3 @@
-from pprint import pprint
 from pprint import pformat
 
 GRAY = '\33[90m'
