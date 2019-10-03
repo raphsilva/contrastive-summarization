@@ -1,83 +1,48 @@
-"""
-    Developed by: Otávio Augusto Ferreira Sousa (June 2018)    
-    Adapted by: Raphael Rocha da Silva (September 2018) 
-    Last modified: October, 2018
-    
-    This file contains the implementation of a Contrastive Opinion Summarizer based on the work of Kim & Zhai(2009).
-    Hyun Duk Kim and ChengXiang Zhai, Generating Comparative Summaries of Contradictory Opinions in Text, CIKM 2009
-
-"""
-
-from language import setLanguage
-
-from summarization import representativeness_first
-from summarization import contrastiveness_first
-from interface import *
-
-from structure import idx_to_summ
-from structure import word_count
-
 import evaluation as evalu
-
-from load_data import read_input
+import output_format as out
+from interface import *
+from language import setLanguage
 from load_data import preprocess
-
-from setup import SOURCE1
-from setup import SOURCE2
-from setup import filepath
+from load_data import read_input
+from setup import DATASETS_TO_TEST
+from setup import DISCARD_TESTS
 from setup import LANGUAGE
-from setup import SHOW_SUMMARY
+from setup import LIMIT_PAIRS
+from setup import LIMIT_WORDS
+from setup import REPEAT_TESTS
 from setup import SHOW_EVALUATION
 from setup import SHOW_INDEXES
-from setup import SUMLEN
-
-import output_format as out
-
-results = {}
-results['meta'] = {}
-results['meta']['implementation'] = 'Kim'
-results['meta']['source'] = []
-results['meta']['source'].append(SOURCE1)
-results['meta']['source'].append(SOURCE2)
-results['meta']['language'] = LANGUAGE
-results['meta']['limits'] = {}
-results['meta']['limits']['pairs'] = SUMLEN
-results['output'] = []
+from setup import SHOW_SUMMARY
+from setup import filepath
+from structure import idx_to_summ
+from structure import word_count
+from summarization import contrastiveness_first
+from summarization import representativeness_first
 
 
 def print_result(*msg):
     print(*msg, end='', flush=True)
 
 
-# <---------------------------->
-# <-----> Common Modules <----->
-# <---------------------------->
-
-
-from writefiles import underwrite_file
+from writefiles import overwrite_json
 
 
 def round_num(num):
     return float('%.2g' % (num))
 
 
-from setup import SIZE_FAC, ASPECTS_TAGS, METHOD, DATASET_ID
+from setup import SIZE_FAC, METHOD
 
 from time import time
 
 exec_code = str(int(time()) % 100000000)
 
-FILE_RESULTS = 'results_ ' + exec_cod
-e + '.txt'
+FILE_RESULTS = 'results_ ' + exec_code + '.txt'
 
-RTESTS = 100
-DTESTS = int(RTEST
-S / 10)
-
-print('Will perform %d tests and discard %d(x2) best and worst\n\n' % (RTESTS, DTESTS))
+print('Will perform %d tests and discard %d(x2) best and worst\n\n' % (REPEAT_TESTS, DISCARD_TESTS))
 
 f = open(FILE_RESULTS, 'a')
-f.write('%d tests, discard %d(x2) best and worst\n\n' % (RTESTS, DTESTS))
+f.write('%d tests, discard %d(x2) best and worst\n\n' % (REPEAT_TESTS, DISCARD_TESTS))
 f.close()
 
 SHOW_ALL_ITERAT = False
@@ -90,46 +55,37 @@ def sqdiff(l1, l2):
     return r
 
 
-# SHOW_ALL_ITERAT = False
+SIZE_FAC_DEFAULT = SIZE_FAC
 
-# for SOURCE1, SOURCE2 in reversed([('D1a','D1b'), ('D2a','D2b'), ('D3a','D3b'), ('D4a','D4b'), ('D5a','D5b'), ('D6a','D6b'), ('D7a','D7b'), ('D8a','D8b')]):
-# for SOURCE1, SOURCE2 in reversed([('D5a','D5b'), ('D6a','D6b'), ('D7a','D7b'), ('D8a','D8b')]):
-for SOURCE1, SOURCE2 in reversed([('D1a', 'D1b'), ('D2a', 'D2b'), ('D3a', 'D3b'), ('D4a', 'D4b')]):
-    # for SOURCE1, SOURCE2 in reversed([('D2a','D2b'), ('D6a','D6b')]):
+for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
+
+    SIZE_FAC = SIZE_FAC_DEFAULT
+
+    results = {}
+    results['meta'] = {}
+    results['meta']['implementation'] = 'Kim'
+    results['meta']['source'] = []
+    results['meta']['source'].append(SOURCE1)
+    results['meta']['source'].append(SOURCE2)
+    results['meta']['language'] = LANGUAGE
+    results['meta']['limits'] = {}
+    results['meta']['limits']['pairs'] = LIMIT_PAIRS
+    results['meta']['limits']['words'] = LIMIT_WORDS
+    results['output'] = []
 
     summScoresList = {}
 
-    OUTPUT_FILE = 'out ' + exec_cod
-    e + '_ ' + SOURCE1[:-1] + '.txt'
+    OUTPUT_FILE = 'out ' + exec_code + '_ ' + SOURCE1[:-1] + '.txt'
 
     print('\n\n\n\n ============  ', SOURCE1, SOURCE2)
     print('\n\n')
 
-    # global PAR
-
-    # print(PAR['ID1'], PAR['ID2'], PAR['ASPECT'])
-
-    # define the parameters according to what was given in the command line arguments;
-    # if there are none, the program will consider the predefined parameters in the beginning of this code.
-    # try:
-    # opts, args = getopt.getopt(argv, "", ["dataset=", "language=", "lambda=", "method=", "centroids_as_summary=",
-    # "use_hungarian_method=", "allow_repetition="])
-    # for opt, arg in opts:
-    # PAR[opt[2:].upper()] = arg
-
-    # except (getopt.GetoptError, ValueError):
-    # print('Error: please see the documentation in order to provide parameters correctly.')
-    # sys.exit(2)
-
-    # setup language functions
+    # Setup language functions
     setLanguage(LANGUAGE)
 
-    # load dataset 
+    # Load dataset
     source1 = read_input(filepath(SOURCE1))
     source2 = read_input(filepath(SOURCE2))
-
-    # pprint(source1)
-    # input()
 
     source1_proc = preprocess(source1)
     source2_proc = preprocess(source2)
@@ -137,24 +93,10 @@ for SOURCE1, SOURCE2 in reversed([('D1a', 'D1b'), ('D2a', 'D2b'), ('D3a', 'D3b')
     print(len(source1), len(source1_proc['+'] + source1_proc['-']))
     print(len(source2), len(source2_proc['+'] + source2_proc['-']))
 
-    # exit()
-
-    # <----------------------------------------->
-    # <--------> executing the methods <-------->
-    # <----------------------------------------->
-
-    # t1 = datasets[SOURCE1]
-    # t2 = datasets[SOURCE2]
-
     set1_pos = source1_proc['+']
     set1_neg = source1_proc['-']
     set2_pos = source2_proc['+']
     set2_neg = source2_proc['-']
-
-    # pprint(set1_pos)
-    # input()
-
-    # Make contrastive summary
 
     hr = []
     hc = []
@@ -167,11 +109,7 @@ for SOURCE1, SOURCE2 in reversed([('D1a', 'D1b'), ('D2a', 'D2b'), ('D3a', 'D3b')
     h_sentences1 = []
     h_sentences2 = []
 
-    RTESTS = 100
-    DTESTS = int(RTEST
-    S / 10)
-
-    print('Will perform %d tests and discard %d(x2) best and worst\n\n' % (RTESTS, DTESTS))
+    print('Will perform %d tests and discard %d(x2) best and worst\n\n' % (REPEAT_TESTS, DISCARD_TESTS))
 
     total_time = 0
 
@@ -181,13 +119,12 @@ for SOURCE1, SOURCE2 in reversed([('D1a', 'D1b'), ('D2a', 'D2b'), ('D3a', 'D3b')
 
     repeat = 0
 
-    for repeat in range(RTESTS):
+    while repeat < REPEAT_TESTS:
+        repeat += 1
 
-        pr = repea
-        t / RTESTS
-        out.printProgress('   %3d%% ' % (10 0 * pr), end="\r")
+        pr = repeat / REPEAT_TESTS
+        out.printProgress('   %3d%% ' % (100 * pr), end="\r")
 
-        # não faz diferença
         from random import shuffle
 
         shuffle(set1_pos)
@@ -215,17 +152,13 @@ for SOURCE1, SOURCE2 in reversed([('D1a', 'D1b'), ('D2a', 'D2b'), ('D3a', 'D3b')
 
                     if METHOD == 'CF':
 
-                        summ_idx_A = contrastiveness_first(set1_pos, set2_neg, '+', '-', LAMBDA, CENTROIDS_AS_SUMMARY,
-                                                           USE_HUNGARIAN_METHOD)
-                        summ_idx_B = contrastiveness_first(set1_neg, set2_pos, '-', '+', LAMBDA, CENTROIDS_AS_SUMMARY,
-                                                           USE_HUNGARIAN_METHOD)
+                        summ_idx_A = contrastiveness_first(set1_pos, set2_neg, '+', '-', LAMBDA, CENTROIDS_AS_SUMMARY, USE_HUNGARIAN_METHOD)
+                        summ_idx_B = contrastiveness_first(set1_neg, set2_pos, '-', '+', LAMBDA, CENTROIDS_AS_SUMMARY, USE_HUNGARIAN_METHOD)
 
                     elif METHOD == 'RF':
 
-                        summ_idx_A = representativeness_first(set1_pos, set2_neg, '+', '-', LAMBDA,
-                                                              CENTROIDS_AS_SUMMARY, USE_HUNGARIAN_METHOD)
-                        summ_idx_B = representativeness_first(set1_neg, set2_pos, '-', '+', LAMBDA,
-                                                              CENTROIDS_AS_SUMMARY, USE_HUNGARIAN_METHOD)
+                        summ_idx_A = representativeness_first(set1_pos, set2_neg, '+', '-', LAMBDA, CENTROIDS_AS_SUMMARY, USE_HUNGARIAN_METHOD)
+                        summ_idx_B = representativeness_first(set1_neg, set2_pos, '-', '+', LAMBDA, CENTROIDS_AS_SUMMARY, USE_HUNGARIAN_METHOD)
 
                     fin_time = time()
                     elaps_time = fin_time - ini_time
@@ -245,9 +178,6 @@ for SOURCE1, SOURCE2 in reversed([('D1a', 'D1b'), ('D2a', 'D2b'), ('D3a', 'D3b')
                     fin_time = time()
                     elaps_time = fin_time - ini_time
                     total_time += elaps_time
-
-                    print('SIZE 1:  ', word_count(summ1))
-                    print('SIZE 2:  ', word_count(summ2))
 
                     # IDs of sentences in the summary (gotten from original dataset)
                     summ_idx_A1 = [source1[i[0]]['id'] for i in summ_idx_A]
@@ -288,17 +218,12 @@ for SOURCE1, SOURCE2 in reversed([('D1a', 'D1b'), ('D2a', 'D2b'), ('D3a', 'D3b')
                     w1 = sum([summ1[i]['word_count'] for i in summ1])
                     w2 = sum([summ2[i]['word_count'] for i in summ2])
 
-                    print(w1, w2)
-
-                    if w 1 +w2 > MAX_WORDS:
-                        print('TOO LARGE')
+                    if w1 + w2 > LIMIT_WORDS:  # Summary is too large; will repeat with smaller size factor.
                         repeat -= 1
-                        SIZE_FAC[ASPECTS_TAGS][METHOD][DATASET_ID] *= 0.95
+                        SIZE_FAC *= 0.95
                         break
                     else:
-                        SIZE_FAC[ASPECTS_TAGS][METHOD][DATASET_ID] *= 1.01
-
-                    print(SIZE_FAC[ASPECTS_TAGS][METHOD][DATASET_ID])
+                        SIZE_FAC *= 1.01
 
                     if SHOW_EVALUATION:
 
@@ -323,15 +248,15 @@ for SOURCE1, SOURCE2 in reversed([('D1a', 'D1b'), ('D2a', 'D2b'), ('D3a', 'D3b')
 
                         from scipy.stats import hmean
 
-                        h_mean = hmean([repre s + .00001, contr s + .00001])  # Sums 0.00001 to avoid 0
+                        h_mean = hmean([repres + .00001, contrs + .00001])  # Sums 0.00001 to avoid 0
                         h_mean = round_num(h_mean)
 
-                        print("   %3d %3d [%2d]  " % (10 0 * repres, 10 0 * contrs, 10 0 * h_mean), end='')
+                        print("   %3d %3d [%2d]  " % (100 * repres, 100 * contrs, 100 * h_mean), end='')
 
-                        h_mean = hmean([pai r + .00001, cov e + .00001])  # Sums 0.00001 to avoid 0
+                        h_mean = hmean([pair + .00001, cove + .00001])  # Sums 0.00001 to avoid 0
                         h_mean = round_num(h_mean)
 
-                        print(" %3d %3d [%2d] " % (10 0 * pair, 10 0 * cove, 10 0 * h_mean), end='')
+                        print(" %3d %3d [%2d] " % (100 * pair, 100 * cove, 100 * h_mean), end='')
 
 
                         def harmonic_mean(l):
@@ -358,9 +283,6 @@ for SOURCE1, SOURCE2 in reversed([('D1a', 'D1b'), ('D2a', 'D2b'), ('D3a', 'D3b')
                         evals['D'] = (evals['d1'] + evals['d2']) / 2
 
                         evals['H'] = harmonic_mean([evals['R'], evals['C'], evals['D']])
-
-                        # for i in evals:
-                        # evals[i] = int('%3.0lf'%(evals[i]))
 
                         w1 = sum([summ1[i]['word_count'] for i in summ1])
                         w2 = sum([summ2[i]['word_count'] for i in summ2])
@@ -396,10 +318,10 @@ for SOURCE1, SOURCE2 in reversed([('D1a', 'D1b'), ('D2a', 'D2b'), ('D3a', 'D3b')
 
     from statistics import stdev
 
-    hr_medians = sorted(hr)[DTESTS:-DTESTS]
-    hc_medians = sorted(hc)[DTESTS:-DTESTS]
-    hd_medians = sorted(hd)[DTESTS:-DTESTS]
-    hh_medians = sorted(hh)[DTESTS:-DTESTS]
+    hr_medians = sorted(hr)[DISCARD_TESTS:-DISCARD_TESTS]
+    hc_medians = sorted(hc)[DISCARD_TESTS:-DISCARD_TESTS]
+    hd_medians = sorted(hd)[DISCARD_TESTS:-DISCARD_TESTS]
+    hh_medians = sorted(hh)[DISCARD_TESTS:-DISCARD_TESTS]
 
     print()
     print(hh_medians)
@@ -555,4 +477,4 @@ for SOURCE1, SOURCE2 in reversed([('D1a', 'D1b'), ('D2a', 'D2b'), ('D3a', 'D3b')
     results['meta']['size']['source']['words'].append(word_count(source2))
     results['meta']['run time'] = round(total_time, 2)
 
-    underwrite_file('output/' + SOURCE1 + ' ' + SOURCE2 + ' (' + str(int(time())) + ').json', results)
+    overwrite_json('output/' + SOURCE1 + ' ' + SOURCE2 + ' (' + str(int(time())) + ').json', results)
