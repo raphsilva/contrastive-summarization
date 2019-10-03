@@ -1,8 +1,7 @@
-from language import *
 from similarity import psi, phi
 import math
 
-from setup import SUMLEN
+from setup import LIMIT_PAIRS
 from setup import ALLOW_REPETITION
 
 # clustering algorithm used in the implementation of RF method
@@ -19,18 +18,15 @@ from setup import SIZE_FAC
 
 # Defines the size of the summary of the sets 'side1' and 'side2'.
 def summSize(side1, side2):
-    from setup import DATASET_ID
-    from setup import METHOD, ASPECTS_TAGS
+    from setup import METHOD
     l1 = len(side1)
     l2 = len(side2)
-    if SUMLEN != None:  # Force size to the value specified in the setup
-        k = int(SUMLEN / 2)
+    if LIMIT_PAIRS != None:  # Force size to the value specified in the setup
+        k = int(LIMIT_PAIRS / 2)
     else:
         k = 1 + int(math.floor(math.log2(l1 + l2)))
 
-    k = int(k * SIZE_FAC[ASPECTS_TAGS][METHOD][DATASET_ID])
-
-    print(SIZE_FAC[ASPECTS_TAGS][METHOD][DATASET_ID])
+    k = int(k * SIZE_FAC)
 
     return min(k, l1, l2)  # Don't allow summaries bigger than original sets (error would occur)
 
@@ -55,11 +51,6 @@ def findCentroids(clusters, text_info, polarity, k):
 
         centroids[cluster_id] = best_sentence
     return centroids
-
-
-# <--------------------------->
-# <-----> COS Functions <----->
-# <--------------------------->
 
 from random import uniform
 
@@ -106,8 +97,6 @@ def representativeness_first(side1, side2, polarity1, polarity2, LAMBDA=0.5, CEN
         clusters_x[model_labels_x[i]].append(i)
     for j in range(len(side2)):
         clusters_y[model_labels_y[j]].append(j)
-
-    # debug.print_cluster(clusters_x, side1, k)
 
     # structures to store the centroids for each cluster
     centroids_x = findCentroids(clusters_x, text_info_1, polarity1, k)
