@@ -4,28 +4,32 @@ from interface import *
 from language import setLanguage
 from load_data import preprocess
 from load_data import read_input
+from setup import DATASETS_TO_TEST
+from setup import DISCARD_TESTS
 from setup import LANGUAGE
+from setup import LIMIT_PAIRS
 from setup import LIMIT_WORDS
 from setup import REPEAT_TESTS
-from setup import DISCARD_TESTS
 from setup import SHOW_EVALUATION
 from setup import SHOW_INDEXES
 from setup import SHOW_SUMMARY
-from setup import DATASETS_TO_TEST
-from setup import LIMIT_PAIRS
 from setup import filepath
 from structure import idx_to_summ
 from structure import word_count
 from summarization import contrastiveness_first
 from summarization import representativeness_first
 
+
 def print_result(*msg):
     print(*msg, end='', flush=True)
 
+
 from writefiles import overwrite_json
+
 
 def round_num(num):
     return float('%.2g' % (num))
+
 
 from setup import SIZE_FAC, METHOD
 
@@ -49,6 +53,7 @@ def sqdiff(l1, l2):
     for i in range(len(l1)):
         r += pow(l1[i] - l2[i], 2)
     return r
+
 
 SIZE_FAC_DEFAULT = SIZE_FAC
 
@@ -114,7 +119,7 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
 
     repeat = 0
 
-    while repeat <  REPEAT_TESTS:
+    while repeat < REPEAT_TESTS:
         repeat += 1
 
         pr = repeat / REPEAT_TESTS
@@ -213,7 +218,7 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
                     w1 = sum([summ1[i]['word_count'] for i in summ1])
                     w2 = sum([summ2[i]['word_count'] for i in summ2])
 
-                    if w1 + w2 > LIMIT_WORDS: # Summary is too large; will repeat with smaller size factor.
+                    if w1 + w2 > LIMIT_WORDS:  # Summary is too large; will repeat with smaller size factor.
                         repeat -= 1
                         SIZE_FAC *= 0.95
                         break
