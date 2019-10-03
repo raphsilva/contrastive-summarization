@@ -1,12 +1,12 @@
 import re
 import string
-
-# used for: tagger for English, tokenizer, stopwords lists, stemmer
-import nltk
-from nltk.stem import RSLPStemmer, PorterStemmer
+from setup import LANGUAGE
 
 # used for: tagger for Portuguese
 import nlpnet
+# used for: tagger for English, tokenizer, stopwords lists, stemmer
+import nltk
+from nltk.stem import RSLPStemmer, PorterStemmer
 
 # NLP variables
 stemmer = dict(portuguese=RSLPStemmer(), english=PorterStemmer())
@@ -15,22 +15,19 @@ nlpnet_POSTagger = nlpnet.POSTagger()
 
 # lists of negation words
 negation_words = {
-    'portuguese': ["sem", "jamais", "nada", "nem", "nenhum", "ninguém", "nunca", "não", "tampouco", "nao", "ñ",
-                   "ninguem", "longe", "evitar", "impedir", "perder", "tirar"],
+    'portuguese': ["sem", "jamais", "nada", "nem", "nenhum", "ninguém", "nunca", "não", "tampouco", "nao", "ñ", "ninguem", "longe", "evitar", "impedir", "perder", "tirar"],
     'english': ["never", "neither", "nobody", "no", "none", "nor", "nothing", "nowhere", "not", 'n\'t']
 }
 
 LANGUAGE_DIR = 'language'
 
 stopwords = []
-from setup import LANGUAGE
 
 
 def setLanguage(language):
-    global LANGUAGE
     global stopwords
 
-    DIR = LANGUAGE_DIR + '/' + LANGUAGE
+    DIR = LANGUAGE_DIR + '/' + language
 
     stopwords = open(DIR + '/' + 'stopwords.txt').read().split()
 
@@ -43,11 +40,7 @@ def simplify_characters(my_string):
     """
 
     # normalize and transform characters into lowercase
-    # normalized_string = unicodedata.normalize('NFKD', my_string.casefold())
     normalized_string = my_string.lower()
-
-    # simplify characters in a way that ç becomes c, á becomes a, etc.
-    # normalized_string = u"".join([c for c in normalized_string if not unicodedata.combining(c)])
 
     # remove punctuation and special characters
     return re.sub('[' + string.punctuation + ']', ' ', normalized_string)
@@ -67,7 +60,7 @@ def makecache_remove_negs_adjs(sentence):
     if str(k) in cache_removed_negs_adjs:
         return
 
-        # simplifying the sentence
+    # simplify the sentence
     s = simplify_characters(sentence)
 
     # tokenize the sentence
@@ -98,7 +91,6 @@ def removeNegsAndAdjs(sentence_proc):
     return cache_removed_negs_adjs[str(sentence_proc)]
 
 
-from writefiles import save_to_file
 from writefiles import get_variable_from_file
 from writefiles import overwrite_json
 
@@ -107,11 +99,10 @@ got_all_lemmas = False
 
 def readLemmaDic():
     global got_all_lemmas
-    # return []
     r = {}
     f = open('language/portuguese/lemmas.dic', 'r')
     for i in f:
-        if len(i)==0:
+        if len(i) == 0:
             continue
         if '#' in i:
             continue
