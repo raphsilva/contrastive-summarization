@@ -1,5 +1,3 @@
-import math
-
 import method
 
 import structure as struct
@@ -134,7 +132,7 @@ def MakeContrastiveSummary_C(source1, source2, stats_source_1, stats_source_2, L
 
     pprint(rank)
 
-    exit()
+    exit() #TODO What?
 
 
 def MakeContrastiveSummary_greedy(source1, source2, stats_source_1, stats_source_2, LIM_WORDS_1=LIM_WORDS,
@@ -295,8 +293,6 @@ def MakeContrastiveSummary_greedy(source1, source2, stats_source_1, stats_source
 def makeSummary_greedy(source, stats_source, LIM_WORDS=LIM_WORDS):
 
     best_score = -INFINITY
-
-    total_candidates = len(source)
 
     top_candidates = [([], -INFINITY)]
 
