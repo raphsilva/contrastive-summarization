@@ -2,19 +2,10 @@ import method
 
 import structure as struct
 
-import output_format as out
-
-from pprint import pprint
-
 INFINITY = 999999
 
 from setup import LIM_SENTENCES
 from setup import LIM_WORDS
-
-from setup import GREEDY_CANDS_SELECTED
-from setup import VERBOSE_MODE
-
-from setup import DEBUG_MODE
 
 from setup import METHOD
 
@@ -24,15 +15,9 @@ RANDOM_SEED = 4
 
 RANDOMIZE_DRAW = False  # If two candidates have the same score, chooses random (if true) or chooses the last found (false)
 
-
 def random_seed():
     global RANDOM_SEED
     RANDOM_SEED = random.randint(0, 10000)
-    # RANDOM_SEED = 4
-
-
-from setup import KEY_MEASURE
-
 
 def MakeContrastiveSummary(t1, t2, d1, d2, method='greedy', LIM_WORDS_1=LIM_WORDS, LIM_WORDS_2=LIM_WORDS):
     if method == 'greedy':
