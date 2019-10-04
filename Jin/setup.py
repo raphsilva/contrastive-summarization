@@ -1,8 +1,6 @@
 # Execution options
 METHOD = ['R', 'C', 'D'][1]
 
-OPTM_METHOD = 'greedy'
-
 REPEAT_TESTS = 10  # Times to repeat each test
 DISCARD_TESTS = int(0.1 * REPEAT_TESTS)  # Amount of top-rated and bottom-rated tests to be discarded to compute average
 
