@@ -1,7 +1,5 @@
-import numpy as np
-import scipy.stats as stats
 import matplotlib.pyplot as plt
-from pprint import pprint
+import scipy.stats as stats
 
 from setup import MAXPOLARITY
 
@@ -103,4 +101,3 @@ def plotDistribution(d, title="", label=""):
 
 def clearChart():
     ax1.cla()
-
