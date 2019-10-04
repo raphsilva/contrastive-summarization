@@ -10,7 +10,6 @@ from setup import EVALUATION_MODE
 # Setup options
 from setup import LIM_SENTENCES  # Sets the maximum number of SENTENCES in each side of the summary
 from setup import LIM_WORDS  # Sets the maximum number of WORDS in each side of the summary
-from setup import OPTM_METHOD
 from setup import OUTPUT_MODE
 from setup import VERBOSE_MODE
 from setup import filepath  # Get full path for the file with data of target
@@ -208,9 +207,9 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
             out.printProgress('   %3d%%   %s %s' % (100 * pr, SOURCE1, SOURCE2), end="\r")
 
             summ_idx_1A, summ_idx_2A = optm.MakeContrastiveSummary(e1_pos, e2_neg, stats_e1_pos, stats_e2_neg,
-                                                                   OPTM_METHOD, size_A, size_A)
+                                                                   size_A, size_A)
             summ_idx_1B, summ_idx_2B = optm.MakeContrastiveSummary(e1_neg, e2_pos, stats_e1_neg, stats_e2_pos,
-                                                                   OPTM_METHOD, size_B, size_B)
+                                                                   size_B, size_B)
 
             summ_idx_1 = summ_idx_1A + summ_idx_1B
             summ_idx_2 = summ_idx_2A + summ_idx_2B
