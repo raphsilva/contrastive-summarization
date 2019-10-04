@@ -1,3 +1,5 @@
+import random
+
 from probability import *
 from writefiles import get_variable_from_file
 from writefiles import underwrite_file
@@ -114,19 +116,6 @@ def eval_D(summ1, summ2):
     return 1 - 0.5 * (s1 / c1 + s2 / c2)
 
 
-import random
-
-
-def _OLD__rank_R(source1_stats, source2_stats):
-    scores = {}
-    for i in source1_stats:
-        for j in source2_stats:
-            scores[(i, j)] = similarity(source1_stats[i], source2_stats[j])
-
-    rank = sorted(scores.keys(), key=lambda i: scores[i] + random.uniform(-0.001, 0.001), reverse=True)
-
-    return rank
-
 
 def rank_R(source1_stats, source2_stats):
     scores_1 = {}
@@ -188,40 +177,7 @@ def rank_C(source1_stats, source2_stats):
 
     rank = sorted(scores.keys(), key=lambda i: scores[i] + random.uniform(-0.001, 0.001), reverse=True)
 
-    # sss = sorted(scores.items(), key=lambda i: scores[i[0]] + random.uniform(-0.001,0.001), reverse=True)
-
-    # sss = [i for i in sss if i[1] > 0]
-
-    # pprint(sss)
-
     rank_1 = [i[0] for i in rank]
     rank_2 = [i[1] for i in rank]
 
     return rank_1, rank_2
-
-
-def score(source1, source2, summ1, summ2, method='R'):
-    if method == 'C':
-        return score_C(source1, source2, summ1, summ2)
-    if method == 'R':
-        return score_R(source1, source2, summ1, summ2)
-
-
-def SAM_contrastive(original_stats_1, original_stats_2, stats_cand_1, stats_cand_2):
-    return None
-
-    score11 = +SAM(original_stats_1, stats_cand_1)
-    score22 = +SAM(original_stats_2, stats_cand_2)
-    score12 = -SAM(original_stats_1, stats_cand_2)
-    score21 = -SAM(original_stats_2, stats_cand_1)
-
-    score = (score11 + score12 + score21 + score22) / 4  # Using average instead of sum (doesn't affect anything, only makes it prettier)
-
-    score = float('%.4g' % (score))
-
-    return score
-
-
-def save_caches():
-    underwrite_file('cache/SAM.cache', cache_SAM)
-    underwrite_file('cache/distance.cache', cache_distance)
