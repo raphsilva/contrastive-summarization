@@ -2,7 +2,6 @@ import random
 
 from probability import *
 from writefiles import get_variable_from_file
-from writefiles import underwrite_file
 
 cache_distance = get_variable_from_file('cache/distance.cache')
 cache_SAM = get_variable_from_file('cache/SAM.cache')
@@ -40,38 +39,6 @@ def similarity(op1, op2):
 
     r = len(intersection) / len(union)
 
-    return r
-
-
-def score_C(source1, source2, summ1, summ2):
-    r = 0
-    for p in summ1:
-        for q in summ2:
-            r += similarity(summ1[p], summ2[q])
-    return r
-
-
-def score_R(source1, source2, summ1, summ2):
-    r = 0
-    for p in source1:
-        for q in summ2:
-            r += similarity(source1[p], summ2[q])
-    for p in source2:
-        for q in summ1:
-            r += similarity(source2[p], summ1[q])
-    return r
-
-
-def score_D(source1, source2, summ1, summ2):
-    r = 0
-    for i in range(len(summ1)):
-        for j in range(len(summ1)):
-            if i != j:
-                r -= similarity(summ1[p], summ1[q])
-    for i in range(len(summ2)):
-        for j in range(len(summ2)):
-            if i != j:
-                r -= similarity(summ2[p], summ2[q])
     return r
 
 
@@ -114,7 +81,6 @@ def eval_D(summ1, summ2):
             c2 += 1
 
     return 1 - 0.5 * (s1 / c1 + s2 / c2)
-
 
 
 def rank_R(source1_stats, source2_stats):
