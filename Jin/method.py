@@ -1,110 +1,7 @@
+import random
+
 from probability import *
-
-from setup import MAXPOLARITY
-from setup import POLARITY_ATTRIBUTION
-
-import re, string
-
-from writefiles import underwrite_file
 from writefiles import get_variable_from_file
-
-
-def set_ALPHA(value):
-    global ALPHA
-    ALPHA = value
-    return ALPHA
-
-
-def divergence_measure(d1, d2):
-    # return integralDivergence(d1, d2)
-    # return hellingerDistance(d1, d2)
-    return KLdivergence(d1, d2)
-
-def pol_ontopt(term):
-    if term in possible_aspects:
-        return 0
-    if term in sentiment_lexicon_ontopt:
-        return sentiment_lexicon_ontopt[term]
-    return 0
-
-
-def pol_sqrt(term):
-    if term in possible_aspects:
-        return 0
-    if term in sentiment_lexicon_sqrt:
-        return sentiment_lexicon_sqrt[term]
-    return 0
-
-
-ww = {}
-
-
-def lex_sent(term):
-    term = term.lower()
-    term = re.sub('[' + string.punctuation + ']', '', term)  # Remove punctuation
-    if POLARITY_ATTRIBUTION == 'complex':
-        if term in possible_aspects:
-            return 0
-    r = 0
-    if term in sentiment_lexicon:
-        r = sentiment_lexicon[term]
-
-    return MAXPOLARITY * r
-
-
-def find_polarities(words):
-    if POLARITY_ATTRIBUTION != 'complex':
-
-        return [(i, lex_sent(i)) for i in words]
-
-    elif POLARITY_ATTRIBUTION == 'complex':
-
-        neg_pos = []
-        if any(i in negation_words for i in words):
-
-            l = []
-
-            for i in range(len(words)):
-                if words[i] in negation_words:
-                    neg_pos.append(i)
-
-            for i in range(len(words)):
-                if i in neg_pos:
-                    continue  # won't keep negation words
-                if any(i - j <= 3 and i - j > 0 for j in neg_pos):
-                    l.append((words[i], -lex_sent(words[i])))
-
-                else:
-                    l.append((words[i], lex_sent(words[i])))
-
-        else:
-            l = [(i, lex_sent(i)) for i in words]
-
-        return l
-
-
-def sent(words_polarities):
-    a = 0
-    b = 0
-
-    for i in words_polarities:
-        a += i[1]
-        b += abs(i[1])
-
-    sent = MAXPOLARITY * a / (b + ALPHA)
-    sent_rounded = float('%.2g' % (sent))  # Rounded to 2 significant digits (to optimize use of cache)
-
-    return sent_rounded
-
-
-def mismatch(S, S_rating, info):
-    a = S_rating - mean_summ_sent(S, info)
-    return a * a / MAXPOLARITY
-
-
-def SM(source, candidate):
-    return mismatch(source, candidate)
-
 
 cache_distance = get_variable_from_file('cache/distance.cache')
 cache_SAM = get_variable_from_file('cache/SAM.cache')
@@ -116,81 +13,6 @@ if cache_SAM == False:
     cache_SAM = {}
 
 normal_distribution_zero = normalDistributionZero()
-
-
-def SAM(source, candidate):
-    global cache_distance, cache_SAM
-
-    key_SAM = repr(source) + repr(candidate)
-
-    if key_SAM in cache_SAM:
-        return cache_SAM[key_SAM]
-
-    score = 0
-    debug_score = {}
-
-    for aspect in candidate:
-
-        c_mean = candidate[aspect]['mean']
-        c_std = candidate[aspect]['std']
-        c_prob = candidate[aspect]['prob']
-
-        if aspect not in source:
-            key_distance = repr([0, 0, 0, c_mean, c_std, c_prob])
-            if key_distance in cache_distance:  # acess entropy cache
-                distance = cache_distance[key_distance]
-
-            else:
-                normalSource = normal_distribution_zero
-                normalCandid = normalDistribution(c_mean, c_std, c_prob)
-                distance = -divergence_measure(normalCandid, normalSource)  # calculate entropy
-                cache_distance[key_distance] = distance  # save entropy to cache
-            score += distance  # add up entropy to make the score
-            debug_score[aspect] = distance
-
-        else:
-
-            s_mean = source[aspect]['mean']
-            s_std = source[aspect]['std']
-            s_prob = source[aspect]['prob']
-
-            key_distance = repr([s_mean, s_std, s_prob, c_mean, c_std, c_prob])
-
-            if key_distance in cache_distance:  # acess entropy cache
-                distance = cache_distance[key_distance]
-
-            else:
-                normalSource = normalDistribution(s_mean, s_std, s_prob)
-                normalCandid = normalDistribution(c_mean, c_std, c_prob)
-                distance = -divergence_measure(normalCandid, normalSource)  # calculate entropy
-                cache_distance[key_distance] = distance  # save entropy to cache
-            score += distance  # add up entropy to make the score
-            debug_score[aspect] = distance
-
-    for aspect in source:
-        if aspect not in candidate:
-
-            s_mean = source[aspect]['mean']
-            s_std = source[aspect]['std']
-            s_prob = source[aspect]['prob']
-
-            key_distance = repr([s_mean, s_std, s_prob, 0, 0, 0])
-
-            if key_distance in cache_distance:
-                distance = cache_distance[key_distance]  # acess entropy cache
-
-            else:
-                normalSource = normalDistribution(s_mean, s_std, s_prob)
-                normalCandid = normal_distribution_zero
-                distance = -divergence_measure(normalCandid, normalSource)  # calculate entropy
-                cache_distance[key_distance] = distance  # save entropy to cache
-            score += distance  # add up entropy to make the score
-            debug_score[aspect] = distance
-
-    score = float('%.4g' % (score))
-
-    cache_SAM[key_SAM] = score
-    return score
 
 
 def get_topics(source):
@@ -217,38 +39,6 @@ def similarity(op1, op2):
 
     r = len(intersection) / len(union)
 
-    return r
-
-
-def score_C(source1, source2, summ1, summ2):
-    r = 0
-    for p in summ1:
-        for q in summ2:
-            r += similarity(summ1[p], summ2[q])
-    return r
-
-
-def score_R(source1, source2, summ1, summ2):
-    r = 0
-    for p in source1:
-        for q in summ2:
-            r += similarity(source1[p], summ2[q])
-    for p in source2:
-        for q in summ1:
-            r += similarity(source2[p], summ1[q])
-    return r
-
-
-def score_D(source1, source2, summ1, summ2):
-    r = 0
-    for i in range(len(summ1)):
-        for j in range(len(summ1)):
-            if i != j:
-                r -= similarity(summ1[p], summ1[q])
-    for i in range(len(summ2)):
-        for j in range(len(summ2)):
-            if i != j:
-                r -= similarity(summ2[p], summ2[q])
     return r
 
 
@@ -291,20 +81,6 @@ def eval_D(summ1, summ2):
             c2 += 1
 
     return 1 - 0.5 * (s1 / c1 + s2 / c2)
-
-
-import random
-
-
-def _OLD__rank_R(source1_stats, source2_stats):
-    scores = {}
-    for i in source1_stats:
-        for j in source2_stats:
-            scores[(i, j)] = similarity(source1_stats[i], source2_stats[j])
-
-    rank = sorted(scores.keys(), key=lambda i: scores[i] + random.uniform(-0.001, 0.001), reverse=True)
-
-    return rank
 
 
 def rank_R(source1_stats, source2_stats):
@@ -367,41 +143,7 @@ def rank_C(source1_stats, source2_stats):
 
     rank = sorted(scores.keys(), key=lambda i: scores[i] + random.uniform(-0.001, 0.001), reverse=True)
 
-    # sss = sorted(scores.items(), key=lambda i: scores[i[0]] + random.uniform(-0.001,0.001), reverse=True)
-
-    # sss = [i for i in sss if i[1] > 0]
-
-    # pprint(sss)
-
     rank_1 = [i[0] for i in rank]
     rank_2 = [i[1] for i in rank]
 
     return rank_1, rank_2
-
-
-def score(source1, source2, summ1, summ2, method='R'):
-    if method == 'C':
-        return score_C(source1, source2, summ1, summ2)
-    if method == 'R':
-        return score_R(source1, source2, summ1, summ2)
-
-
-def SAM_contrastive(original_stats_1, original_stats_2, stats_cand_1, stats_cand_2):
-    return None
-
-    score11 = +SAM(original_stats_1, stats_cand_1)
-    score22 = +SAM(original_stats_2, stats_cand_2)
-    score12 = -SAM(original_stats_1, stats_cand_2)
-    score21 = -SAM(original_stats_2, stats_cand_1)
-
-    score = (
-                        score11 + score12 + score21 + score22) / 4  # Using average instead of sum (doesn't affect anything, only makes it prettier)
-
-    score = float('%.4g' % (score))
-
-    return score
-
-
-def save_caches():
-    underwrite_file('cache/SAM.cache', cache_SAM)
-    underwrite_file('cache/distance.cache', cache_distance)
