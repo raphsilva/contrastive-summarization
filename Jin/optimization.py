@@ -15,17 +15,14 @@ RANDOM_SEED = 4
 
 RANDOMIZE_DRAW = False  # If two candidates have the same score, chooses random (if true) or chooses the last found (false)
 
+
 def random_seed():
     global RANDOM_SEED
     RANDOM_SEED = random.randint(0, 10000)
 
-def MakeContrastiveSummary(t1, t2, d1, d2, method='greedy', LIM_WORDS_1=LIM_WORDS, LIM_WORDS_2=LIM_WORDS):
-    if method == 'greedy':
-        return MakeContrastiveSummary_greedy(t1, t2, d1, d2, LIM_WORDS_1, LIM_WORDS_2)
 
-
-def MakeContrastiveSummary_C(source1, source2, stats_source_1, stats_source_2, LIM_WORDS_1=LIM_WORDS,
-                             LIM_WORDS_2=LIM_WORDS):
+def MakeContrastiveSummary(source1, source2, stats_source_1, stats_source_2, LIM_WORDS_1=LIM_WORDS,
+                           LIM_WORDS_2=LIM_WORDS):
     candidate_options_1 = sorted(list(source1.keys()))
     candidate_options_2 = sorted(list(source2.keys()))
     random.seed(RANDOM_SEED)
@@ -77,11 +74,3 @@ def MakeContrastiveSummary_C(source1, source2, stats_source_1, stats_source_2, L
             break
 
     return idx_summ_1, idx_summ_2
-
-
-def MakeContrastiveSummary_greedy(source1, source2, stats_source_1, stats_source_2, LIM_WORDS_1=LIM_WORDS,
-                                  LIM_WORDS_2=LIM_WORDS):
-    return MakeContrastiveSummary_C(source1, source2, stats_source_1, stats_source_2, LIM_WORDS_1, LIM_WORDS_2)
-
-
-    # End of greedy algorithm to find best summary
