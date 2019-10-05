@@ -1,5 +1,5 @@
-import scipy.stats as stats
 import matplotlib.pyplot as plt
+import scipy.stats as stats
 
 from setup import MAXPOLARITY
 

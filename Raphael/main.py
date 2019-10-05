@@ -1,29 +1,23 @@
 # From this project:
-import method
-from read_input import read_input
 import evaluation.evaluation as evalu
+import method
+import optimization as optm
 import output_format as out
 import structure as struct
-from structure import word_count
-
-import optimization as optm
-
+from read_input import read_input
+from setup import EVALUATION_MODE
 # Setup options
 from setup import LIM_SENTENCES  # Sets the maximum number of SENTENCES in each side of the summary
 from setup import LIM_WORDS  # Sets the maximum number of WORDS in each side of the summary
-from setup import SOURCE1, SOURCE2
-from setup import filepath  # Get full path for the file with data of target
-
-from setup import VERBOSE_MODE
-from setup import EVALUATION_MODE
+from setup import METHOD
+from setup import OPTM_MODE
 from setup import OUTPUT_MODE
 from setup import OVERVIEW_MODE
-
-from setup import OPTM_MODE
-
+from setup import SOURCE1, SOURCE2
+from setup import VERBOSE_MODE
+from setup import filepath  # Get full path for the file with data of target
+from structure import word_count
 from writefiles import underwrite_file
-
-from setup import METHOD
 
 results = {}
 results['meta'] = {}
@@ -96,7 +90,6 @@ def load_input():
     'cor':  {'mean': -87, 'prob': 0.21, 'std': 1.73}}
 '''
 
-
 from time import time
 
 exec_code = str(int(time()) % 100000000)
@@ -120,6 +113,7 @@ def sqdiff(l1, l2):
     for i in range(len(l1)):
         r += pow(l1[i] - l2[i], 2)
     return r
+
 
 for SOURCE1, SOURCE2 in [('D1a', 'D1b'), ('D2a', 'D2b'), ('D3a', 'D3b'), ('D4a', 'D4b'), ('D5a', 'D5b'), ('D6a', 'D6b'),
                          ('D7a', 'D7b'), ('D8a', 'D8b')][2]:

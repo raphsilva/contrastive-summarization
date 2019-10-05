@@ -52,12 +52,15 @@ ALPHA = 20
 preset = [0, 1, 2][2]
 
 PRESET = [
-    {'KEY_MEASURE': 'aspects',
-     'setting': 0},
-    {'KEY_MEASURE': 'aspects',
-     'setting': 1},
-    {'KEY_MEASURE': 'corpus',
-     'setting': 1}
+    {
+        'KEY_MEASURE': 'aspects',
+        'setting': 0},
+    {
+        'KEY_MEASURE': 'aspects',
+        'setting': 1},
+    {
+        'KEY_MEASURE': 'corpus',
+        'setting': 1}
 ]
 
 config = PRESET[preset]
