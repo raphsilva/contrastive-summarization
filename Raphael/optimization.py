@@ -1,6 +1,5 @@
 from pprint import pprint
 
-import method
 import output_format as out
 import structure as struct
 from structure import trinary_polarity
