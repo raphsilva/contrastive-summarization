@@ -51,7 +51,7 @@ normal_distribution_zero = normalDistributionZero()
 ########################################################################
 
 
-import evaluation.evaluation as evaluation
+import evaluation as evaluation
 
 
 def score_repr_summ(source, candidate):
