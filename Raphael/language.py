@@ -8,11 +8,6 @@ from nltk.stem import RSLPStemmer, PorterStemmer
 # used for: tagger for Portuguese
 import nlpnet
 
-# NLP variables
-stemmer = dict(portuguese=RSLPStemmer(), english=PorterStemmer())
-nlpnet.set_data_dir("language/portuguese")
-nlpnet_POSTagger = nlpnet.POSTagger()
-
 from writefiles import get_variable_from_file
 from writefiles import underwrite_file
 
@@ -128,100 +123,5 @@ def getSentimentLexicon_sqrt():
         w = i.split(',')[0]
         s = i.split(',')[1]
         r[w] = float(s)
-
-    return r
-
-
-def simplify_characters(my_string):
-    """
-    Normalize the characters, transform characters into lowercase and remove both punctuation and special characters from a string.
-    :param my_string: [str]
-    :return: [str] returns a simplified string with only numbers, letters and spaces.
-    """
-
-    # normalize and transform characters into lowercase
-    # normalized_string = unicodedata.normalize('NFKD', my_string.casefold())
-    normalized_string = my_string.lower()
-
-    # simplify characters in a way that ç becomes c, á becomes a, etc.
-    # normalized_string = u"".join([c for c in normalized_string if not unicodedata.combining(c)])
-
-    # remove punctuation and special characters
-    return re.sub('[' + string.punctuation + ']', ' ', normalized_string)
-
-
-cache_removed_negs_adjs = {}
-
-
-def makecache_remove_negs_adjs(sentence):
-    global cache_removed_negs_adjs
-
-    if len(sentence) == 0:
-        return []
-
-    k = process_sentence(sentence)
-
-    if str(k) in cache_removed_negs_adjs:
-        return
-
-        # simplifying the sentence
-    s = simplify_characters(sentence)
-
-    # tokenize the sentence
-    s = nltk.word_tokenize(s, language=LANGUAGE)
-
-    r = s
-
-    # removing adjectives from both sentences
-    if LANGUAGE == 'english':
-        r = [token for (token, tag) in nltk.pos_tag(s, tagset='universal') if (tag != 'ADJ')]
-    elif LANGUAGE == 'portuguese':
-        r = [token for (token, tag) in nlpnet_POSTagger.tag_tokens(s, return_tokens=True) if (tag == 'N' or tag == 'V')]
-
-    # removing negation words from sentence
-    r = [word for word in r if (word not in negation_words[LANGUAGE])]
-
-    r = [word for word in r if (word not in stopwords)]
-
-    # Stemmer
-    r = [stemmer[LANGUAGE].stem(i) for i in r]
-
-    cache_removed_negs_adjs[str(k)] = r
-
-    return r
-
-
-def removeNegsAndAdjs(sentence_proc):
-    return cache_removed_negs_adjs[str(sentence_proc)]  # This cache is made right when data is loaded
-
-
-def stem(word, language=LANGUAGE):
-    return stemmer[language].stem(word)
-
-
-def process_sentence(sentence, STEM=True):
-    # simplifying the sentence
-    r = simplify_characters(sentence)
-
-    # tokenize the sentence
-    r = nltk.word_tokenize(r, language=LANGUAGE)
-
-    if len(r) == 0:
-        return r
-
-    s = nlpnet_POSTagger.tag_tokens(r, return_tokens=True)
-
-    # removing stopwords from the sentence                
-    r = [token for (token, tag) in nlpnet_POSTagger.tag_tokens(r, return_tokens=True) if
-         (tag == 'ADJ' or tag == 'N' or tag == 'V' or token in negation_words)]
-
-    r = [word for word in r if (word not in stopwords or word in negation_words)]
-
-    # Stemmer
-    if STEM:
-        r = [lemma(i) for i in r]
-
-    r = [word for word in r if (word not in stopwords or word in negation_words)]
-    r = [word for word in r if not word.isdigit()]
 
     return r
