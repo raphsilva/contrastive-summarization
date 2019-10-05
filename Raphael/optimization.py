@@ -6,7 +6,6 @@ INFINITY = 999999
 from setup import LIM_SENTENCES
 from setup import LIM_WORDS
 
-
 from setup import SENTENCE_IDEAL_LENGTH
 from setup import INDEPENDENT_RANK
 
@@ -20,8 +19,6 @@ RANDOM_SEED = 7
 def random_seed():
     global RANDOM_SEED
     RANDOM_SEED = random.randint(0, 10000)
-
-
 
 
 def MakeContrastiveSummary(t1, t2, mode):
@@ -109,11 +106,10 @@ def get_contrastive_pairs_rank_independent(source1, source2):
     return contr_rank_1, contr_rank_2
 
 
-def MakeContrastiveSummary_selection_side(source, opinions_rank, side):
+def MakeContrastiveSummary_selection_side(source, opinions_rank):
     summ = []
 
     c_words = 0
-    c_words_prev = -1
 
     desired_opinions = opinions_rank
 
@@ -127,8 +123,6 @@ def MakeContrastiveSummary_selection_side(source, opinions_rank, side):
             q_desired_opinions.append(e)
 
     while c_words < LIM_WORDS:
-
-        c_words_prev = c_words
 
         if q_desired_opinions == []:  # no more opinions found
             break
@@ -191,8 +185,8 @@ def MakeContrastiveSummary_selection_side(source, opinions_rank, side):
 def MakeContrastiveSummary_selection(source1, source2):
     contr_rank_1, contr_rank_2 = get_contrastive_pairs_rank(source1, source2)
 
-    summ1 = MakeContrastiveSummary_selection_side(source1, contr_rank_1, 1)
-    summ2 = MakeContrastiveSummary_selection_side(source2, contr_rank_2, 2)
+    summ1 = MakeContrastiveSummary_selection_side(source1, contr_rank_1)
+    summ2 = MakeContrastiveSummary_selection_side(source2, contr_rank_2)
 
     summ1_idx = [e['id'] for e in summ1]
     summ2_idx = [e['id'] for e in summ2]
@@ -207,7 +201,7 @@ def get_elements_count(l):
     return r
 
 
-def MakeContrastiveSummary_alternate_side(source, repr_rank, contr_rank, side):
+def MakeContrastiveSummary_alternate_side(source, repr_rank, contr_rank):
     summ = []
 
     c_words = 0
@@ -226,8 +220,6 @@ def MakeContrastiveSummary_alternate_side(source, repr_rank, contr_rank, side):
     turn = 0
 
     while c_words < LIM_WORDS:
-
-        c_words_prev = c_words
 
         if q_contr == [] and q_repr == []:  # no more opinions found
             break
@@ -262,8 +254,6 @@ def MakeContrastiveSummary_alternate_side(source, repr_rank, contr_rank, side):
                 continue
 
             if c_words + source[i]['word_count'] <= LIM_WORDS:
-                oo = [(i[0], 100 * i[1]) for i in q_turn]
-
                 cand_sentences.append(source[i])
 
         if len(cand_sentences) == 0:  # No more sentences for this opinions
@@ -327,8 +317,8 @@ def MakeContrastiveSummary_alternate(source1, source2):
     repr1_rank = [i[0] for i in sorted(op_c_1.items(), key=lambda kv: kv[1], reverse=True)]
     repr2_rank = [i[0] for i in sorted(op_c_2.items(), key=lambda kv: kv[1], reverse=True)]
 
-    summ1 = MakeContrastiveSummary_alternate_side(source1, repr1_rank, contr_rank_1, 1)
-    summ2 = MakeContrastiveSummary_alternate_side(source2, repr2_rank, contr_rank_2, 2)
+    summ1 = MakeContrastiveSummary_alternate_side(source1, repr1_rank, contr_rank_1)
+    summ2 = MakeContrastiveSummary_alternate_side(source2, repr2_rank, contr_rank_2)
 
     summ1_idx = [e['id'] for e in summ1]
     summ2_idx = [e['id'] for e in summ2]
@@ -342,19 +332,20 @@ def MakeContrastiveSummary_random(source1, source2):
     idx1 = source1.keys()
     idx2 = source2.keys()
 
-    idx_cand_1 = sample(idx1, LIM_SENTENCES)
-    idx_cand_2 = sample(idx2, LIM_SENTENCES)
+    # Choose random indexes for the summary, with size equal to the limit of sentences.
+    summ1_idx = sample(idx1, LIM_SENTENCES)
+    summ2_idx = sample(idx2, LIM_SENTENCES)
 
-    summ_cand_1 = struct.idx_to_summ(source1, idx_cand_1)
-    summ_cand_2 = struct.idx_to_summ(source2, idx_cand_2)
+    # Build summary
+    summ1 = struct.idx_to_summ(source1, summ1_idx)
+    summ2 = struct.idx_to_summ(source2, summ2_idx)
 
-    while struct.word_count(summ_cand_1) > LIM_WORDS and len(idx_cand_1) > 0:
-        idx_cand_1 = idx_cand_1[:-1]
-        summ_cand_1 = struct.idx_to_summ(source1, idx_cand_1)
-    while struct.word_count(summ_cand_2) > LIM_WORDS and len(idx_cand_2) > 0:
-        idx_cand_2 = idx_cand_2[:-1]
-        summ_cand_2 = struct.idx_to_summ(source2, idx_cand_2)
+    # Remove sentences until the sumary size respects the limit of words.
+    while struct.word_count(summ1) > LIM_WORDS and len(summ1_idx) > 0:
+        summ1_idx = summ1_idx[:-1]
+        summ1 = struct.idx_to_summ(source1, summ1_idx)
+    while struct.word_count(summ2) > LIM_WORDS and len(summ2_idx) > 0:
+        summ2_idx = summ2_idx[:-1]
+        summ2 = struct.idx_to_summ(source2, summ2_idx)
 
-    return idx_cand_1, idx_cand_2
-
-
+    return summ1_idx, summ2_idx
