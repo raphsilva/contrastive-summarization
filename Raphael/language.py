@@ -1,13 +1,3 @@
-import re
-import string
-
-# used for: tagger for English, tokenizer, stopwords lists, stemmer
-import nltk
-from nltk.stem import RSLPStemmer, PorterStemmer
-
-# used for: tagger for Portuguese
-import nlpnet
-
 from writefiles import get_variable_from_file
 from writefiles import underwrite_file
 

@@ -1,6 +1,3 @@
-# version 19-03-04
-
-
 import os.path
 import json
 
