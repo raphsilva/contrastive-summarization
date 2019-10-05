@@ -14,6 +14,7 @@ from setup import OUTPUT_MODE
 from setup import OVERVIEW_MODE
 from setup import DATASETS_TO_TEST
 from setup import VERBOSE_MODE
+from setup import REPEAT_TESTS, DISCARD_TESTS
 from setup import filepath  # Get full path for the file with data of target
 from structure import word_count
 from writefiles import underwrite_file
@@ -94,13 +95,12 @@ exec_code = str(int(time()) % 100000000)
 
 FILE_RESULTS = 'results_' + exec_code + '.txt'
 
-RTESTS = 100
-DTESTS = int(RTESTS / 10)
 
-print('Will perform %d tests and discard %d(x2) best and worst\n\n' % (RTESTS, DTESTS))
+
+print('Will perform %d tests and discard %d(x2) best and worst\n\n' % (REPEAT_TESTS, DISCARD_TESTS))
 
 f = open(FILE_RESULTS, 'a')
-f.write('%d tests, discard %d(x2) best and worst\n\n' % (RTESTS, DTESTS))
+f.write('%d tests, discard %d(x2) best and worst\n\n' % (REPEAT_TESTS, DISCARD_TESTS))
 f.close()
 
 SHOW_ALL_ITERAT = False
@@ -137,9 +137,6 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
         print("Size 1: ", len(source1))
         print("Size 2: ", len(source2))
 
-    stats_source_1 = struct.aspects_stats(source1)
-    stats_source_2 = struct.aspects_stats(source2)
-
     print_verbose('Sizes of datasets without low intensity sentences: ', len(source1), len(source2))
 
     print_verbose('Making summary')
@@ -159,7 +156,7 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
     h_sentences1 = []
     h_sentences2 = []
 
-    for repeat in range(RTESTS):
+    for repeat in range(REPEAT_TESTS):
 
         optm.random_seed()
 
@@ -266,10 +263,10 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
 
     from statistics import stdev
 
-    hr_medians = sorted(hr)[DTESTS:-DTESTS]
-    hc_medians = sorted(hc)[DTESTS:-DTESTS]
-    hd_medians = sorted(hd)[DTESTS:-DTESTS]
-    hh_medians = sorted(hh)[DTESTS:-DTESTS]
+    hr_medians = sorted(hr)[DISCARD_TESTS:-DISCARD_TESTS]
+    hc_medians = sorted(hc)[DISCARD_TESTS:-DISCARD_TESTS]
+    hd_medians = sorted(hd)[DISCARD_TESTS:-DISCARD_TESTS]
+    hh_medians = sorted(hh)[DISCARD_TESTS:-DISCARD_TESTS]
 
     sthh = stdev(hh_medians)
     sthc = stdev(hc_medians)
