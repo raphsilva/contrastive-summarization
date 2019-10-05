@@ -1,23 +1,9 @@
 MAXSENT = 100
 
 
-
-
-from pprint import pprint
-
-#from LermanFunctions import *
-#import method
-
 import structure as struct
 from structure import get_opinions
 from structure import get_contrastive_pairs
-
-#BYPASS_ASPECTS = ['EMPRESA', 'PRODUTO', '_GENERIC', '_NONE', 'x', 'X']
-#BYPASS_ASPECTS = []
-
-
-
-
 
 
 def representativiness(source, summ):
@@ -103,11 +89,7 @@ def diversity(source, summ):
     
     opinions_source = list(set(opinions_source)) # Remove duplicates
     opinions_summ = list(set(opinions_summ))
-    
-    #pprint(opinions_source)
-    #pprint(opinions_summ)
-    #print()
-    
+
     return len(opinions_summ)/len(opinions_source)
 
 
@@ -164,34 +146,9 @@ def DEPREC_contrastiviness(source1, source2, summ1, summ2 = 'corpus'):
                 c += .5
             if (p[0], p[2]) in opinions_opposite_summ:
                 c += .5
-                
-        #pprint(all_possibles)
-        #print()
-        #pprint(opinions_source)
-        #input()
+
                 
         points += c/len(all_possibles)
-        
-        #for op1 in opinions_source:
-            #for op2 in opinions_opposite_summ:
-                #pol1 = (op1[1])
-                #pol2 = (op2[1])
-                #if op1[0] == op2[0] and pol1 == -pol2:
-                    #asp_cont = (op1[0], pol1, pol2) # This aspect has the possibility to form a possible contrastive pair. 
-                    #if asp_cont not in pairs_formed:
-                        #pairs_formed.append(asp_cont)
-                #elif op1[0] == op2[0]:
-                    #print('**', op1, op2)
-     
-             
-             
-        #points += len(pairs_formed)/len(all_possibles)
-        
-        #points += p/max_possible 
-    
-    ##print(points)
-    
-    #points /= max_possible
 
     
     return points/2
@@ -241,23 +198,13 @@ def contrastiviness_repr(source1, source2, summ1, summ2):
                 pol2 = trinary_polarity(op2[1])
                 if op1[0] == op2[0] and pol1 == -pol2:
                     asp_cont = (op1[0], pol1) # This aspect has the possibility to form a possible contrastive pair. 
-                    #asp_opposite = (op1[0], -pol1)
-                     
-                    #if asp_opposite in all_possibles:
-                        ##pprint(all_possibles)
-                        ##print('deleting ', asp_opposite)
-                        ##input()
-                        #del all_possibles[all_possibles.index(asp_opposite)]
-                    #else:
-                    ##if asp_cont not in all_possibles:
+
                     all_possibles.append(asp_cont)
                          
                     idx1_used.append(idx1)
                     idx2_used.append(idx2)
           
-        #pprint(sorted(all_possibles))
-        #input()
-          
+
         pairs_formed = []
          
         idx1_used = []
@@ -312,45 +259,10 @@ def BAK_contrastiviness(source1, source2, summ1, summ2):
     
     
     
-    
-                
-    #for opinions1 in opinions_source1:
-        #m = [0]
-        #for opinions2 in opinions_source2:
-            #if opinions1[0] == opinions2[0]:
-                #m.append(abs(opinions1[1] - opinions2[1]))
-        #max_possible += max(m)
-                
-    #for opinions2 in opinions_source2:
-        #m = [0]
-        #for opinions1 in opinions_source1:
-            #if opinions1[0] == opinions2[0]:
-                #m.append(abs(opinions1[1] - opinions2[1]))
-        #max_possible += max(m)
-    
-    #max_possible /= 2
-                
-        
-                #print(max_possible)
-                #print(opinions1)
-                #print(opinions2)
-                #print()
-    
-    #exit()
-        
-    
+
     # Compares source 1 with summ 2 and vice-versa.
     for opinions_source, opinions_opposite_source, opinions_opposite_summ in zip([opinions_source1, opinions_source2], [opinions_source2, opinions_source1], [opinions_summ2, opinions_summ1]):
-    
-    
-        
-        
-        #pprint(opinions_source)
-        #pprint(opinions_summ)
-        
-        #print()
-        #print()
-        #print()
+
         
         max_possible = 0
         
@@ -366,17 +278,10 @@ def BAK_contrastiviness(source1, source2, summ1, summ2):
             for u in opinions_opposite_summ:
                 if o[0] == u[0] and o[1] * u[1] < 0:
                     p += 1
-                    #break
-                #if o[0] == u[0]:
-                    #points += abs(o[1] - u[1])
-        
+
         points += p/max_possible 
     
-    ##print(points)
-    
-    #points /= max_possible
 
-    
     return points/2
 
 
@@ -393,13 +298,7 @@ def representativeness_sim(set1, set2, summ):
     The representativeness of a contrastive opinion summary S, denoted as r(S), measures how well the summary S represents the opinions expressed by the sentences in both X and Y .
     :return: [float] representativeness of the generated summary.
     """
-    
-    #pprint(set1)
-    #for i in set1:
-        #print("olha")
-        #pprint(i)
-        #print(i['text_info'])
-    #input()
+
     
     source1_text_info = [s['text_info'] for s in set1]
     source2_text_info = [s['text_info'] for s in set2]
@@ -455,25 +354,17 @@ def precision(summ):
     :return: [float] precision of the generated summary.
     """
     
-    #print()
-    #pprint(summ)
-    #print()
-    
     c_match = 0
 
     for (u, v) in summ:
-        pair_is_agreed = False
-        
+
         c1 = [i[0] for i in u['opinions']] # gets aspects
         c2 = [i[0] for i in v['opinions']] # gets aspects
-        #c1 = getHumanClusteringForSentence(TARGET1, u['id'])
-        #c2 = getHumanClusteringForSentence(TARGET2, v['id'])
+
         
         if any(i in c1 for i in c2):
             c_match += 1
-            #print(c1)
-            #print(c2)
-            #print()
+
             
 
     return c_match / len(summ)
@@ -496,18 +387,6 @@ def aspect_coverage(source, summ):
             if c not in all_clusters:
                 all_clusters.append(c)
 
-    
-    #for product_id in human_clustering:
-        #for cluster in human_clustering[product_id]:
-            #if cluster not in all_clusters:
-                
-                ## If a cluster is in one target but not in the other, it won't be counted because it can't make pairs
-                #if cluster not in human_clustering[TARGET1]:
-                    #continue
-                #if cluster not in human_clustering[TARGET2]:
-                    #continue
-                    
-                #all_clusters.append(cluster)
                 
      
     # Get all clusters that were covered in the summary 
@@ -536,13 +415,7 @@ def representativiness_competitive(source, summ):
     
     opinions_source = [item for sublist in [source[j]['opinions'] for j in source] for item in sublist]
     opinions_summ = [item for sublist in [summ[j]['opinions'] for j in summ] for item in sublist]
-    
-    #pprint(opinions_source)
-    #pprint(opinions_summ)
-    
-    #print()
-    #print()
-    #print()
+
     
     for o in opinions_source:
         for u in opinions_summ:
@@ -552,9 +425,7 @@ def representativiness_competitive(source, summ):
             elif o[0] == u[0] and o[1] * u[1] < 0:
                 points -= 1
     
-    #print(points)
-    #print(points/len(opinions_source))
-    
+
     return points/len(opinions_source)
     
     
@@ -567,24 +438,14 @@ def contrastiviness_competitive(source, summ):
     
     opinions_source = [item for sublist in [source[j]['opinions'] for j in source] for item in sublist]
     opinions_summ = [item for sublist in [summ[j]['opinions'] for j in summ] for item in sublist]
-    
-    #pprint(opinions_source)
-    #pprint(opinions_summ)
-    
-    #print()
-    #print()
-    #print()
-    
+
     for o in opinions_source:
         for u in opinions_summ:
             if o[0] == u[0] and o[1] * u[1] <= 0:
-                #print(o, u)
                 points += 1
             elif o[0] == u[0] and o[1] * u[1] < 0:
-                #print(o, u)
                 points -= 1
     
-    #print(points)
     return points/len(opinions_source)
 
 
@@ -648,11 +509,7 @@ def comparability (sum1, sum2):
 
     return len(inter)/len(un)
     
-    
-    
-#def divergence(t1, t2):
-    #return 0.5 * (divergenceFrom(t1, t2) + divergenceFrom(t2, t1))
-    
+
     
 def divergence(t1, t2): 
     
@@ -711,17 +568,6 @@ def conformity(sum1, sum2):
     
     return 1 - r
                 
-            
-
-#def equity(source1, sum1, source2, sum2):
-    #t1 = getAspectsSentDistrib(source1)
-    #t2 = getAspectsSentDistrib(source2)
-    #s1 = getAspectsSentDistrib(sum1)
-    #s2 = getAspectsSentDistrib(sum2)
-    #eq1 = SAM(t1, s1)
-    #eq2 = SAM(t2, s2)
-    #return (eq1+eq2)/2
-            
 
 
 def equity(source, summ):
