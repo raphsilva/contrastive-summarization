@@ -35,6 +35,8 @@ MAXPOLARITY = 100  # Sets the polarity scale (from -MAXPOLARITY to +MAXPOLARITY)
 LIM_SENTENCES = 20  # Sets the maximum number of SENTENCES in each side of the summary
 LIM_WORDS = 150  # Sets the maximum number of WORDS in each side of the summary
 
+LOW_PRIORITY_ASPECTS = ['_GENERIC']  # Aspects that are send to the end of the queue
+
 # Optimization options
 
 # In the greedy optimization, [max(1, GREEDY_CANDS_SELECTED * (total number of candidates))] will be selected for the next step.
