@@ -171,17 +171,9 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
         summ1 = {i: source1[i] for i in summ_idx_1}
         summ2 = {i: source2[i] for i in summ_idx_2}
 
-        sum_stats_1 = struct.aspects_stats(summ1)
-        sum_stats_2 = struct.aspects_stats(summ2)
-
         s_id = (sorted(summ_idx_1), sorted(summ_idx_2))
         if s_id not in all_summaries:
             all_summaries.append(s_id)
-
-        if VERBOSE_MODE:
-            print_verbose('\nOverview of opinions in the summary for each entity:')
-            struct.printOverview(sum_stats_1)
-            struct.printOverview(sum_stats_2)
 
         # Display the results
 
