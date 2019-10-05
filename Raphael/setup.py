@@ -6,6 +6,9 @@ INDEPENDENT_RANK = False
 
 SENTENCE_IDEAL_LENGTH = 0 # 0 for none
 
+REPEAT_TESTS = 10  # Times to repeat each test
+DISCARD_TESTS = int(0.1*REPEAT_TESTS)  # Amount of top-rated and bottom-rated tests to be discarded to compute average
+
 # Display options
 
 VERBOSE_MODE = False  # To print statistics and status information (progress is always shown)
