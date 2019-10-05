@@ -1,6 +1,3 @@
-from pprint import pprint
-
-import output_format as out
 import structure as struct
 from structure import trinary_polarity
 
@@ -9,8 +6,6 @@ INFINITY = 999999
 from setup import LIM_SENTENCES
 from setup import LIM_WORDS
 
-from setup import GREEDY_CANDS_SELECTED
-from setup import VERBOSE_MODE
 
 from setup import SENTENCE_IDEAL_LENGTH
 from setup import INDEPENDENT_RANK
@@ -29,7 +24,7 @@ def random_seed():
 
 
 
-def MakeContrastiveSummary(t1, t2, d1, d2, mode):
+def MakeContrastiveSummary(t1, t2, mode):
     if mode == 'random':
         return MakeContrastiveSummary_random(t1, t2)
     if mode == 'selection':
