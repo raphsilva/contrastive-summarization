@@ -1,6 +1,6 @@
-import output_format
 import statistics
 
+import output_format
 from setup import MAXPOLARITY
 
 
