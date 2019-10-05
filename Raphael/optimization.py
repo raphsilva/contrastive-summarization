@@ -6,6 +6,8 @@ INFINITY = 999999
 from setup import LIM_SENTENCES
 from setup import LIM_WORDS
 
+from setup import LOW_PRIORITY_ASPECTS
+
 from setup import SENTENCE_IDEAL_LENGTH
 from setup import INDEPENDENT_RANK
 
@@ -162,7 +164,7 @@ def MakeContrastiveSummary_selection_side(source, opinions_rank):
 
     # Send generic to end of queue
     for i in reversed(range(len(q_desired_opinions))):
-        if q_desired_opinions[i][0] == '_GENERIC':
+        if q_desired_opinions[i][0] in LOW_PRIORITY_ASPECTS:
             e = q_desired_opinions[i]
             del q_desired_opinions[i]
             q_desired_opinions.append(e)
@@ -238,7 +240,7 @@ def MakeContrastiveSummary_alternate_side(source, repr_rank, contr_rank):
     # Send generic to end of queue
     for Q in [q_contr, q_repr]:
         for i in reversed(range(len(Q))):
-            if Q[i][0] == '_GENERIC':
+            if Q[i][0] in LOW_PRIORITY_ASPECTS:
                 e = Q[i]
                 del Q[i]
                 Q.append(e)
