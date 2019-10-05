@@ -12,7 +12,7 @@ from setup import METHOD
 from setup import OPTM_MODE
 from setup import OUTPUT_MODE
 from setup import OVERVIEW_MODE
-from setup import SOURCE1, SOURCE2
+from setup import DATASETS_TO_TEST
 from setup import VERBOSE_MODE
 from setup import filepath  # Get full path for the file with data of target
 from structure import word_count
@@ -21,8 +21,7 @@ from writefiles import underwrite_file
 results = {}
 results['meta'] = {}
 results['meta']['source'] = []
-results['meta']['source'].append(SOURCE1)
-results['meta']['source'].append(SOURCE2)
+results['meta']['source'].append(DATASETS_TO_TEST)
 results['meta']['limits (per side)'] = {}
 results['meta']['limits (per side)']['sentences'] = LIM_SENTENCES
 results['meta']['limits (per side)']['words'] = LIM_WORDS
@@ -114,8 +113,7 @@ def sqdiff(l1, l2):
     return r
 
 
-for SOURCE1, SOURCE2 in [('D1a', 'D1b'), ('D2a', 'D2b'), ('D3a', 'D3b'), ('D4a', 'D4b'), ('D5a', 'D5b'), ('D6a', 'D6b'),
-                         ('D7a', 'D7b'), ('D8a', 'D8b')][2:3]:
+for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
 
     summScoresList = {}
 
