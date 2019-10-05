@@ -1,5 +1,6 @@
 from writefiles import get_variable_from_file
 
+
 # Reads input files
 def read_input(filename):
     g = get_variable_from_file(filename)

@@ -1,10 +1,8 @@
 from probability import *
-
-from setup import MAXPOLARITY
 from setup import KEY_MEASURE
-
-from writefiles import underwrite_file
+from setup import MAXPOLARITY
 from writefiles import get_variable_from_file
+from writefiles import underwrite_file
 
 
 def set_ALPHA(value):
@@ -15,7 +13,6 @@ def set_ALPHA(value):
 
 def divergence_measure(d1, d2):
     return KLdivergence(d1, d2)
-
 
 
 def sent(words_polarities):
