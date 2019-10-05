@@ -1,6 +1,3 @@
-# Raphael Rocha da Silva
-# 2018/02/04 
-
 import scipy.stats as stats
 import matplotlib.pyplot as plt
 
@@ -22,7 +19,6 @@ def normalDistribution(mean, std, prob, step=DISTRIBUTIONS_STEP, leftlimit=-DIST
     normalContinuous = stats.norm(mean, std)
 
     r = {}
-    discreteContinuousRange = []
 
     left = int(leftlimit / step)
     right = int(rightlimit / step)
