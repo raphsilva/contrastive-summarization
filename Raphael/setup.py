@@ -35,41 +35,6 @@ MAXPOLARITY = 100  # Sets the polarity scale (from -MAXPOLARITY to +MAXPOLARITY)
 LIM_SENTENCES = 20  # Sets the maximum number of SENTENCES in each side of the summary
 LIM_WORDS = 150  # Sets the maximum number of WORDS in each side of the summary
 
-MIN_INTENS_IN_SUMMARY = 1 * MAXPOLARITY  # If (the absolute value of) a sentence is lower than that, that sentence will not be in the summary.
-
-# Method parameters
-
-ALPHA = 20
-
-preset = [0, 1, 2][2]
-
-PRESET = [
-    {
-        'KEY_MEASURE': 'aspects',
-        'setting': 0},
-    {
-        'KEY_MEASURE': 'aspects',
-        'setting': 1},
-    {
-        'KEY_MEASURE': 'corpus',
-        'setting': 1}
-]
-
-config = PRESET[preset]
-
-
-KEY_MEASURE = config['KEY_MEASURE']
-
-setting = config['setting']
-
-ASPECT_DETECTION = ['keywords', 'clues'][setting]
-POLARITY_ATTRIBUTION = ['pure', 'complex', 'manual'][setting]
-
-BYPASS_GENERIC = [True, False][setting]
-BYPASS_UNRELATAD = [False, True][setting]
-BYPASS_SHORT = [False, True][setting]
-
-
 POLARITY_LEXICON = 'sentilex'
 
 # Optimization options
@@ -101,6 +66,4 @@ if VERBOSE_MODE or EVALUATION_MODE:
     out.printMessage()
     out.printMessage('Limit of words (per side): ', LIM_WORDS)
     out.printMessage()
-    out.printMessage('Aspect detection: ', ASPECT_DETECTION)
-    out.printMessage('Polarity attribution: ', POLARITY_ATTRIBUTION)
     out.printMessage()
