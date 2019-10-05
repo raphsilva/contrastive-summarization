@@ -1,17 +1,10 @@
 DEBUGGING = False
 
-# Execution options
-# METHOD = ['CONTRASTIVE', 'NONCONTRASTIVE'][0]
+OPTM_MODE = ['selection', 'alternate', 'random'][0]
 
-OPTM_MODE = 'selection'
-# OPTM_MODE = 'random'
-# OPTM_MODE = 'alternate'
-
-# INDEPENDENT_RANK = True
 INDEPENDENT_RANK = False
 
-# SENTENCE_IDEAL_LENGTH = 5
-SENTENCE_IDEAL_LENGTH = 0
+SENTENCE_IDEAL_LENGTH = 0 # 0 for none
 
 # Display options
 
@@ -26,9 +19,9 @@ METHOD = [OPTM_MODE, INDEPENDENT_RANK, SENTENCE_IDEAL_LENGTH]
 
 DATA_DIR = "../input"
 
-SOURCE1, SOURCE2 = \
-    [(), ('10', '11'), ('30', '31'), ('10-sel', '11-sel'), ('10-chop', '11'), ('30a', '31a'), ('30b', '31b'),
-     ('30f', '31f')][1]
+INPUT_FILES = [(), ('D1a','D1b'), ('D2a','D2b'), ('D3a','D3b'), ('D4a','D4b'), ('D5a','D5b'), ('D6a','D6b'), ('D7a','D7b'), ('D8a','D8b')]
+
+DATASETS_TO_TEST = [INPUT_FILES[2]]
 
 # SOURCE1 = '10'
 # SOURCE2 = '11'
@@ -126,7 +119,7 @@ def filepath(target):
 if VERBOSE_MODE or EVALUATION_MODE:
     import output_format as out
 
-    out.printMessage('Datasets: ', SOURCE1, SOURCE2)
+    out.printMessage('Datasets: ', DATASETS_TO_TEST)
     out.printMessage()
     # out.printMessage('Method: ', OPTM_METHOD, INDEPENDENT_RANK)
     out.printMessage('Limit of words (per side): ', LIM_WORDS)
