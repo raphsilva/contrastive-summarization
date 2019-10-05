@@ -35,13 +35,7 @@ MAXPOLARITY = 100  # Sets the polarity scale (from -MAXPOLARITY to +MAXPOLARITY)
 LIM_SENTENCES = 20  # Sets the maximum number of SENTENCES in each side of the summary
 LIM_WORDS = 150  # Sets the maximum number of WORDS in each side of the summary
 
-POLARITY_LEXICON = 'sentilex'
-
 # Optimization options
-
-
-GREEDY_CANDS_SELECTED = 10  # 5#1#5#0.0002
-
 
 # In the greedy optimization, [max(1, GREEDY_CANDS_SELECTED * (total number of candidates))] will be selected for the next step.
 # For example, if GREEDY_CANDS_SELECTED = 0.001 and there are 10k candidates for the best summary of length 3, then the 0.001*10k = 10 best summaries of length 3 will be tried to see which one forms the best summary of length 4. 
