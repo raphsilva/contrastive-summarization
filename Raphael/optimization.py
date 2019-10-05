@@ -1,11 +1,9 @@
-import method
+from pprint import pprint
 
+import method
+import output_format as out
 import structure as struct
 from structure import trinary_polarity
-
-import output_format as out
-
-from pprint import pprint
 
 INFINITY = 999999
 
@@ -28,7 +26,6 @@ RANDOM_SEED = 7
 def random_seed():
     global RANDOM_SEED
     RANDOM_SEED = random.randint(0, 10000)
-
 
 
 def summarize(t1, t2, d1, d2, method, mode='greedy'):
@@ -218,7 +215,6 @@ def MakeContrastiveSummary_selection_side(source, opinions_rank, side):
                 break
 
     return summ
-
 
 
 def MakeContrastiveSummary_selection(source1, source2):
