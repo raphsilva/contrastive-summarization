@@ -1,6 +1,5 @@
 # From this project:
 import evaluation as evalu
-import method
 import optimization as optm
 import output_format as out
 import structure as struct
@@ -429,4 +428,3 @@ for SOURCE1, SOURCE2 in [('D1a', 'D1b'), ('D2a', 'D2b'), ('D3a', 'D3b'), ('D4a',
 
     underwrite_file('output/' + SOURCE1 + ' ' + SOURCE2 + ' (' + str(int(time())) + ').json', results)
 
-method.save_caches()
