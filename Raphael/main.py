@@ -1,5 +1,5 @@
 # From this project:
-import evaluation.evaluation as evalu
+import evaluation as evalu
 import method
 import optimization as optm
 import output_format as out
@@ -116,7 +116,7 @@ def sqdiff(l1, l2):
 
 
 for SOURCE1, SOURCE2 in [('D1a', 'D1b'), ('D2a', 'D2b'), ('D3a', 'D3b'), ('D4a', 'D4b'), ('D5a', 'D5b'), ('D6a', 'D6b'),
-                         ('D7a', 'D7b'), ('D8a', 'D8b')][2]:
+                         ('D7a', 'D7b'), ('D8a', 'D8b')][2:3]:
 
     summScoresList = {}
 
