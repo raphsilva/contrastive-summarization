@@ -2,7 +2,6 @@
 import evaluation as evalu
 import optimization as optm
 import output_format as out
-import structure as struct
 from read_input import read_input
 from setup import EVALUATION_MODE
 # Setup options
@@ -38,10 +37,6 @@ def print_verbose(*msg):
     if not VERBOSE_MODE:
         return
     out.printMessage(*msg)
-
-
-def print_result(*msg):
-    print(*msg, end='', flush=True)
 
 
 # Load input
@@ -130,9 +125,6 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
     source1, source2 = load_input()
     print_verbose('Sizes of datasets: ', len(source1), len(source2))
 
-    wc1 = struct.word_count(source1)
-    wc2 = struct.word_count(source2)
-
     if VERBOSE_MODE:
         print("Size 1: ", len(source1))
         print("Size 2: ", len(source2))
@@ -144,7 +136,6 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
     # Make contrastive summary
 
     all_summaries = []
-    count_time = time()
 
     hr = []
     hc = []
@@ -372,7 +363,6 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
     w1 = sum([summ1[i]['word_count'] for i in summ1])
     w2 = sum([summ2[i]['word_count'] for i in summ2])
 
-    # print()
     summ_out += '\n\n'
     summ_out += '(%3.0lf %3.0lf)     %3.0lf   %3.0lf   %3.0lf   [[%3.0lf]]  ' % (
         evals['r1'], evals['r2'], evals['R'], evals['C'], evals['D'], evals['H'])
