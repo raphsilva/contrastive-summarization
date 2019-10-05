@@ -1,9 +1,3 @@
-# -*- coding: utf-8 -*-
-
-
-# From Python standard library:
-import statistics  # For mean and stdev
-
 # From this project:
 import method
 from read_input import read_input
@@ -44,9 +38,7 @@ results['output'] = []
 from setup import DEBUGGING
 
 if DEBUGGING:
-    # For debugging
     out.setDebugPrints(True)  # Choose whether or not to display information for debugging.
-    # out.setDebugPrints(False)   # Choose whether or not to display information for debugging.
 
 
 def print_verbose(*msg):
@@ -63,13 +55,8 @@ def print_result(*msg):
 def load_input():
     print_verbose(" \nLENDO ALVO 1")
     source1 = read_input(filepath(SOURCE1))
-    # out.printdebug(source1)
-    # input()
-
     print_verbose(" \nLENDO ALVO 2")
     source2 = read_input(filepath(SOURCE2))
-    # out.printdebug(source2)
-
     return source1, source2
 
 
@@ -134,18 +121,12 @@ def sqdiff(l1, l2):
         r += pow(l1[i] - l2[i], 2)
     return r
 
-
-# SHOW_ALL_ITERAT = False
-
 for SOURCE1, SOURCE2 in [('D1a', 'D1b'), ('D2a', 'D2b'), ('D3a', 'D3b'), ('D4a', 'D4b'), ('D5a', 'D5b'), ('D6a', 'D6b'),
-                         ('D7a', 'D7b'), ('D8a', 'D8b')]:
-    # for SOURCE1, SOURCE2 in reversed([('D2a','D2b')]):
+                         ('D7a', 'D7b'), ('D8a', 'D8b')][2]:
 
     summScoresList = {}
 
     OUTPUT_FILE = 'out' + exec_code + '_' + SOURCE1[:-1] + '.txt'
-
-    # results_record = {}
 
     print('\n\n\n\n ============  ', SOURCE1, SOURCE2)
     print('\n\n')
@@ -193,7 +174,6 @@ for SOURCE1, SOURCE2 in [('D1a', 'D1b'), ('D2a', 'D2b'), ('D3a', 'D3b'), ('D4a',
 
         summ_idx_1, summ_idx_2 = optm.MakeContrastiveSummary(source1, source2, stats_source_1, stats_source_2,
                                                              OPTM_MODE)
-        # summ_idx_1, summ_idx_2 = optm.MakeContrastiveSummary(source1_nolow, source2_nolow, stats_source_1, stats_source_2)
         out.printProgress()
         out.printProgress()
 

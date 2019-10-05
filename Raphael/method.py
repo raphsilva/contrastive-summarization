@@ -1,11 +1,7 @@
 from probability import *
 
 from setup import MAXPOLARITY
-from setup import POLARITY_ATTRIBUTION
 from setup import KEY_MEASURE
-
-import re, string
-
 
 from writefiles import underwrite_file
 from writefiles import get_variable_from_file

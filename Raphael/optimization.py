@@ -7,7 +7,6 @@ import output_format as out
 
 from pprint import pprint
 
-# INFINITY = math.inf
 INFINITY = 999999
 
 from setup import LIM_SENTENCES
@@ -233,8 +232,6 @@ def MakeContrastiveSummary_selection(source1, source2):
 
     return summ1_idx, summ2_idx
 
-    # Side 1
-
 
 def get_elements_count(l):
     r = {i: 0 for i in l}
@@ -247,7 +244,6 @@ def MakeContrastiveSummary_alternate_side(source, repr_rank, contr_rank, side):
     summ = []
 
     c_words = 0
-    c_words_prev = -1
 
     q_contr = [i for i in contr_rank if i[1] != 0]
     q_repr = [i for i in repr_rank if i[1] != 0]
@@ -267,7 +263,6 @@ def MakeContrastiveSummary_alternate_side(source, repr_rank, contr_rank, side):
         c_words_prev = c_words
 
         if q_contr == [] and q_repr == []:  # no more opinions found
-            # if q_contr == [] and q_repr == [] and q_div == []: # no more opinions found
             break
 
         if turn % 2 == 0:
@@ -372,8 +367,6 @@ def MakeContrastiveSummary_alternate(source1, source2):
     summ2_idx = [e['id'] for e in summ2]
 
     return summ1_idx, summ2_idx
-
-    exit()
 
 
 def MakeContrastiveSummary_random(source1, source2):
