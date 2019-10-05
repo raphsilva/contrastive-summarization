@@ -52,7 +52,6 @@ def contrastive_pair_count(pair, op1, op2):
     return c1 * c2
 
 
-
 def contrastive_pair_count_independent(pair, op):
     c1 = 0
 
@@ -72,23 +71,10 @@ def get_elements_count(l):
 
 def get_contrastive_pairs_rank(source1, source2):
     if INDEPENDENT_RANK:
-        return get_contrastive_pairs_rank_independent(source1, source2)  # ATTENTION
+        return get_contrastive_pairs_rank_independent(source1, source2)
+    else:
+        return get_contrastive_pairs_rank_conjugated(source1, source2)
 
-    op1 = get_opinions(source1)
-    op2 = get_opinions(source2)
-
-    contrpairs = get_contrastive_pairs(op1, op2)
-
-    cpairs_stats = {i: 0 for i in contrpairs}
-    for i in contrpairs:
-        cpairs_stats[i] = contrastive_pair_count(i, op1, op2)
-
-    contr_rank = [i[0] for i in sorted(cpairs_stats.items(), key=lambda kv: kv[1], reverse=True)]
-
-    contr_rank_1 = [(i[0], i[1]) for i in contr_rank]
-    contr_rank_2 = [(i[0], i[2]) for i in contr_rank]
-
-    return contr_rank_1, contr_rank_2
 
 def get_contrastive_pairs_rank_independent(source1, source2):
     op1 = get_opinions(source1)
@@ -112,6 +98,25 @@ def get_contrastive_pairs_rank_independent(source1, source2):
 
     return contr_rank_1, contr_rank_2
 
+
+def get_contrastive_pairs_rank_conjugated(source1, source2):
+    op1 = get_opinions(source1)
+    op2 = get_opinions(source2)
+
+    contrpairs = get_contrastive_pairs(op1, op2)
+
+    cpairs_stats = {i: 0 for i in contrpairs}
+    for i in contrpairs:
+        cpairs_stats[i] = contrastive_pair_count(i, op1, op2)
+
+    contr_rank = [i[0] for i in sorted(cpairs_stats.items(), key=lambda kv: kv[1], reverse=True)]
+
+    contr_rank_1 = [(i[0], i[1]) for i in contr_rank]
+    contr_rank_2 = [(i[0], i[2]) for i in contr_rank]
+
+    return contr_rank_1, contr_rank_2
+
+
 def MakeContrastiveSummary_selection(source1, source2):
     contr_rank_1, contr_rank_2 = get_contrastive_pairs_rank(source1, source2)
 
@@ -123,9 +128,8 @@ def MakeContrastiveSummary_selection(source1, source2):
 
     return summ1_idx, summ2_idx
 
-def MakeContrastiveSummary_alternate(source1, source2):
-    random.seed(RANDOM_SEED)
 
+def MakeContrastiveSummary_alternate(source1, source2):
     contr_rank_1, contr_rank_2 = get_contrastive_pairs_rank(source1, source2)
 
     op1 = get_opinions(source1)
@@ -145,6 +149,7 @@ def MakeContrastiveSummary_alternate(source1, source2):
     summ2_idx = [e['id'] for e in summ2]
 
     return summ1_idx, summ2_idx
+
 
 def MakeContrastiveSummary_selection_side(source, opinions_rank):
     summ = []
@@ -220,6 +225,7 @@ def MakeContrastiveSummary_selection_side(source, opinions_rank):
                 break
 
     return summ
+
 
 def MakeContrastiveSummary_alternate_side(source, repr_rank, contr_rank):
     summ = []
@@ -321,6 +327,7 @@ def MakeContrastiveSummary_alternate_side(source, repr_rank, contr_rank):
 
     return summ
 
+
 def MakeContrastiveSummary_random(source1, source2):
     from random import sample
 
@@ -344,5 +351,3 @@ def MakeContrastiveSummary_random(source1, source2):
         summ2 = struct.idx_to_summ(source2, summ2_idx)
 
     return summ1_idx, summ2_idx
-
-
