@@ -61,14 +61,3 @@ def word_count(summ):
     for i in summ:
         r += summ[i]['word_count']
     return r
-
-
-def compression(source, summ):
-    return word_count(summ) / word_count(source)
-
-
-def printOverview(distribution):
-    for i in sorted(distribution, key=lambda x: distribution[x]['prob']):
-        output_format.printinfo(
-            "%-20s %3d %3d %8.4lf" % (i, distribution[i]['mean'], distribution[i]['std'], distribution[i]['prob']))
-    print()
