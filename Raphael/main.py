@@ -165,8 +165,7 @@ for SOURCE1, SOURCE2 in [('D1a', 'D1b'), ('D2a', 'D2b'), ('D3a', 'D3b'), ('D4a',
 
         optm.random_seed()
 
-        summ_idx_1, summ_idx_2 = optm.MakeContrastiveSummary(source1, source2, stats_source_1, stats_source_2,
-                                                             OPTM_MODE)
+        summ_idx_1, summ_idx_2 = optm.MakeContrastiveSummary(source1, source2, OPTM_MODE)
         out.printProgress()
         out.printProgress()
 
