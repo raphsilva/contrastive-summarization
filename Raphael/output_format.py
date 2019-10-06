@@ -1,4 +1,3 @@
-from pprint import pprint
 from pprint import pformat
 
 GRAY = '\33[90m'
@@ -31,22 +30,6 @@ def printFormat(*text):
         return r.replace('\'', '')  # remove quotes
 
 
-def printFormat_OLD(*text):
-    try:
-        r = pformat(*text)
-    except:
-        r = ''
-        for i in text:
-            r += str(i) + ' '
-    return r.replace('\'', '')  # remove quotes
-
-
-def printdebug(*text):
-    if DEBUG_PRINTS == False:
-        return
-    printColor(printFormat(*text), GRAY)
-
-
 def printinfo(*text):
     printColor(printFormat(*text), BLUE)
 
@@ -57,7 +40,3 @@ def printProgress(*text, end='\n'):
 
 def printMessage(*text, end='\n'):
     printColor(printFormat(*text), YELLOW, end)
-
-
-def printError(*text):
-    printColor(printFormat(*text), RED)
