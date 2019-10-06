@@ -60,7 +60,7 @@ def contrastive_pair_count_independent(pair, opinions):
     return c
 
 
-def get_elements_count(l):
+def get_opinions_frequency(l):
     r = {i: 0 for i in l}
     for i in l:
         r[i] += 1 / len(l)
@@ -118,8 +118,8 @@ def get_contrastive_pairs_rank_conjugated(source_1, source_2):
 def make_summary_selection(source_1, source_2):
     contr_rank_1, contr_rank_2 = get_contrastive_pairs_rank(source_1, source_2)
 
-    summary_1 = MakeContrastiveSummary_selection_side(source_1, contr_rank_1)
-    summary_2 = MakeContrastiveSummary_selection_side(source_2, contr_rank_2)
+    summary_1 = make_summary_selection_side(source_1, contr_rank_1)
+    summary_2 = make_summary_selection_side(source_2, contr_rank_2)
 
     summary_indexes_1 = [e['id'] for e in summary_1]
     summary_indexes_2 = [e['id'] for e in summary_2]
@@ -133,14 +133,14 @@ def make_summary_alternate(source_1, source_2):
     opinions_1 = get_opinions(source_1)
     opinions_2 = get_opinions(source_2)
 
-    op_c_1 = get_elements_count(opinions_1)
-    op_c_2 = get_elements_count(opinions_2)
+    opinions_frequency_1 = get_opinions_frequency(opinions_1)
+    opinions_frequency_2 = get_opinions_frequency(opinions_2)
 
-    repr_rank_1 = [i[0] for i in sorted(op_c_1.items(), key=lambda kv: kv[1], reverse=True)]
-    repr_rank_2 = [i[0] for i in sorted(op_c_2.items(), key=lambda kv: kv[1], reverse=True)]
+    repr_rank_1 = [i[0] for i in sorted(opinions_frequency_1.items(), key=lambda kv: kv[1], reverse=True)]
+    repr_rank_2 = [i[0] for i in sorted(opinions_frequency_2.items(), key=lambda kv: kv[1], reverse=True)]
 
-    summary_1 = MakeContrastiveSummary_alternate_side(source_1, repr_rank_1, contr_rank_1)
-    summary_2 = MakeContrastiveSummary_alternate_side(source_2, repr_rank_2, contr_rank_2)
+    summary_1 = make_summary_alternate_side(source_1, repr_rank_1, contr_rank_1)
+    summary_2 = make_summary_alternate_side(source_2, repr_rank_2, contr_rank_2)
 
     summary_indexes_1 = [e['id'] for e in summary_1]
     summary_indexes_2 = [e['id'] for e in summary_2]
@@ -148,7 +148,7 @@ def make_summary_alternate(source_1, source_2):
     return summary_indexes_1, summary_indexes_2
 
 
-def MakeContrastiveSummary_selection_side(source, contr_rank):
+def make_summary_selection_side(source, contr_rank):
     summary = []
 
     count_words = 0
@@ -158,10 +158,10 @@ def MakeContrastiveSummary_selection_side(source, contr_rank):
     q_desired_opinions = list(desired_opinions)
 
     # Send low priority aspects to end of queue
-    for i in reversed(range(len(q_desired_opinions))):
-        if q_desired_opinions[i][0] in LOW_PRIORITY_ASPECTS:
-            e = q_desired_opinions[i]
-            del q_desired_opinions[i]
+    for candidate_sentence in reversed(range(len(q_desired_opinions))):
+        if q_desired_opinions[candidate_sentence][0] in LOW_PRIORITY_ASPECTS:
+            e = q_desired_opinions[candidate_sentence]
+            del q_desired_opinions[candidate_sentence]
             q_desired_opinions.append(e)
 
     while count_words < LIM_WORDS:
@@ -169,37 +169,37 @@ def MakeContrastiveSummary_selection_side(source, contr_rank):
         if q_desired_opinions == []:  # no more opinions found
             break
 
-        p = q_desired_opinions.pop(0)  # this is a queue
+        desired_opinion = q_desired_opinions.pop(0)  # this is a queue
 
-        aspect = p[0]
-        polarity = p[1]
+        desired_aspect = desired_opinion[0]
+        desired_polarity = desired_opinion[1]
 
-        cand_sentences = []
+        candidate_sentences = []
 
-        for i in source:
+        for candidate_sentence in source:
 
-            if aspect not in source[i]['sent']:  # same aspect
-                continue
+            if desired_aspect not in source[candidate_sentence]['sent']:  # same aspect
+                continue  # Candidate doesn't have the aspect that the algorithm is lookink for.
 
-            if source[i]['sent'][aspect] * polarity <= 0:  # same polarity
-                continue
+            if source[candidate_sentence]['sent'][desired_aspect] * desired_polarity <= 0:  # same polarity
+                continue  # Candidate doesn't have the polarity that the algorithm is lookink for.
 
-            if source[i] in summary:
-                continue
+            if source[candidate_sentence] in summary:
+                continue  # Candidate is already in the summary
 
-            if count_words + source[i]['word_count'] <= LIM_WORDS:
-                cand_sentences.append(source[i])
+            if count_words + source[candidate_sentence]['word_count'] <= LIM_WORDS:  # Check if candidate will exceed the limit of words of the summary.
+                candidate_sentences.append(source[candidate_sentence])
 
         best_size_diff = INFINITY
 
         if SENTENCE_IDEAL_LENGTH != 0:
-            for s in cand_sentences:
+            for s in candidate_sentences:
                 best_size_diff = min(best_size_diff, abs(SENTENCE_IDEAL_LENGTH - len(s['words'])))
 
         random.seed(RANDOM_SEED)
-        random.shuffle(cand_sentences)
+        random.shuffle(candidate_sentences)
 
-        for s in cand_sentences:
+        for s in candidate_sentences:
 
             if SENTENCE_IDEAL_LENGTH == 0 or abs(SENTENCE_IDEAL_LENGTH - len(s['words'])) == best_size_diff:
 
@@ -209,8 +209,8 @@ def MakeContrastiveSummary_selection_side(source, contr_rank):
 
                 s_opinions = []
 
-                for aspect in s['sent']:
-                    s_opinions.append((aspect, trinary_polarity(s['sent'][aspect])))
+                for desired_aspect in s['sent']:
+                    s_opinions.append((desired_aspect, trinary_polarity(s['sent'][desired_aspect])))
 
                 # Opinions covered in the selected sentence go to the end of queue
                 for e in s_opinions:
@@ -224,7 +224,7 @@ def MakeContrastiveSummary_selection_side(source, contr_rank):
     return summary
 
 
-def MakeContrastiveSummary_alternate_side(source, repr_rank, contr_rank):
+def make_summary_alternate_side(source, repr_rank, contr_rank):
     summary = []
 
     count_words = 0
@@ -234,17 +234,17 @@ def MakeContrastiveSummary_alternate_side(source, repr_rank, contr_rank):
 
     # Send low priority aspects to end of queue
     for Q in [q_contr, q_repr]:
-        for i in reversed(range(len(Q))):
-            if Q[i][0] in LOW_PRIORITY_ASPECTS:
-                e = Q[i]
-                del Q[i]
+        for candidate_sentence in reversed(range(len(Q))):
+            if Q[candidate_sentence][0] in LOW_PRIORITY_ASPECTS:
+                e = Q[candidate_sentence]
+                del Q[candidate_sentence]
                 Q.append(e)
 
-    turn = 0
+    turn = 0  # Keeps track of which queue will choose the next opinion.
 
     while count_words < LIM_WORDS:
 
-        if q_contr == [] and q_repr == []:  # no more opinions found
+        if q_contr == [] and q_repr == []:  # No more opinions found.
             break
 
         if turn % 2 == 0:
@@ -257,42 +257,42 @@ def MakeContrastiveSummary_alternate_side(source, repr_rank, contr_rank):
         if q_turn == []:
             continue
 
-        p = q_turn[0]
+        desired_opinion = q_turn[0]
 
-        aspect = p[0]
-        polarity = p[1]
+        desired_aspect = desired_opinion[0]
+        desired_polarity = desired_opinion[1]
 
-        cand_sentences = []
+        candidate_sentences = []
 
-        for i in source:
+        for candidate_sentence in source:
 
-            if aspect not in source[i]['sent']:  # same aspect
-                continue
+            if desired_aspect not in source[candidate_sentence]['sent']:
+                continue  # Candidate doesn't have the aspect that the algorithm is lookink for.
 
-            if source[i]['sent'][aspect] * polarity <= 0:  # same polarity
-                continue
+            if source[candidate_sentence]['sent'][desired_aspect] * desired_polarity <= 0:
+                continue  # Candidate doesn't have the polarity that the algorithm is lookink for.
 
-            if source[i] in summary:
-                continue
+            if source[candidate_sentence] in summary:
+                continue  # Candidate is already in the summary
 
-            if count_words + source[i]['word_count'] <= LIM_WORDS:
-                cand_sentences.append(source[i])
+            if count_words + source[candidate_sentence]['word_count'] <= LIM_WORDS:  # Check if candidate will exceed the limit of words of the summary.
+                candidate_sentences.append(source[candidate_sentence])
 
-        if len(cand_sentences) == 0:  # No more sentences for this opinions
+        if len(candidate_sentences) == 0:  # No more sentences for this opinions
             del q_turn[0]
 
-        cand_sentences = cand_sentences[::-1]
+        candidate_sentences = candidate_sentences[::-1]
 
         best_size_diff = INFINITY
 
         if SENTENCE_IDEAL_LENGTH != 0:
-            for s in cand_sentences:
+            for s in candidate_sentences:
                 best_size_diff = min(best_size_diff, abs(SENTENCE_IDEAL_LENGTH - len(s['words'])))
 
         random.seed(RANDOM_SEED)
-        random.shuffle(cand_sentences)
+        random.shuffle(candidate_sentences)
 
-        for s in cand_sentences:
+        for s in candidate_sentences:
 
             if SENTENCE_IDEAL_LENGTH == 0 or abs(SENTENCE_IDEAL_LENGTH - len(s['words'])) == best_size_diff:
 
@@ -302,8 +302,8 @@ def MakeContrastiveSummary_alternate_side(source, repr_rank, contr_rank):
 
                 s_opinions = []
 
-                for aspect in s['sent']:
-                    s_opinions.append((aspect, trinary_polarity(s['sent'][aspect])))
+                for desired_aspect in s['sent']:
+                    s_opinions.append((desired_aspect, trinary_polarity(s['sent'][desired_aspect])))
 
                 # Opinions covered in the selected sentence go to the end of queue
                 for e in s_opinions:
