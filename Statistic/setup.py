@@ -42,10 +42,6 @@ MIN_INTENS_IN_SUMMARY = 1*MAXPOLARITY # If (the absolute value of) the intensity
 
 ALPHA = 20
 
-ASPECT_DETECTION =   'manual'
-POLARITY_ATTRIBUTION = 'manual'
-POLARITY_LEXICON = 'sentilex'
-
 # Optimization options
 
 
@@ -75,7 +71,4 @@ if VERBOSE_MODE or EVALUATION_MODE:
     out.printMessage('alpha: ', ALPHA)
     out.printMessage('Candidates selected: ', GREEDY_CANDS_SELECTED)
     out.printMessage()
-    out.printMessage('Aspect detection: ', ASPECT_DETECTION)
-    out.printMessage('Polarity attribution: ', POLARITY_ATTRIBUTION)
-    out.printMessage('Polarity lexicon: ', POLARITY_LEXICON)
     out.printMessage()

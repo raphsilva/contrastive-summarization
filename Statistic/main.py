@@ -24,9 +24,6 @@ from setup import METHOD
 from setup import OPTM_MODE
 from setup import ALPHA
 
-from setup import ASPECT_DETECTION
-from setup import POLARITY_ATTRIBUTION
-
 from setup import REPEAT_TESTS
 from setup import DISCARD_TESTS
 
@@ -253,8 +250,6 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
         n['parameters']['method'] = METHOD
         n['parameters']['summization'] = OPTM_MODE
         n['parameters']['alpha'] = ALPHA
-        n['parameters']['aspect detection'] = ASPECT_DETECTION
-        n['parameters']['polarity attribution'] = POLARITY_ATTRIBUTION
         n['evaluation'] = {}
         n['evaluation']['R'] = evals['R']
         n['evaluation']['C'] = evals['C']
