@@ -9,7 +9,7 @@ from setup import EVALUATION_MODE
 from setup import LIM_SENTENCES  # Sets the maximum number of SENTENCES in each side of the summary
 from setup import LIM_WORDS  # Sets the maximum number of WORDS in each side of the summary
 from setup import METHOD
-from setup import OPTM_MODE
+from setup import RANKING_MODE
 from setup import OUTPUT_MODE
 from setup import OVERVIEW_MODE
 from setup import REPEAT_TESTS, DISCARD_TESTS
@@ -149,7 +149,7 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
 
         optm.random_seed()
 
-        summ_idx_1, summ_idx_2 = optm.MakeContrastiveSummary(source1, source2, OPTM_MODE)
+        summ_idx_1, summ_idx_2 = optm.make_contrastive_summary(source1, source2, RANKING_MODE)
         out.printProgress()
         out.printProgress()
 
