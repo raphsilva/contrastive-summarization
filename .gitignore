@@ -1,9 +1,7 @@
 __pycache__
-lemmas.dic
-results_*
-__*
-*OUTPUT*
+OUTPUT
 RESULTS
+cache
 .*
 !.gitignore
 
@@ -15,4 +13,3 @@ out*
 results
 results_*
 *.txt
->>>>>>> 175a29f... gitignore
