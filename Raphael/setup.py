@@ -38,19 +38,6 @@ LIM_WORDS = 150  # Sets the maximum number of WORDS in each side of the summary
 LOW_PRIORITY_ASPECTS = ['_GENERIC']  # Aspects that are send to the end of the queue
 
 
-# Optimization options
-
-# In the greedy optimization, [max(1, GREEDY_CANDS_SELECTED * (total number of candidates))] will be selected for the next step.
-# For example, if GREEDY_CANDS_SELECTED = 0.001 and there are 10k candidates for the best summary of length 3, then the 0.001*10k = 10 best summaries of length 3 will be tried to see which one forms the best summary of length 4. 
-# Must be in the interval [0,1]. Lower values are faster, but higher values give better result. 
-# Use GREEDY_CANDS_SELECTED = 0 for a purely greedy algorithm. (will keep only one best candidate at a time)
-# Suggestion: GREEDY_CANDS_SELECTED = 0.0005 is a nice setting for datasets of size around 200, where it'll keep the top 10 candidates at each iteration. It is slower than GREEDY_CANDS_SELECTED = 0 but might deliever a better result. 
-# GREEDY_CANDS_SELECTED = 1 would run a brute force algorithm (won't discard any candidate) NOTICE: this takes a lot and does lots of unecessary computing; it's better to use the brute force algorithm that is implemented in this project (which, of course, also takes a lot, but doesn't do unecessary computing)
-
-
-# If true, in the greedy algorithm, chooses all candidates (not just one) with score equal to the best one. MUCH SLOWER! May deliever a better result.
-
-
 # Get full path for the file with data of target 
 def filepath(target):
     return DATA_DIR + '/' + target + '.json'
