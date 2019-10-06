@@ -26,13 +26,13 @@ def random_seed():
     RANDOM_SEED = random.randint(0, 10000)
 
 
-def MakeContrastiveSummary(source_1, source_2, mode):
+def make_contrastive_summary(source_1, source_2, mode):
     if mode == 'random':
         return make_summary_random(source_1, source_2)
-    if mode == 'selection':
-        return make_summary_selection(source_1, source_2)
-    if mode == 'alternate':
-        return make_summary_alternate(source_1, source_2)
+    if mode == 'contrastive':
+        return make_summary_contrastive(source_1, source_2)
+    if mode == 'contrastive+representative':
+        return make_summary_contrastive_and_representative(source_1, source_2)
 
 
 def contrastive_pair_count(pair, opinions_1, opinions_2):
@@ -78,21 +78,21 @@ def get_contrastive_pairs_rank_independent(source_1, source_2):
     opinions_1 = get_opinions(source_1)
     opinions_2 = get_opinions(source_2)
 
-    contrpairs = get_contrastive_pairs(opinions_1, opinions_2)
+    contrastive_pairs = get_contrastive_pairs(opinions_1, opinions_2)
 
-    contrpairs_1 = [(i[0], i[1]) for i in contrpairs]
-    contrpairs_2 = [(i[0], i[2]) for i in contrpairs]
+    contrastive_opinions_1 = [(i[0], i[1]) for i in contrastive_pairs]
+    contrastive_opinions_2 = [(i[0], i[2]) for i in contrastive_pairs]
 
-    cpairs_stats_1 = {i: 0 for i in contrpairs_1}
-    for i in contrpairs_1:
-        cpairs_stats_1[i] = contrastive_pair_count_independent(i, opinions_1)
+    count_contrastive_opinions_1 = {i: 0 for i in contrastive_opinions_1}
+    for i in contrastive_opinions_1:
+        count_contrastive_opinions_1[i] = contrastive_pair_count_independent(i, opinions_1)
 
-    cpairs_stats_2 = {i: 0 for i in contrpairs_2}
-    for i in contrpairs_2:
-        cpairs_stats_2[i] = contrastive_pair_count_independent(i, opinions_2)
+    count_contrastive_opinions_2 = {i: 0 for i in contrastive_opinions_2}
+    for i in contrastive_opinions_2:
+        count_contrastive_opinions_2[i] = contrastive_pair_count_independent(i, opinions_2)
 
-    contr_rank_1 = [i[0] for i in sorted(cpairs_stats_1.items(), key=lambda kv: kv[1], reverse=True)]
-    contr_rank_2 = [i[0] for i in sorted(cpairs_stats_2.items(), key=lambda kv: kv[1], reverse=True)]
+    contr_rank_1 = [i[0] for i in sorted(count_contrastive_opinions_1.items(), key=lambda i: i[1], reverse=True)]
+    contr_rank_2 = [i[0] for i in sorted(count_contrastive_opinions_2.items(), key=lambda i: i[1], reverse=True)]
 
     return contr_rank_1, contr_rank_2
 
@@ -101,13 +101,13 @@ def get_contrastive_pairs_rank_conjugated(source_1, source_2):
     opinions_1 = get_opinions(source_1)
     opinions_2 = get_opinions(source_2)
 
-    contrpairs = get_contrastive_pairs(opinions_1, opinions_2)
+    contrastive_pairs = get_contrastive_pairs(opinions_1, opinions_2)
 
-    cpairs_stats = {i: 0 for i in contrpairs}
-    for i in contrpairs:
-        cpairs_stats[i] = contrastive_pair_count(i, opinions_1, opinions_2)
+    count_contrastive_pairs = {i: 0 for i in contrastive_pairs}
+    for i in contrastive_pairs:
+        count_contrastive_pairs[i] = contrastive_pair_count(i, opinions_1, opinions_2)
 
-    contr_rank = [i[0] for i in sorted(cpairs_stats.items(), key=lambda kv: kv[1], reverse=True)]
+    contr_rank = [i[0] for i in sorted(count_contrastive_pairs.items(), key=lambda i: i[1], reverse=True)]
 
     contr_rank_1 = [(i[0], i[1]) for i in contr_rank]
     contr_rank_2 = [(i[0], i[2]) for i in contr_rank]
@@ -115,11 +115,11 @@ def get_contrastive_pairs_rank_conjugated(source_1, source_2):
     return contr_rank_1, contr_rank_2
 
 
-def make_summary_selection(source_1, source_2):
+def make_summary_contrastive(source_1, source_2):
     contr_rank_1, contr_rank_2 = get_contrastive_pairs_rank(source_1, source_2)
 
-    summary_1 = make_summary_selection_side(source_1, contr_rank_1)
-    summary_2 = make_summary_selection_side(source_2, contr_rank_2)
+    summary_1 = make_summary_side_contrastive(source_1, contr_rank_1)
+    summary_2 = make_summary_side_contrastive(source_2, contr_rank_2)
 
     summary_indexes_1 = [e['id'] for e in summary_1]
     summary_indexes_2 = [e['id'] for e in summary_2]
@@ -127,7 +127,7 @@ def make_summary_selection(source_1, source_2):
     return summary_indexes_1, summary_indexes_2
 
 
-def make_summary_alternate(source_1, source_2):
+def make_summary_contrastive_and_representative(source_1, source_2):
     contr_rank_1, contr_rank_2 = get_contrastive_pairs_rank(source_1, source_2)
 
     opinions_1 = get_opinions(source_1)
@@ -139,8 +139,8 @@ def make_summary_alternate(source_1, source_2):
     repr_rank_1 = [i[0] for i in sorted(opinions_frequency_1.items(), key=lambda kv: kv[1], reverse=True)]
     repr_rank_2 = [i[0] for i in sorted(opinions_frequency_2.items(), key=lambda kv: kv[1], reverse=True)]
 
-    summary_1 = make_summary_alternate_side(source_1, repr_rank_1, contr_rank_1)
-    summary_2 = make_summary_alternate_side(source_2, repr_rank_2, contr_rank_2)
+    summary_1 = make_summary_side_contrastive_and_representative(source_1, repr_rank_1, contr_rank_1)
+    summary_2 = make_summary_side_contrastive_and_representative(source_2, repr_rank_2, contr_rank_2)
 
     summary_indexes_1 = [e['id'] for e in summary_1]
     summary_indexes_2 = [e['id'] for e in summary_2]
@@ -148,7 +148,7 @@ def make_summary_alternate(source_1, source_2):
     return summary_indexes_1, summary_indexes_2
 
 
-def make_summary_selection_side(source, contr_rank):
+def make_summary_side_contrastive(source, contr_rank):
     summary = []
 
     count_words = 0
@@ -224,7 +224,7 @@ def make_summary_selection_side(source, contr_rank):
     return summary
 
 
-def make_summary_alternate_side(source, repr_rank, contr_rank):
+def make_summary_side_contrastive_and_representative(source, repr_rank, contr_rank):
     summary = []
 
     count_words = 0
