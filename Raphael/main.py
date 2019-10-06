@@ -15,7 +15,7 @@ from setup import DATASETS_TO_TEST
 from setup import VERBOSE_MODE
 from setup import REPEAT_TESTS, DISCARD_TESTS
 from setup import filepath  # Get full path for the file with data of target
-from structure import word_count
+from structure import count_words
 from writefiles import underwrite_file
 
 results = {}
@@ -238,8 +238,8 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
             n['summ'].append(summ_idx_2)
             n['size'] = {}
             n['size']['word count'] = []
-            n['size']['word count'].append(word_count(summ1))
-            n['size']['word count'].append(word_count(summ2))
+            n['size']['word count'].append(count_words(summ1))
+            n['size']['word count'].append(count_words(summ2))
             results['output'].append(n)
 
             summScoresList[(evals['R'], evals['C'], evals['D'])] = (summ_idx_1, summ_idx_2)
@@ -398,8 +398,8 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
     results['meta']['size']['source']['sentences'].append(len(source1))
     results['meta']['size']['source']['sentences'].append(len(source2))
     results['meta']['size']['source']['words'] = []
-    results['meta']['size']['source']['words'].append(word_count(source1))
-    results['meta']['size']['source']['words'].append(word_count(source2))
+    results['meta']['size']['source']['words'].append(count_words(source1))
+    results['meta']['size']['source']['words'].append(count_words(source2))
     results['meta']['run time'] = round(total_time, 2)
 
     underwrite_file('output/' + SOURCE1 + ' ' + SOURCE2 + ' (' + str(int(time())) + ').json', results)
