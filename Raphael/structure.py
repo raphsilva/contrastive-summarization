@@ -52,11 +52,11 @@ def get_contrastive_pairs(opinions_source1, opinions_source2, REPETITION=False):
     return r
 
 
-def idx_to_summ(source, indexes):
+def get_summary_from_indexes(source, indexes):
     return {i: source[i] for i in indexes}
 
 
-def word_count(summ):
+def count_words(summ):
     r = 0
     for i in summ:
         r += summ[i]['word_count']
