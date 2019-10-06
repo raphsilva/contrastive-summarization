@@ -1,6 +1,3 @@
-# version 19-03-04
-
-
 import os.path
 import json
 
@@ -38,6 +35,8 @@ def remove_old_file(path, filename):
     new_name = filename
     while os.path.isfile(new_path + '/' + new_name) == True:
         new_name += '-'
+    # print('Will rename %s to %s' % (path+'/'+filename, new_path+'/'+new_name))
+    # input()
     os.rename(path + '/' + filename, new_path + '/' + new_name)
 
 
@@ -52,10 +51,10 @@ def save_to_file(filepath, data, mode='pretty'):
     dirname, filename = sep_dir_file(filepath)
     mk_dir(dirname)
     remove_old_file(dirname, filename)
-    underwrite_file(filepath, data, mode)
+    overwrite_json(filepath, data, mode)
 
 
-def underwrite_file(filepath, data, mode='pretty'):
+def overwrite_json(filepath, data, mode='pretty'):
     dirname, filename = sep_dir_file(filepath)
     mk_dir(dirname)
     f = open(dirname + filename, 'w')
@@ -74,6 +73,3 @@ def get_variable_from_file(filepath):
         return json.load(g)
     except:
         return False
-
-
-mk_dir(TRASH_DIR)

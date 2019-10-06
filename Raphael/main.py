@@ -1,41 +1,27 @@
-# -*- coding: utf-8 -*-
-
-
-# From Python standard library:
-import statistics  # For mean and stdev
-
 # From this project:
-import method
-from read_input import read_input
-import evaluation.evaluation as evalu
-import output_format as out
-import structure as struct
-from structure import word_count
-
+import evaluation as evalu
 import optimization as optm
-
+import output_format as out
+from read_input import read_input
+from setup import DATASETS_TO_TEST
+from setup import EVALUATION_MODE
 # Setup options
 from setup import LIM_SENTENCES  # Sets the maximum number of SENTENCES in each side of the summary
 from setup import LIM_WORDS  # Sets the maximum number of WORDS in each side of the summary
-from setup import SOURCE1, SOURCE2
-from setup import filepath  # Get full path for the file with data of target
-
-from setup import VERBOSE_MODE
-from setup import EVALUATION_MODE
+from setup import METHOD
+from setup import RANKING_MODE
 from setup import OUTPUT_MODE
 from setup import OVERVIEW_MODE
-
-from setup import OPTM_MODE
-
-from writefiles import underwrite_file
-
-from setup import METHOD
+from setup import REPEAT_TESTS, DISCARD_TESTS
+from setup import VERBOSE_MODE
+from setup import filepath  # Get full path for the file with data of target
+from structure import count_words
+from writefiles import overwrite_json
 
 results = {}
 results['meta'] = {}
 results['meta']['source'] = []
-results['meta']['source'].append(SOURCE1)
-results['meta']['source'].append(SOURCE2)
+results['meta']['source'].append(DATASETS_TO_TEST)
 results['meta']['limits (per side)'] = {}
 results['meta']['limits (per side)']['sentences'] = LIM_SENTENCES
 results['meta']['limits (per side)']['words'] = LIM_WORDS
@@ -44,9 +30,7 @@ results['output'] = []
 from setup import DEBUGGING
 
 if DEBUGGING:
-    # For debugging
     out.setDebugPrints(True)  # Choose whether or not to display information for debugging.
-    # out.setDebugPrints(False)   # Choose whether or not to display information for debugging.
 
 
 def print_verbose(*msg):
@@ -55,21 +39,12 @@ def print_verbose(*msg):
     out.printMessage(*msg)
 
 
-def print_result(*msg):
-    print(*msg, end='', flush=True)
-
-
 # Load input
 def load_input():
     print_verbose(" \nLENDO ALVO 1")
     source1 = read_input(filepath(SOURCE1))
-    # out.printdebug(source1)
-    # input()
-
     print_verbose(" \nLENDO ALVO 2")
     source2 = read_input(filepath(SOURCE2))
-    # out.printdebug(source2)
-
     return source1, source2
 
 
@@ -109,20 +84,16 @@ def load_input():
     'cor':  {'mean': -87, 'prob': 0.21, 'std': 1.73}}
 '''
 
-
 from time import time
 
 exec_code = str(int(time()) % 100000000)
 
 FILE_RESULTS = 'results_' + exec_code + '.txt'
 
-RTESTS = 100
-DTESTS = int(RTESTS / 10)
-
-print('Will perform %d tests and discard %d(x2) best and worst\n\n' % (RTESTS, DTESTS))
+print('Will perform %d tests and discard %d(x2) best and worst\n\n' % (REPEAT_TESTS, DISCARD_TESTS))
 
 f = open(FILE_RESULTS, 'a')
-f.write('%d tests, discard %d(x2) best and worst\n\n' % (RTESTS, DTESTS))
+f.write('%d tests, discard %d(x2) best and worst\n\n' % (REPEAT_TESTS, DISCARD_TESTS))
 f.close()
 
 SHOW_ALL_ITERAT = False
@@ -135,17 +106,11 @@ def sqdiff(l1, l2):
     return r
 
 
-# SHOW_ALL_ITERAT = False
-
-for SOURCE1, SOURCE2 in [('D1a', 'D1b'), ('D2a', 'D2b'), ('D3a', 'D3b'), ('D4a', 'D4b'), ('D5a', 'D5b'), ('D6a', 'D6b'),
-                         ('D7a', 'D7b'), ('D8a', 'D8b')]:
-    # for SOURCE1, SOURCE2 in reversed([('D2a','D2b')]):
+for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
 
     summScoresList = {}
 
     OUTPUT_FILE = 'out' + exec_code + '_' + SOURCE1[:-1] + '.txt'
-
-    # results_record = {}
 
     print('\n\n\n\n ============  ', SOURCE1, SOURCE2)
     print('\n\n')
@@ -158,15 +123,9 @@ for SOURCE1, SOURCE2 in [('D1a', 'D1b'), ('D2a', 'D2b'), ('D3a', 'D3b'), ('D4a',
     source1, source2 = load_input()
     print_verbose('Sizes of datasets: ', len(source1), len(source2))
 
-    wc1 = struct.word_count(source1)
-    wc2 = struct.word_count(source2)
-
     if VERBOSE_MODE:
         print("Size 1: ", len(source1))
         print("Size 2: ", len(source2))
-
-    stats_source_1 = struct.aspects_stats(source1)
-    stats_source_2 = struct.aspects_stats(source2)
 
     print_verbose('Sizes of datasets without low intensity sentences: ', len(source1), len(source2))
 
@@ -175,7 +134,6 @@ for SOURCE1, SOURCE2 in [('D1a', 'D1b'), ('D2a', 'D2b'), ('D3a', 'D3b'), ('D4a',
     # Make contrastive summary
 
     all_summaries = []
-    count_time = time()
 
     hr = []
     hc = []
@@ -187,13 +145,11 @@ for SOURCE1, SOURCE2 in [('D1a', 'D1b'), ('D2a', 'D2b'), ('D3a', 'D3b'), ('D4a',
     h_sentences1 = []
     h_sentences2 = []
 
-    for repeat in range(RTESTS):
+    for repeat in range(REPEAT_TESTS):
 
         optm.random_seed()
 
-        summ_idx_1, summ_idx_2 = optm.MakeContrastiveSummary(source1, source2, stats_source_1, stats_source_2,
-                                                             OPTM_MODE)
-        # summ_idx_1, summ_idx_2 = optm.MakeContrastiveSummary(source1_nolow, source2_nolow, stats_source_1, stats_source_2)
+        summ_idx_1, summ_idx_2 = optm.make_contrastive_summary(source1, source2, RANKING_MODE)
         out.printProgress()
         out.printProgress()
 
@@ -204,17 +160,9 @@ for SOURCE1, SOURCE2 in [('D1a', 'D1b'), ('D2a', 'D2b'), ('D3a', 'D3b'), ('D4a',
         summ1 = {i: source1[i] for i in summ_idx_1}
         summ2 = {i: source2[i] for i in summ_idx_2}
 
-        sum_stats_1 = struct.aspects_stats(summ1)
-        sum_stats_2 = struct.aspects_stats(summ2)
-
         s_id = (sorted(summ_idx_1), sorted(summ_idx_2))
         if s_id not in all_summaries:
             all_summaries.append(s_id)
-
-        if VERBOSE_MODE:
-            print_verbose('\nOverview of opinions in the summary for each entity:')
-            struct.printOverview(sum_stats_1)
-            struct.printOverview(sum_stats_2)
 
         # Display the results
 
@@ -288,18 +236,18 @@ for SOURCE1, SOURCE2 in [('D1a', 'D1b'), ('D2a', 'D2b'), ('D3a', 'D3b'), ('D4a',
             n['summ'].append(summ_idx_2)
             n['size'] = {}
             n['size']['word count'] = []
-            n['size']['word count'].append(word_count(summ1))
-            n['size']['word count'].append(word_count(summ2))
+            n['size']['word count'].append(count_words(summ1))
+            n['size']['word count'].append(count_words(summ2))
             results['output'].append(n)
 
             summScoresList[(evals['R'], evals['C'], evals['D'])] = (summ_idx_1, summ_idx_2)
 
     from statistics import stdev
 
-    hr_medians = sorted(hr)[DTESTS:-DTESTS]
-    hc_medians = sorted(hc)[DTESTS:-DTESTS]
-    hd_medians = sorted(hd)[DTESTS:-DTESTS]
-    hh_medians = sorted(hh)[DTESTS:-DTESTS]
+    hr_medians = sorted(hr)[DISCARD_TESTS:-DISCARD_TESTS]
+    hc_medians = sorted(hc)[DISCARD_TESTS:-DISCARD_TESTS]
+    hd_medians = sorted(hd)[DISCARD_TESTS:-DISCARD_TESTS]
+    hh_medians = sorted(hh)[DISCARD_TESTS:-DISCARD_TESTS]
 
     sthh = stdev(hh_medians)
     sthc = stdev(hc_medians)
@@ -413,7 +361,6 @@ for SOURCE1, SOURCE2 in [('D1a', 'D1b'), ('D2a', 'D2b'), ('D3a', 'D3b'), ('D4a',
     w1 = sum([summ1[i]['word_count'] for i in summ1])
     w2 = sum([summ2[i]['word_count'] for i in summ2])
 
-    # print()
     summ_out += '\n\n'
     summ_out += '(%3.0lf %3.0lf)     %3.0lf   %3.0lf   %3.0lf   [[%3.0lf]]  ' % (
         evals['r1'], evals['r2'], evals['R'], evals['C'], evals['D'], evals['H'])
@@ -449,10 +396,8 @@ for SOURCE1, SOURCE2 in [('D1a', 'D1b'), ('D2a', 'D2b'), ('D3a', 'D3b'), ('D4a',
     results['meta']['size']['source']['sentences'].append(len(source1))
     results['meta']['size']['source']['sentences'].append(len(source2))
     results['meta']['size']['source']['words'] = []
-    results['meta']['size']['source']['words'].append(word_count(source1))
-    results['meta']['size']['source']['words'].append(word_count(source2))
+    results['meta']['size']['source']['words'].append(count_words(source1))
+    results['meta']['size']['source']['words'].append(count_words(source2))
     results['meta']['run time'] = round(total_time, 2)
 
-    underwrite_file('output/' + SOURCE1 + ' ' + SOURCE2 + ' (' + str(int(time())) + ').json', results)
-
-method.save_caches()
+    overwrite_json('output/' + SOURCE1 + ' ' + SOURCE2 + ' (' + str(int(time())) + ').json', results)
