@@ -24,7 +24,7 @@ DATA_DIR = "../input"
 
 INPUT_FILES = [(), ('D1a','D1b'), ('D2a','D2b'), ('D3a','D3b'), ('D4a','D4b'), ('D5a','D5b'), ('D6a','D6b'), ('D7a','D7b'), ('D8a','D8b')]
 
-DATASETS_TO_TEST = [INPUT_FILES[2]]
+DATASETS_TO_TEST = INPUT_FILES[2:4]
 
 # Scale options
 

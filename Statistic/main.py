@@ -38,7 +38,7 @@ from os import mkdir
 
 try:
     mkdir('RESULTS')
-    mkdir('EVALUATION')
+    mkdir('OUTPUT')
 except:
     pass
 
@@ -50,8 +50,6 @@ if DEBUG_MODE:
 
 results = {'meta': {}}
 results['meta']['source'] = []
-results['meta']['source'].append(DATASETS_TO_TEST[0])
-results['meta']['source'].append(DATASETS_TO_TEST)
 results['meta']['limits (per side)'] = {}
 results['meta']['limits (per side)']['sentences'] = LIM_SENTENCES
 results['meta']['limits (per side)']['words'] = LIM_WORDS
@@ -84,6 +82,8 @@ f.write('%d tests, discard %d(x2) best and worst\n\n' % (REPEAT_TESTS, DISCARD_T
 f.close()
 
 for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
+
+    results['meta']['source'] = (SOURCE1, SOURCE2)
 
     summScoresList = {}
 
