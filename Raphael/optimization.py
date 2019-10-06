@@ -174,7 +174,7 @@ def make_summary_side_contrastive(source, contr_rank):
         desired_aspect = desired_opinion[0]
         desired_polarity = desired_opinion[1]
 
-        candidate_sentences = []
+        possible_sentences = []  # Will save all sentences which are desired to be included in the summary at this step.
 
         for candidate_sentence in source:
 
@@ -188,20 +188,21 @@ def make_summary_side_contrastive(source, contr_rank):
                 continue  # Candidate is already in the summary
 
             if count_words + source[candidate_sentence]['word_count'] <= LIM_WORDS:  # Check if candidate will exceed the limit of words of the summary.
-                candidate_sentences.append(source[candidate_sentence])
+                possible_sentences.append(source[candidate_sentence])
 
-        best_size_diff = INFINITY
-
-        if SENTENCE_IDEAL_LENGTH != 0:
-            for s in candidate_sentences:
-                best_size_diff = min(best_size_diff, abs(SENTENCE_IDEAL_LENGTH - len(s['words'])))
+        # Find the length of candidate sentences which is closest to the defined ideal length.
+        best_length_diff = INFINITY
+        if SENTENCE_IDEAL_LENGTH != None:
+            for s in possible_sentences:
+                best_length_diff = min(best_length_diff, abs(SENTENCE_IDEAL_LENGTH - len(s['words'])))
 
         random.seed(RANDOM_SEED)
-        random.shuffle(candidate_sentences)
+        random.shuffle(possible_sentences)
 
-        for s in candidate_sentences:
+        for s in possible_sentences:
 
-            if SENTENCE_IDEAL_LENGTH == 0 or abs(SENTENCE_IDEAL_LENGTH - len(s['words'])) == best_size_diff:
+            # Will pick the first sentence in `possible_sentences` that has the closest length to the ideal length.
+            if SENTENCE_IDEAL_LENGTH == None or abs(SENTENCE_IDEAL_LENGTH - len(s['words'])) == best_length_diff:
 
                 summary.append(s)
 
@@ -219,7 +220,7 @@ def make_summary_side_contrastive(source, contr_rank):
                             q_desired_opinions.remove(e)
                         q_desired_opinions.append(e)
 
-                break
+                break  # Stops after one sentence is chosen.
 
     return summary
 
@@ -262,7 +263,7 @@ def make_summary_side_contrastive_and_representative(source, repr_rank, contr_ra
         desired_aspect = desired_opinion[0]
         desired_polarity = desired_opinion[1]
 
-        candidate_sentences = []
+        possible_sentences = []  # Will save all sentences which are desired to be included in the summary at this step.
 
         for candidate_sentence in source:
 
@@ -276,25 +277,24 @@ def make_summary_side_contrastive_and_representative(source, repr_rank, contr_ra
                 continue  # Candidate is already in the summary
 
             if count_words + source[candidate_sentence]['word_count'] <= LIM_WORDS:  # Check if candidate will exceed the limit of words of the summary.
-                candidate_sentences.append(source[candidate_sentence])
+                possible_sentences.append(source[candidate_sentence])
 
-        if len(candidate_sentences) == 0:  # No more sentences for this opinions
+        if len(possible_sentences) == 0:  # No more sentences for this opinions
             del q_turn[0]
 
-        candidate_sentences = candidate_sentences[::-1]
-
-        best_size_diff = INFINITY
-
-        if SENTENCE_IDEAL_LENGTH != 0:
-            for s in candidate_sentences:
-                best_size_diff = min(best_size_diff, abs(SENTENCE_IDEAL_LENGTH - len(s['words'])))
+        # Find the length of candidate sentences which is closest to the defined ideal length.
+        best_length_diff = INFINITY
+        if SENTENCE_IDEAL_LENGTH != None:
+            for s in possible_sentences:
+                best_length_diff = min(best_length_diff, abs(SENTENCE_IDEAL_LENGTH - len(s['words'])))
 
         random.seed(RANDOM_SEED)
-        random.shuffle(candidate_sentences)
+        random.shuffle(possible_sentences)
 
-        for s in candidate_sentences:
+        for s in possible_sentences:
 
-            if SENTENCE_IDEAL_LENGTH == 0 or abs(SENTENCE_IDEAL_LENGTH - len(s['words'])) == best_size_diff:
+            # Will pick the first sentence in `possible_sentences` that has the closest length to the ideal length.
+            if SENTENCE_IDEAL_LENGTH == None or abs(SENTENCE_IDEAL_LENGTH - len(s['words'])) == best_length_diff:
 
                 summary.append(s)
 
@@ -318,7 +318,7 @@ def make_summary_side_contrastive_and_representative(source, repr_rank, contr_ra
                             q_repr.remove(e)
                         q_repr.append(e)
 
-                break
+                break  # Stops after one sentence is chosen.
 
     return summary
 

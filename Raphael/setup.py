@@ -4,7 +4,7 @@ RANKING_MODE = ['contrastive', 'contrastive+representative', 'random'][1]
 
 INDEPENDENT_RANK = False
 
-SENTENCE_IDEAL_LENGTH = 0  # 0 for none
+SENTENCE_IDEAL_LENGTH = None
 
 REPEAT_TESTS = 10  # Times to repeat each test
 DISCARD_TESTS = int(0.1 * REPEAT_TESTS)  # Amount of top-rated and bottom-rated tests to be discarded to compute average without outliers
