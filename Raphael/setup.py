@@ -1,6 +1,6 @@
 DEBUGGING = False
 
-OPTM_MODE = ['selection', 'alternate', 'random'][1]
+RANKING_MODE = ['contrastive', 'contrastive+representative', 'random'][1]
 
 INDEPENDENT_RANK = False
 
@@ -16,7 +16,7 @@ EVALUATION_MODE = True  # To print evaluation metrics results
 OUTPUT_MODE = False  # To print the summaries
 OVERVIEW_MODE = False
 
-METHOD = [OPTM_MODE, INDEPENDENT_RANK, SENTENCE_IDEAL_LENGTH]
+METHOD = [RANKING_MODE, INDEPENDENT_RANK, SENTENCE_IDEAL_LENGTH]
 
 # Input files 
 
