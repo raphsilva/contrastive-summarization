@@ -3,6 +3,7 @@ import json
 from setup import LIM_SENTENCES  # Sets the maximum number of SENTENCES in each side of the summary
 from setup import LIM_WORDS  # Sets the maximum number of WORDS in each side of the summary
 from setup import MIN_INTENSITY_IN_SUMMARY  # Sets the minimum intensity that a sentence in the summary has to have
+from setup import DISCARD_TESTS, REPEAT_TESTS
 from structure import word_count
 
 results = {}
@@ -53,6 +54,49 @@ def new_summary(summ1, summ2, evals, summary_parameters):
 
 def end_of_process(time_total):
     results['meta']['run time'] = round(time_total, 2)
+
+
+def overall_scores(e, time_total, all_summaries, exec_code, SOURCE1, SOURCE2):
+    TABLE_RESULTS_FILENAME = 'RESULTS/table_results_' + exec_code + '.txt'  # Name of file that will save the results
+
+    results_msg = 'SCORES'
+    results_msg += '\n\n'
+    results_msg += '                R     C     D   harm mean '
+    results_msg += '\n\n'
+    results_msg += 'mean          %3.0lf   %3.0lf   %3.0lf   [ %3.0lf ]' % (e['means']['r'], e['means']['c'], e['means']['d'], e['means']['h'])
+    results_msg += '\n\n'
+    results_msg += 'stdevs       ~%3.0lf  ~%3.0lf  ~%3.0lf    ~%3.0lf' % (e['stdevs']['r'], e['stdevs']['c'], e['stdevs']['d'], e['stdevs']['h'])
+    results_msg += '\n\n\n'
+    results_msg += 'max           %3.0lf   %3.0lf   %3.0lf     %3.0lf' % ((max(e['scores']['r'])), (max(e['scores']['c'])), (max(e['scores']['d'])), (max(e['scores']['h'])))
+    results_msg += '\n\n'
+    results_msg += 'min           %3.0lf   %3.0lf   %3.0lf     %3.0lf' % ((min(e['scores']['r'])), (min(e['scores']['c'])), (min(e['scores']['d'])), (min(e['scores']['h'])))
+    results_msg += '\n\n\n'
+
+    results_msg += '\n\n'
+    results_msg += ' avg words 1:  %6.2lf ' % (e['avg_sizes']['words_1'])
+    results_msg += '\n'
+    results_msg += ' avg words 2:  %6.2lf ' % (e['avg_sizes']['words_2'])
+    results_msg += '\n\n'
+    results_msg += ' avg sentences 1:  %6.2lf ' % (e['avg_sizes']['sentences_1'])
+    results_msg += '\n'
+    results_msg += ' avg sentences 2:  %6.2lf ' % (e['avg_sizes']['sentences_2'])
+    results_msg += '\n\n'
+    results_msg += ' time %6.2lf ' % (time_total)
+    results_msg += '\n'
+    results_msg += ' diff summs: %d' % (len(all_summaries))
+    results_msg += '\n\n'
+
+    print(results_msg)
+
+    f = open(TABLE_RESULTS_FILENAME, 'a')
+    f.write('%d tests, discard %d(x2) best and worst\n\n' % (REPEAT_TESTS, DISCARD_TESTS))
+    f.write('\n\n')
+    f.write('============  %s %s ============' % (SOURCE1, SOURCE2))
+    f.write('\n\n')
+    f.write(results_msg)
+    f.write('\n\n\n\n\n\n')
+    f.close()
+
 
 
 def write_files(SOURCE1, SOURCE2, exec_code):

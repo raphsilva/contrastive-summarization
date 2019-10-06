@@ -184,7 +184,9 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
 
         summScoresList[(evals['R'], evals['C'], evals['D'])] = (summ_idx_1, summ_idx_2)
 
-    h_scores = evaluate.overall_samples(SOURCE1, SOURCE2, exec_code, time_total, all_summaries)
+    overall_scores = evaluate.overall_samples()
+
+    output_files.overall_scores(overall_scores, time_total, all_summaries, exec_code, SOURCE1, SOURCE2)
 
 
     # Choose the summary that best reflects the method's evaluation
@@ -196,8 +198,10 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
             r += pow(l1[i] - l2[i], 2)
         return r
 
+    print()
 
-    fairness_rank = sorted(summScoresList.keys(), key=lambda k: sqdiff(k, h_scores))
+    means = [overall_scores['means']['r'], overall_scores['means']['c'], overall_scores['means']['d']]
+    fairness_rank = sorted(summScoresList.keys(), key=lambda k: sqdiff(k, means))
 
     summ_idx_f_1 = summScoresList[fairness_rank[0]][0]
     summ_idx_f_2 = summScoresList[fairness_rank[0]][1]

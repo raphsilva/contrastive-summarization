@@ -1,5 +1,5 @@
 import metrics
-from setup import DISCARD_TESTS, REPEAT_TESTS
+from setup import DISCARD_TESTS
 from statistics import stdev
 
 
@@ -15,7 +15,9 @@ qnt_sentences_2 = []
 
 
 def reset():
-    global r_scores, c_scores, d_scores, h_scores, qnt_words_1, qnt_words_2, qnt_sentences_1, qnt_sentences_2
+    global r_scores, c_scores, d_scores, h_scores
+    global qnt_words_1, qnt_words_2, qnt_sentences_1, qnt_sentences_2
+
     r_scores = []
     c_scores = []
     d_scores = []
@@ -27,7 +29,9 @@ def reset():
 
 
 def new_sample(source1, source2, summ1, summ2):
-    global r_scores, c_scores, d_scores, h_scores, qnt_words_1, qnt_words_2, qnt_sentences_1, qnt_sentences_2
+    global r_scores, c_scores, d_scores, h_scores
+    global qnt_words_1, qnt_words_2, qnt_sentences_1, qnt_sentences_2
+
     scores = {}
 
     scores['r1'] = 100 * metrics.representativiness(source1, summ1)
@@ -59,9 +63,7 @@ def new_sample(source1, source2, summ1, summ2):
     return scores
 
 
-def overall_samples(SOURCE1, SOURCE2, exec_code, time_total, all_summaries):
-    
-    TABLE_RESULTS_FILENAME = 'RESULTS/table_results_' + exec_code + '.txt'  # Name of file that will save the results
+def overall_samples():
 
     r_scores_without_outliers = sorted(r_scores)[DISCARD_TESTS:-DISCARD_TESTS]
     c_scores_without_outliers = sorted(c_scores)[DISCARD_TESTS:-DISCARD_TESTS]
@@ -78,50 +80,38 @@ def overall_samples(SOURCE1, SOURCE2, exec_code, time_total, all_summaries):
     d_mean = sum(d_scores_without_outliers) / len(d_scores_without_outliers)
     h_mean = harmonic_mean([r_mean, c_mean, d_mean])
 
-    results_msg = 'SCORES'
-    results_msg += '\n\n'
-    results_msg += '                R     C     D   harm mean '
-    results_msg += '\n\n'
-    results_msg += 'mean          %3.0lf   %3.0lf   %3.0lf   [ %3.0lf ]' % (r_mean, c_mean, d_mean, h_mean)
-    results_msg += '\n\n'
-    results_msg += 'stdevs       ~%3.0lf  ~%3.0lf  ~%3.0lf    ~%3.0lf' % (r_stdev, c_stdev, d_stdev, h_stdev)
-    results_msg += '\n\n\n'
-    results_msg += 'max           %3.0lf   %3.0lf   %3.0lf     %3.0lf' % ((max(r_scores_without_outliers)), (max(c_scores_without_outliers)), (max(d_scores_without_outliers)), (max(h_scores_without_outliers)))
-    results_msg += '\n\n'
-    results_msg += 'min           %3.0lf   %3.0lf   %3.0lf     %3.0lf' % ((min(r_scores_without_outliers)), (min(c_scores_without_outliers)), (min(d_scores_without_outliers)), (min(h_scores_without_outliers)))
-    results_msg += '\n\n\n'
-
     avg_words1 = sum(qnt_words_1) / len(qnt_words_1)
     avg_words2 = sum(qnt_words_2) / len(qnt_words_2)
     avg_sentences1 = sum(qnt_sentences_1) / len(qnt_sentences_1)
     avg_sentences2 = sum(qnt_sentences_2) / len(qnt_sentences_2)
 
-    results_msg += '\n\n'
-    results_msg += ' avg words 1:  %6.2lf ' % (avg_words1)
-    results_msg += '\n'
-    results_msg += ' avg words 2:  %6.2lf ' % (avg_words2)
-    results_msg += '\n\n'
-    results_msg += ' avg sentences 1:  %6.2lf ' % (avg_sentences1)
-    results_msg += '\n'
-    results_msg += ' avg sentences 2:  %6.2lf ' % (avg_sentences2)
-    results_msg += '\n\n'
-    results_msg += ' time %6.2lf ' % (time_total)
-    results_msg += '\n'
-    results_msg += ' diff summs: %d' % (len(all_summaries))
-    results_msg += '\n\n'
+    e = {}
+    e['scores'] = {
+        'r': r_scores_without_outliers,
+        'c': c_scores_without_outliers,
+        'd': d_scores_without_outliers,
+        'h': h_scores_without_outliers
+    }
+    e['means'] = {
+        'r': r_mean,
+        'c': c_mean,
+        'd': d_mean,
+        'h': h_mean
+    }
+    e['stdevs'] = {
+        'r': r_stdev,
+        'c': c_stdev,
+        'd': d_stdev,
+        'h': h_stdev
+    }
+    e['avg_sizes'] = {
+        'words_1': avg_words1,
+        'words_2': avg_words2,
+        'sentences_1': avg_sentences1,
+        'sentences_2': avg_sentences2
+    }
 
-    print(results_msg)
-
-    f = open(TABLE_RESULTS_FILENAME, 'a')
-    f.write('%d tests, discard %d(x2) best and worst\n\n' % (REPEAT_TESTS, DISCARD_TESTS))
-    f.write('\n\n')
-    f.write('============  %s %s ============' % (SOURCE1, SOURCE2))
-    f.write('\n\n')
-    f.write(results_msg)
-    f.write('\n\n\n\n\n\n')
-    f.close()
-
-    return [r_mean, c_mean, d_mean]
+    return e
 
 
 def harmonic_mean(l):
