@@ -70,15 +70,15 @@ def overall_samples():
     d_scores_without_outliers = sorted(d_scores)[DISCARD_TESTS:-DISCARD_TESTS]
     h_scores_without_outliers = sorted(h_scores)[DISCARD_TESTS:-DISCARD_TESTS]
 
-    r_stdev = stdev(r_scores_without_outliers)
-    c_stdev = stdev(c_scores_without_outliers)
-    d_stdev = stdev(d_scores_without_outliers)
-    h_stdev = stdev(h_scores_without_outliers)
-
     r_mean = sum(r_scores_without_outliers) / len(r_scores_without_outliers)
     c_mean = sum(c_scores_without_outliers) / len(c_scores_without_outliers)
     d_mean = sum(d_scores_without_outliers) / len(d_scores_without_outliers)
     h_mean = harmonic_mean([r_mean, c_mean, d_mean])
+
+    r_stdev = stdev(r_scores_without_outliers)
+    c_stdev = stdev(c_scores_without_outliers)
+    d_stdev = stdev(d_scores_without_outliers)
+    h_stdev = stdev(h_scores_without_outliers)
 
     avg_words1 = sum(qnt_words_1) / len(qnt_words_1)
     avg_words2 = sum(qnt_words_2) / len(qnt_words_2)
