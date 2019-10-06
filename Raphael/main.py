@@ -3,6 +3,7 @@ import evaluation as evalu
 import optimization as optm
 import output_format as out
 from read_input import read_input
+from setup import DATASETS_TO_TEST
 from setup import EVALUATION_MODE
 # Setup options
 from setup import LIM_SENTENCES  # Sets the maximum number of SENTENCES in each side of the summary
@@ -11,9 +12,8 @@ from setup import METHOD
 from setup import OPTM_MODE
 from setup import OUTPUT_MODE
 from setup import OVERVIEW_MODE
-from setup import DATASETS_TO_TEST
-from setup import VERBOSE_MODE
 from setup import REPEAT_TESTS, DISCARD_TESTS
+from setup import VERBOSE_MODE
 from setup import filepath  # Get full path for the file with data of target
 from structure import count_words
 from writefiles import underwrite_file
@@ -89,8 +89,6 @@ from time import time
 exec_code = str(int(time()) % 100000000)
 
 FILE_RESULTS = 'results_' + exec_code + '.txt'
-
-
 
 print('Will perform %d tests and discard %d(x2) best and worst\n\n' % (REPEAT_TESTS, DISCARD_TESTS))
 
@@ -403,4 +401,3 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
     results['meta']['run time'] = round(total_time, 2)
 
     underwrite_file('output/' + SOURCE1 + ' ' + SOURCE2 + ' (' + str(int(time())) + ').json', results)
-

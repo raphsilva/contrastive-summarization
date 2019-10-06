@@ -1,4 +1,3 @@
-import output_format
 from setup import MAXPOLARITY
 
 
