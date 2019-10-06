@@ -1,0 +1,372 @@
+{
+    "data": [
+        {
+            "id": 4,
+            "opinions": [
+                [
+                    "ACESSÓRIO",
+                    100
+                ],
+                [
+                    "ACESSÓRIO",
+                    100
+                ],
+                [
+                    "FOTO",
+                    100
+                ],
+                [
+                    "ACESSÓRIO",
+                    100
+                ],
+                [
+                    "ACESSÓRIO",
+                    100
+                ]
+            ],
+            "sentence": "O produto vem com correia para evitar quedas, duas lentes para fotografia, o corpo é resistente, a qualidade de fotografia é superior se comparado a prozoomers, Acompanha bateria, tampas de lentes para evitar riscos e manchas ao manusear."
+        },
+        {
+            "id": 5,
+            "opinions": [
+                [
+                    "ACESSÓRIO",
+                    100
+                ]
+            ],
+            "sentence": "Os tutoriais online Canon ajudam muito."
+        },
+        {
+            "id": 8,
+            "opinions": [
+                [
+                    "PREÇO",
+                    100
+                ]
+            ],
+            "sentence": "Me sinto satisfeito pelo que paguei, pois pretendo melhorar as fotos com lentes novas com a 50 mm - f 1.4."
+        },
+        {
+            "id": 10,
+            "opinions": [
+                [
+                    "ACESSÓRIO",
+                    -100
+                ]
+            ],
+            "sentence": "A abertura de diafragma das lentes do kit não são das melhores, mas pelo preço proposto é satisfatório."
+        },
+        {
+            "id": 14,
+            "opinions": [
+                [
+                    "PREÇO",
+                    100
+                ]
+            ],
+            "sentence": "Só o corpo da Nikon chega ao preço que paguei no kit inteiro da Canon."
+        },
+        {
+            "id": 15,
+            "opinions": [
+                [
+                    "ACESSÓRIO",
+                    -100
+                ],
+                [
+                    "ACESSÓRIO",
+                    0
+                ]
+            ],
+            "sentence": "Falta uma mochila para transporte, o que daria muito mais segurança, mesmo sabendo da robustez do corpo."
+        },
+        {
+            "id": 17,
+            "opinions": [
+                [
+                    "ACESSÓRIO",
+                    -100
+                ]
+            ],
+            "sentence": "Poderia vir um software pelo menos trial para poder editar fotos."
+        },
+        {
+            "id": 21,
+            "opinions": [
+                [
+                    "ACESSÓRIO",
+                    -100
+                ]
+            ],
+            "sentence": "Deveria vir com bateria extrado demais atende minhas necessidades."
+        },
+        {
+            "id": 24,
+            "opinions": [
+                [
+                    "PREÇO",
+                    100
+                ]
+            ],
+            "sentence": "Ótimo custo-benefício."
+        },
+        {
+            "id": 26,
+            "opinions": [
+                [
+                    "USABILIDADE",
+                    100
+                ]
+            ],
+            "sentence": "Amei o produto! É uma câmera de entrada no mundo DSLR, com funções pré-programadas e a possibilidade de fazer configurações próprias, à medida que o usuário vai se familiarizando com esse tipo de equipamento."
+        },
+        {
+            "id": 27,
+            "opinions": [
+                [
+                    "FOTO",
+                    100
+                ]
+            ],
+            "sentence": "Permite fotos com qualidade profissional, desfocadas, com planos bem distintos( adoro! rsrs) e com alta resolução."
+        },
+        {
+            "id": 28,
+            "opinions": [
+                [
+                    "FOTO",
+                    100
+                ]
+            ],
+            "sentence": "Tem ISO relativamente bom, mas apresenta uma limitação em qualidade a partir do ISO 1600."
+        },
+        {
+            "id": 29,
+            "opinions": [
+                [
+                    "FOTO",
+                    100
+                ]
+            ],
+            "sentence": "Com ISO acima disso as fotos ficam boas, mas apresentam algumas granulações leves."
+        },
+        {
+            "id": 30,
+            "opinions": [
+                [
+                    "FOTO",
+                    0
+                ]
+            ],
+            "sentence": "Até o momento, o ISO 1200 foi o máximo que senti necessidade de usar, então, na prática, esse fator não me incomoda."
+        },
+        {
+            "id": 31,
+            "opinions": [
+                [
+                    "USABILIDADE",
+                    100
+                ],
+                [
+                    "FOTO",
+                    100
+                ]
+            ],
+            "sentence": "Achei os comandos bem intuitivos e consigo fotos muito bonitas sem muito trabalho de ajuste fino."
+        },
+        {
+            "id": 33,
+            "opinions": [
+                [
+                    "USABILIDADE",
+                    100
+                ]
+            ],
+            "sentence": "Uma coisa muito legal é a possibilidade de trocar as lentes, pois o produto é compatível com todas as lentes da marca."
+        },
+        {
+            "id": 56,
+            "opinions": [
+                [
+                    "PREÇO",
+                    100
+                ]
+            ],
+            "sentence": "E o preço esta muito bom."
+        },
+        {
+            "id": 57,
+            "opinions": [
+                [
+                    "PREÇO",
+                    100
+                ]
+            ],
+            "sentence": "Custo beneficio excelente."
+        },
+        {
+            "id": 61,
+            "opinions": [
+                [
+                    "PREÇO",
+                    100
+                ]
+            ],
+            "sentence": "Uma ótima opção para fotógrafos iniciantes e amadores que querem se profissionalizar.O custo beneficio, é um dos maiores pontos positivos."
+        },
+        {
+            "id": 62,
+            "opinions": [
+                [
+                    "USABILIDADE",
+                    -100
+                ],
+                [
+                    "ACESSÓRIO",
+                    -100
+                ]
+            ],
+            "sentence": "Claro que para usufruir de todas as funções, de maneira aficais é necessário estudar e testar, assim é possivel criar imagens com qualidade profissionais, sem deixar nada a desejar.Um ponto negativo é a lente do kit, porem essa pode ser ótima opção para começo e assim q perceber sua necessidade saberá qual tipo de lente é melhor para cada usuário."
+        },
+        {
+            "id": 77,
+            "opinions": [
+                [
+                    "FOTO",
+                    100
+                ]
+            ],
+            "sentence": "Depois que comprei esta câmera minhas fotos melhoraram Muito, Agora tenho fotos a nível profissional, com ela já fiz ate alguns ensaios e adquiri uma renda extra."
+        },
+        {
+            "id": 84,
+            "opinions": [
+                [
+                    "PREÇO",
+                    100
+                ],
+                [
+                    "FOTO",
+                    100
+                ]
+            ],
+            "sentence": "Ótimo custo benefício! Fotos em alta definição."
+        },
+        {
+            "id": 89,
+            "opinions": [
+                [
+                    "USABILIDADE",
+                    100
+                ]
+            ],
+            "sentence": "Fácil manuseio, ótimo p/ elaborar trabalhos etc."
+        },
+        {
+            "id": 91,
+            "opinions": [
+                [
+                    "USABILIDADE",
+                    0
+                ]
+            ],
+            "sentence": "Excelente câmera! Vale a pena.Quem não é profissional basta dar uma estudada, ler e praticar!"
+        },
+        {
+            "id": 95,
+            "opinions": [
+                [
+                    "USABILIDADE",
+                    100
+                ]
+            ],
+            "sentence": "Para quem procura uma câmera de entrada ela é muito boa!"
+        },
+        {
+            "id": 106,
+            "opinions": [
+                [
+                    "USABILIDADE",
+                    100
+                ]
+            ],
+            "sentence": "Amei esse produto,me surpreendi com a ótima qualidade,essa câmera virou minha queridinha,amei ela mesmo,só que o ruim dela é a duração da bateria,acaba rápido,mais o respo é ótimo,e ela é super fácil de mexer.Recomendo para todos."
+        },
+        {
+            "id": 108,
+            "opinions": [
+                [
+                    "PREÇO",
+                    100
+                ]
+            ],
+            "sentence": "Relativamente bom o investimento, o produto apresenta diversas características de uso profissional amador, comprei para uso pessoal e tive bons resultados."
+        },
+        {
+            "id": 113,
+            "opinions": [
+                [
+                    "USABILIDADE",
+                    100
+                ]
+            ],
+            "sentence": "Produto de qualidade, muito intuitiva, fácil de usar e qualidade de imagem.Recomendo a todos os iniciantes que desejam dar um passo a mais no mundo da fotografia."
+        },
+        {
+            "id": 121,
+            "opinions": [
+                [
+                    "USABILIDADE",
+                    100
+                ]
+            ],
+            "sentence": "Produto muito bom, ótima qualidade, fácil manuseio."
+        },
+        {
+            "id": 122,
+            "opinions": [
+                [
+                    "PREÇO",
+                    100
+                ]
+            ],
+            "sentence": "Ótimo custo benefício."
+        },
+        {
+            "id": 130,
+            "opinions": [
+                [
+                    "PREÇO",
+                    100
+                ],
+                [
+                    "ACESSÓRIO",
+                    100
+                ],
+                [
+                    "PREÇO",
+                    100
+                ],
+                [
+                    "USABILIDADE",
+                    100
+                ]
+            ],
+            "sentence": "Confesso que me surpreendi com ela.Comprei recentemente essa camera por um otimo preco em uma grande rede de hipermercados.Em que pese a lente do kit basico ser de abertura maxima 3,5 nao muito apropriada para ambientes de pouca iluminacao e internos, por ter um sensor grande o ISO pode ir ate 1600 com um minimo de ruido.O acabamento e muito bom e da impressao de resistencia.O custo beneficio vale a pena.Vantajosa no tocante ao uso de outras lentes e de facil troca.Sempre tive as cameras Canon e considero a melhor marca do mundo pela qualidade das lentes e acabamento.Recomendo a sua compra para quem esta comecando a fotografia profissional e laser."
+        }
+    ],
+    "meta": {
+        "Average rating": "9/10",
+        "Collection date": "2018-05-28",
+        "File generation date": "2019-03-02",
+        "Format": "sentences_multiasp_vertical",
+        "Human reviser": "Raphael",
+        "ID": "30",
+        "Number of reviews": "47",
+        "Product": "Câmera Digital Canon EOS Rebel T5 18.0 Megapixels",
+        "Source": "www.buscape.com.br/avaliacoes/canon-eos-rebel-t5-18-0-megapixels",
+        "Total of opinions": "42",
+        "Total of sentences": "131",
+        "Type": "Câmera"
+    }
+}

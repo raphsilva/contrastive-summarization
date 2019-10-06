@@ -1,0 +1,2 @@
+10 tests, discard 1(x2) best and worst
+

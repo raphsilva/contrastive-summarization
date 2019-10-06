@@ -1,0 +1,38 @@
+10 tests, discard 1(x2) best and worst
+
+
+
+============  D2a D2b ============
+
+
+
+               93    73    68   [  77 ]    ( 77)      ~  2
+
+             ~  1  ~  4  ~  2               ~  2
+
+
+max            94    78    71                 81
+
+min            92    67    66                 74
+
+
+simple mean    92    73    68      77       ' 77'      ~  2
+
+
+
+
+ avg words 1:  149.50 
+ avg words 2:  149.80 
+
+ avg sentences 1:    7.60 
+ avg sentences 2:   13.80 
+
+ time   0.06 
+ diff summs: 10
+
+
+
+
+
+
+
