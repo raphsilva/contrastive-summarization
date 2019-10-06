@@ -376,21 +376,6 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
     summ_out += '    words:   %3d  %3d' % (w1, w2)
     summ_out += '\n'
 
-    evals = {}
-
-    evals['r1'] = 100 * metrics.representativiness(source1, summ1)
-    evals['r2'] = 100 * metrics.representativiness(source2, summ2)
-    evals['R'] = (evals['r1'] + evals['r2']) / 2
-
-    evals['C'] = 100 * metrics.contrastiviness(source1, source2, summ1, summ2)
-
-    evals['d1'] = 100 * metrics.diversity(source1, summ1)
-    evals['d2'] = 100 * metrics.diversity(source2, summ2)
-
-    evals['D'] = (evals['d1'] + evals['d2']) / 2
-
-    evals['H'] = harmonic_mean([evals['R'], evals['C'], evals['D']])
-
     w1 = sum([summ1[i]['word_count'] for i in summ1])
     w2 = sum([summ2[i]['word_count'] for i in summ2])
 
