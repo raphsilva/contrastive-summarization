@@ -1,6 +1,5 @@
-from setup import DISCARD_TESTS, REPEAT_TESTS
-
 import metrics
+from setup import DISCARD_TESTS, REPEAT_TESTS
 
 hr = []
 hc = []
@@ -130,7 +129,6 @@ def overall_samples(SOURCE1, SOURCE2, exec_code, time_total, all_summaries):
     f.close()
 
     return [r_median_mean, c_median_mean, d_median_mean]
-
 
 
 def harmonic_mean(l):

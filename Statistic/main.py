@@ -1,34 +1,27 @@
 # From Python standard library:
+from os import mkdir
 from time import time
 
+import evaluate
 # From this project:
 import method
-from read_input import read_input
-import evaluate
 import output_files
 import output_format as out
 import structure as struct
-from summarization import summarize
-
+from read_input import read_input
+from setup import ALPHA
+from setup import DATASETS_TO_TEST
+from setup import DEBUG_MODE
+from setup import DISCARD_TESTS
+from setup import METHOD
 # Setup options
 from setup import MIN_INTENSITY_IN_SUMMARY  # Sets the minimum intensity that a sentence in the summary has to have
-from setup import filepath  # Get full path for the file with data of target
-
-from setup import VERBOSE_MODE
-from setup import OUTPUT_MODE
-
-from setup import METHOD
 from setup import OPTM_MODE
-from setup import ALPHA
-
+from setup import OUTPUT_MODE
 from setup import REPEAT_TESTS
-from setup import DISCARD_TESTS
-
-from setup import DATASETS_TO_TEST
-
-from setup import DEBUG_MODE
-
-from os import mkdir
+from setup import VERBOSE_MODE
+from setup import filepath  # Get full path for the file with data of target
+from summarization import summarize
 
 try:
     mkdir('RESULTS')
@@ -63,10 +56,7 @@ def remove_low_intensity(source):
 
 print('Will perform %d tests and discard %d(x2) best and worst\n\n' % (REPEAT_TESTS, DISCARD_TESTS))
 
-
 for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
-
-
 
     summScoresList = {}
 
@@ -140,7 +130,6 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
 
     evaluate.reset()
 
-
     for repeat in range(REPEAT_TESTS):
 
         # Display progress
@@ -187,23 +176,19 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
             for i in summ_idx_2:
                 print("%s " % (source2[i]['verbatim']))
 
-
         evals = evaluate.new_sample(source1, source2, summ1, summ2)
 
-        summary_parameters = [METHOD, OPTM_MODE, 'alpha='+str(ALPHA)]
+        summary_parameters = [METHOD, OPTM_MODE, 'alpha=' + str(ALPHA)]
 
         output_files.new_summary(summ1, summ2, evals, summary_parameters)
 
-
-
         summScoresList[(evals['R'], evals['C'], evals['D'])] = (summ_idx_1, summ_idx_2)
-
 
     h_scores = evaluate.overall_samples(SOURCE1, SOURCE2, exec_code, time_total, all_summaries)
 
+
     # Choose the summary that best reflects the method's evaluation
     # (based on the scores gotten after running the method several times for this dataset)
-
 
     def sqdiff(l1, l2):  # To determine difference between two summaries scores
         r = 0
@@ -256,7 +241,6 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
     f = open(OUTPUT_FILE, 'w')
     f.write(summ_out)
     f.close()
-
 
     output_files.end_of_process(time_total)
 

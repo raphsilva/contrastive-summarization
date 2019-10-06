@@ -1,13 +1,12 @@
 import json
 
-
 from setup import LIM_SENTENCES  # Sets the maximum number of SENTENCES in each side of the summary
 from setup import LIM_WORDS  # Sets the maximum number of WORDS in each side of the summary
 from setup import MIN_INTENSITY_IN_SUMMARY  # Sets the minimum intensity that a sentence in the summary has to have
-
 from structure import word_count
 
 results = {}
+
 
 def reset():
     global results
@@ -33,6 +32,7 @@ def new_source(SOURCE1_NAME, SOURCE2_NAME, source1, source2):
     results['meta']['size']['source']['words'].append(word_count(source1))
     results['meta']['size']['source']['words'].append(word_count(source2))
 
+
 def new_summary(summ1, summ2, evals, summary_parameters):
     n = {}
     n['parameters'] = summary_parameters
@@ -50,8 +50,10 @@ def new_summary(summ1, summ2, evals, summary_parameters):
     n['size']['word count'].append(word_count(summ2))
     results['output'].append(n)
 
+
 def end_of_process(time_total):
     results['meta']['run time'] = round(time_total, 2)
+
 
 def write_files(SOURCE1, SOURCE2, exec_code):
     f = open('RESULTS/' + SOURCE1 + '_' + SOURCE2 + '_' + exec_code + '.json', 'w')

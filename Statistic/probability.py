@@ -1,5 +1,5 @@
-import scipy.stats as stats
 import matplotlib.pyplot as plt
+import scipy.stats as stats
 
 from setup import MAXPOLARITY
 
@@ -49,6 +49,7 @@ def normalDistributionZero(step=DISTRIBUTIONS_STEP, leftlimit=-DISTRIBUTIONS_LEN
     for i in [j * step for j in range(left, right)]:
         r[i] = 0 + INFINITESIMAL
     return r
+
 
 def KLdivergence(d1, d2):  # d1 and d2 are dicts containing a normal distribution
     d1 = list(d1.values())

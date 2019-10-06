@@ -1,8 +1,8 @@
 # version 19-09-06
 
 
-import os.path
 import json
+import os.path
 
 TRASH_DIR = 'trash'
 
