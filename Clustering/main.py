@@ -63,7 +63,7 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
 
     results = {}
     results['meta'] = {}
-    results['meta']['implementation'] = 'Kim'
+    results['meta']['implementation'] = 'Clustering'
     results['meta']['source'] = []
     results['meta']['source'].append(SOURCE1)
     results['meta']['source'].append(SOURCE2)
