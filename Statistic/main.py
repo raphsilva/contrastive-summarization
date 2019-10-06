@@ -5,7 +5,7 @@ import json
 # From this project:
 import method
 from read_input import read_input
-import evaluation as evalu
+import metrics
 import output_format as out
 import structure as struct
 from structure import word_count
@@ -219,14 +219,14 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
 
         evals = {}
 
-        evals['r1'] = 100 * evalu.representativiness(source1, summ1)
-        evals['r2'] = 100 * evalu.representativiness(source2, summ2)
+        evals['r1'] = 100 * metrics.representativiness(source1, summ1)
+        evals['r2'] = 100 * metrics.representativiness(source2, summ2)
         evals['R'] = (evals['r1'] + evals['r2']) / 2
 
-        evals['C'] = 100 * evalu.contrastiviness(source1, source2, summ1, summ2)
+        evals['C'] = 100 * metrics.contrastiviness(source1, source2, summ1, summ2)
 
-        evals['d1'] = 100 * evalu.diversity(source1, summ1)
-        evals['d2'] = 100 * evalu.diversity(source2, summ2)
+        evals['d1'] = 100 * metrics.diversity(source1, summ1)
+        evals['d2'] = 100 * metrics.diversity(source2, summ2)
 
         evals['D'] = (evals['d1'] + evals['d2']) / 2
 
@@ -378,14 +378,14 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
 
     evals = {}
 
-    evals['r1'] = 100 * evalu.representativiness(source1, summ1)
-    evals['r2'] = 100 * evalu.representativiness(source2, summ2)
+    evals['r1'] = 100 * metrics.representativiness(source1, summ1)
+    evals['r2'] = 100 * metrics.representativiness(source2, summ2)
     evals['R'] = (evals['r1'] + evals['r2']) / 2
 
-    evals['C'] = 100 * evalu.contrastiviness(source1, source2, summ1, summ2)
+    evals['C'] = 100 * metrics.contrastiviness(source1, source2, summ1, summ2)
 
-    evals['d1'] = 100 * evalu.diversity(source1, summ1)
-    evals['d2'] = 100 * evalu.diversity(source2, summ2)
+    evals['d1'] = 100 * metrics.diversity(source1, summ1)
+    evals['d2'] = 100 * metrics.diversity(source2, summ2)
 
     evals['D'] = (evals['d1'] + evals['d2']) / 2
 
