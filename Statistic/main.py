@@ -1,20 +1,17 @@
 # From Python standard library:
 from time import time
-import json
 
 # From this project:
 import method
 from read_input import read_input
-import metrics
+import evaluate
+import output_files
 import output_format as out
 import structure as struct
-from structure import word_count
 from summarization import summarize
 
 # Setup options
-from setup import LIM_SENTENCES  # Sets the maximum number of SENTENCES in each side of the summary
-from setup import LIM_WORDS  # Sets the maximum number of WORDS in each side of the summary
-from setup import MIN_INTENS_IN_SUMMARY  # Sets the minimum intensity that a sentence in the summary has to have
+from setup import MIN_INTENSITY_IN_SUMMARY  # Sets the minimum intensity that a sentence in the summary has to have
 from setup import filepath  # Get full path for the file with data of target
 
 from setup import VERBOSE_MODE
@@ -40,17 +37,9 @@ except:
     pass
 
 exec_code = str(int(time()) % 100000000)  # Execution code (will be in the results file name)
-TABLE_RESULTS_FILENAME = 'RESULTS/table_results_' + exec_code + '.txt'  # Name of file that will save the results
 
 if DEBUG_MODE:
     out.setDebugPrints(True)  # Choose whether or not to display information for debugging.
-
-results = {'meta': {}}
-results['meta']['source'] = []
-results['meta']['limits (per side)'] = {}
-results['meta']['limits (per side)']['sentences'] = LIM_SENTENCES
-results['meta']['limits (per side)']['words'] = LIM_WORDS
-results['output'] = []
 
 
 def print_verbose(*msg):
@@ -67,20 +56,17 @@ def remove_low_intensity(source):
     # Remove sentences with low intensity. 
     # Will bypass any sentence which the intensity is lower than MIN_INTENS_IN_SUMMARY.
     for i in dict(source):
-        if source[i]['intensity'] < MIN_INTENS_IN_SUMMARY:
+        if source[i]['intensity'] < MIN_INTENSITY_IN_SUMMARY:
             del source[i]
     return source
 
 
 print('Will perform %d tests and discard %d(x2) best and worst\n\n' % (REPEAT_TESTS, DISCARD_TESTS))
 
-f = open(TABLE_RESULTS_FILENAME, 'a')
-f.write('%d tests, discard %d(x2) best and worst\n\n' % (REPEAT_TESTS, DISCARD_TESTS))
-f.close()
 
 for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
 
-    results['meta']['source'] = (SOURCE1, SOURCE2)
+
 
     summScoresList = {}
 
@@ -102,6 +88,8 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
 
     wc1 = struct.word_count(source1)
     wc2 = struct.word_count(source2)
+
+    output_files.new_source(SOURCE1, SOURCE2, source1, source2)
 
     print('Words: ', wc1, wc2)
 
@@ -150,15 +138,8 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
 
     print_verbose('Making summary')
 
-    hr = []
-    hc = []
-    hd = []
-    hh = []
+    evaluate.reset()
 
-    h_words1 = []
-    h_words2 = []
-    h_sentences1 = []
-    h_sentences2 = []
 
     for repeat in range(REPEAT_TESTS):
 
@@ -207,133 +188,18 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
                 print("%s " % (source2[i]['verbatim']))
 
 
-        def harmonic_mean(l):
-            s = 0
-            if min(l) == 0:
-                return -1
-            for i in l:
-                s += 1 / i
-            m = s / len(l)
-            return 1 / m
+        evals = evaluate.new_sample(source1, source2, summ1, summ2)
+
+        summary_parameters = [METHOD, OPTM_MODE, 'alpha='+str(ALPHA)]
+
+        output_files.new_summary(summ1, summ2, evals, summary_parameters)
 
 
-        evals = {}
-
-        evals['r1'] = 100 * metrics.representativiness(source1, summ1)
-        evals['r2'] = 100 * metrics.representativiness(source2, summ2)
-        evals['R'] = (evals['r1'] + evals['r2']) / 2
-
-        evals['C'] = 100 * metrics.contrastiviness(source1, source2, summ1, summ2)
-
-        evals['d1'] = 100 * metrics.diversity(source1, summ1)
-        evals['d2'] = 100 * metrics.diversity(source2, summ2)
-
-        evals['D'] = (evals['d1'] + evals['d2']) / 2
-
-        evals['H'] = harmonic_mean([evals['R'], evals['C'], evals['D']])
-
-        w1 = sum([summ1[i]['word_count'] for i in summ1])
-        w2 = sum([summ2[i]['word_count'] for i in summ2])
-
-        h_words1.append(w1)
-        h_words2.append(w2)
-        h_sentences1.append(len(summ1))
-        h_sentences2.append(len(summ2))
-
-        hr.append(evals['R'])
-        hc.append(evals['C'])
-        hd.append(evals['D'])
-        hh.append(evals['H'])
-
-        n = {}
-        n['parameters'] = {}
-        n['parameters']['method'] = METHOD
-        n['parameters']['summization'] = OPTM_MODE
-        n['parameters']['alpha'] = ALPHA
-        n['evaluation'] = {}
-        n['evaluation']['R'] = evals['R']
-        n['evaluation']['C'] = evals['C']
-        n['evaluation']['D'] = evals['D']
-        n['evaluation']['H'] = evals['H']
-        n['summ'] = []
-        n['summ'].append(summ_idx_1)
-        n['summ'].append(summ_idx_2)
-        n['size'] = {}
-        n['size']['word count'] = []
-        n['size']['word count'].append(word_count(summ1))
-        n['size']['word count'].append(word_count(summ2))
-        results['output'].append(n)
 
         summScoresList[(evals['R'], evals['C'], evals['D'])] = (summ_idx_1, summ_idx_2)
 
 
-    from statistics import stdev
-
-    hr_medians = sorted(hr)[DISCARD_TESTS:-DISCARD_TESTS]
-    hc_medians = sorted(hc)[DISCARD_TESTS:-DISCARD_TESTS]
-    hd_medians = sorted(hd)[DISCARD_TESTS:-DISCARD_TESTS]
-    hh_medians = sorted(hh)[DISCARD_TESTS:-DISCARD_TESTS]
-
-    sthh = stdev(hh_medians)
-    sthc = stdev(hc_medians)
-    sthr = stdev(hr_medians)
-    sthd = stdev(hd_medians)
-
-    r = sum(hr) / len(hr)
-    c = sum(hc) / len(hc)
-    d = sum(hd) / len(hd)
-    h = harmonic_mean([r, c, d])
-
-    r_median_mean = sum(hr_medians) / len(hr_medians)
-    c_median_mean = sum(hc_medians) / len(hc_medians)
-    d_median_mean = sum(hd_medians) / len(hd_medians)
-    h_median_mean = harmonic_mean([r, c, d])
-
-    ht = sum(hh) / len(hh)
-
-    results_msg = 'SCORES'
-    results_msg += '\n\n'
-    results_msg += '                R     C     D   harm mean '
-    results_msg += '\n\n'
-    results_msg += 'mean          %3.0lf   %3.0lf   %3.0lf   [ %3.0lf ]' % (r_median_mean, c_median_mean, d_median_mean, h_median_mean)
-    results_msg += '\n\n'
-    results_msg += 'stdevs       ~%3.0lf  ~%3.0lf  ~%3.0lf    ~%3.0lf' % (sthr, sthc, sthd, sthh)
-    results_msg += '\n\n\n'
-    results_msg += 'max           %3.0lf   %3.0lf   %3.0lf     %3.0lf' % ((max(hr_medians)), (max(hc_medians)), (max(hd_medians)), (max(hh_medians)))
-    results_msg += '\n\n'
-    results_msg += 'min           %3.0lf   %3.0lf   %3.0lf     %3.0lf' % ((min(hr_medians)), (min(hc_medians)), (min(hd_medians)), (min(hh_medians)))
-    results_msg += '\n\n\n'
-
-
-    avg_words1 = sum(h_words1) / len(h_words1)
-    avg_words2 = sum(h_words2) / len(h_words2)
-    avg_sentences1 = sum(h_sentences1) / len(h_sentences1)
-    avg_sentences2 = sum(h_sentences2) / len(h_sentences2)
-
-    results_msg += '\n\n'
-    results_msg += ' avg words 1:  %6.2lf ' % (avg_words1)
-    results_msg += '\n'
-    results_msg += ' avg words 2:  %6.2lf ' % (avg_words2)
-    results_msg += '\n\n'
-    results_msg += ' avg sentences 1:  %6.2lf ' % (avg_sentences1)
-    results_msg += '\n'
-    results_msg += ' avg sentences 2:  %6.2lf ' % (avg_sentences2)
-    results_msg += '\n\n'
-    results_msg += ' time %6.2lf ' % (time_total)
-    results_msg += '\n'
-    results_msg += ' diff summs: %d' % (len(all_summaries))
-    results_msg += '\n\n'
-
-    print(results_msg)
-
-    f = open(TABLE_RESULTS_FILENAME, 'a')
-    f.write('\n\n')
-    f.write('============  %s %s ============' % (SOURCE1, SOURCE2))
-    f.write('\n\n')
-    f.write(results_msg)
-    f.write('\n\n\n\n\n\n')
-    f.close()
-
+    h_scores = evaluate.overall_samples(SOURCE1, SOURCE2, exec_code, time_total, all_summaries)
 
     # Choose the summary that best reflects the method's evaluation
     # (based on the scores gotten after running the method several times for this dataset)
@@ -346,8 +212,7 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
         return r
 
 
-    fairness_rank = sorted(summScoresList.keys(),
-                           key=lambda k: sqdiff(k, [r_median_mean, c_median_mean, d_median_mean]))
+    fairness_rank = sorted(summScoresList.keys(), key=lambda k: sqdiff(k, h_scores))
 
     summ_idx_f_1 = summScoresList[fairness_rank[0]][0]
     summ_idx_f_2 = summScoresList[fairness_rank[0]][1]
@@ -392,18 +257,9 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
     f.write(summ_out)
     f.close()
 
-    results['meta']['size'] = {}
-    results['meta']['size']['source'] = {}
-    results['meta']['size']['source']['sentences'] = []
-    results['meta']['size']['source']['sentences'].append(len(source1))
-    results['meta']['size']['source']['sentences'].append(len(source2))
-    results['meta']['size']['source']['words'] = []
-    results['meta']['size']['source']['words'].append(word_count(source1))
-    results['meta']['size']['source']['words'].append(word_count(source2))
-    results['meta']['run time'] = round(time_total, 2)
 
-    f = open('RESULTS/' + SOURCE1 + '_' + SOURCE2 + '_' + exec_code + '.json', 'w')
-    f.write(json.dumps(results, sort_keys=True, indent=4, separators=(',', ': '), ensure_ascii=False))
-    f.close()
+    output_files.end_of_process(time_total)
+
+    output_files.write_files(SOURCE1, SOURCE2, exec_code)
 
     method.save_caches()

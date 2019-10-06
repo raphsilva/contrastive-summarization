@@ -36,7 +36,7 @@ MAXPOLARITY = 100 # Sets the polarity scale (from -MAXPOLARITY to +MAXPOLARITY)
 LIM_SENTENCES =  20     # Sets the maximum number of SENTENCES in each side of the summary
 LIM_WORDS     =  100     # Sets the maximum number of WORDS in each side of the summary
 
-MIN_INTENS_IN_SUMMARY = 1*MAXPOLARITY # If (the absolute value of) the intensity of a sentence is lower than that, that sentence will not be in the summary. 
+MIN_INTENSITY_IN_SUMMARY = 1 * MAXPOLARITY # If (the absolute value of) the intensity of a sentence is lower than that, that sentence will not be in the summary.
 
 # Method parameters
 
@@ -67,7 +67,7 @@ if VERBOSE_MODE or EVALUATION_MODE:
     out.printMessage('Limit of sentences (per side): ', LIM_SENTENCES)
     out.printMessage('Limit of words (per side): ', LIM_WORDS)
     out.printMessage()
-    out.printMessage('Low sentiment: ', MIN_INTENS_IN_SUMMARY)
+    out.printMessage('Low sentiment: ', MIN_INTENSITY_IN_SUMMARY)
     out.printMessage('alpha: ', ALPHA)
     out.printMessage('Candidates selected: ', GREEDY_CANDS_SELECTED)
     out.printMessage()
