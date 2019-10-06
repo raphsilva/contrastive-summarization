@@ -12,3 +12,4 @@ out*
 !*.py
 results
 results_*
+*.txt
