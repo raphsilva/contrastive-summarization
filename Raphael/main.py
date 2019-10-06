@@ -16,7 +16,7 @@ from setup import REPEAT_TESTS, DISCARD_TESTS
 from setup import VERBOSE_MODE
 from setup import filepath  # Get full path for the file with data of target
 from structure import count_words
-from writefiles import underwrite_file
+from writefiles import overwrite_json
 
 results = {}
 results['meta'] = {}
@@ -400,4 +400,4 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
     results['meta']['size']['source']['words'].append(count_words(source2))
     results['meta']['run time'] = round(total_time, 2)
 
-    underwrite_file('output/' + SOURCE1 + ' ' + SOURCE2 + ' (' + str(int(time())) + ').json', results)
+    overwrite_json('output/' + SOURCE1 + ' ' + SOURCE2 + ' (' + str(int(time())) + ').json', results)
