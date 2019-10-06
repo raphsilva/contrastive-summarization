@@ -4,10 +4,10 @@ OPTM_MODE = ['selection', 'alternate', 'random'][0]
 
 INDEPENDENT_RANK = False
 
-SENTENCE_IDEAL_LENGTH = 0 # 0 for none
+SENTENCE_IDEAL_LENGTH = 0  # 0 for none
 
 REPEAT_TESTS = 10  # Times to repeat each test
-DISCARD_TESTS = int(0.1*REPEAT_TESTS)  # Amount of top-rated and bottom-rated tests to be discarded to compute average
+DISCARD_TESTS = int(0.1 * REPEAT_TESTS)  # Amount of top-rated and bottom-rated tests to be discarded to compute average
 
 # Display options
 
@@ -22,7 +22,7 @@ METHOD = [OPTM_MODE, INDEPENDENT_RANK, SENTENCE_IDEAL_LENGTH]
 
 DATA_DIR = "../input"
 
-INPUT_FILES = [(), ('D1a','D1b'), ('D2a','D2b'), ('D3a','D3b'), ('D4a','D4b'), ('D5a','D5b'), ('D6a','D6b'), ('D7a','D7b'), ('D8a','D8b')]
+INPUT_FILES = [(), ('D1a', 'D1b'), ('D2a', 'D2b'), ('D3a', 'D3b'), ('D4a', 'D4b'), ('D5a', 'D5b'), ('D6a', 'D6b'), ('D7a', 'D7b'), ('D8a', 'D8b')]
 
 DATASETS_TO_TEST = [INPUT_FILES[2]]
 
@@ -36,6 +36,7 @@ LIM_SENTENCES = 20  # Sets the maximum number of SENTENCES in each side of the s
 LIM_WORDS = 150  # Sets the maximum number of WORDS in each side of the summary
 
 LOW_PRIORITY_ASPECTS = ['_GENERIC']  # Aspects that are send to the end of the queue
+
 
 # Optimization options
 
