@@ -35,8 +35,6 @@ def MakeContrastiveSummary(source_1, source_2, mode):
         return make_summary_alternate(source_1, source_2)
 
 
-
-
 def contrastive_pair_count(pair, opinions_1, opinions_2):
     c1 = 0
     c2 = 0
