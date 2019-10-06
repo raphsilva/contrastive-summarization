@@ -166,10 +166,10 @@ def make_summary_side_contrastive(source, contr_rank):
 
     while count_words < LIM_WORDS:
 
-        if q_desired_opinions == []:  # no more opinions found
+        if q_desired_opinions == []:  # No more opinions found.
             break
 
-        desired_opinion = q_desired_opinions.pop(0)  # this is a queue
+        desired_opinion = q_desired_opinions.pop(0)  # Gets first element of queue.
 
         desired_aspect = desired_opinion[0]
         desired_polarity = desired_opinion[1]
@@ -178,10 +178,10 @@ def make_summary_side_contrastive(source, contr_rank):
 
         for candidate_sentence in source:
 
-            if desired_aspect not in source[candidate_sentence]['sent']:  # same aspect
+            if desired_aspect not in source[candidate_sentence]['sent']:
                 continue  # Candidate doesn't have the aspect that the algorithm is lookink for.
 
-            if source[candidate_sentence]['sent'][desired_aspect] * desired_polarity <= 0:  # same polarity
+            if source[candidate_sentence]['sent'][desired_aspect] * desired_polarity <= 0:
                 continue  # Candidate doesn't have the polarity that the algorithm is lookink for.
 
             if source[candidate_sentence] in summary:
@@ -258,7 +258,7 @@ def make_summary_side_contrastive_and_representative(source, repr_rank, contr_ra
         if q_turn == []:
             continue
 
-        desired_opinion = q_turn[0]
+        desired_opinion = q_turn[0]  # Gets first element of queue.
 
         desired_aspect = desired_opinion[0]
         desired_polarity = desired_opinion[1]
