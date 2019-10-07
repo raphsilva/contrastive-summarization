@@ -32,20 +32,18 @@ def new_sample(source1, source2, summ1, summ2):
     global r_scores, c_scores, d_scores, h_scores
     global qnt_words_1, qnt_words_2, qnt_sentences_1, qnt_sentences_2
 
-    scores = {}
+    r1 = 100 * metrics.representativiness(source1, summ1)
+    r2= 100 * metrics.representativiness(source2, summ2)
+    R = (r1 + r2) / 2
 
-    scores['r1'] = 100 * metrics.representativiness(source1, summ1)
-    scores['r2'] = 100 * metrics.representativiness(source2, summ2)
-    scores['R'] = (scores['r1'] + scores['r2']) / 2
+    C = 100 * metrics.contrastiviness(source1, source2, summ1, summ2)
 
-    scores['C'] = 100 * metrics.contrastiviness(source1, source2, summ1, summ2)
+    d1 = 100 * metrics.diversity(source1, summ1)
+    d2 = 100 * metrics.diversity(source2, summ2)
 
-    scores['d1'] = 100 * metrics.diversity(source1, summ1)
-    scores['d2'] = 100 * metrics.diversity(source2, summ2)
+    D = (d1 + d2) / 2
 
-    scores['D'] = (scores['d1'] + scores['d2']) / 2
-
-    scores['H'] = harmonic_mean([scores['R'], scores['C'], scores['D']])
+    H = harmonic_mean([R, C, D])
 
     w1 = sum([summ1[i]['word_count'] for i in summ1])
     w2 = sum([summ2[i]['word_count'] for i in summ2])
@@ -55,12 +53,12 @@ def new_sample(source1, source2, summ1, summ2):
     qnt_sentences_1.append(len(summ1))
     qnt_sentences_2.append(len(summ2))
 
-    r_scores.append(scores['R'])
-    c_scores.append(scores['C'])
-    d_scores.append(scores['D'])
-    h_scores.append(scores['H'])
+    r_scores.append(R)
+    c_scores.append(C)
+    d_scores.append(D)
+    h_scores.append(H)
 
-    return scores
+    return {'R': R, 'C': C, 'D': D, 'H': H}
 
 
 def overall_samples():
@@ -87,22 +85,22 @@ def overall_samples():
 
     e = {}
     e['scores'] = {
-        'r': r_scores_without_outliers,
-        'c': c_scores_without_outliers,
-        'd': d_scores_without_outliers,
-        'h': h_scores_without_outliers
+        'R': r_scores_without_outliers,
+        'C': c_scores_without_outliers,
+        'D': d_scores_without_outliers,
+        'H': h_scores_without_outliers
     }
     e['means'] = {
-        'r': r_mean,
-        'c': c_mean,
-        'd': d_mean,
-        'h': h_mean
+        'R': r_mean,
+        'C': c_mean,
+        'D': d_mean,
+        'H': h_mean
     }
     e['stdevs'] = {
-        'r': r_stdev,
-        'c': c_stdev,
-        'd': d_stdev,
-        'h': h_stdev
+        'R': r_stdev,
+        'C': c_stdev,
+        'D': d_stdev,
+        'H': h_stdev
     }
     e['avg_sizes'] = {
         'words_1': avg_words1,

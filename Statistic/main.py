@@ -200,7 +200,7 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
 
     print()
 
-    means = [overall_scores['means']['r'], overall_scores['means']['c'], overall_scores['means']['d']]
+    means = [overall_scores['means'][s] for s in ['R', 'C', 'D']]
     fairness_rank = sorted(summScoresList.keys(), key=lambda k: sqdiff(k, means))
 
     summ_idx_f_1 = summScoresList[fairness_rank[0]][0]
@@ -245,8 +245,6 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
     f = open(OUTPUT_FILE, 'w')
     f.write(summ_out)
     f.close()
-
-    output_files.end_of_process(time_total)
 
     output_files.write_files(SOURCE1, SOURCE2, exec_code)
 

@@ -52,34 +52,35 @@ def new_summary(summ1, summ2, evals, summary_parameters):
     results['output'].append(n)
 
 
-def end_of_process(time_total):
-    results['meta']['run time'] = round(time_total, 2)
-
-
 def overall_scores(e, time_total, all_summaries, exec_code, SOURCE1, SOURCE2):
     TABLE_RESULTS_FILENAME = 'RESULTS/table_results_' + exec_code + '.txt'  # Name of file that will save the results
+
+    means = e['means']
+    stdevs = e['stdevs']
+    scores = e['scores']
+    sizes = e['avg_sizes']
 
     results_msg = 'SCORES'
     results_msg += '\n\n'
     results_msg += '                R     C     D   harm mean '
     results_msg += '\n\n'
-    results_msg += 'mean          %3.0lf   %3.0lf   %3.0lf   [ %3.0lf ]' % (e['means']['r'], e['means']['c'], e['means']['d'], e['means']['h'])
+    results_msg += 'mean          %3.0lf   %3.0lf   %3.0lf   [ %3.0lf ]' % (means['R'], means['C'], means['D'], means['H'])
     results_msg += '\n\n'
-    results_msg += 'stdevs       ~%3.0lf  ~%3.0lf  ~%3.0lf    ~%3.0lf' % (e['stdevs']['r'], e['stdevs']['c'], e['stdevs']['d'], e['stdevs']['h'])
+    results_msg += 'stdevs       ~%3.0lf  ~%3.0lf  ~%3.0lf    ~%3.0lf' % (stdevs['R'], stdevs['C'], stdevs['D'], stdevs['H'])
     results_msg += '\n\n\n'
-    results_msg += 'max           %3.0lf   %3.0lf   %3.0lf     %3.0lf' % ((max(e['scores']['r'])), (max(e['scores']['c'])), (max(e['scores']['d'])), (max(e['scores']['h'])))
+    results_msg += 'max           %3.0lf   %3.0lf   %3.0lf     %3.0lf' % ((max(scores['R'])), (max(scores['C'])), (max(scores['D'])), (max(scores['H'])))
     results_msg += '\n\n'
-    results_msg += 'min           %3.0lf   %3.0lf   %3.0lf     %3.0lf' % ((min(e['scores']['r'])), (min(e['scores']['c'])), (min(e['scores']['d'])), (min(e['scores']['h'])))
+    results_msg += 'min           %3.0lf   %3.0lf   %3.0lf     %3.0lf' % ((min(scores['R'])), (min(scores['C'])), (min(scores['D'])), (min(scores['H'])))
     results_msg += '\n\n\n'
 
     results_msg += '\n\n'
-    results_msg += ' avg words 1:  %6.2lf ' % (e['avg_sizes']['words_1'])
+    results_msg += ' avg words 1:  %6.2lf ' % (sizes['words_1'])
     results_msg += '\n'
-    results_msg += ' avg words 2:  %6.2lf ' % (e['avg_sizes']['words_2'])
+    results_msg += ' avg words 2:  %6.2lf ' % (sizes['words_2'])
     results_msg += '\n\n'
-    results_msg += ' avg sentences 1:  %6.2lf ' % (e['avg_sizes']['sentences_1'])
+    results_msg += ' avg sentences 1:  %6.2lf ' % (sizes['sentences_1'])
     results_msg += '\n'
-    results_msg += ' avg sentences 2:  %6.2lf ' % (e['avg_sizes']['sentences_2'])
+    results_msg += ' avg sentences 2:  %6.2lf ' % (sizes['sentences_2'])
     results_msg += '\n\n'
     results_msg += ' time %6.2lf ' % (time_total)
     results_msg += '\n'
@@ -96,6 +97,10 @@ def overall_scores(e, time_total, all_summaries, exec_code, SOURCE1, SOURCE2):
     f.write(results_msg)
     f.write('\n\n\n\n\n\n')
     f.close()
+
+    results['meta']['run time'] = round(time_total, 2)
+
+    results['evaluation'] = e
 
 
 
