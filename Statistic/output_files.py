@@ -7,11 +7,10 @@ from setup import MIN_INTENSITY_IN_SUMMARY  # Sets the minimum intensity that a 
 from structure import word_count
 
 json_results = {}
-table_results = ''
 
 
 def reset():
-    global json_results, table_results
+    global json_results
     json_results = {'meta': {}}
     json_results['meta']['source'] = []
     json_results['meta']['limits (per side)'] = {}
@@ -20,7 +19,6 @@ def reset():
     json_results['meta']['method_options'] = {}
     json_results['meta']['method_options']['minimum intensity'] = MIN_INTENSITY_IN_SUMMARY
     json_results['output'] = []
-    table_results = ''
 
 
 def new_source(SOURCE1_NAME, SOURCE2_NAME, source1, source2):
@@ -56,16 +54,13 @@ def new_summary(summ1, summ2, evals, summary_parameters):
 
 def overall_scores(e, time_total, all_summaries):
     global json_results
-
-    make_table_of_results(e, time_total, all_summaries)
-
     json_results['meta']['run time'] = round(time_total, 2)
-
+    json_results['meta']['different summaries generated'] = len(all_summaries)
     json_results['evaluation'] = e
 
 
-def make_table_of_results(e, time_total, all_summaries):
-    global table_results
+def make_table_of_results():
+    e = json_results['evaluation']
 
     means = e['means']
     stdevs = e['stdevs']
@@ -94,12 +89,14 @@ def make_table_of_results(e, time_total, all_summaries):
     table_results += '\n'
     table_results += ' avg sentences 2:  %6.2lf ' % (sizes['sentences_2'])
     table_results += '\n\n'
-    table_results += ' time %6.2lf ' % (time_total)
+    table_results += ' time %6.2lf ' % (json_results['meta']['run time'])
     table_results += '\n'
-    table_results += ' diff summs: %d' % (len(all_summaries))
+    table_results += ' diff summs: %d' % (json_results['meta']['different summaries generated'])
     table_results += '\n\n'
 
     print(table_results)
+
+    return table_results
 
 
 def write_files(SOURCE1, SOURCE2, exec_code):
@@ -108,6 +105,7 @@ def write_files(SOURCE1, SOURCE2, exec_code):
     f.write(json.dumps(json_results, sort_keys=True, indent=4, separators=(',', ': '), ensure_ascii=False))
     f.close()
 
+    table_results = make_table_of_results()
     table_results_filename = 'RESULTS/' + exec_code + '_' + 'table' + '.txt'  # Name of file that will save the results
     f = open(table_results_filename, 'a')
     f.write('%d tests, discard %d(x2) best and worst\n\n' % (REPEAT_TESTS, DISCARD_TESTS))
