@@ -186,7 +186,7 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
 
     overall_scores = evaluate.overall_samples()
 
-    output_files.overall_scores(overall_scores, time_total, all_summaries, exec_code, SOURCE1, SOURCE2)
+    output_files.overall_scores(overall_scores, time_total, all_summaries)
 
 
     # Choose the summary that best reflects the method's evaluation
