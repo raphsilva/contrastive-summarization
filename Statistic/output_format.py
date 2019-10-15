@@ -60,3 +60,4 @@ def printMessage(*text, end='\n'):
 
 def printError(*text):
     printColor(printFormat(*text), RED)
+

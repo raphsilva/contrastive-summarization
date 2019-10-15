@@ -165,9 +165,6 @@ def MakeContrastiveSummary_greedy(source1, source2, stats_source_1, stats_source
 
                     best_score = top_candidates[0][1]
 
-    if VERBOSE_MODE:
-        out.printinfo('Best score: ', best_score)
-
     best_summ1 = top_candidates[0][0][0]
     best_summ2 = top_candidates[0][0][1]
 
@@ -209,8 +206,8 @@ def makeSummary_greedy(source, stats_source, LIM_WORDS=LIM_WORDS):
                 c += 1
                 pr = (s - 1) / LIM_SENTENCES + (c_searched_paths - 1) / search_paths / LIM_SENTENCES + c / len(
                     source) / search_paths / LIM_SENTENCES
-                out.printProgress(" %6.2lf%%   ( path %3d/%d  of  size  %2d/%d )  %16.2lf" % (
-                    100 * pr, c_searched_paths, search_paths, s, LIM_SENTENCES, best_score), end="\r")
+                # out.printProgress(" %6.2lf%%   ( path %3d/%d  of  size  %2d/%d )  %16.2lf" % (
+                #     100 * pr, c_searched_paths, search_paths, s, LIM_SENTENCES, best_score), end="\r")
 
                 if i in idx_best_for_size:  # Candidate opinion already in the summary
                     continue

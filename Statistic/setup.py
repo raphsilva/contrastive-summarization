@@ -8,9 +8,7 @@ DISCARD_TESTS = int(0.1 * REPEAT_TESTS)  # Amount of top-rated and bottom-rated 
 
 # Display options
 
-VERBOSE_MODE = True  # To print statistics and status information (progress is always shown)
-EVALUATION_MODE = False  # To print evaluation metrics results
-OUTPUT_MODE = False  # To print the summaries
+VERBOSE_MODE = False  # To print statistics and status information (progress is always shown)
 DEBUG_MODE = False
 
 # Input files
@@ -55,7 +53,7 @@ def filepath(target):
     return DATA_DIR + '/' + target + '.json'
 
 
-if VERBOSE_MODE or EVALUATION_MODE:
+if VERBOSE_MODE:
     import output_format as out
 
     out.printMessage('Datasets: ', DATASETS_TO_TEST)

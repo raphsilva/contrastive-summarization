@@ -17,7 +17,6 @@ from setup import METHOD
 # Setup options
 from setup import MIN_INTENSITY_IN_SUMMARY  # Sets the minimum intensity that a sentence in the summary has to have
 from setup import OPTM_MODE
-from setup import OUTPUT_MODE
 from setup import REPEAT_TESTS
 from setup import VERBOSE_MODE
 from setup import filepath  # Get full path for the file with data of target
@@ -44,10 +43,6 @@ def print_verbose(*msg):
     out.printMessage(*msg)
 
 
-def print_result(*msg):
-    print(*msg, end='', flush=True)
-
-
 def remove_low_intensity(source):
     # Remove sentences with low intensity. 
     # Will bypass any sentence which the intensity is lower than MIN_INTENS_IN_SUMMARY.
@@ -57,7 +52,7 @@ def remove_low_intensity(source):
     return source
 
 
-print('Will perform %d tests and discard %d(x2) best and worst\n\n' % (REPEAT_TESTS, DISCARD_TESTS))
+print('\n\nWill perform %d tests and discard %d(x2) best and worst\n\n' % (REPEAT_TESTS, DISCARD_TESTS))
 
 for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
 
@@ -67,7 +62,7 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
 
     OUTPUT_FILE = f'OUTPUT/out_{EXECUTION_ID}_{SOURCE1[:-1]}.txt'
 
-    print(f'\n\n\n  =========datasets=======>  {SOURCE1} {SOURCE2}\n\n')
+    print(f'\n\n\n\n  =========datasets=======>  {SOURCE1} {SOURCE2}\n\n')
 
     print_verbose('Loading input')
     source1 = read_input(filepath(SOURCE1))
@@ -169,7 +164,7 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
 
 
     # Choose the summary that best reflects the method's evaluation
-    # (based on the scores gotten after running the method several times for this dataset)
+    # (based on the scores gotten after running the method several times for this data set)
 
     def sqdiff(l1, l2):  # To determine difference between two summaries scores
         r = 0
@@ -177,7 +172,6 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
             r += pow(l1[i] - l2[i], 2)
         return r
 
-    print()
 
     means = [overall_scores['means'][s] for s in ['R', 'C', 'D']]
     fairness_rank = sorted(summScoresList.keys(), key=lambda k: sqdiff(k, means))
@@ -188,21 +182,19 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
     summ1 = {i: source1[i] for i in summ_idx_f_1}
     summ2 = {i: source2[i] for i in summ_idx_f_2}
 
-    if VERBOSE_MODE:
-        print_verbose('\nOverview of opinions in the summary for each entity:')
+    if DEBUG_MODE:
+        out.printMessage('\nOverview of opinions in the summary for each entity:')
         sum_stats_1 = struct.aspects_stats(summ1)
         sum_stats_2 = struct.aspects_stats(summ2)
         struct.printOverview(sum_stats_1)
         struct.printOverview(sum_stats_2)
-        print_verbose('\nOpinions in the summary for each entity:')
+        out.printMessage('\nOpinions in the summary for each entity:')
         for i in summ_idx_1:
             out.printinfo("      %4d)   %s " % (i, source1[i]['opinions']))
         print()
         for i in summ_idx_2:
             out.printinfo("      %4d)   %s " % (i, source2[i]['opinions']))
 
-
-    # Get summary that best reflects the method's evaluation
     summ_out = '\n'
     for i in summ_idx_f_1:
         summ_out += "%s " % (source1[i]['verbatim'])
@@ -232,4 +224,4 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
 
     method.save_caches()
 
-print(f'Summaries and evaluations are in folders {PATH_OUTPUT} and {PATH_RESULTS}')
+print(f'\n\nSummaries and evaluations are in folders {PATH_OUTPUT} and {PATH_RESULTS}.')
