@@ -132,7 +132,6 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
 
         # Make summary
         summ_idx_1, summ_idx_2 = summarize(source1, source2, stats_source_1, stats_source_2, METHOD, OPTM_MODE)
-
         summ1 = {i: source1[i] for i in summ_idx_1}
         summ2 = {i: source2[i] for i in summ_idx_2}
 
@@ -147,7 +146,7 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
 
         # Evaluate summary
         evals = evaluate.new_sample(source1, source2, summ1, summ2)
-        print('%3d) %5d %5d %5d %5d' % (repeat+1, evals['R'], evals['C'], evals['D'], evals['H']))
+        print('%3d) %5d %5d %5d %5d' % (repeat + 1, evals['R'], evals['C'], evals['D'], evals['H']))
 
         # Register parameters used
         summary_parameters = [METHOD, OPTM_MODE, 'alpha=' + str(ALPHA)]

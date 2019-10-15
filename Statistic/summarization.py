@@ -1,5 +1,3 @@
-from pprint import pprint
-
 import method
 import output_format as out
 import structure as struct
@@ -10,7 +8,6 @@ from setup import LIM_SENTENCES
 from setup import LIM_WORDS
 
 from setup import GREEDY_CANDS_SELECTED
-from setup import VERBOSE_MODE
 
 import random
 

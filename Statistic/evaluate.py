@@ -1,7 +1,7 @@
-import metrics
-from setup import DISCARD_TESTS
 from statistics import stdev
 
+import metrics
+from setup import DISCARD_TESTS
 
 r_scores = []
 c_scores = []
@@ -33,7 +33,7 @@ def new_sample(source1, source2, summ1, summ2):
     global qnt_words_1, qnt_words_2, qnt_sentences_1, qnt_sentences_2
 
     r1 = 100 * metrics.representativiness(source1, summ1)
-    r2= 100 * metrics.representativiness(source2, summ2)
+    r2 = 100 * metrics.representativiness(source2, summ2)
     R = (r1 + r2) / 2
 
     C = 100 * metrics.contrastiviness(source1, source2, summ1, summ2)
@@ -62,7 +62,6 @@ def new_sample(source1, source2, summ1, summ2):
 
 
 def overall_samples():
-
     r_scores_without_outliers = sorted(r_scores)[DISCARD_TESTS:-DISCARD_TESTS]
     c_scores_without_outliers = sorted(c_scores)[DISCARD_TESTS:-DISCARD_TESTS]
     d_scores_without_outliers = sorted(d_scores)[DISCARD_TESTS:-DISCARD_TESTS]
