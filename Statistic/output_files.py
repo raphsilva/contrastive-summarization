@@ -60,14 +60,13 @@ def overall_scores(e, time_total, all_summaries):
 
 
 def make_table_of_results():
-    e = json_results['evaluation']
 
-    means = e['means']
-    stdevs = e['stdevs']
-    scores = e['scores']
-    sizes = e['avg_sizes']
+    means = json_results['evaluation']['means']
+    stdevs = json_results['evaluation']['stdevs']
+    scores = json_results['evaluation']['scores']
+    sizes = json_results['evaluation']['avg_sizes']
 
-    table_results = 'SCORES'
+    table_results = '\n\nSCORES'
     table_results += '\n\n'
     table_results += '                R     C     D   harm mean '
     table_results += '\n\n'

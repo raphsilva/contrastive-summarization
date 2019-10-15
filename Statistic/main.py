@@ -23,13 +23,16 @@ from setup import VERBOSE_MODE
 from setup import filepath  # Get full path for the file with data of target
 from summarization import summarize
 
+PATH_RESULTS = 'RESULTS'
+PATH_OUTPUT = 'OUTPUT'
+
 try:
-    mkdir('RESULTS')
-    mkdir('OUTPUT')
+    mkdir(PATH_RESULTS)
+    mkdir(PATH_OUTPUT)
 except:
     pass
 
-exec_code = str(int(time()) % 100000000)  # Execution code (will be in the results file name)
+EXECUTION_ID = str(int(time()) % 100000000)  # Execution code (will be in the results file name)
 
 if DEBUG_MODE:
     out.setDebugPrints(True)  # Choose whether or not to display information for debugging.
@@ -62,7 +65,7 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
 
     time_total = 0
 
-    OUTPUT_FILE = 'OUTPUT/out_' + exec_code + '_' + SOURCE1[:-1] + '.txt'
+    OUTPUT_FILE = 'OUTPUT/out_' + EXECUTION_ID + '_' + SOURCE1[:-1] + '.txt'
     print(OUTPUT_FILE)
 
     print('\n\n\n\n ============  ', SOURCE1, SOURCE2)
@@ -246,6 +249,8 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
     f.write(summ_out)
     f.close()
 
-    output_files.write_files(SOURCE1, SOURCE2, exec_code)
+    output_files.write_files(SOURCE1, SOURCE2, EXECUTION_ID)
 
     method.save_caches()
+
+print(f'Summaries and evaluations are in folders {PATH_OUTPUT} and {PATH_RESULTS}')
