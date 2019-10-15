@@ -67,7 +67,7 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
 
     OUTPUT_FILE = f'OUTPUT/out_{EXECUTION_ID}_{SOURCE1[:-1]}.txt'
 
-    print(f'\n\n\n ===============datasets======>  {SOURCE1} {SOURCE2}\n\n')
+    print(f'\n\n\n  =========datasets=======>  {SOURCE1} {SOURCE2}\n\n')
 
     print_verbose('Loading input')
     source1 = read_input(filepath(SOURCE1))
@@ -127,14 +127,11 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
 
     print_verbose('Making summaries\n\n')
 
-    print('%3s  %5s %5s %5s %5s\n' % ('n', 'R', 'C', 'D', 'H'))
+    print('     %5s %5s %5s %5s\n' % ('R', 'C', 'D', 'H'))
 
     evaluate.reset()
 
     for repeat in range(REPEAT_TESTS):
-
-        # Display progress
-        out.printProgress('   %3d%% ' % (100 * repeat / REPEAT_TESTS), end="\n")
 
         time_initial = time()
 
@@ -204,7 +201,8 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
         for i in summ_idx_2:
             out.printinfo("      %4d)   %s " % (i, source2[i]['opinions']))
 
-    print("\nSUMMARY THAT BEST REFLECTS THIS METHOD'S EVALUATION (based on %d executions that were performed)\n" % (REPEAT_TESTS))
+
+    # Get summary that best reflects the method's evaluation
     summ_out = '\n'
     for i in summ_idx_f_1:
         summ_out += "%s " % (source1[i]['verbatim'])
@@ -225,11 +223,6 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
     summ_out += '              words:   %3d  %3d' % (w1, w2)
     summ_out += 'different summaries: %d:' % (len(all_summaries))
     summ_out += '\n'
-
-    print(summ_out)
-
-    print('\n')
-    print('\n')
 
     f = open(OUTPUT_FILE, 'w')
     f.write(summ_out)

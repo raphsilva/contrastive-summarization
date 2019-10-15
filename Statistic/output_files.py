@@ -93,8 +93,6 @@ def make_table_of_results():
     table_results += ' diff summs: %d' % (json_results['meta']['different summaries generated'])
     table_results += '\n\n'
 
-    print(table_results)
-
     return table_results
 
 
