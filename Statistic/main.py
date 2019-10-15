@@ -125,14 +125,16 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
 
     print_verbose('Sizes of datasets without low intensity sentences: ', len(source1), len(source2))
 
-    print_verbose('Making summary')
+    print_verbose('Making summaries\n\n')
+
+    print('%3s  %5s %5s %5s %5s\n' % ('n', 'R', 'C', 'D', 'H'))
 
     evaluate.reset()
 
     for repeat in range(REPEAT_TESTS):
 
         # Display progress
-        out.printProgress('   %3d%% ' % (100 * repeat / REPEAT_TESTS), end="\r")
+        out.printProgress('   %3d%% ' % (100 * repeat / REPEAT_TESTS), end="\n")
 
         time_initial = time()
 
@@ -153,6 +155,7 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
 
         # Evaluate summary
         evals = evaluate.new_sample(source1, source2, summ1, summ2)
+        print('%3d) %5d %5d %5d %5d' % (repeat+1, evals['R'], evals['C'], evals['D'], evals['H']))
 
         # Register parameters used
         summary_parameters = [METHOD, OPTM_MODE, 'alpha=' + str(ALPHA)]
