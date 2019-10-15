@@ -65,11 +65,9 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
 
     time_total = 0
 
-    OUTPUT_FILE = 'OUTPUT/out_' + EXECUTION_ID + '_' + SOURCE1[:-1] + '.txt'
-    print(OUTPUT_FILE)
+    OUTPUT_FILE = f'OUTPUT/out_{EXECUTION_ID}_{SOURCE1[:-1]}.txt'
 
-    print('\n\n\n\n ============  ', SOURCE1, SOURCE2)
-    print('\n\n')
+    print(f'\n\n\n ===============datasets======>  {SOURCE1} {SOURCE2}\n\n')
 
     print_verbose('Loading input')
     source1 = read_input(filepath(SOURCE1))
@@ -78,13 +76,11 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
     source1 = remove_low_intensity(source1)
     source2 = remove_low_intensity(source2)
     print_verbose('Sizes of datasets after cleaning: ', len(source1), len(source2))
-
     wc1 = struct.word_count(source1)
     wc2 = struct.word_count(source2)
+    print_verbose('Words: ', wc1, wc2)
 
     output_files.new_source(SOURCE1, SOURCE2, source1, source2)
-
-    print('Words: ', wc1, wc2)
 
     '''
     /source.../ are structures of the form
@@ -155,36 +151,16 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
         time_final = time()
         time_total += time_final - time_initial
 
-        # Display the results
-
-        if VERBOSE_MODE:
-            print_verbose('\nOverview of opinions in the summary for each entity:')
-            sum_stats_1 = struct.aspects_stats(summ1)
-            sum_stats_2 = struct.aspects_stats(summ2)
-            struct.printOverview(sum_stats_1)
-            struct.printOverview(sum_stats_2)
-            print_verbose('\nOpinions in the summary for each entity:')
-            for i in summ_idx_1:
-                out.printinfo("      %4d)   %s " % (i, source1[i]['opinions']))
-            print()
-            for i in summ_idx_2:
-                out.printinfo("      %4d)   %s " % (i, source2[i]['opinions']))
-
-        if OUTPUT_MODE:
-            print("\nCONTRASTIVE SUMMARY\n")
-            print("\n___ Entity 1\n")
-            for i in summ_idx_1:
-                print("%s " % (source1[i]['verbatim']))
-            print("\n___ Entity 2\n")
-            for i in summ_idx_2:
-                print("%s " % (source2[i]['verbatim']))
-
+        # Evaluate summary
         evals = evaluate.new_sample(source1, source2, summ1, summ2)
 
+        # Register parameters used
         summary_parameters = [METHOD, OPTM_MODE, 'alpha=' + str(ALPHA)]
 
+        # Write output file
         output_files.new_summary(summ1, summ2, evals, summary_parameters)
 
+        # Make dictionary mapping evaluations to summaries
         summScoresList[(evals['R'], evals['C'], evals['D'])] = (summ_idx_1, summ_idx_2)
 
     overall_scores = evaluate.overall_samples()
@@ -212,6 +188,19 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
     summ1 = {i: source1[i] for i in summ_idx_f_1}
     summ2 = {i: source2[i] for i in summ_idx_f_2}
 
+    if VERBOSE_MODE:
+        print_verbose('\nOverview of opinions in the summary for each entity:')
+        sum_stats_1 = struct.aspects_stats(summ1)
+        sum_stats_2 = struct.aspects_stats(summ2)
+        struct.printOverview(sum_stats_1)
+        struct.printOverview(sum_stats_2)
+        print_verbose('\nOpinions in the summary for each entity:')
+        for i in summ_idx_1:
+            out.printinfo("      %4d)   %s " % (i, source1[i]['opinions']))
+        print()
+        for i in summ_idx_2:
+            out.printinfo("      %4d)   %s " % (i, source2[i]['opinions']))
+
     print("\nSUMMARY THAT BEST REFLECTS THIS METHOD'S EVALUATION (based on %d executions that were performed)\n" % (REPEAT_TESTS))
     summ_out = '\n'
     for i in summ_idx_f_1:
@@ -229,21 +218,15 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
 
     summ_out += '\n\n\n'
 
-    summ_out += 'sentences:   %3d  %3d\n' % (len(summ1), len(summ2))
-    summ_out += '    words:   %3d  %3d' % (w1, w2)
+    summ_out += '          sentences:   %3d  %3d\n' % (len(summ1), len(summ2))
+    summ_out += '              words:   %3d  %3d' % (w1, w2)
+    summ_out += 'different summaries: %d:' % (len(all_summaries))
     summ_out += '\n'
 
-    w1 = sum([summ1[i]['word_count'] for i in summ1])
-    w2 = sum([summ2[i]['word_count'] for i in summ2])
-
-    print('sentences: ', len(summ1), len(summ2))
-    print('words: ', w1, w2)
-    print('diff summs: ', len(all_summaries))
-
-    print('\n')
-    print('\n')
-
     print(summ_out)
+
+    print('\n')
+    print('\n')
 
     f = open(OUTPUT_FILE, 'w')
     f.write(summ_out)

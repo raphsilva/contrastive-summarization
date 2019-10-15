@@ -84,9 +84,6 @@ def MakeContrastiveSummary_greedy(source1, source2, stats_source_1, stats_source
     for s in range(1, LIM_SENTENCES + 1):
 
         if len(top_candidates[0][0][0]) < s - 1 and len(top_candidates[0][0][1]) < s - 1:
-            # pprint(top_candidates)
-            # print()
-            # out.printMessage('\nWon\'t find any larger summary', s)
             break
 
         search_paths = len(top_candidates)
@@ -194,11 +191,7 @@ def makeSummary_greedy(source, stats_source, LIM_WORDS=LIM_WORDS):
     for s in range(1, LIM_SENTENCES + 1):
 
         if len(top_candidates[0][0]) < s - 1:
-            if VERBOSE_MODE:
-                print()
-                pprint(top_candidates)
-                out.printMessage('\nWon\'t find any larger summary', s)
-            break
+            break  # Won't find any larger summary
 
         best_for_size_prev = [i[0] for i in top_candidates]
 
