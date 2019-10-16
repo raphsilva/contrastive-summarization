@@ -1,9 +1,7 @@
-# From Python standard library:
 import os
 from time import time
 
 import evaluate
-# From this project:
 import method
 import output_files
 import output_format as out
@@ -14,7 +12,6 @@ from setup import DATASETS_TO_TEST
 from setup import DEBUG_MODE
 from setup import DISCARD_TESTS
 from setup import METHOD
-# Setup options
 from setup import OPTM_MODE
 from setup import REPEAT_TESTS
 from setup import VERBOSE_MODE
@@ -62,9 +59,9 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
         'word_count': 2,
         'verbatim': 'Câmera boa.'},
     2: {'intensity': 80.0,
-        'opinions': [('DESEMPENHO', -80.0),
-                    ('DESEMPENHO', -80.0),
-                    ('RESISTÊNCIA', -80.0)],
+        'opinions': [('DESEMPENHO',  -80.0),
+                     ('DESEMPENHO',  -80.0),
+                     ('RESISTÊNCIA', -80.0)],
         'sent': {'DESEMPENHO': -94, 'RESISTÊNCIA': -88},
         'verbatim': 'Entretanto, na primeira semana de uso já ralou facilmente, '
                     'esquenta muito com os dados móveis ligados e trava, mesmo '
@@ -84,10 +81,10 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
     '''
      /stats_.../ are structures of the form: 
         {'tela': {'mean':  83, 'prob': 0.07, 'std': 0},
-        'cor':  {'mean': -87, 'prob': 0.21, 'std': 1.73}}
+        'cor':   {'mean': -87, 'prob': 0.21, 'std': 1.73}}
     '''
 
-    all_summaries = []
+    distinct_summaries = set()
 
     if VERBOSE_MODE:
         out.print_verbose('\nOverview of opinions in the source for each entity:')
@@ -116,9 +113,8 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
         time_total += time_final - time_initial
 
         # Register all summaries generated, ignoring order of sentences.
-        s_id = (sorted(summ_idx_1), sorted(summ_idx_2))
-        if s_id not in all_summaries:
-            all_summaries.append(s_id)
+        s_id = ([sorted(summ_idx_1), sorted(summ_idx_2)])
+        distinct_summaries.add(str(s_id))
 
         # Evaluate summary
         scores = evaluate.new_sample(source1, source2, summ1, summ2)
@@ -135,7 +131,7 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
 
     overall_scores = evaluate.overall_samples()
 
-    output_files.overall_scores(overall_scores, time_total, all_summaries)
+    output_files.overall_scores(overall_scores, time_total, distinct_summaries)
 
     # Choose the summary that best reflects the method's evaluation
     # (based on the scores gotten after running the method several times for this data set)
@@ -147,7 +143,7 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
     summ1 = {i: source1[i] for i in summ_idx_1}
     summ2 = {i: source2[i] for i in summ_idx_2}
 
-    output_files.write_summary(summ1, summ2, len(all_summaries))
+    output_files.write_summary(summ1, summ2, len(distinct_summaries))
 
     if DEBUG_MODE:
         output_files.print_summ_stats(summ_idx_1, summ_idx_2, source1, source2)
