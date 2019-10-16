@@ -15,7 +15,6 @@ from setup import DEBUG_MODE
 from setup import DISCARD_TESTS
 from setup import METHOD
 # Setup options
-from setup import MIN_INTENSITY_IN_SUMMARY  # Sets the minimum intensity that a sentence in the summary has to have
 from setup import OPTM_MODE
 from setup import REPEAT_TESTS
 from setup import VERBOSE_MODE
@@ -40,15 +39,6 @@ def print_verbose(*msg):
     out.printMessage(*msg)
 
 
-def remove_low_intensity(source):
-    # Remove sentences with low intensity. 
-    # Will bypass any sentence which the intensity is lower than MIN_INTENS_IN_SUMMARY.
-    for i in dict(source):
-        if source[i]['intensity'] < MIN_INTENSITY_IN_SUMMARY:
-            del source[i]
-    return source
-
-
 print('\n\nWill perform %d tests and discard %d(x2) best and worst\n\n' % (REPEAT_TESTS, DISCARD_TESTS))
 
 for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
@@ -63,8 +53,8 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
     source1 = read_input(filepath(SOURCE1))
     source2 = read_input(filepath(SOURCE2))
     print_verbose('Sizes of datasets: ', len(source1), len(source2))
-    source1 = remove_low_intensity(source1)
-    source2 = remove_low_intensity(source2)
+    source1 = method.remove_low_intensity(source1)
+    source2 = method.remove_low_intensity(source2)
     print_verbose('Sizes of datasets after cleaning: ', len(source1), len(source2))
     wc1 = struct.word_count(source1)
     wc2 = struct.word_count(source2)
@@ -155,7 +145,6 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
     overall_scores = evaluate.overall_samples()
 
     output_files.overall_scores(overall_scores, time_total, all_summaries)
-
 
     # Choose the summary that best reflects the method's evaluation
     # (based on the scores gotten after running the method several times for this data set)
