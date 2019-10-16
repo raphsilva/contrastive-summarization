@@ -116,7 +116,7 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
         struct.printOverview(stats_source_1)
         struct.printOverview(stats_source_2)
 
-    print_verbose('Sizes of datasets without low intensity sentences: ', len(source1), len(source2))
+    print_verbose('Sizes of data sets without low intensity sentences: ', len(source1), len(source2))
 
     print_verbose('Making summaries\n\n')
 
@@ -133,27 +133,27 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
         summ1 = {i: source1[i] for i in summ_idx_1}
         summ2 = {i: source2[i] for i in summ_idx_2}
 
+        # Register time elapsed
+        time_final = time()
+        time_total += time_final - time_initial
+
         # Register all summaries generated, ignoring order of sentences.
         s_id = (sorted(summ_idx_1), sorted(summ_idx_2))
         if s_id not in all_summaries:
             all_summaries.append(s_id)
 
-        # Register time elapsed
-        time_final = time()
-        time_total += time_final - time_initial
-
         # Evaluate summary
-        evals = evaluate.new_sample(source1, source2, summ1, summ2)
-        print('%3d) %5d %5d %5d %5d' % (repeat + 1, evals['R'], evals['C'], evals['D'], evals['H']))
+        scores = evaluate.new_sample(source1, source2, summ1, summ2)
+        print('%3d) %5d %5d %5d %5d' % (repeat + 1, scores['R'], scores['C'], scores['D'], scores['H']))
 
         # Register parameters used
         summary_parameters = [METHOD, OPTM_MODE, 'alpha=' + str(ALPHA)]
 
         # Write output file
-        output_files.new_summary(summ1, summ2, evals, summary_parameters)
+        output_files.new_summary(summ1, summ2, scores, summary_parameters)
 
         # Make dictionary mapping evaluations to summaries
-        map_scores_summary[(evals['R'], evals['C'], evals['D'])] = (summ_idx_1, summ_idx_2)
+        map_scores_summary[(scores['R'], scores['C'], scores['D'])] = (summ_idx_1, summ_idx_2)
 
     overall_scores = evaluate.overall_samples()
 
@@ -162,7 +162,6 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
 
     # Choose the summary that best reflects the method's evaluation
     # (based on the scores gotten after running the method several times for this data set)
-
 
     means = [overall_scores['means'][s] for s in ['R', 'C', 'D']]
 
