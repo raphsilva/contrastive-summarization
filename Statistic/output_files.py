@@ -116,9 +116,7 @@ def write_summary(summ1, summ2, num_summaries):
     summary += '\n\n\n'
 
     summary += '          sentences:   %3d  %3d\n' % (len(summ1), len(summ2))
-    summary += '              words:   %3d  %3d\n\n' % (w1, w2)
-    summary += 'different summaries: %d' % (num_summaries)
-    summary += '\n'
+    summary += '              words:   %3d  %3d\n' % (w1, w2)
 
 
 def print_summ_stats(summ_idx_1, summ_idx_2, source1, source2):
