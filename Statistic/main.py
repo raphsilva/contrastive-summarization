@@ -1,5 +1,5 @@
 # From Python standard library:
-from os import mkdir
+import os
 from time import time
 
 import evaluate
@@ -25,11 +25,8 @@ from summarization import summarize
 PATH_RESULTS = 'RESULTS'
 PATH_OUTPUT = 'OUTPUT'
 
-try:
-    mkdir(PATH_RESULTS)
-    mkdir(PATH_OUTPUT)
-except:
-    pass
+os.makedirs(PATH_RESULTS, exist_ok=True)
+os.makedirs(PATH_OUTPUT, exist_ok=True)
 
 EXECUTION_ID = str(int(time()) % 100000000)  # Execution code (will be in the results file name)
 
