@@ -119,9 +119,15 @@ def write_summary(summ1, summ2, num_summaries):
     summary += '              words:   %3d  %3d\n' % (w1, w2)
 
 
-def print_summ_stats(summ_idx_1, summ_idx_2, source1, source2):
+def print_stats(summ_idx_1, summ_idx_2, source1, source2):
     import output_format as out
     import structure as struct
+    # Get statistics about aspects in the source (mean, standard deviation, probability)
+    stats_source_1 = struct.aspects_stats(source1)
+    stats_source_2 = struct.aspects_stats(source2)
+    out.printMessage('\nOverview of opinions in the source for each entity:')
+    struct.printOverview(stats_source_1)
+    struct.printOverview(stats_source_2)
     summ1 = {i: source1[i] for i in summ_idx_1}
     summ2 = {i: source2[i] for i in summ_idx_2}
     out.printMessage('\nOverview of opinions in the summary for each entity:')

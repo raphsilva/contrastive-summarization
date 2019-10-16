@@ -14,7 +14,6 @@ from setup import DISCARD_TESTS
 from setup import METHOD
 from setup import OPTM_MODE
 from setup import REPEAT_TESTS
-from setup import VERBOSE_MODE
 from setup import filepath  # Get full path for the file with data of target
 from summarization import summarize
 
@@ -31,24 +30,16 @@ print('\n\nWill perform %d tests and discard %d(x2) best and worst\n\n' % (REPEA
 
 for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
 
-    map_scores_summary = {}
-
-    time_total = 0
-
     print(f'\n\n\n\n  =========datasets=======>  {SOURCE1} {SOURCE2}\n\n')
 
     out.print_verbose('Loading input')
     source1 = read_input(filepath(SOURCE1))
     source2 = read_input(filepath(SOURCE2))
-    out.print_verbose('Sizes of datasets: ', len(source1), len(source2))
+    out.print_verbose('Sizes of data sets: ', len(source1), len(source2))
     source1 = method.remove_low_intensity(source1)
     source2 = method.remove_low_intensity(source2)
-    out.print_verbose('Sizes of datasets after cleaning: ', len(source1), len(source2))
-    wc1 = struct.word_count(source1)
-    wc2 = struct.word_count(source2)
-    out.print_verbose('Words: ', wc1, wc2)
-
-    output_files.new_source(SOURCE1, SOURCE2, source1, source2)
+    out.print_verbose('Sizes of data sets after cleaning: ', len(source1), len(source2))
+    out.print_verbose('Words: ', struct.word_count(source1), struct.word_count(source2))
 
     '''
     /source.../ are structures of the form
@@ -70,11 +61,7 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
     }
     '''
 
-    # Estimate overall sentiment about targets
-    overall_rate_1 = struct.avgSent(source1)
-    overall_rate_2 = struct.avgSent(source2)
-
-    # Get statistics about aspects in the source (mean, stdev, probability)
+    # Get statistics about aspects in the source (mean, standard deviation, probability)
     stats_source_1 = struct.aspects_stats(source1)
     stats_source_2 = struct.aspects_stats(source2)
 
@@ -84,20 +71,19 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
         'cor':   {'mean': -87, 'prob': 0.21, 'std': 1.73}}
     '''
 
+    evaluate.reset()  # To start evaluating summaries of the current sources.
+    output_files.new_source(SOURCE1, SOURCE2, source1, source2)  # Prepare output files for the current sources.
+
+    map_scores_summary = {}
+
     distinct_summaries = set()
 
-    if VERBOSE_MODE:
-        out.print_verbose('\nOverview of opinions in the source for each entity:')
-        struct.printOverview(stats_source_1)
-        struct.printOverview(stats_source_2)
-
-    out.print_verbose('Sizes of data sets without low intensity sentences: ', len(source1), len(source2))
+    time_total = 0
 
     out.print_verbose('Making summaries\n\n')
 
     print('     %5s %5s %5s %5s\n' % ('R', 'C', 'D', 'H'))
 
-    evaluate.reset()
 
     for repeat in range(REPEAT_TESTS):
 
@@ -129,27 +115,29 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
         # Make dictionary mapping evaluations to summaries
         map_scores_summary[(scores['R'], scores['C'], scores['D'])] = (summ_idx_1, summ_idx_2)
 
-    overall_scores = evaluate.overall_samples()
 
+    # Evaluate source based on all summaries that were gotten.
+    overall_scores = evaluate.source()
+
+    # Saves evaluation information that will be written in json output files.
     output_files.overall_scores(overall_scores, time_total, distinct_summaries)
 
-    # Choose the summary that best reflects the method's evaluation
-    # (based on the scores gotten after running the method several times for this data set)
-
+    # Choose the summary that best reflects the method's evaluation (based on the scores)
     means = [overall_scores['means'][s] for s in ['R', 'C', 'D']]
-
     summ_idx_1, summ_idx_2 = struct.get_summ_closest_to_scores(means, map_scores_summary)
-
     summ1 = {i: source1[i] for i in summ_idx_1}
     summ2 = {i: source2[i] for i in summ_idx_2}
 
+    # Write summary in output file.
     output_files.write_summary(summ1, summ2, len(distinct_summaries))
 
     if DEBUG_MODE:
-        output_files.print_summ_stats(summ_idx_1, summ_idx_2, source1, source2)
+        output_files.print_stats(summ_idx_1, summ_idx_2, source1, source2)
 
+    # Save output files in disc.
     output_files.write_files(SOURCE1, SOURCE2, EXECUTION_ID)
 
+    # Update cache.
     method.save_caches()
 
 print(f'\n\nSummaries and evaluations are in folders {PATH_OUTPUT} and {PATH_RESULTS}.')

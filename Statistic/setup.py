@@ -67,3 +67,8 @@ if VERBOSE_MODE:
     out.printMessage('Candidates selected: ', GREEDY_CANDS_SELECTED)
     out.printMessage()
     out.printMessage()
+
+import output_format as out
+
+if DEBUG_MODE:
+    out.setDebugPrints(True)  # Choose whether or not to display information for debugging.

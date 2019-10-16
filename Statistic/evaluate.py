@@ -61,7 +61,7 @@ def new_sample(source1, source2, summ1, summ2):
     return {'R': R, 'C': C, 'D': D, 'H': H}
 
 
-def overall_samples():
+def source():
     r_scores_without_outliers = sorted(r_scores)[DISCARD_TESTS:-DISCARD_TESTS]
     c_scores_without_outliers = sorted(c_scores)[DISCARD_TESTS:-DISCARD_TESTS]
     d_scores_without_outliers = sorted(d_scores)[DISCARD_TESTS:-DISCARD_TESTS]
