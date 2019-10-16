@@ -121,6 +121,24 @@ def write_summary(summ1, summ2, num_summaries):
     summary += '\n'
 
 
+def print_summ_stats(summ_idx_1, summ_idx_2, source1, source2):
+    import output_format as out
+    import structure as struct
+    summ1 = {i: source1[i] for i in summ_idx_1}
+    summ2 = {i: source2[i] for i in summ_idx_2}
+    out.printMessage('\nOverview of opinions in the summary for each entity:')
+    sum_stats_1 = struct.aspects_stats(summ1)
+    sum_stats_2 = struct.aspects_stats(summ2)
+    struct.printOverview(sum_stats_1)
+    struct.printOverview(sum_stats_2)
+    out.printMessage('\nOpinions in the summary for each entity:')
+    for i in summ_idx_1:
+        out.printinfo("      %4d)   %s " % (i, source1[i]['opinions']))
+    print()
+    for i in summ_idx_2:
+        out.printinfo("      %4d)   %s " % (i, source2[i]['opinions']))
+
+
 
 def write_files(SOURCE1, SOURCE2, exec_code):
     json_results_filename = 'RESULTS/' + exec_code + '_' + SOURCE1 + '_' + SOURCE2 + '.json'

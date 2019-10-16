@@ -8,8 +8,8 @@ DISCARD_TESTS = int(0.1 * REPEAT_TESTS)  # Amount of top-rated and bottom-rated 
 
 # Display options
 
-VERBOSE_MODE = False  # To print statistics and status information (progress is always shown)
-DEBUG_MODE = False
+VERBOSE_MODE = True  # To print statistics and status information (progress is always shown)
+DEBUG_MODE = True
 
 # Input files
 

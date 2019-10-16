@@ -165,25 +165,15 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
 
     means = [overall_scores['means'][s] for s in ['R', 'C', 'D']]
 
-    summ_idx_f_1, summ_idx_f_2 = struct.get_summ_closest_to_scores(means, map_scores_summary)
+    summ_idx_1, summ_idx_2 = struct.get_summ_closest_to_scores(means, map_scores_summary)
 
-    summ1 = {i: source1[i] for i in summ_idx_f_1}
-    summ2 = {i: source2[i] for i in summ_idx_f_2}
+    summ1 = {i: source1[i] for i in summ_idx_1}
+    summ2 = {i: source2[i] for i in summ_idx_2}
 
     output_files.write_summary(summ1, summ2, len(all_summaries))
 
     if DEBUG_MODE:
-        out.printMessage('\nOverview of opinions in the summary for each entity:')
-        sum_stats_1 = struct.aspects_stats(summ1)
-        sum_stats_2 = struct.aspects_stats(summ2)
-        struct.printOverview(sum_stats_1)
-        struct.printOverview(sum_stats_2)
-        out.printMessage('\nOpinions in the summary for each entity:')
-        for i in summ_idx_1:
-            out.printinfo("      %4d)   %s " % (i, source1[i]['opinions']))
-        print()
-        for i in summ_idx_2:
-            out.printinfo("      %4d)   %s " % (i, source2[i]['opinions']))
+        output_files.print_summ_stats(summ_idx_1, summ_idx_2, source1, source2)
 
     output_files.write_files(SOURCE1, SOURCE2, EXECUTION_ID)
 
