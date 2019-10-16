@@ -30,12 +30,6 @@ os.makedirs(PATH_OUTPUT, exist_ok=True)
 EXECUTION_ID = str(int(time()) % 100000000)  # Execution code (will be in the results file name)
 
 
-def print_verbose(*msg):
-    if not VERBOSE_MODE:
-        return
-    out.printMessage(*msg)
-
-
 print('\n\nWill perform %d tests and discard %d(x2) best and worst\n\n' % (REPEAT_TESTS, DISCARD_TESTS))
 
 for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
@@ -46,16 +40,16 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
 
     print(f'\n\n\n\n  =========datasets=======>  {SOURCE1} {SOURCE2}\n\n')
 
-    print_verbose('Loading input')
+    out.print_verbose('Loading input')
     source1 = read_input(filepath(SOURCE1))
     source2 = read_input(filepath(SOURCE2))
-    print_verbose('Sizes of datasets: ', len(source1), len(source2))
+    out.print_verbose('Sizes of datasets: ', len(source1), len(source2))
     source1 = method.remove_low_intensity(source1)
     source2 = method.remove_low_intensity(source2)
-    print_verbose('Sizes of datasets after cleaning: ', len(source1), len(source2))
+    out.print_verbose('Sizes of datasets after cleaning: ', len(source1), len(source2))
     wc1 = struct.word_count(source1)
     wc2 = struct.word_count(source2)
-    print_verbose('Words: ', wc1, wc2)
+    out.print_verbose('Words: ', wc1, wc2)
 
     output_files.new_source(SOURCE1, SOURCE2, source1, source2)
 
@@ -96,13 +90,13 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
     all_summaries = []
 
     if VERBOSE_MODE:
-        print_verbose('\nOverview of opinions in the source for each entity:')
+        out.print_verbose('\nOverview of opinions in the source for each entity:')
         struct.printOverview(stats_source_1)
         struct.printOverview(stats_source_2)
 
-    print_verbose('Sizes of data sets without low intensity sentences: ', len(source1), len(source2))
+    out.print_verbose('Sizes of data sets without low intensity sentences: ', len(source1), len(source2))
 
-    print_verbose('Making summaries\n\n')
+    out.print_verbose('Making summaries\n\n')
 
     print('     %5s %5s %5s %5s\n' % ('R', 'C', 'D', 'H'))
 
