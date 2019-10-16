@@ -56,11 +56,9 @@ print('\n\nWill perform %d tests and discard %d(x2) best and worst\n\n' % (REPEA
 
 for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
 
-    summScoresList = {}
+    map_scores_summary = {}
 
     time_total = 0
-
-    OUTPUT_FILE = f'OUTPUT/out_{EXECUTION_ID}_{SOURCE1[:-1]}.txt'
 
     print(f'\n\n\n\n  =========datasets=======>  {SOURCE1} {SOURCE2}\n\n')
 
@@ -155,7 +153,7 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
         output_files.new_summary(summ1, summ2, evals, summary_parameters)
 
         # Make dictionary mapping evaluations to summaries
-        summScoresList[(evals['R'], evals['C'], evals['D'])] = (summ_idx_1, summ_idx_2)
+        map_scores_summary[(evals['R'], evals['C'], evals['D'])] = (summ_idx_1, summ_idx_2)
 
     overall_scores = evaluate.overall_samples()
 
@@ -165,21 +163,15 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
     # Choose the summary that best reflects the method's evaluation
     # (based on the scores gotten after running the method several times for this data set)
 
-    def sqdiff(l1, l2):  # To determine difference between two summaries scores
-        r = 0
-        for i in range(len(l1)):
-            r += pow(l1[i] - l2[i], 2)
-        return r
-
 
     means = [overall_scores['means'][s] for s in ['R', 'C', 'D']]
-    fairness_rank = sorted(summScoresList.keys(), key=lambda k: sqdiff(k, means))
 
-    summ_idx_f_1 = summScoresList[fairness_rank[0]][0]
-    summ_idx_f_2 = summScoresList[fairness_rank[0]][1]
+    summ_idx_f_1, summ_idx_f_2 = struct.get_summ_closest_to_scores(means, map_scores_summary)
 
     summ1 = {i: source1[i] for i in summ_idx_f_1}
     summ2 = {i: source2[i] for i in summ_idx_f_2}
+
+    output_files.write_summary(summ1, summ2, len(all_summaries))
 
     if DEBUG_MODE:
         out.printMessage('\nOverview of opinions in the summary for each entity:')
@@ -193,31 +185,6 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
         print()
         for i in summ_idx_2:
             out.printinfo("      %4d)   %s " % (i, source2[i]['opinions']))
-
-    summ_out = '\n'
-    for i in summ_idx_f_1:
-        summ_out += "%s " % (source1[i]['verbatim'])
-        summ_out += "\n"
-
-    summ_out += '\n\n'
-
-    for i in summ_idx_f_2:
-        summ_out += "%s " % (source2[i]['verbatim'])
-        summ_out += "\n"
-
-    w1 = sum([summ1[i]['word_count'] for i in summ1])
-    w2 = sum([summ2[i]['word_count'] for i in summ2])
-
-    summ_out += '\n\n\n'
-
-    summ_out += '          sentences:   %3d  %3d\n' % (len(summ1), len(summ2))
-    summ_out += '              words:   %3d  %3d' % (w1, w2)
-    summ_out += 'different summaries: %d:' % (len(all_summaries))
-    summ_out += '\n'
-
-    f = open(OUTPUT_FILE, 'w')
-    f.write(summ_out)
-    f.close()
 
     output_files.write_files(SOURCE1, SOURCE2, EXECUTION_ID)
 

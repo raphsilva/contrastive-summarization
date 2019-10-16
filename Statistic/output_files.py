@@ -7,6 +7,7 @@ from setup import MIN_INTENSITY_IN_SUMMARY  # Sets the minimum intensity that a 
 from structure import word_count
 
 json_results = {}
+summary = ''
 
 
 def reset():
@@ -95,10 +96,40 @@ def make_table_of_results():
     return table_results
 
 
+def write_summary(summ1, summ2, num_summaries):
+    global summary
+
+    summary = '\n'
+    for i in summ1:
+        summary += "%s " % (summ1[i]['verbatim'])
+        summary += "\n"
+
+    summary += '\n\n'
+
+    for i in summ2:
+        summary += "%s " % (summ2[i]['verbatim'])
+        summary += "\n"
+
+    w1 = sum([summ1[i]['word_count'] for i in summ1])
+    w2 = sum([summ2[i]['word_count'] for i in summ2])
+
+    summary += '\n\n\n'
+
+    summary += '          sentences:   %3d  %3d\n' % (len(summ1), len(summ2))
+    summary += '              words:   %3d  %3d\n\n' % (w1, w2)
+    summary += 'different summaries: %d' % (num_summaries)
+    summary += '\n'
+
+
+
 def write_files(SOURCE1, SOURCE2, exec_code):
     json_results_filename = 'RESULTS/' + exec_code + '_' + SOURCE1 + '_' + SOURCE2 + '.json'
     f = open(json_results_filename, 'w')
     f.write(json.dumps(json_results, sort_keys=True, indent=4, separators=(',', ': '), ensure_ascii=False))
+    f.close()
+
+    f = open(f'OUTPUT/out_{exec_code}_{SOURCE1[:-1]}.txt', 'w')
+    f.write(summary)
     f.close()
 
     table_results = make_table_of_results()
