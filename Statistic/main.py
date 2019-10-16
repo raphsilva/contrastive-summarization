@@ -29,9 +29,6 @@ os.makedirs(PATH_OUTPUT, exist_ok=True)
 
 EXECUTION_ID = str(int(time()) % 100000000)  # Execution code (will be in the results file name)
 
-if DEBUG_MODE:
-    out.setDebugPrints(True)  # Choose whether or not to display information for debugging.
-
 
 def print_verbose(*msg):
     if not VERBOSE_MODE:
