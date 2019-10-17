@@ -97,13 +97,13 @@ def write_summary(summ1, summ2, num_summaries):
 
     summary = '\n'
     for i in summ1:
-        summary += "%s " % (summ1[i]['verbatim'])
+        summary += "%s " % (summ1[i]['sentence'])
         summary += "\n"
 
     summary += '\n\n'
 
     for i in summ2:
-        summary += "%s " % (summ2[i]['verbatim'])
+        summary += "%s " % (summ2[i]['sentence'])
         summary += "\n"
 
     w1 = sum([summ1[i]['word_count'] for i in summ1])
