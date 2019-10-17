@@ -16,6 +16,7 @@ from setup import filepath  # Get full path for the file with data of target
 from structure import word_count
 from writefiles import overwrite_json
 
+
 if DEBUG_MODE:
     out.setDebugPrints(True)
 
@@ -81,12 +82,6 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
     source1, source2 = load_input()
     print_verbose('Sizes of datasets: ', len(source1), len(source2))
 
-    wc1 = struct.word_count(source1)
-    wc2 = struct.word_count(source2)
-
-    print("Size 1: ", len(source1))
-    print("Size 2: ", len(source2))
-
     '''
      /source.../ are structures of the form
      {
@@ -106,26 +101,6 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
          'word_count': 21}
      }
      '''
-
-    # Estimate overall sentiment about targets
-    overall_rate_1 = struct.avgSent(source1)
-    overall_rate_2 = struct.avgSent(source2)
-
-    # Get statistics about aspects in the source (mean, stdev, probability)
-    stats_source_1 = struct.aspects_stats(source1)
-    stats_source_2 = struct.aspects_stats(source2)
-
-    # /stats_.../ are structures of the form: 
-    '''
-        {'tela': {'mean':  83, 'prob': 0.07, 'std': 0},
-        'cor':  {'mean': -87, 'prob': 0.21, 'std': 1.73}}
-    '''
-
-    all_summaries = []
-
-    print(len(source1))
-    print(len(source2))
-    print()
 
     e1_pos = {}
     e1_neg = {}
@@ -153,12 +128,6 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
 
         ini_time = time()
 
-        if VERBOSE_MODE:
-            print_verbose('\nOpinions in the summary for each entity:')
-            print_verbose('\nOverview of opinions in the source for each entity:')
-            struct.printOverview(stats_source_1)
-            struct.printOverview(stats_source_2)
-
         print_verbose('Sizes of datasets without low intensity sentences: ', len(source1), len(source2))
 
         print_verbose('Making summary')
@@ -184,9 +153,6 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
 
             random_seed()
 
-            pr = repeat / RTESTS
-            out.printProgress('   %3d%%   %s %s' % (100 * pr, SOURCE1, SOURCE2), end="\r")
-
             summ_idx_1A, summ_idx_2A = optm.MakeContrastiveSummary(e1_pos, e2_neg, stats_e1_pos, stats_e2_neg,
                                                                    size_A, size_A)
             summ_idx_1B, summ_idx_2B = optm.MakeContrastiveSummary(e1_neg, e2_pos, stats_e1_neg, stats_e2_pos,
@@ -194,9 +160,6 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
 
             summ_idx_1 = summ_idx_1A + summ_idx_1B
             summ_idx_2 = summ_idx_2A + summ_idx_2B
-
-            out.printProgress()
-            out.printProgress()
 
             fin_time = time()
             elaps_time = fin_time - ini_time
