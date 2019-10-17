@@ -8,7 +8,6 @@ from language import setLanguage
 from load_data import preprocess
 from load_data import read_input
 from setup import DATASETS_TO_TEST
-from setup import DEBUG_MODE
 from setup import DISCARD_TESTS
 from setup import LANGUAGE
 from setup import METHOD
@@ -174,9 +173,6 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
 
     # Write summary in output file.
     output_files.write_summary(summ1, summ2, len(distinct_summaries))
-
-    if DEBUG_MODE:
-        output_files.print_stats(summ_idx_1, summ_idx_2, source1, source2)
 
     # Save output files in disc.
     output_files.write_files(SOURCE1, SOURCE2, EXECUTION_ID)
