@@ -18,41 +18,22 @@ from structure import idx_to_summ
 from structure import word_count
 from summarization import contrastiveness_first
 from summarization import representativeness_first
-
-
-def print_result(*msg):
-    print(*msg, end='', flush=True)
-
-
 from writefiles import overwrite_json
-
-
-def round_num(num):
-    return float('%.2g' % (num))
 
 
 from setup import SIZE_FAC, METHOD
 
 from time import time
 
-exec_code = str(int(time()) % 100000000)
+EXECUTION_ID = str(int(time()) % 100000000)
 
-FILE_RESULTS = 'results_ ' + exec_code + '.txt'
+FILE_RESULTS = 'results_ ' + EXECUTION_ID + '.txt'
 
 print('Will perform %d tests and discard %d(x2) best and worst\n\n' % (REPEAT_TESTS, DISCARD_TESTS))
 
 f = open(FILE_RESULTS, 'a')
 f.write('%d tests, discard %d(x2) best and worst\n\n' % (REPEAT_TESTS, DISCARD_TESTS))
 f.close()
-
-SHOW_ALL_ITERAT = False
-
-
-def sqdiff(l1, l2):
-    r = 0
-    for i in range(len(l1)):
-        r += pow(l1[i] - l2[i], 2)
-    return r
 
 
 SIZE_FAC_DEFAULT = SIZE_FAC
@@ -70,9 +51,6 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
 
     source1_proc = preprocess(source1)
     source2_proc = preprocess(source2)
-
-    print(len(source1), len(source1_proc['+'] + source1_proc['-']))
-    print(len(source2), len(source2_proc['+'] + source2_proc['-']))
 
     set1_pos = source1_proc['+']
     set1_neg = source1_proc['-']
@@ -102,9 +80,6 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
 
     while repeat < REPEAT_TESTS:
         repeat += 1
-
-        pr = repeat / REPEAT_TESTS
-        out.printProgress('   %3d%% ' % (100 * pr), end="\r")
 
         from random import shuffle
 
