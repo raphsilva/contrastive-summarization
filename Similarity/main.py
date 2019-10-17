@@ -1,38 +1,21 @@
-# From this project:
-import evaluation as evalu
-import optimization as optm
-import output_format as out
-import structure as struct
-from read_input import read_input
-from setup import DATASETS_TO_TEST
-from setup import DEBUG_MODE
-from setup import EVALUATION_MODE
-# Setup options
-from setup import LIM_SENTENCES  # Sets the maximum number of SENTENCES in each side of the summary
-from setup import LIM_WORDS  # Sets the maximum number of WORDS in each side of the summary
-from setup import OUTPUT_MODE
-from setup import VERBOSE_MODE
-from setup import filepath  # Get full path for the file with data of target
-from structure import word_count
-from writefiles import overwrite_json
-
 import os
 from time import time
 
 import evaluate
-import method
+import optimization as optm
 import output_files
 import output_format as out
 import structure as struct
 from read_input import read_input
-from setup import ALPHA
 from setup import DATASETS_TO_TEST
 from setup import DEBUG_MODE
 from setup import DISCARD_TESTS
+from setup import LIM_SENTENCES  # Sets the maximum number of SENTENCES in each side of the summary
+from setup import LIM_WORDS  # Sets the maximum number of WORDS in each side of the summary
 from setup import METHOD
 from setup import REPEAT_TESTS
 from setup import filepath  # Get full path for the file with data of target
-
+from structure import word_count
 
 PATH_RESULTS = 'RESULTS'
 PATH_OUTPUT = 'OUTPUT'
@@ -41,6 +24,7 @@ os.makedirs(PATH_RESULTS, exist_ok=True)
 os.makedirs(PATH_OUTPUT, exist_ok=True)
 
 EXECUTION_ID = str(int(time()) % 100000000)  # Execution code (will be in the results file name)
+
 
 # Load input
 def load_input():
@@ -51,6 +35,7 @@ def load_input():
     source2 = read_input(filepath(SOURCE2))
 
     return source1, source2
+
 
 print('\n\nWill perform %d tests and discard %d(x2) best and worst\n\n' % (REPEAT_TESTS, DISCARD_TESTS))
 
@@ -132,9 +117,7 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
     size_A = LIM_WORDS * size_A_proportion / (size_A_proportion + size_B_proportion)
     size_B = LIM_WORDS * size_B_proportion / (size_A_proportion + size_B_proportion)
 
-
     for repeat in range(REPEAT_TESTS):
-
         time_initial = time()
 
         # Make summary
@@ -174,7 +157,6 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
         # Make dictionary mapping evaluations to summaries
         map_scores_summary[(scores['R'], scores['C'], scores['D'])] = (summ_idx_1, summ_idx_2)
 
-
     # Evaluate source based on all summaries that were gotten.
     overall_scores = evaluate.source()
 
@@ -195,6 +177,5 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
 
     # Save output files in disc.
     output_files.write_files(SOURCE1, SOURCE2, EXECUTION_ID)
-
 
 print(f'\n\nSummaries and evaluations are in folders {PATH_OUTPUT} and {PATH_RESULTS}.')
