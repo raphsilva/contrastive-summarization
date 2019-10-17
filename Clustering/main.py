@@ -1,42 +1,24 @@
-import metrics as evalu
-import output_format as out
-from interface import *
-from language import setLanguage
-from load_data import preprocess
-from load_data import read_input
-from setup import DATASETS_TO_TEST
-from setup import DISCARD_TESTS
-from setup import LANGUAGE
-from setup import LIMIT_PAIRS
-from setup import LIMIT_WORDS
-from setup import REPEAT_TESTS
-from setup import SHOW_EVALUATION
-from setup import SHOW_INDEXES
-from setup import SHOW_SUMMARY
-from setup import filepath
-from structure import idx_to_summ
-from structure import word_count
-from summarization import contrastiveness_first
-from summarization import representativeness_first
-from writefiles import overwrite_json
-
-
-from setup import SIZE_FAC, METHOD
-
-from time import time
-
 import os
 from time import time
 
 import evaluate
 import output_files
 import output_format as out
-import structure as struct
+from language import setLanguage
+from load_data import preprocess
+from load_data import read_input
 from setup import DATASETS_TO_TEST
+from setup import DEBUG_MODE
 from setup import DISCARD_TESTS
+from setup import LANGUAGE
 from setup import METHOD
 from setup import REPEAT_TESTS
+from setup import SIZE_FAC
 from setup import filepath  # Get full path for the file with data of target
+from structure import idx_to_summ
+from structure import get_summ_closest_to_scores
+from summarization import contrastiveness_first
+from summarization import representativeness_first
 
 PATH_RESULTS = 'RESULTS'
 PATH_OUTPUT = 'OUTPUT'
@@ -46,9 +28,7 @@ os.makedirs(PATH_OUTPUT, exist_ok=True)
 
 EXECUTION_ID = str(int(time()) % 100000000)  # Execution code (will be in the results file name)
 
-
 print('\n\nWill perform %d tests and discard %d(x2) best and worst\n\n' % (REPEAT_TESTS, DISCARD_TESTS))
-
 
 SIZE_FAC_DEFAULT = SIZE_FAC
 
@@ -140,13 +120,17 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
 
                     if METHOD == 'CF':
 
-                        summ_idx_A = contrastiveness_first(set1_pos, set2_neg, '+', '-', LAMBDA, CENTROIDS_AS_SUMMARY, USE_HUNGARIAN_METHOD)
-                        summ_idx_B = contrastiveness_first(set1_neg, set2_pos, '-', '+', LAMBDA, CENTROIDS_AS_SUMMARY, USE_HUNGARIAN_METHOD)
+                        summ_idx_A = contrastiveness_first(set1_pos, set2_neg, '+', '-', LAMBDA, CENTROIDS_AS_SUMMARY,
+                                                           USE_HUNGARIAN_METHOD)
+                        summ_idx_B = contrastiveness_first(set1_neg, set2_pos, '-', '+', LAMBDA, CENTROIDS_AS_SUMMARY,
+                                                           USE_HUNGARIAN_METHOD)
 
                     elif METHOD == 'RF':
 
-                        summ_idx_A = representativeness_first(set1_pos, set2_neg, '+', '-', LAMBDA, CENTROIDS_AS_SUMMARY, USE_HUNGARIAN_METHOD)
-                        summ_idx_B = representativeness_first(set1_neg, set2_pos, '-', '+', LAMBDA, CENTROIDS_AS_SUMMARY, USE_HUNGARIAN_METHOD)
+                        summ_idx_A = representativeness_first(set1_pos, set2_neg, '+', '-', LAMBDA,
+                                                              CENTROIDS_AS_SUMMARY, USE_HUNGARIAN_METHOD)
+                        summ_idx_B = representativeness_first(set1_neg, set2_pos, '-', '+', LAMBDA,
+                                                              CENTROIDS_AS_SUMMARY, USE_HUNGARIAN_METHOD)
 
                     # Indexes of each side of the summary
                     summ_idx_1 = [i[0] for i in summ_idx_A + summ_idx_B]
@@ -175,3 +159,26 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
 
                     # Make dictionary mapping evaluations to summaries
                     map_scores_summary[(scores['R'], scores['C'], scores['D'])] = (summ_idx_1, summ_idx_2)
+
+    # Evaluate source based on all summaries that were gotten.
+    overall_scores = evaluate.source()
+
+    # Saves evaluation information that will be written in json output files.
+    output_files.overall_scores(overall_scores, time_total, distinct_summaries)
+
+    # Choose the summary that best reflects the method's evaluation (based on the scores)
+    means = [overall_scores['means'][s] for s in ['R', 'C', 'D']]
+    summ_idx_1, summ_idx_2 = get_summ_closest_to_scores(means, map_scores_summary)
+    summ1 = {i: source1[i] for i in summ_idx_1}
+    summ2 = {i: source2[i] for i in summ_idx_2}
+
+    # Write summary in output file.
+    output_files.write_summary(summ1, summ2, len(distinct_summaries))
+
+    if DEBUG_MODE:
+        output_files.print_stats(summ_idx_1, summ_idx_2, source1, source2)
+
+    # Save output files in disc.
+    output_files.write_files(SOURCE1, SOURCE2, EXECUTION_ID)
+
+print(f'\n\nSummaries and evaluations are in folders {PATH_OUTPUT} and {PATH_RESULTS}.')
