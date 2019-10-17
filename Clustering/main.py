@@ -1,4 +1,4 @@
-import evaluation as evalu
+import metrics as evalu
 import output_format as out
 from interface import *
 from language import setLanguage
