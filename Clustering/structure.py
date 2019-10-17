@@ -12,6 +12,23 @@ def idx_to_summ(source, indexes):
     return r
 
 
+def get_summ_closest_to_scores(scores, map_scores_summary):
+
+    def sqdiff(l1, l2):  # To determine difference between two summaries scores
+        r = 0
+        for i in range(len(l1)):
+            r += pow(l1[i] - l2[i], 2)
+        return r
+
+    fairness_rank = sorted(map_scores_summary.keys(), key=lambda k: sqdiff(k, scores))
+
+    summ_idx_f_1 = map_scores_summary[fairness_rank[0]][0]
+    summ_idx_f_2 = map_scores_summary[fairness_rank[0]][1]
+
+    return summ_idx_f_1, summ_idx_f_2
+
+
+
 # Rounds a number (to optimize use of cache and display of information)
 def round_num(n):
     return float("%.2g" % n)  # rounds to 2 significant digits
@@ -96,15 +113,15 @@ aspsentdistr_cache = {}
 
 
 # Calculate the (mean, stdev, probability) of each aspect
-def aspects_stats(info, measure):
+def aspects_stats(info):
     r = {}
-    pairs = getGroupsPairsAspectSentim(info, measure)
+    pairs = getGroupsPairsAspectSentim(info)
 
     if str(pairs) in aspsentdistr_cache:  # Tempo de execução caiu de 4'30" para 1'40" no força bruta tamanho 3.
         return aspsentdistr_cache[str(pairs)]
 
-    # /pairs/ are tuples compound by an aspect and a list of every occurency of the aspect. 
-    # Example: 
+    # /pairs/ are tuples compound by an aspect and a list of every occurency of the aspect.
+    # Example:
     ''' {
         'computador': [{'intensity': 80, 'sent': -88}],
         'cor': [{'intensity': 80, 'sent': -88},
@@ -116,11 +133,16 @@ def aspects_stats(info, measure):
     for i in pairs:
         total += len(pairs[i])
 
+    # if total < 10:
+    # total = 10
+
     for i in pairs:
-        if i == 'empresa' or i == 'EMPRESA' or i[0] == '_' or i[0] == 'X' or i[0] == 'x':
+        if i == 'empresa' or i == 'EMPRESA' or i == '_NONE' or i[0] == 'X' or i[0] == 'x':
             continue
         if i not in r:
             r[i] = {'prob': round_num(len(pairs[i]) / total)}
+            # if len(info) < 20:
+            # r[i] = {'prob': 0.1*round_num(len(pairs[i])/total)}
         mean = statistics.mean([j['value'] for j in pairs[i]])
         r[i]['mean'] = round_num(mean)
         try:
