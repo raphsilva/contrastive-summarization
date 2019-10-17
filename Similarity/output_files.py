@@ -3,7 +3,6 @@ import json
 from setup import DISCARD_TESTS, REPEAT_TESTS
 from setup import LIM_SENTENCES  # Sets the maximum number of SENTENCES in each side of the summary
 from setup import LIM_WORDS  # Sets the maximum number of WORDS in each side of the summary
-from setup import MIN_INTENSITY_IN_SUMMARY  # Sets the minimum intensity that a sentence in the summary has to have
 from structure import word_count
 
 json_results = {}
@@ -18,7 +17,6 @@ def reset():
     json_results['meta']['limits (per side)']['sentences'] = LIM_SENTENCES
     json_results['meta']['limits (per side)']['words'] = LIM_WORDS
     json_results['meta']['method_options'] = {}
-    json_results['meta']['method_options']['minimum intensity'] = MIN_INTENSITY_IN_SUMMARY
     json_results['output'] = []
 
 
