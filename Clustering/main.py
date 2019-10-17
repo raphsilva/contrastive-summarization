@@ -25,15 +25,29 @@ from setup import SIZE_FAC, METHOD
 
 from time import time
 
-EXECUTION_ID = str(int(time()) % 100000000)
+import os
+from time import time
 
-FILE_RESULTS = 'results_ ' + EXECUTION_ID + '.txt'
+import evaluate
+import output_files
+import output_format as out
+import structure as struct
+from setup import DATASETS_TO_TEST
+from setup import DISCARD_TESTS
+from setup import METHOD
+from setup import REPEAT_TESTS
+from setup import filepath  # Get full path for the file with data of target
 
-print('Will perform %d tests and discard %d(x2) best and worst\n\n' % (REPEAT_TESTS, DISCARD_TESTS))
+PATH_RESULTS = 'RESULTS'
+PATH_OUTPUT = 'OUTPUT'
 
-f = open(FILE_RESULTS, 'a')
-f.write('%d tests, discard %d(x2) best and worst\n\n' % (REPEAT_TESTS, DISCARD_TESTS))
-f.close()
+os.makedirs(PATH_RESULTS, exist_ok=True)
+os.makedirs(PATH_OUTPUT, exist_ok=True)
+
+EXECUTION_ID = str(int(time()) % 100000000)  # Execution code (will be in the results file name)
+
+
+print('\n\nWill perform %d tests and discard %d(x2) best and worst\n\n' % (REPEAT_TESTS, DISCARD_TESTS))
 
 
 SIZE_FAC_DEFAULT = SIZE_FAC
@@ -45,9 +59,32 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
     # Setup language functions
     setLanguage(LANGUAGE)
 
-    # Load dataset
+    print(f'\n\n\n\n  =========datasets=======>  {SOURCE1} {SOURCE2}\n\n')
+
+    out.print_verbose('Loading input')
     source1 = read_input(filepath(SOURCE1))
     source2 = read_input(filepath(SOURCE2))
+    out.print_verbose('Sizes of data sets: ', len(source1), len(source2))
+
+    '''
+    /source.../ are structures of the form
+    {
+    0: {'intensity': 80.0,
+        'opinions': [('CÂMERA', 80.0)],
+        'sent': {'CÂMERA': 88},
+        'word_count': 2,
+        'verbatim': 'Câmera boa.'},
+    2: {'intensity': 80.0,
+        'opinions': [('DESEMPENHO',  -80.0),
+                     ('DESEMPENHO',  -80.0),
+                     ('RESISTÊNCIA', -80.0)],
+        'sent': {'DESEMPENHO': -94, 'RESISTÊNCIA': -88},
+        'verbatim': 'Entretanto, na primeira semana de uso já ralou facilmente, '
+                    'esquenta muito com os dados móveis ligados e trava, mesmo '
+                    'que raramente.',
+        'word_count': 21}
+    }
+    '''
 
     source1_proc = preprocess(source1)
     source2_proc = preprocess(source2)
@@ -57,29 +94,24 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
     set2_pos = source2_proc['+']
     set2_neg = source2_proc['-']
 
-    hr = []
-    hc = []
-    hd = []
-    hh = []
+    evaluate.reset()  # To start evaluating summaries of the current sources.
+    output_files.new_source(SOURCE1, SOURCE2, source1, source2)  # Prepare output files for the current sources.
 
-    h_words1 = []
-    h_words2 = []
-    h_sentences = []
-    h_sentences1 = []
-    h_sentences2 = []
+    map_scores_summary = {}
 
-    print('Will perform %d tests and discard %d(x2) best and worst\n\n' % (REPEAT_TESTS, DISCARD_TESTS))
+    distinct_summaries = set()
 
-    total_time = 0
+    time_total = 0
 
-    ini_time = time()
+    out.print_verbose('Making summaries\n\n')
 
-    all_summaries = []
+    print('     %5s %5s %5s %5s\n' % ('R', 'C', 'D', 'H'))
 
-    repeat = 0
+    for repeat in range(REPEAT_TESTS):
 
-    while repeat < REPEAT_TESTS:
-        repeat += 1
+        time_initial = time()
+
+        # Make summary
 
         from random import shuffle
 
@@ -116,10 +148,6 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
                         summ_idx_A = representativeness_first(set1_pos, set2_neg, '+', '-', LAMBDA, CENTROIDS_AS_SUMMARY, USE_HUNGARIAN_METHOD)
                         summ_idx_B = representativeness_first(set1_neg, set2_pos, '-', '+', LAMBDA, CENTROIDS_AS_SUMMARY, USE_HUNGARIAN_METHOD)
 
-                    fin_time = time()
-                    elaps_time = fin_time - ini_time
-                    total_time += elaps_time
-
                     # Indexes of each side of the summary
                     summ_idx_1 = [i[0] for i in summ_idx_A + summ_idx_B]
                     summ_idx_2 = [i[1] for i in summ_idx_A + summ_idx_B]
@@ -127,54 +155,23 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
                     summ1 = idx_to_summ(source1, summ_idx_1)
                     summ2 = idx_to_summ(source2, summ_idx_2)
 
-                    s_id = (sorted(summ_idx_1), sorted(summ_idx_2))
-                    if s_id not in all_summaries:
-                        all_summaries.append(s_id)
+                    # Register time elapsed
+                    time_final = time()
+                    time_total += time_final - time_initial
 
-                    fin_time = time()
-                    elaps_time = fin_time - ini_time
-                    total_time += elaps_time
+                    # Register all summaries generated, ignoring order of sentences.
+                    s_id = ([sorted(summ_idx_1), sorted(summ_idx_2)])
+                    distinct_summaries.add(str(s_id))
 
-                    # IDs of sentences in the summary (gotten from original dataset)
-                    summ_idx_A1 = [source1[i[0]]['id'] for i in summ_idx_A]
-                    summ_idx_A2 = [source2[i[1]]['id'] for i in summ_idx_A]
-                    summ_idx_B1 = [source1[i[0]]['id'] for i in summ_idx_B]
-                    summ_idx_B2 = [source2[i[1]]['id'] for i in summ_idx_B]
+                    # Evaluate summary
+                    scores = evaluate.new_sample(source1, source2, summ1, summ2)
+                    print('%3d) %5d %5d %5d %5d' % (repeat + 1, scores['R'], scores['C'], scores['D'], scores['H']))
 
-                    summ_idx_1 = summ_idx_A1 + summ_idx_B1
-                    summ_idx_2 = summ_idx_A2 + summ_idx_B2
+                    # Register parameters used
+                    summary_parameters = [METHOD, 'lambda=' + str(LAMBDA), centroid_choices, hungarian_choices]
 
-                    n = {}
-                    n['parameters'] = {}
-                    n['parameters']['method'] = METHOD
-                    n['parameters']['lambda'] = LAMBDA
-                    n['parameters']['hungarian'] = USE_HUNGARIAN_METHOD
-                    n['parameters']['centroid'] = CENTROIDS_AS_SUMMARY
-                    n['summ'] = []
-                    n['summ'].append(summ_idx_1)
-                    n['summ'].append(summ_idx_2)
-                    n['size'] = {}
-                    n['size']['word count'] = []
-                    n['size']['word count'].append(word_count(summ1))
-                    n['size']['word count'].append(word_count(summ2))
+                    # Write output file
+                    output_files.new_summary(summ1, summ2, scores, summary_parameters)
 
-                    if SHOW_SUMMARY:
-                        show_summary(source1, source2, summ_idx_A, part=1)
-                        show_summary(source1, source2, summ_idx_B, part=2)
-
-                    if SHOW_INDEXES:
-                        print('#')
-                        print("%s  %4.2lf " % (METHOD, LAMBDA))
-                        print('>', SOURCE1, summ_idx_1)
-                        print('>', SOURCE2, summ_idx_2)
-                        print()
-
-                    w1 = sum([summ1[i]['word_count'] for i in summ1])
-                    w2 = sum([summ2[i]['word_count'] for i in summ2])
-
-                    if w1 + w2 > LIMIT_WORDS:  # Summary is too large; will repeat with smaller size factor.
-                        repeat -= 1
-                        SIZE_FAC *= 0.95
-                        break
-                    else:
-                        SIZE_FAC *= 1.01
+                    # Make dictionary mapping evaluations to summaries
+                    map_scores_summary[(scores['R'], scores['C'], scores['D'])] = (summ_idx_1, summ_idx_2)
