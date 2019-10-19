@@ -1,7 +1,10 @@
+# Polarity representation
+MAXPOLARITY = 100  # Sets the polarity scale (from -MAXPOLARITY to +MAXPOLARITY)
+
+
 # Method options
 METHOD = ['contrastive', 'noncontrastive'][1]
 OPTM_MODE = 'greedy'
-MAXPOLARITY = 100  # Sets the polarity scale (from -MAXPOLARITY to +MAXPOLARITY)
 MIN_INTENSITY_IN_SUMMARY = 1 * MAXPOLARITY  # If (the absolute value of) the intensity of a sentence is lower than that, that sentence will not be in the summary.
 ALPHA = 20
 
@@ -43,8 +46,6 @@ GREEDY_CANDS_SELECTED = 1
 # Lower values are faster, higher values give better result.
 # Use GREEDY_CANDS_SELECTED = 1 for a purely greedy algorithm. (will keep only one best candidate at a time)
 
-
-# Display options
 
 if VERBOSE_MODE:
     import output_format as out
