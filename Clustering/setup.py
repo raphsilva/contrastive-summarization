@@ -1,13 +1,13 @@
-LIMIT_PAIRS = None  # Summary length (number of sentences on each side). Set 'None' for automatic.
+LIMIT_SENTENCES = None  # Summary length (number of sentences on each side). Set 'None' for automatic.
 
 LIMIT_WORDS = 2 * 100
 
 LANGUAGE = ['portuguese'][0]
 
 METHOD = ['RF', 'CF'][0]
-LAMBDA = '0.5'
-CENTROIDS_AS_SUMMARY = 'False'
-USE_HUNGARIAN_METHOD = 'False'
+LAMBDA = 0.5
+CENTROIDS_AS_SUMMARY = False
+USE_HUNGARIAN_METHOD = False
 ALLOW_REPETITION = False
 
 REPEAT_TESTS = 10  # Times to repeat each test
@@ -19,9 +19,6 @@ INPUT_FILES = [(), ('D1a','D1b'), ('D2a','D2b'), ('D3a','D3b'), ('D4a','D4b'), (
 
 DATASETS_TO_TEST = [INPUT_FILES[2]]
 
-SHOW_SUMMARY = False
-SHOW_EVALUATION = True
-SHOW_INDEXES = False
 VERBOSE_MODE = True
 
 SIZE_FAC = 0.7

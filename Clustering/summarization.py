@@ -1,7 +1,7 @@
 from similarity import psi, phi
 import math
 
-from setup import LIMIT_PAIRS
+from setup import LIMIT_SENTENCES
 from setup import ALLOW_REPETITION
 
 # clustering algorithm used in the implementation of RF method
@@ -21,8 +21,8 @@ def summSize(side1, side2):
     from setup import METHOD
     l1 = len(side1)
     l2 = len(side2)
-    if LIMIT_PAIRS != None:  # Force size to the value specified in the setup
-        k = int(LIMIT_PAIRS / 2)
+    if LIMIT_SENTENCES != None:  # Force size to the value specified in the setup
+        k = int(LIMIT_SENTENCES / 2)
     else:
         k = 1 + int(math.floor(math.log2(l1 + l2)))
 
