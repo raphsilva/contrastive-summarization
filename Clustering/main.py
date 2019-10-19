@@ -87,7 +87,9 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
 
     print('     %5s %5s %5s %5s\n' % ('R', 'C', 'D', 'H'))
 
-    for repeat in range(REPEAT_TESTS):
+    repeat = 0
+    discarded = 0
+    while repeat < REPEAT_TESTS:
 
         time_initial = time()
 
@@ -144,6 +146,7 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
 
                     if w1 + w2 > LIMIT_WORDS:  # Summary is too large; will repeat with smaller size factor.
                         repeat -= 1
+                        discarded += 1
                         SIZE_FAC *= 0.95
                         break
                     else:
@@ -169,6 +172,9 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
 
                     # Make dictionary mapping evaluations to summaries
                     map_scores_summary[(scores['R'], scores['C'], scores['D'])] = (summ_idx_1, summ_idx_2)
+        repeat += 1
+
+    print(f'\nDiscarded {discarded} summaries that didn\'t fit into size limit.\n')
 
     # Evaluate source based on all summaries that were gotten.
     overall_scores = evaluate.source()
