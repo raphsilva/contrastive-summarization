@@ -1,7 +1,5 @@
 MAXSENT = 100
 
-import structure as struct
-
 BYPASS_ASPECTS = ['EMPRESA', 'PRODUTO', '_GENERIC', '_NONE', 'x', 'X']
 
 
@@ -26,7 +24,6 @@ def get_opinions(source):
 
 
 def representativiness_2(source, summ):
-
     opinions_source = get_opinions(source)
     opinions_summ = get_opinions(summ)
 
@@ -106,7 +103,7 @@ def contrastiviness(source1, source2, summ1, summ2):
                 pol2 = (op2[1])
                 if op1[0] == op2[0] and pol1 == -pol2 and pol1 != 0:
                     asp_cont = (
-                    op1[0], pol1, pol2)  # This aspect has the possibility to form a possible contrastive pair.
+                        op1[0], pol1, pol2)  # This aspect has the possibility to form a possible contrastive pair.
 
                     if asp_cont not in all_possibles:
                         all_possibles.append(asp_cont)
@@ -131,5 +128,3 @@ def contrastiviness(source1, source2, summ1, summ2):
         points += c / len(all_possibles)
 
     return points / 2
-
-

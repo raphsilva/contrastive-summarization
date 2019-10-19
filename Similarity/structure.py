@@ -4,6 +4,21 @@ import output_format
 def idx_to_summ(source, indexes):
     return {i: source[i] for i in indexes}
 
+def get_summ_closest_to_scores(scores, map_scores_summary):
+
+    def sqdiff(l1, l2):  # To determine difference between two summaries scores
+        r = 0
+        for i in range(len(l1)):
+            r += pow(l1[i] - l2[i], 2)
+        return r
+
+    fairness_rank = sorted(map_scores_summary.keys(), key=lambda k: sqdiff(k, scores))
+
+    summ_idx_f_1 = map_scores_summary[fairness_rank[0]][0]
+    summ_idx_f_2 = map_scores_summary[fairness_rank[0]][1]
+
+    return summ_idx_f_1, summ_idx_f_2
+
 
 # Rounds a number (to optimize use of cache and display of information)
 def round_num(n):

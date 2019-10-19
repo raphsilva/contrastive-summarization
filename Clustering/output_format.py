@@ -9,6 +9,13 @@ RED = '\33[31m'
 DEBUG_PRINTS = False
 
 
+def print_verbose(*msg):
+    from setup import VERBOSE_MODE
+    if not VERBOSE_MODE:
+        return
+    printMessage(*msg)
+
+
 def setDebugPrints(option):
     global DEBUG_PRINTS
     DEBUG_PRINTS = option

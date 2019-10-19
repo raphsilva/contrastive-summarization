@@ -1,5 +1,6 @@
 from probability import *
 from setup import ALPHA
+from setup import MIN_INTENSITY_IN_SUMMARY
 from setup import MAXPOLARITY
 from writefiles import get_variable_from_file
 from writefiles import overwrite_json
@@ -18,6 +19,15 @@ normal_distribution_zero = normalDistributionZero()
 
 def divergence_measure(d1, d2):
     return KLdivergence(d1, d2)
+
+
+def remove_low_intensity(source):
+    # Remove sentences with low intensity.
+    # Will bypass any sentence which the intensity is lower than MIN_INTENS_IN_SUMMARY.
+    for i in dict(source):
+        if source[i]['intensity'] < MIN_INTENSITY_IN_SUMMARY:
+            del source[i]
+    return source
 
 
 def sent(words_polarities):

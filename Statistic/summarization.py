@@ -1,10 +1,6 @@
 import method
-
-import structure as struct
-
 import output_format as out
-
-from pprint import pprint
+import structure as struct
 
 INFINITY = 999999
 
@@ -12,7 +8,6 @@ from setup import LIM_SENTENCES
 from setup import LIM_WORDS
 
 from setup import GREEDY_CANDS_SELECTED
-from setup import VERBOSE_MODE
 
 import random
 
@@ -71,7 +66,6 @@ def MakeContrastiveSummary_random(source1, source2):
 
 def MakeContrastiveSummary_greedy(source1, source2, stats_source_1, stats_source_2, LIM_WORDS_1=LIM_WORDS,
                                   LIM_WORDS_2=LIM_WORDS):
-
     best_score = -INFINITY
 
     # total_candidates = len(source1) * len(source2)  # number of new candidates at each iteration
@@ -87,9 +81,6 @@ def MakeContrastiveSummary_greedy(source1, source2, stats_source_1, stats_source
     for s in range(1, LIM_SENTENCES + 1):
 
         if len(top_candidates[0][0][0]) < s - 1 and len(top_candidates[0][0][1]) < s - 1:
-            # pprint(top_candidates)
-            # print()
-            # out.printMessage('\nWon\'t find any larger summary', s)
             break
 
         search_paths = len(top_candidates)
@@ -171,9 +162,6 @@ def MakeContrastiveSummary_greedy(source1, source2, stats_source_1, stats_source
 
                     best_score = top_candidates[0][1]
 
-    if VERBOSE_MODE:
-        out.printinfo('Best score: ', best_score)
-
     best_summ1 = top_candidates[0][0][0]
     best_summ2 = top_candidates[0][0][1]
 
@@ -181,7 +169,6 @@ def MakeContrastiveSummary_greedy(source1, source2, stats_source_1, stats_source
 
 
 def makeSummary_greedy(source, stats_source, LIM_WORDS=LIM_WORDS):
-
     best_score = -INFINITY
 
     # total_candidates = len(source)
@@ -198,11 +185,7 @@ def makeSummary_greedy(source, stats_source, LIM_WORDS=LIM_WORDS):
     for s in range(1, LIM_SENTENCES + 1):
 
         if len(top_candidates[0][0]) < s - 1:
-            if VERBOSE_MODE:
-                print()
-                pprint(top_candidates)
-                out.printMessage('\nWon\'t find any larger summary', s)
-            break
+            break  # Won't find any larger summary
 
         best_for_size_prev = [i[0] for i in top_candidates]
 
@@ -220,8 +203,8 @@ def makeSummary_greedy(source, stats_source, LIM_WORDS=LIM_WORDS):
                 c += 1
                 pr = (s - 1) / LIM_SENTENCES + (c_searched_paths - 1) / search_paths / LIM_SENTENCES + c / len(
                     source) / search_paths / LIM_SENTENCES
-                out.printProgress(" %6.2lf%%   ( path %3d/%d  of  size  %2d/%d )  %16.2lf" % (
-                100 * pr, c_searched_paths, search_paths, s, LIM_SENTENCES, best_score), end="\r")
+                # out.printProgress(" %6.2lf%%   ( path %3d/%d  of  size  %2d/%d )  %16.2lf" % (
+                #     100 * pr, c_searched_paths, search_paths, s, LIM_SENTENCES, best_score), end="\r")
 
                 if i in idx_best_for_size:  # Candidate opinion already in the summary
                     continue
@@ -332,7 +315,7 @@ def MakeContrastiveSummary_brute(source1, source2, stats_source_1, stats_source_
                     if p % 1000 == 0:
                         pr = float(p / togo)
                         out.printProgress("  %6.2lf%%   %10s %10s   %6.2lf   /   %10s %10s %6.2lf" % (
-                        100 * pr, subset1, subset2, score, best_summ1, best_summ2, best))
+                            100 * pr, subset1, subset2, score, best_summ1, best_summ2, best))
 
                     if score >= best:
                         best = score
@@ -377,7 +360,7 @@ def makeSummary_brute(source, stats_source):
             if pr_cur % 100 == 0:
                 out.printProgress("  %6.2lf%% " % (100 * pr), end="\r")
                 out.printdebug(" cur subset: %20s   score:  %6.2lf   /  best subset: %10s  score: %6.5lf" % (
-                idx_cand, score, best_idx, best_score))
+                    idx_cand, score, best_idx, best_score))
 
     return best_idx
 
