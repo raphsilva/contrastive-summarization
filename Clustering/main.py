@@ -140,7 +140,7 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
         w1 = sum([summ1[i]['word_count'] for i in summ1])
         w2 = sum([summ2[i]['word_count'] for i in summ2])
 
-        if w1 + w2 > LIMIT_WORDS:  # Summary is too large; will repeat with smaller size factor.
+        if w1 + w2 > 2*LIMIT_WORDS:  # Summary is too large; will repeat with smaller size factor.
             discarded += 1
             repeat -= 1
             SIZE_FAC *= 0.95

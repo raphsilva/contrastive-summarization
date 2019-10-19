@@ -1,6 +1,6 @@
 LIMIT_SENTENCES = None  # Summary length (number of sentences on each side). Set 'None' for automatic.
 
-LIMIT_WORDS = 2 * 100
+LIMIT_WORDS = 100
 
 LANGUAGE = ['portuguese'][0]
 
