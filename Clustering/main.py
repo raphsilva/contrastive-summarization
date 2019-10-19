@@ -4,14 +4,12 @@ from time import time
 import evaluate
 import output_files
 import output_format as out
-from language import setLanguage
 from load_data import preprocess
 from load_data import read_input
 from setup import PICK_CENTROIDS
 from setup import DATASETS_TO_TEST
 from setup import DISCARD_TESTS
 from setup import LAMBDA
-from setup import LANGUAGE
 from setup import LIMIT_WORDS
 from setup import METHOD
 from setup import REPEAT_TESTS
@@ -39,8 +37,7 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
 
     SIZE_FAC = SIZE_FAC_DEFAULT
 
-    # Setup language functions
-    setLanguage(LANGUAGE)
+
 
     print(f'\n\n\n\n  =========datasets=======>  {SOURCE1} {SOURCE2}\n\n')
 

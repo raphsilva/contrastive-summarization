@@ -9,7 +9,7 @@ SIZE_FAC = 0.7  # To help control the summary size (since this method doesn't al
 
 # Summary characteristics
 
-LIM_WORDS = 100  # Sets the maximum number of words in each side of the summary
+LIMIT_WORDS = 100  # Sets the maximum number of words in each side of the summary
 LIMIT_SENTENCES = 'Auto'  # Sets the number of sentences on each side. Use 'Auto' for automatic.
 
 ALLOW_REPETITION = False
@@ -36,6 +36,4 @@ DATASETS_TO_TEST = [INPUT_FILES[2]]
 
 def filepath(target):  # Get full path for the file with data of target
     return DATA_DIR + '/' + target + '.json'
-
-LANGUAGE = ['portuguese'][0]
 

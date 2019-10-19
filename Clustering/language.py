@@ -1,6 +1,6 @@
 import re
 import string
-from setup import LANGUAGE
+LANGUAGE = 'portuguese'
 
 # used for: tagger for Portuguese
 import nlpnet
@@ -30,6 +30,10 @@ def setLanguage(language):
     DIR = LANGUAGE_DIR + '/' + language
 
     stopwords = open(DIR + '/' + 'stopwords.txt').read().split()
+
+
+# Setup language functions
+setLanguage(LANGUAGE)
 
 
 def simplify_characters(my_string):
