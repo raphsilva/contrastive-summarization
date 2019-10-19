@@ -10,6 +10,7 @@ from load_data import read_input
 from setup import DATASETS_TO_TEST
 from setup import DISCARD_TESTS
 from setup import LANGUAGE
+from setup import LIMIT_WORDS
 from setup import METHOD
 from setup import REPEAT_TESTS
 from setup import SIZE_FAC
@@ -137,6 +138,16 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
 
                     summ1 = idx_to_summ(source1, summ_idx_1)
                     summ2 = idx_to_summ(source2, summ_idx_2)
+
+                    w1 = sum([summ1[i]['word_count'] for i in summ1])
+                    w2 = sum([summ2[i]['word_count'] for i in summ2])
+
+                    if w1 + w2 > LIMIT_WORDS:  # Summary is too large; will repeat with smaller size factor.
+                        repeat -= 1
+                        SIZE_FAC *= 0.95
+                        break
+                    else:
+                        SIZE_FAC *= 1.01
 
                     # Register time elapsed
                     time_final = time()
