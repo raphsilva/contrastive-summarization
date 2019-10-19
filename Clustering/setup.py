@@ -6,8 +6,8 @@ LANGUAGE = ['portuguese'][0]
 
 METHOD = ['RF', 'CF'][0]
 LAMBDA = 0.5
-CENTROIDS_AS_SUMMARY = False
-USE_HUNGARIAN_METHOD = False
+PICK_CENTROIDS = False
+HUNGARIAN_METHOD = False
 ALLOW_REPETITION = False
 
 REPEAT_TESTS = 10  # Times to repeat each test

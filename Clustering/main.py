@@ -7,7 +7,7 @@ import output_format as out
 from language import setLanguage
 from load_data import preprocess
 from load_data import read_input
-from setup import CENTROIDS_AS_SUMMARY
+from setup import PICK_CENTROIDS
 from setup import DATASETS_TO_TEST
 from setup import DISCARD_TESTS
 from setup import LAMBDA
@@ -16,7 +16,7 @@ from setup import LIMIT_WORDS
 from setup import METHOD
 from setup import REPEAT_TESTS
 from setup import SIZE_FAC
-from setup import USE_HUNGARIAN_METHOD
+from setup import HUNGARIAN_METHOD
 from setup import filepath  # Get full path for the file with data of target
 from structure import get_summ_closest_to_scores
 from structure import idx_to_summ
@@ -118,17 +118,17 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
 
         if METHOD == 'CF':
 
-            summ_idx_A = contrastiveness_first(set1_pos, set2_neg, '+', '-', LAMBDA, CENTROIDS_AS_SUMMARY,
-                                               USE_HUNGARIAN_METHOD)
-            summ_idx_B = contrastiveness_first(set1_neg, set2_pos, '-', '+', LAMBDA, CENTROIDS_AS_SUMMARY,
-                                               USE_HUNGARIAN_METHOD)
+            summ_idx_A = contrastiveness_first(set1_pos, set2_neg, '+', '-', LAMBDA, PICK_CENTROIDS,
+                                               HUNGARIAN_METHOD)
+            summ_idx_B = contrastiveness_first(set1_neg, set2_pos, '-', '+', LAMBDA, PICK_CENTROIDS,
+                                               HUNGARIAN_METHOD)
 
         elif METHOD == 'RF':
 
             summ_idx_A = representativeness_first(set1_pos, set2_neg, '+', '-', LAMBDA,
-                                                  CENTROIDS_AS_SUMMARY, USE_HUNGARIAN_METHOD)
+                                                  PICK_CENTROIDS, HUNGARIAN_METHOD)
             summ_idx_B = representativeness_first(set1_neg, set2_pos, '-', '+', LAMBDA,
-                                                  CENTROIDS_AS_SUMMARY, USE_HUNGARIAN_METHOD)
+                                                  PICK_CENTROIDS, HUNGARIAN_METHOD)
 
         # Indexes of each side of the summary
         summ_idx_1 = [i[0] for i in summ_idx_A + summ_idx_B]
