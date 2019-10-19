@@ -1,4 +1,4 @@
-LIMIT_SENTENCES = None  # Summary length (number of sentences on each side). Set 'None' for automatic.
+LIMIT_SENTENCES = 'Auto'  # Summary length (number of sentences on each side). Set 'Auto' for automatic.
 
 LIMIT_WORDS = 100
 
