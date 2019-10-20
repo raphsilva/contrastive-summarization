@@ -15,15 +15,7 @@ from structure import get_opinions
 from structure import get_contrastive_pairs
 
 import random
-
-RANDOMIZE_DRAW = False  # If two candidates have the same score, chooses random (if true) or chooses the last found (false)
-
-RANDOM_SEED = 7
-
-
-def random_seed():
-    global RANDOM_SEED
-    RANDOM_SEED = random.randint(0, 10000)
+random.seed(0)
 
 
 def make_contrastive_summary(source_1, source_2, mode):
@@ -196,7 +188,6 @@ def make_summary_side_contrastive(source, contr_rank):
             for s in possible_sentences:
                 best_length_diff = min(best_length_diff, abs(SENTENCE_IDEAL_LENGTH - len(s['words'])))
 
-        random.seed(RANDOM_SEED)
         random.shuffle(possible_sentences)
 
         for s in possible_sentences:
@@ -288,7 +279,6 @@ def make_summary_side_contrastive_and_representative(source, repr_rank, contr_ra
             for s in possible_sentences:
                 best_length_diff = min(best_length_diff, abs(SENTENCE_IDEAL_LENGTH - len(s['words'])))
 
-        random.seed(RANDOM_SEED)
         random.shuffle(possible_sentences)
 
         for s in possible_sentences:
@@ -337,7 +327,7 @@ def make_summary_random(source_1, source_2):
     summary_1 = struct.get_summary_from_indexes(source_1, summary_indexes_1)
     summary_2 = struct.get_summary_from_indexes(source_2, summary_indexes_2)
 
-    # Remove sentences until the sumary size respects the limit of words.
+    # Remove sentences until the summary size respects the limit of words.
     while struct.count_words(summary_1) > LIM_WORDS and len(summary_indexes_1) > 0:
         summary_indexes_1 = summary_indexes_1[:-1]
         summary_1 = struct.get_summary_from_indexes(source_1, summary_indexes_1)

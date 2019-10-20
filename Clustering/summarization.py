@@ -15,6 +15,9 @@ from operator import itemgetter
 
 from setup import SIZE_FAC
 
+import random
+random.seed(0)  # Make random deterministic
+
 
 # Defines the size of the summary of the sets 'side1' and 'side2'.
 def summSize(side1, side2):
@@ -61,6 +64,9 @@ def representativeness_first(side1, side2, polarity1, polarity2, LAMBDA=0.5, CEN
     if len(side1) * len(
             side2) == 0:  # Case when there's either no negative or no positive opinions; no pairs can be formed.
         return []
+
+    random.shuffle(side1)
+    random.shuffle(side2)
 
     contrastive_pairs = []
 
@@ -186,6 +192,9 @@ def contrastiveness_first(side1, side2, polarity1, polarity2, LAMBDA=0.5, CENTRO
                           USE_HUNGARIAN_METHOD=False):
     if len(side1) * len(side2) == 0:  # If either side is empty, a summary can't be made.
         return []
+
+    random.shuffle(side1)
+    random.shuffle(side2)
 
     contrastive_pairs = []
 

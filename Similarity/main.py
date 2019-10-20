@@ -121,9 +121,6 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
         time_initial = time()
 
         # Make summary
-        from optimization import random_seed
-
-        random_seed()
 
         summ_idx_1A, summ_idx_2A = optm.MakeContrastiveSummary(e1_pos, e2_neg, stats_e1_pos, stats_e2_neg,
                                                                size_A, size_A)
