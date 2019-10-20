@@ -18,9 +18,9 @@ The implementation is made to allow tests in batch: a single execution can perfo
 
 ### Input
 
-The input data is supposed to be in the directory `input` in the root of the repository. This directory will be made during the installation procedures. 
+The input data is supposed to be in the directory `input` in the root of the repository. This directory will be made during the installation procedures, when the data set will be collected. 
 
-The input data of each entity is a JSON file with a list of sentences with IDs and their opinions identified. Opinions are a list of form `[aspect, polarity]`. Positive polarity is represented as `100` and negative polarity is represented as `-100`. Below there's an example of an excerpt of an input data file. 
+The input file of each entity is a JSON file with a list of sentences with IDs and their opinions identified. Opinions are a list of form `[aspect, polarity]`. Positive polarity is represented as `100` and negative polarity is represented as `-100`. Below there's an example of an excerpt of an input data file (in Portuguese). 
 
 ```json
 {
@@ -47,30 +47,28 @@ After a method of summarization has been executed multiple times for a given inp
 
 #### Evaluation
 
-The evaluation results are saved in the directory `RESULTS` of each method. They are files named `[method]/OUTPUT/[n]_[dataset].txt`,  where `n` is an identifier attributed to each execution. The files are JSONs organized as follows: 
+The evaluation results are saved in the directory `RESULTS` of each method. They are files named `[method]/OUTPUT/[n]_[dataset].json`,  where `n` is an identifier attributed to each execution. The files are JSONs that contain the following: 
 * Information about the **input**, such as **number of words**, **number of sentences**, **file names**.
 * The **options** used in the tests, such as **method parameters**, **limits of words**, etc;
 * Statistics of execution, such as **time consumed** and **number of distinct summaries** gotten;
-* The **evaluation** information, with the metrics of **representativity**, **contrastivity** and **diversity** (indicated by their first letters) calculated for the summaries and the **harmonic mean** of the three (indicated by H):
-    * The **scores** for all tests made on the dataset;
-    * The **means** of the scores;
-    * The **standard deviation** of the scores. 
+* The **evaluation** information, with the metrics of **representativity**, **contrastivity** and **diversity** (indicated by their first letters) calculated for the summaries and the **harmonic mean** of the three (indicated by H); **means** and **standard deviation** of the four scores are also shown. 
 * The **quantitative** information of summaries, with the **average of words** and **average of sentences**.
-* Information of **each summary** generated for that input, showing the **parameters** used, the **size** of the summary, the **evaluation** scores and the **indexes of sentences** that were chosen for the summary.
+* Information of **each summary** generated, such as the **size** of the summary, the **evaluation** scores and the **indexes of sentences** that make the the summary.
 
+Another file is generated at each execution, called `[n]_table.txt`, and it has a summary of results for all input files. It shows, in a compact way: the average scores, standard deviation, highest / lowest scores, average sizes, time consumed and the number of distinct summaries found.
 
 
 ## Instructions
 
+Follow the instructions below to execute the methods with the implementations provided here. 
+
 ### Installation
+
+Some dependencies need to be installed before the first execution. On a terminal, go to the repository main directory and follow the instructions below.
 
 #### Download repository
 
 Download the repository with `git clone https://github.com/raphsilva/contrastive-summarization.git`. 
-
-#### Get dependencies
-
-Some dependencies need to be installed before the first execution. On a terminal, go to the repository main directory and follow the instructions below.
 
 #### Dataset
 
@@ -84,7 +82,7 @@ If you intend to run the Clustering method, additional data is needed for langua
 
 #### Python modules
 
-THe python modules needed to execute the files are listed in `requirements.txt`. To install them, run `pip install -r requirements.txt`. Depending on how Python and pip were installed in you computer, you may need to specify the pip version: `pip3 install -r requirements.txt`.
+The python modules needed to execute the files are listed in `requirements.txt`. To install them, run `pip install -r requirements.txt`. Depending on how Python and pip were installed in you computer, you may need to specify the pip version: `pip3 install -r requirements.txt`.
 
 
 ### Execution
@@ -100,23 +98,27 @@ Each method has a file `setup.py` which allows you to choose the options for exe
 * `DISCARD_TESTS`: Amount of outliers tests that will be discarded for overall evaluation (the total number of discarded tests is twice this value, because this amount of best summaries and of worst summaries are discarded).
 * `DATASETS_TO_TEST`: Choose which files of data will be tested.
 
+Besides those, you'll find the section `# Method options` which lets you change the method's parameters. 
+
 #### Run
 
 To run a method, go to its directory and run the `main.py` file with Python 3.6. 
 
 #### See results
 
-Output files and evaluation results will be inside each method's directory.
+After the execution, output files and evaluation results will be inside each method's directory.
 
 
 ### Summary
 
-Below are all the commands from the steps detailed above. 
+Below are all the commands from the steps above. 
 
 To install:
 ```
 git clone https://github.com/raphsilva/contrastive-summarization.git
 cd contrastive-summarization
+chmode +x get_dataset.sh
+chmode +x get_dependencies.sh
 ./get_dataset.sh
 ./get_dependencies.sh
 pip install -r requirements.txt
