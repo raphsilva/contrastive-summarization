@@ -82,7 +82,7 @@ If you intend to run the Clustering method, additional data is needed for langua
 
 #### Python modules
 
-The python modules needed to execute the files are listed in `requirements.txt`. To install them, run `pip install -r requirements.txt`. Depending on how Python and pip were installed in you computer, you may need to specify the pip version: `pip3 install -r requirements.txt`.
+If you intend to run the Clustering method, you'll need to install additional Python modules. The Python modules needed to execute the method are listed in `requirements.txt`. To install them, run `pip install -r requirements.txt`. Depending on how Python and pip were installed in you computer, you may need to specify the pip version: `pip3 install -r requirements.txt`.
 
 
 ### Execution
