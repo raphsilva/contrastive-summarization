@@ -17,14 +17,6 @@ def print_verbose(*msg):
     printMessage(*msg)
 
 
-def setDebugPrints(option):
-    global DEBUG_PRINTS
-    DEBUG_PRINTS = option
-
-if DEBUG_MODE:
-    setDebugPrints(True)  # Choose whether or not to display information for debugging.
-
-
 def printColor(text, color, e='\n'):
     print(color + text + '\33[0m', end=e)
 
@@ -52,9 +44,8 @@ def printFormat_OLD(*text):
 
 
 def printdebug(*text):
-    if DEBUG_PRINTS == False:
-        return
-    printColor(printFormat(*text), GRAY)
+    if DEBUG_MODE:
+        printColor(printFormat(*text), GRAY)
 
 
 def printinfo(*text):
