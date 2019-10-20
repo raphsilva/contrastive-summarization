@@ -1,7 +1,7 @@
 from probability import *
 from setup import ALPHA
 from setup import MIN_INTENSITY_IN_SUMMARY
-from setup import MAXPOLARITY
+from setup import POLARITY_SCALE
 from writefiles import get_variable_from_file
 from writefiles import overwrite_json
 
@@ -38,7 +38,7 @@ def sent(words_polarities):
         a += i[1]
         b += abs(i[1])
 
-    sent = MAXPOLARITY * a / (b + ALPHA)
+    sent = POLARITY_SCALE * a / (b + ALPHA)
     sent_rounded = float('%.2g' % (sent))  # Rounded to 2 significant digits (to optimize use of cache)
 
     return sent_rounded

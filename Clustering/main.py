@@ -4,19 +4,20 @@ from time import time
 import evaluate
 import output_files
 import output_format as out
-from language import setLanguage
 from load_data import preprocess
 from load_data import read_input
+from setup import PICK_CENTROIDS
 from setup import DATASETS_TO_TEST
 from setup import DISCARD_TESTS
-from setup import LANGUAGE
+from setup import LAMBDA
 from setup import LIMIT_WORDS
 from setup import METHOD
 from setup import REPEAT_TESTS
 from setup import SIZE_FAC
+from setup import HUNGARIAN_METHOD
 from setup import filepath  # Get full path for the file with data of target
-from structure import idx_to_summ
 from structure import get_summ_closest_to_scores
+from structure import idx_to_summ
 from summarization import contrastiveness_first
 from summarization import representativeness_first
 
@@ -36,8 +37,7 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
 
     SIZE_FAC = SIZE_FAC_DEFAULT
 
-    # Setup language functions
-    setLanguage(LANGUAGE)
+
 
     print(f'\n\n\n\n  =========datasets=======>  {SOURCE1} {SOURCE2}\n\n')
 
@@ -91,6 +91,8 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
     discarded = 0
     while repeat < REPEAT_TESTS:
 
+        repeat += 1
+
         time_initial = time()
 
         # Make summary
@@ -109,70 +111,60 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
             centroid_choices = [None]
             hungarian_choices = [None]
 
-        for lambda_choice in [0.5]:
-            LAMBDA = lambda_choice
+        ini_time = time()
 
-            for centroid_choice in centroid_choices:
-                CENTROIDS_AS_SUMMARY = centroid_choice
+        if METHOD == 'CF':
 
-                for hungarian_choice in hungarian_choices:
-                    USE_HUNGARIAN_METHOD = hungarian_choice
+            summ_idx_A = contrastiveness_first(set1_pos, set2_neg, '+', '-', LAMBDA, PICK_CENTROIDS,
+                                               HUNGARIAN_METHOD)
+            summ_idx_B = contrastiveness_first(set1_neg, set2_pos, '-', '+', LAMBDA, PICK_CENTROIDS,
+                                               HUNGARIAN_METHOD)
 
-                    ini_time = time()
+        elif METHOD == 'RF':
 
-                    if METHOD == 'CF':
+            summ_idx_A = representativeness_first(set1_pos, set2_neg, '+', '-', LAMBDA,
+                                                  PICK_CENTROIDS, HUNGARIAN_METHOD)
+            summ_idx_B = representativeness_first(set1_neg, set2_pos, '-', '+', LAMBDA,
+                                                  PICK_CENTROIDS, HUNGARIAN_METHOD)
 
-                        summ_idx_A = contrastiveness_first(set1_pos, set2_neg, '+', '-', LAMBDA, CENTROIDS_AS_SUMMARY,
-                                                           USE_HUNGARIAN_METHOD)
-                        summ_idx_B = contrastiveness_first(set1_neg, set2_pos, '-', '+', LAMBDA, CENTROIDS_AS_SUMMARY,
-                                                           USE_HUNGARIAN_METHOD)
+        # Indexes of each side of the summary
+        summ_idx_1 = [i[0] for i in summ_idx_A + summ_idx_B]
+        summ_idx_2 = [i[1] for i in summ_idx_A + summ_idx_B]
 
-                    elif METHOD == 'RF':
+        summ1 = idx_to_summ(source1, summ_idx_1)
+        summ2 = idx_to_summ(source2, summ_idx_2)
 
-                        summ_idx_A = representativeness_first(set1_pos, set2_neg, '+', '-', LAMBDA,
-                                                              CENTROIDS_AS_SUMMARY, USE_HUNGARIAN_METHOD)
-                        summ_idx_B = representativeness_first(set1_neg, set2_pos, '-', '+', LAMBDA,
-                                                              CENTROIDS_AS_SUMMARY, USE_HUNGARIAN_METHOD)
+        w1 = sum([summ1[i]['word_count'] for i in summ1])
+        w2 = sum([summ2[i]['word_count'] for i in summ2])
 
-                    # Indexes of each side of the summary
-                    summ_idx_1 = [i[0] for i in summ_idx_A + summ_idx_B]
-                    summ_idx_2 = [i[1] for i in summ_idx_A + summ_idx_B]
+        if w1 + w2 > 2*LIMIT_WORDS:  # Summary is too large; will repeat with smaller size factor.
+            discarded += 1
+            repeat -= 1
+            SIZE_FAC *= 0.95
+            continue
+        else:  # Summary succeeded
+            SIZE_FAC *= 1.01
 
-                    summ1 = idx_to_summ(source1, summ_idx_1)
-                    summ2 = idx_to_summ(source2, summ_idx_2)
+        # Register time elapsed
+        time_final = time()
+        time_total += time_final - time_initial
 
-                    w1 = sum([summ1[i]['word_count'] for i in summ1])
-                    w2 = sum([summ2[i]['word_count'] for i in summ2])
+        # Register all summaries generated, ignoring order of sentences.
+        s_id = ([sorted(summ_idx_1), sorted(summ_idx_2)])
+        distinct_summaries.add(str(s_id))
 
-                    if w1 + w2 > LIMIT_WORDS:  # Summary is too large; will repeat with smaller size factor.
-                        repeat -= 1
-                        discarded += 1
-                        SIZE_FAC *= 0.95
-                        break
-                    else:
-                        SIZE_FAC *= 1.01
+        # Evaluate summary
+        scores = evaluate.new_sample(source1, source2, summ1, summ2)
+        print('%3d) %5d %5d %5d %5d' % (repeat, scores['R'], scores['C'], scores['D'], scores['H']))
 
-                    # Register time elapsed
-                    time_final = time()
-                    time_total += time_final - time_initial
+        # Register parameters used
+        summary_parameters = [METHOD, 'lambda=' + str(LAMBDA), centroid_choices, hungarian_choices]
 
-                    # Register all summaries generated, ignoring order of sentences.
-                    s_id = ([sorted(summ_idx_1), sorted(summ_idx_2)])
-                    distinct_summaries.add(str(s_id))
+        # Write output file
+        output_files.new_summary(summ1, summ2, scores, summary_parameters)
 
-                    # Evaluate summary
-                    scores = evaluate.new_sample(source1, source2, summ1, summ2)
-                    print('%3d) %5d %5d %5d %5d' % (repeat + 1, scores['R'], scores['C'], scores['D'], scores['H']))
-
-                    # Register parameters used
-                    summary_parameters = [METHOD, 'lambda=' + str(LAMBDA), centroid_choices, hungarian_choices]
-
-                    # Write output file
-                    output_files.new_summary(summ1, summ2, scores, summary_parameters)
-
-                    # Make dictionary mapping evaluations to summaries
-                    map_scores_summary[(scores['R'], scores['C'], scores['D'])] = (summ_idx_1, summ_idx_2)
-        repeat += 1
+        # Make dictionary mapping evaluations to summaries
+        map_scores_summary[(scores['R'], scores['C'], scores['D'])] = (summ_idx_1, summ_idx_2)
 
     print(f'\nDiscarded {discarded} summaries that didn\'t fit into size limit.\n')
 

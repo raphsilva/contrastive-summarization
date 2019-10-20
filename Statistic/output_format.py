@@ -1,3 +1,4 @@
+from setup import DEBUG_MODE
 from pprint import pformat
 
 GRAY = '\33[90m'
@@ -14,11 +15,6 @@ def print_verbose(*msg):
     if not VERBOSE_MODE:
         return
     printMessage(*msg)
-
-
-def setDebugPrints(option):
-    global DEBUG_PRINTS
-    DEBUG_PRINTS = option
 
 
 def printColor(text, color, e='\n'):
@@ -48,9 +44,8 @@ def printFormat_OLD(*text):
 
 
 def printdebug(*text):
-    if DEBUG_PRINTS == False:
-        return
-    printColor(printFormat(*text), GRAY)
+    if DEBUG_MODE:
+        printColor(printFormat(*text), GRAY)
 
 
 def printinfo(*text):

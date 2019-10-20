@@ -1,10 +1,10 @@
-from setup import MAXPOLARITY
+from setup import POLARITY_SCALE
 
 
 def trinary_polarity(num):
-    if num < -0.25 * MAXPOLARITY:
+    if num < -0.25 * POLARITY_SCALE:
         return -1
-    if num > 0.25 * MAXPOLARITY:
+    if num > 0.25 * POLARITY_SCALE:
         return +1
     return 0
 
