@@ -6,15 +6,15 @@ import output_files
 import output_format as out
 from load_data import preprocess
 from load_data import read_input
-from setup import PICK_CENTROIDS
 from setup import DATASETS_TO_TEST
 from setup import DISCARD_TESTS
+from setup import HUNGARIAN_METHOD
 from setup import LAMBDA
 from setup import LIMIT_WORDS
 from setup import METHOD
+from setup import PICK_CENTROIDS
 from setup import REPEAT_TESTS
 from setup import SIZE_FAC
-from setup import HUNGARIAN_METHOD
 from setup import filepath  # Get full path for the file with data of target
 from structure import get_summ_closest_to_scores
 from structure import idx_to_summ
@@ -36,8 +36,6 @@ SIZE_FAC_DEFAULT = SIZE_FAC
 for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
 
     SIZE_FAC = SIZE_FAC_DEFAULT
-
-
 
     print(f'\n\n\n\n  =========datasets=======>  {SOURCE1} {SOURCE2}\n\n')
 
@@ -97,13 +95,6 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
 
         # Make summary
 
-        from random import shuffle
-
-        shuffle(set1_pos)
-        shuffle(set1_neg)
-        shuffle(set2_pos)
-        shuffle(set2_neg)
-
         if METHOD == 'RF':
             centroid_choices = [False]
             hungarian_choices = [False]
@@ -137,7 +128,7 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
         w1 = sum([summ1[i]['word_count'] for i in summ1])
         w2 = sum([summ2[i]['word_count'] for i in summ2])
 
-        if w1 + w2 > 2*LIMIT_WORDS:  # Summary is too large; will repeat with smaller size factor.
+        if w1 + w2 > 2 * LIMIT_WORDS:  # Summary is too large; will repeat with smaller size factor.
             discarded += 1
             repeat -= 1
             SIZE_FAC *= 0.95

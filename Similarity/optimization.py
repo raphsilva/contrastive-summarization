@@ -9,20 +9,14 @@ from setup import LIM_SENTENCES
 from setup import METHOD
 
 import random
-
-RANDOM_SEED = 4
-
-
-def random_seed():
-    global RANDOM_SEED
-    RANDOM_SEED = random.randint(0, 10000)
+random.seed(0)
 
 
 def MakeContrastiveSummary(source1, source2, stats_source_1, stats_source_2, LIM_WORDS_1,
                            LIM_WORDS_2):
     candidate_options_1 = sorted(list(source1.keys()))
     candidate_options_2 = sorted(list(source2.keys()))
-    random.seed(RANDOM_SEED)
+
     random.shuffle(candidate_options_1)
     random.shuffle(candidate_options_2)
 

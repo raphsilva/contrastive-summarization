@@ -82,9 +82,6 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
         time_initial = time()
 
         # Make summary
-        from optimization import random_seed
-
-        random_seed()
 
         summ_idx_1, summ_idx_2 = optm.make_contrastive_summary(source1, source2, RANKING_MODE)
         summ1 = {i: source1[i] for i in summ_idx_1}
