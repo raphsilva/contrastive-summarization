@@ -45,8 +45,3 @@ GREEDY_CANDS_SELECTED = 1
 # For example, if GREEDY_CANDS_SELECTED = 5 and there are 500 candidates for the best summary of length 3, then the 5 best summaries of length 3 will be tried to see which one forms the best summary of length 4.
 # Lower values are faster, higher values give better result.
 # Use GREEDY_CANDS_SELECTED = 1 for a purely greedy algorithm. (will keep only one best candidate at a time)
-
-import output_format as out
-
-if DEBUG_MODE:
-    out.setDebugPrints(True)  # Choose whether or not to display information for debugging.
