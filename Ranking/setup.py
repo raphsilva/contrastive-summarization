@@ -1,5 +1,5 @@
 # Polarity representation
-MAXPOLARITY = 100  # Sets the polarity scale (from -MAXPOLARITY to +MAXPOLARITY)
+POLARITY_SCALE = 100  # Sets the polarity scale (from -MAXPOLARITY to +MAXPOLARITY)
 
 
 # Method options
@@ -24,7 +24,7 @@ DISCARD_TESTS = int(0.1 * REPEAT_TESTS)  # Amount of top-rated and bottom-rated 
 
 # Display options
 
-VERBOSE_MODE = False  # To print statistics and status information (progress is always shown)
+VERBOSE_MODE = False  # To print statistics and status information
 
 
 # Input files settings
@@ -39,13 +39,3 @@ LOW_PRIORITY_ASPECTS = ['_GENERIC']  # Aspects that are send to the end of the q
 
 def filepath(target):  # Get full path for the file with data of target
     return DATA_DIR + '/' + target + '.json'
-
-
-if VERBOSE_MODE:
-    import output_format as out
-
-    out.printMessage('Datasets: ', DATASETS_TO_TEST)
-    out.printMessage()
-    out.printMessage('Limit of words (per side): ', LIM_WORDS)
-    out.printMessage()
-    out.printMessage()

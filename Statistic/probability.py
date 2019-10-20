@@ -1,13 +1,13 @@
 import matplotlib.pyplot as plt
 import scipy.stats as stats
 
-from setup import MAXPOLARITY
+from setup import POLARITY_SCALE
 
 # Value to be added to divisors to avoid division by zero. 
 INFINITESIMAL = 1e-64
 
-DISTRIBUTIONS_LENGTH = MAXPOLARITY * 3
-DISTRIBUTIONS_STEP = MAXPOLARITY / 10
+DISTRIBUTIONS_LENGTH = POLARITY_SCALE * 3
+DISTRIBUTIONS_STEP = POLARITY_SCALE / 10
 
 
 def normalDistribution(mean, std, prob, step=DISTRIBUTIONS_STEP, leftlimit=-DISTRIBUTIONS_LENGTH / 2,

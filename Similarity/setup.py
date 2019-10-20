@@ -1,5 +1,5 @@
 # Polarity representation
-MAXPOLARITY = 100  # Sets the polarity scale (from -MAXPOLARITY to +MAXPOLARITY)
+POLARITY_SCALE = 100  # Sets the polarity scale (from -MAXPOLARITY to +MAXPOLARITY)
 
 
 # Method options
@@ -35,15 +35,3 @@ DATASETS_TO_TEST = [INPUT_FILES[2]]
 
 def filepath(target):  # Get full path for the file with data of target
     return DATA_DIR + '/' + target + '.json'
-
-
-if VERBOSE_MODE:
-    import output_format as out
-
-    out.printMessage('Datasets: ', DATASETS_TO_TEST)
-    out.printMessage()
-    out.printMessage('Method: ', METHOD)
-    out.printMessage('Limit of sentences (per side): ', LIM_SENTENCES)
-    out.printMessage('Limit of words (per side): ', LIM_WORDS)
-    out.printMessage()
-    out.printMessage()
