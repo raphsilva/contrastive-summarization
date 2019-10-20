@@ -134,3 +134,14 @@ cd ../Clustering
 python main.py
 cd ..
 ```
+
+
+## References
+
+* LERMAN, K.; MCDONALD, R.  2009.  **Contrastive summarization: An experiment with consumer
+reviews**.  _Proceedings of Human Language Technologies: The 2009 Annual Conference
+of the North American Chapter of the Association for Computational Linguistics, Companion Volume: Short Papers_, pages 113–116.  Available at http://dl.acm.org/citation.cfm?id=1620853.1620886.
+
+* KIM, H. D.; ZHAI, C. 2009.  **Generating comparative summaries of contradictory opinions in text**.  _Proceedings of the 18th ACM Conference on Information and Knowledge Management_, pages 385–394.  Available at http://doi.acm.org/10.1145/1645953.1646004. 
+
+* JIN, J.; JI, P.; GU, R. 2009.  **Identifying comparative customer requirements from product online reviews for competitor analysis**.  _Eng. Appl. Artif. Intell._, v. 49, n. C, p. 61–73.  Available at http://dx.doi.org/10.1016/j.engappai.2015.12.005
