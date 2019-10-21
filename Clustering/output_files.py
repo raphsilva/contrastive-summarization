@@ -1,7 +1,7 @@
 import json
 
-from setup import DISCARD_TESTS, REPEAT_TESTS
-from setup import LIMIT_WORDS  # Sets the maximum number of WORDS in each side of the summary
+from options import DISCARD_TESTS, REPEAT_TESTS
+from options import LIMIT_WORDS  # Sets the maximum number of WORDS in each side of the summary
 from structure import word_count
 
 json_results = {}

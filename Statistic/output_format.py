@@ -1,4 +1,4 @@
-from setup import DEBUG_MODE
+from options import DEBUG_MODE
 from pprint import pformat
 
 GRAY = '\33[90m'
@@ -11,7 +11,7 @@ DEBUG_PRINTS = False
 
 
 def print_verbose(*msg):
-    from setup import VERBOSE_MODE
+    from options import VERBOSE_MODE
     if not VERBOSE_MODE:
         return
     printMessage(*msg)

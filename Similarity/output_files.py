@@ -1,8 +1,8 @@
 import json
 
-from setup import DISCARD_TESTS, REPEAT_TESTS
-from setup import LIM_SENTENCES  # Sets the maximum number of SENTENCES in each side of the summary
-from setup import LIM_WORDS  # Sets the maximum number of WORDS in each side of the summary
+from options import DISCARD_TESTS, REPEAT_TESTS
+from options import LIM_SENTENCES  # Sets the maximum number of SENTENCES in each side of the summary
+from options import LIM_WORDS  # Sets the maximum number of WORDS in each side of the summary
 from structure import word_count
 
 json_results = {}

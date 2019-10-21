@@ -10,7 +10,7 @@ DEBUG_PRINTS = False
 
 
 def print_verbose(*msg):
-    from setup import VERBOSE_MODE
+    from options import VERBOSE_MODE
     if not VERBOSE_MODE:
         return
     printMessage(*msg)

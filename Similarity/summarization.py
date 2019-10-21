@@ -4,9 +4,9 @@ import structure as struct
 
 INFINITY = 999999
 
-from setup import LIM_SENTENCES
+from options import LIM_SENTENCES
 
-from setup import METHOD
+from options import METHOD
 
 import random
 random.seed(0)

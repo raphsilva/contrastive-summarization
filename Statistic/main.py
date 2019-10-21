@@ -7,14 +7,14 @@ import output_files
 import output_format as out
 import structure as struct
 from read_input import read_input
-from setup import ALPHA
-from setup import DATASETS_TO_TEST
-from setup import DEBUG_MODE
-from setup import DISCARD_TESTS
-from setup import METHOD
-from setup import OPTM_MODE
-from setup import REPEAT_TESTS
-from setup import filepath  # Get full path for the file with data of target
+from options import ALPHA
+from options import DATASETS_TO_TEST
+from options import DEBUG_MODE
+from options import DISCARD_TESTS
+from options import METHOD
+from options import OPTM_MODE
+from options import REPEAT_TESTS
+from options import filepath  # Get full path for the file with data of target
 from summarization import summarize
 
 PATH_RESULTS = 'RESULTS'

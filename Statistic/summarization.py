@@ -4,10 +4,10 @@ import structure as struct
 
 INFINITY = 999999
 
-from setup import LIM_SENTENCES
-from setup import LIM_WORDS
+from options import LIM_SENTENCES
+from options import LIM_WORDS
 
-from setup import GREEDY_CANDS_SELECTED
+from options import GREEDY_CANDS_SELECTED
 
 import random
 random.seed(0)

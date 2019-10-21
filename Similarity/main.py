@@ -2,19 +2,19 @@ import os
 from time import time
 
 import evaluate
-import optimization as optm
+import summarization as optm
 import output_files
 import output_format as out
 import structure as struct
 from read_input import read_input
-from setup import DATASETS_TO_TEST
-from setup import DEBUG_MODE
-from setup import DISCARD_TESTS
-from setup import LIM_SENTENCES  # Sets the maximum number of SENTENCES in each side of the summary
-from setup import LIM_WORDS  # Sets the maximum number of WORDS in each side of the summary
-from setup import METHOD
-from setup import REPEAT_TESTS
-from setup import filepath  # Get full path for the file with data of target
+from options import DATASETS_TO_TEST
+from options import DEBUG_MODE
+from options import DISCARD_TESTS
+from options import LIM_SENTENCES  # Sets the maximum number of SENTENCES in each side of the summary
+from options import LIM_WORDS  # Sets the maximum number of WORDS in each side of the summary
+from options import METHOD
+from options import REPEAT_TESTS
+from options import filepath  # Get full path for the file with data of target
 from structure import word_count
 
 PATH_RESULTS = 'RESULTS'
