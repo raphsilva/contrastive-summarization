@@ -1,9 +1,1 @@
-"""
-    Developed by: Otávio Augusto Ferreira Sousa (June 2018)    
-    Adapted by: Raphael Rocha da Silva (September 2018 - October 2019) 
-    Last modified: October, 2019
-    
-    This file contains the implementation of a Contrastive Opinion Summarizer based on the work of Kim & Zhai(2009).
-    Hyun Duk Kim and ChengXiang Zhai, Generating Comparative Summaries of Contradictory Opinions in Text, CIKM 2009
-
-"""
+Developed by: Otávio Augusto Ferreira Sousa (June 2018) and Raphael Rocha da Silva (September 2018 – October 2019)

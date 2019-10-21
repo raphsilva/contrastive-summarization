@@ -156,6 +156,8 @@ cd ..
 Made by **Raphael Rocha da Silva** (http://raphsilva.github.io) as part of a Master's project submitted to the Institute of Mathematics and Computer Sciences – ICMC-USP. 
 Advisor: Dr. **Thiago Alexandre Salgueiro Pardo** (http://conteudo.icmc.usp.br/pessoas/taspardo).
 
+The implementation of the Clustering method is derived from work done by **Otávio Augusto Ferreira Sousa** (June 2018).
+
 **NILC laboratory**, **University of São Paulo**, São Carlos.  2017 – 2019.
 
 This work is part of the **Opinando project**: **http://sites.google.com/icmc.usp.br/opinando/**
