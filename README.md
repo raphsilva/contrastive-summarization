@@ -82,7 +82,7 @@ If you intend to run the Clustering method, additional data is needed for langua
 
 #### Python modules
 
-If you intend to run the Clustering method, you'll need to install additional Python modules. The Python modules needed to execute the method are listed in `requirements.txt`. To install them, run `pip install -r requirements.txt`. Depending on how Python and pip were installed in you computer, you may need to specify the pip version: `pip3 install -r requirements.txt`.
+If you intend to run the Clustering method, you'll need to install additional Python modules. The Python modules needed to execute the method are listed in `requirements.txt`. To install them, run `pip install -r requirements.txt`. Depending on how Python and pip were installed on you computer, you may need to specify the pip version: `pip3 install -r requirements.txt`.
 
 
 ### Execution
@@ -136,6 +136,46 @@ cd ../Clustering
 python main.py
 cd ..
 ```
+
+## The project
+
+### Authorship
+
+
+
+Made by **Raphael Rocha da Silva** (http://raphsilva.github.io) as part of a Master's project submitted to the Institute of Mathematics and Computer Sciences – ICMC-USP. 
+Advisor: Dr. **Thiago Alexandre Salgueiro Pardo** (http://conteudo.icmc.usp.br/pessoas/taspardo).
+
+**NILC laboratory**, **University of São Paulo**, São Carlos.  2017 – 2019.
+
+This work is part of the **Opinando project**: **http://sites.google.com/icmc.usp.br/opinando/**
+
+### Publication
+
+The work done has been reported in material that is been prepared for publication.
+
+
+### Repository
+
+Releases of this project are publicly available at https://github.com/raphsilva/corpus-4p/releases.
+
+
+### License
+
+This repository is licensed under GNU GENERAL PUBLIC LICENSE  (Version 3, 29 June 2007) as of October 2019. Find the legal text in the file `LICENSE.md`.
+
+In summary, you are free to use its contents for **commercial use**, **modification**, **distribution**, **patent use** and **private use** as long as you keep your work private or publish your work with **license and copyright notice**, **state changes**, **disclose source**, **same license** and **attribution**.
+
+In derivative work that uses the contents provided, we ask you to either mention the authors,  cite their publication (not available yet) or add a link to the public repository, whichever best fits the format of your work. 
+
+The contents are provided **without liability or warranty**. 
+
+
+### Acknowledgments
+
+The author is grateful to **São Paulo Research Foundation** (process 17/12236-0) for the financial support.
+
+
 
 
 ## References
