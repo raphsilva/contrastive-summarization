@@ -95,8 +95,8 @@ def removeNegsAndAdjs(sentence_proc):
     return cache_removed_negs_adjs[str(sentence_proc)]
 
 
-from writefiles import get_variable_from_file
-from writefiles import overwrite_json
+from write_files import get_variable_from_file
+from write_files import overwrite_json
 
 got_all_lemmas = False
 

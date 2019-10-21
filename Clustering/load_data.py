@@ -1,4 +1,4 @@
-from writefiles import get_variable_from_file
+from write_files import get_variable_from_file
 
 from language import process_sentence
 from language import makecache_remove_negs_adjs

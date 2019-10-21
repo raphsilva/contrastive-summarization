@@ -1,8 +1,8 @@
 from similarity import psi, phi
 import math
 
-from setup import LIMIT_SENTENCES
-from setup import ALLOW_REPETITION
+from options import LIMIT_SENTENCES
+from options import ALLOW_REPETITION
 
 # clustering algorithm used in the implementation of RF method
 from sklearn.cluster import AgglomerativeClustering
@@ -19,7 +19,7 @@ random.seed(0)  # Make random deterministic
 
 # Defines the size of the summary of the sets 'side1' and 'side2'.
 def summSize(side1, side2, SIZE_FAC):
-    from setup import METHOD
+    from options import METHOD
     l1 = len(side1)
     l2 = len(side2)
     if LIMIT_SENTENCES != 'Auto':  # Force size to the value specified in the setup

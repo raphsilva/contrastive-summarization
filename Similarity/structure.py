@@ -107,7 +107,7 @@ def getGroupsPairsAspectSentim(info, measure):
 
 aspsentdistr_cache = {}
 
-from setup import POLARITY_SCALE
+from options import POLARITY_SCALE
 
 
 def trinary_polarity(num):

@@ -91,7 +91,7 @@ The execution of each method is done inside the method's directory. Choose the m
 
 #### Set options
 
-Each method has a file `setup.py` which allows you to choose the options for execution. The values you may want to change are: 
+Each method has a file `options.py` which allows you to choose the options for execution. The values you may want to change are: 
 * `LIM_WORDS`: Maximum number of words in the summary (for each entity).
 * `LIM_SENTENCES`: Maximum number of sentences in the summary (for each entity).
 * `REPEAT_TESTS`: Number of tests performed with each dataset (which are shuffled before each repetition)

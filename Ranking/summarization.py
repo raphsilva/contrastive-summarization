@@ -3,13 +3,13 @@ from structure import trinary_polarity
 
 INFINITY = 999999
 
-from setup import LIM_SENTENCES
-from setup import LIM_WORDS
+from options import LIM_SENTENCES
+from options import LIM_WORDS
 
-from setup import LOW_PRIORITY_ASPECTS
+from options import LOW_PRIORITY_ASPECTS
 
-from setup import SENTENCE_IDEAL_LENGTH
-from setup import INDEPENDENT_RANK
+from options import SENTENCE_IDEAL_LENGTH
+from options import INDEPENDENT_RANK
 
 from structure import get_opinions
 from structure import get_contrastive_pairs

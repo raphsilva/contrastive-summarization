@@ -1,7 +1,7 @@
 import random
 
 from probability import *
-from writefiles import get_variable_from_file
+from write_files import get_variable_from_file
 
 cache_distance = get_variable_from_file('cache/distance.cache')
 cache_SAM = get_variable_from_file('cache/SAM.cache')

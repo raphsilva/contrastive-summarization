@@ -6,16 +6,16 @@ import output_files
 import output_format as out
 from load_data import preprocess
 from load_data import read_input
-from setup import DATASETS_TO_TEST
-from setup import DISCARD_TESTS
-from setup import HUNGARIAN_METHOD
-from setup import LAMBDA
-from setup import LIMIT_WORDS
-from setup import METHOD
-from setup import PICK_CENTROIDS
-from setup import REPEAT_TESTS
-from setup import SIZE_FAC
-from setup import filepath  # Get full path for the file with data of target
+from options import DATASETS_TO_TEST
+from options import DISCARD_TESTS
+from options import HUNGARIAN_METHOD
+from options import LAMBDA
+from options import LIMIT_WORDS
+from options import METHOD
+from options import PICK_CENTROIDS
+from options import REPEAT_TESTS
+from options import SIZE_FAC
+from options import filepath  # Get full path for the file with data of target
 from structure import get_summ_closest_to_scores
 from structure import idx_to_summ
 from summarization import contrastiveness_first
