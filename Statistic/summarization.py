@@ -10,6 +10,7 @@ from setup import LIM_WORDS
 from setup import GREEDY_CANDS_SELECTED
 
 import random
+random.seed(0)
 
 
 def summarize(t1, t2, d1, d2, method, mode='greedy'):

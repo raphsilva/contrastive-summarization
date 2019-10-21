@@ -16,3 +16,8 @@ out*
 results
 results_*
 *.txt
+wget-log*
+test*
+input/*
+venv/*
+!requirements.txt

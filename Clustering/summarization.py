@@ -1,7 +1,7 @@
 from similarity import psi, phi
 import math
 
-from setup import LIMIT_PAIRS
+from setup import LIMIT_SENTENCES
 from setup import ALLOW_REPETITION
 
 # clustering algorithm used in the implementation of RF method
@@ -15,14 +15,17 @@ from operator import itemgetter
 
 from setup import SIZE_FAC
 
+import random
+random.seed(0)  # Make random deterministic
+
 
 # Defines the size of the summary of the sets 'side1' and 'side2'.
 def summSize(side1, side2):
     from setup import METHOD
     l1 = len(side1)
     l2 = len(side2)
-    if LIMIT_PAIRS != None:  # Force size to the value specified in the setup
-        k = int(LIMIT_PAIRS / 2)
+    if LIMIT_SENTENCES != 'Auto':  # Force size to the value specified in the setup
+        k = int(LIMIT_SENTENCES / 2)
     else:
         k = 1 + int(math.floor(math.log2(l1 + l2)))
 
@@ -61,6 +64,9 @@ def representativeness_first(side1, side2, polarity1, polarity2, LAMBDA=0.5, CEN
     if len(side1) * len(
             side2) == 0:  # Case when there's either no negative or no positive opinions; no pairs can be formed.
         return []
+
+    random.shuffle(side1)
+    random.shuffle(side2)
 
     contrastive_pairs = []
 
@@ -186,6 +192,9 @@ def contrastiveness_first(side1, side2, polarity1, polarity2, LAMBDA=0.5, CENTRO
                           USE_HUNGARIAN_METHOD=False):
     if len(side1) * len(side2) == 0:  # If either side is empty, a summary can't be made.
         return []
+
+    random.shuffle(side1)
+    random.shuffle(side2)
 
     contrastive_pairs = []
 

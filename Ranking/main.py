@@ -1,17 +1,3 @@
-# From this project:
-import optimization as optm
-import output_format as out
-from read_input import read_input
-from setup import DATASETS_TO_TEST
-from setup import DEBUGGING
-from setup import OUTPUT_MODE
-from setup import OVERVIEW_MODE
-# Setup options
-from setup import RANKING_MODE
-from setup import REPEAT_TESTS, DISCARD_TESTS
-from setup import VERBOSE_MODE
-from setup import filepath  # Get full path for the file with data of target
-
 import os
 from time import time
 
@@ -26,8 +12,10 @@ from setup import DISCARD_TESTS
 from setup import LIM_SENTENCES  # Sets the maximum number of SENTENCES in each side of the summary
 from setup import LIM_WORDS  # Sets the maximum number of WORDS in each side of the summary
 from setup import METHOD
+from setup import RANKING_MODE
 from setup import REPEAT_TESTS
 from setup import filepath  # Get full path for the file with data of target
+
 
 # Load input
 def load_input():
@@ -45,7 +33,6 @@ os.makedirs(PATH_RESULTS, exist_ok=True)
 os.makedirs(PATH_OUTPUT, exist_ok=True)
 
 EXECUTION_ID = str(int(time()) % 100000000)  # Execution code (will be in the results file name)
-
 
 print('\n\nWill perform %d tests and discard %d(x2) best and worst\n\n' % (REPEAT_TESTS, DISCARD_TESTS))
 
@@ -95,9 +82,6 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
         time_initial = time()
 
         # Make summary
-        from optimization import random_seed
-
-        random_seed()
 
         summ_idx_1, summ_idx_2 = optm.make_contrastive_summary(source1, source2, RANKING_MODE)
         summ1 = {i: source1[i] for i in summ_idx_1}
@@ -143,5 +127,3 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
     output_files.write_files(SOURCE1, SOURCE2, EXECUTION_ID)
 
 print(f'\n\nSummaries and evaluations are in folders {PATH_OUTPUT} and {PATH_RESULTS}.')
-
-
