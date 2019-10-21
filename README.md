@@ -41,9 +41,11 @@ The input file of each entity is a JSON file with a list of sentences with IDs a
 
 After tests are done, the outputs will be in two folders: `OUTPUT` will contain the summaries generated and `RESULTS` will contain the summaries characteristics, including evaluation. 
 
+
 #### Summaries 
 
 After a method of summarization has been executed multiple times for a given input, the summary that best reflects the average performance of the method is chosen and saved at `[method]/OUTPUT/[n]_[dataset].txt`, where `n` is an identifier attributed to each execution. Summaries are saved in simple text format and are divided in two parts, separated by a long line break, one for each entity.
+
 
 #### Evaluation
 
@@ -62,13 +64,16 @@ Another file is generated at each execution, called `[n]_table.txt`, and it has 
 
 Follow the instructions below to execute the methods with the implementations provided here. 
 
+
 ### Installation
 
 Some dependencies need to be installed before the first execution. On a terminal, go to the repository main directory and follow the instructions below.
 
+
 #### Download repository
 
 Download the repository with `git clone https://github.com/raphsilva/contrastive-summarization.git`. 
+
 
 #### Dataset
 
@@ -76,9 +81,11 @@ A dataset is needed to be used as input by the methods. To download the dataset 
 
 The dataset used is available at https://github.com/raphsilva/corpus-4p, where you can find more information about it. You can use other dataset as long as they have the same format as this one.
 
+
 #### Language data
 
 If you intend to run the Clustering method, additional data is needed for language processing. Download them with the script in `get_dependencies.sh`.
+
 
 #### Python modules
 
@@ -88,6 +95,7 @@ If you intend to run the Clustering method, you'll need to install additional Py
 ### Execution
 
 The execution of each method is done inside the method's directory. Choose the method you want to execute, go to its directory and follow the instructions below.
+
 
 #### Set options
 
@@ -100,16 +108,18 @@ Each method has a file `options.py` which allows you to choose the options for e
 
 Besides those, you'll find the section `# Method options` which lets you change the method's parameters. 
 
+
 #### Run
 
 To run a method, go to its directory and run the `main.py` file with Python 3.6. 
+
 
 #### See results
 
 After the execution, output files and evaluation results will be inside each method's directory.
 
 
-### Summary
+### Commands
 
 Below are all the commands from the steps above. 
 
@@ -137,18 +147,21 @@ python main.py
 cd ..
 ```
 
+
 ## The project
 
+
 ### Authorship
-
-
 
 Made by **Raphael Rocha da Silva** (http://raphsilva.github.io) as part of a Master's project submitted to the Institute of Mathematics and Computer Sciences – ICMC-USP. 
 Advisor: Dr. **Thiago Alexandre Salgueiro Pardo** (http://conteudo.icmc.usp.br/pessoas/taspardo).
 
+The implementation of the Clustering method is derived from work done by **Otávio Augusto Ferreira Sousa** (June 2018).
+
 **NILC laboratory**, **University of São Paulo**, São Carlos.  2017 – 2019.
 
 This work is part of the **Opinando project**: **http://sites.google.com/icmc.usp.br/opinando/**
+
 
 ### Publication
 
@@ -174,8 +187,6 @@ The contents are provided **without liability or warranty**.
 ### Acknowledgments
 
 The author is grateful to **São Paulo Research Foundation** (process 17/12236-0) for the financial support.
-
-
 
 
 ## References
