@@ -13,14 +13,12 @@ from scipy.optimize import linear_sum_assignment
 from itertools import permutations
 from operator import itemgetter
 
-from setup import SIZE_FAC
-
 import random
 random.seed(0)  # Make random deterministic
 
 
 # Defines the size of the summary of the sets 'side1' and 'side2'.
-def summSize(side1, side2):
+def summSize(side1, side2, SIZE_FAC):
     from setup import METHOD
     l1 = len(side1)
     l2 = len(side2)
@@ -59,7 +57,7 @@ from random import uniform
 
 
 # Representativeness-first approximation to solve the Contrastive Opinion Summarization problem (COS).
-def representativeness_first(side1, side2, polarity1, polarity2, LAMBDA=0.5, CENTROIDS_AS_SUMMARY=False,
+def representativeness_first(side1, side2, polarity1, polarity2, SIZE_FAC, LAMBDA=0.5, CENTROIDS_AS_SUMMARY=False,
                              USE_HUNGARIAN_METHOD=False):
     if len(side1) * len(
             side2) == 0:  # Case when there's either no negative or no positive opinions; no pairs can be formed.
@@ -74,7 +72,7 @@ def representativeness_first(side1, side2, polarity1, polarity2, LAMBDA=0.5, CEN
     text_info_2 = [s['text_info'] for s in side2]
 
     # amount of sentence pairs we want in the summary
-    k = summSize(side1, side2)
+    k = summSize(side1, side2, SIZE_FAC)
 
     # calculating the distance matrices; will be used for agglomerative clustering
     # distance_matrix[i, j] = 1.0 - phi(i, j)
@@ -188,7 +186,7 @@ def representativeness_first(side1, side2, polarity1, polarity2, LAMBDA=0.5, CEN
 
 
 # Contrastiveness-first approximation to solve the Contrastive Opinion Summarization problem (COS).
-def contrastiveness_first(side1, side2, polarity1, polarity2, LAMBDA=0.5, CENTROIDS_AS_SUMMARY=False,
+def contrastiveness_first(side1, side2, polarity1, polarity2, SIZE_FAC, LAMBDA=0.5, CENTROIDS_AS_SUMMARY=False,
                           USE_HUNGARIAN_METHOD=False):
     if len(side1) * len(side2) == 0:  # If either side is empty, a summary can't be made.
         return []
@@ -202,7 +200,7 @@ def contrastiveness_first(side1, side2, polarity1, polarity2, LAMBDA=0.5, CENTRO
     text_info_2 = [s['text_info'] for s in side2]
 
     # amount of sentence pairs we want in the summary
-    k = summSize(side1, side2)
+    k = summSize(side1, side2, SIZE_FAC)
 
     # structures used to find the sets X_ui and Y_vi defined in the paper
     max_similarity_x = [0.0 for sX in side1]

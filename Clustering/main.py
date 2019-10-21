@@ -99,9 +99,9 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
 
         if METHOD == 'CF':
 
-            summ_idx_A = contrastiveness_first(set1_pos, set2_neg, '+', '-', LAMBDA, PICK_CENTROIDS,
+            summ_idx_A = contrastiveness_first(set1_pos, set2_neg, '+', '-', SIZE_FAC, LAMBDA, PICK_CENTROIDS,
                                                HUNGARIAN_METHOD)
-            summ_idx_B = contrastiveness_first(set1_neg, set2_pos, '-', '+', LAMBDA, PICK_CENTROIDS,
+            summ_idx_B = contrastiveness_first(set1_neg, set2_pos, '-', '+', SIZE_FAC, LAMBDA, PICK_CENTROIDS,
                                                HUNGARIAN_METHOD)
 
         elif METHOD == 'RF':
@@ -125,6 +125,7 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
             discarded += 1
             repeat -= 1
             SIZE_FAC *= 0.95
+            print('too large')
             continue
         else:  # Summary succeeded
             SIZE_FAC *= 1.01
