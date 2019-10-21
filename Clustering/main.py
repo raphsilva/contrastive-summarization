@@ -95,20 +95,13 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
 
         # Make summary
 
-        if METHOD == 'RF':
-            centroid_choices = [False]
-            hungarian_choices = [False]
-        else:
-            centroid_choices = [None]
-            hungarian_choices = [None]
-
         ini_time = time()
 
         if METHOD == 'CF':
 
-            summ_idx_A = contrastiveness_first(set1_pos, set2_neg, '+', '-', LAMBDA, PICK_CENTROIDS,
+            summ_idx_A = contrastiveness_first(set1_pos, set2_neg, '+', '-', SIZE_FAC, LAMBDA, PICK_CENTROIDS,
                                                HUNGARIAN_METHOD)
-            summ_idx_B = contrastiveness_first(set1_neg, set2_pos, '-', '+', LAMBDA, PICK_CENTROIDS,
+            summ_idx_B = contrastiveness_first(set1_neg, set2_pos, '-', '+', SIZE_FAC, LAMBDA, PICK_CENTROIDS,
                                                HUNGARIAN_METHOD)
 
         elif METHOD == 'RF':
@@ -132,6 +125,7 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
             discarded += 1
             repeat -= 1
             SIZE_FAC *= 0.95
+            print('too large')
             continue
         else:  # Summary succeeded
             SIZE_FAC *= 1.01
@@ -149,7 +143,7 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
         print('%3d) %5d %5d %5d %5d' % (repeat, scores['R'], scores['C'], scores['D'], scores['H']))
 
         # Register parameters used
-        summary_parameters = [METHOD, 'lambda=' + str(LAMBDA), centroid_choices, hungarian_choices]
+        summary_parameters = [METHOD, 'lambda=' + str(LAMBDA), PICK_CENTROIDS, HUNGARIAN_METHOD]
 
         # Write output file
         output_files.new_summary(summ1, summ2, scores, summary_parameters)
