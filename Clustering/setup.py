@@ -23,7 +23,7 @@ DISCARD_TESTS = int(0.1*REPEAT_TESTS)  # Amount of top-rated and bottom-rated te
 
 # Display options
 
-VERBOSE_MODE = True
+VERBOSE_MODE = False
 
 
 # Input files settings
