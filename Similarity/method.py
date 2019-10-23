@@ -1,20 +1,6 @@
 import random
 random.seed(0)
 
-from probability import *
-from write_files import get_variable_from_file
-
-cache_distance = get_variable_from_file('cache/distance.cache')
-cache_SAM = get_variable_from_file('cache/SAM.cache')
-
-if cache_distance == False:
-    cache_distance = {}
-
-if cache_SAM == False:
-    cache_SAM = {}
-
-normal_distribution_zero = normalDistributionZero()
-
 
 def get_topics(source):
     t = []

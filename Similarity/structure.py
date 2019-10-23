@@ -20,7 +20,7 @@ def get_summ_closest_to_scores(scores, map_scores_summary):
     return summ_idx_f_1, summ_idx_f_2
 
 
-# Rounds a number (to optimize use of cache and display of information)
+# Rounds a number
 def round_num(n):
     return float("%.2g" % n)  # rounds to 2 significant digits
 
@@ -104,8 +104,6 @@ def getGroupsPairsAspectSentim(info, measure):
 
     return r
 
-
-aspsentdistr_cache = {}
 
 from options import POLARITY_SCALE
 
