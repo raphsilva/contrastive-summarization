@@ -1,4 +1,5 @@
 import random
+random.seed(0)
 
 from probability import *
 from write_files import get_variable_from_file
