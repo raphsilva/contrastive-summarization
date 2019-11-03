@@ -7,7 +7,8 @@ INFINITY = 999999
 from options import LIM_SENTENCES
 from options import LIM_WORDS
 
-from options import GREEDY_CANDS_SELECTED
+# from options_c import GREEDY_CANDS_SELECTED
+GREEDY_CANDS_SELECTED = 1 # TODO undo hardcode
 
 import random
 random.seed(0)

@@ -1,18 +1,21 @@
-import structure as struct
-from structure import trinary_polarity
+import Ranking.structure as struct
+from Ranking.structure import trinary_polarity
 
 INFINITY = 999999
 
 from options import LIM_SENTENCES
 from options import LIM_WORDS
 
-from options import LOW_PRIORITY_ASPECTS
+# from options_c import LOW_PRIORITY_ASPECTS
 
-from options import SENTENCE_IDEAL_LENGTH
-from options import INDEPENDENT_RANK
+from options import options
 
-from structure import get_opinions
-from structure import get_contrastive_pairs
+RANKING_MODE = options['Ranking']['strategy']
+INDEPENDENT_RANK = options['Ranking']['independent']
+SENTENCE_IDEAL_LENGTH = options['Ranking']['ideal length']
+
+from Ranking.structure import get_opinions
+from Ranking.structure import get_contrastive_pairs
 
 import random
 random.seed(0)

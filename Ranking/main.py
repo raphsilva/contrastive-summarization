@@ -1,20 +1,28 @@
 import os
+import sys
 from time import time
 
-import evaluate
-import summarization as optm
-import output_files
-import output_format as out
-import structure as struct
-from read_input import read_input
+sys.path.append(os.path.realpath('..'))
+
+import Ranking.evaluate as evaluate
+import Ranking.summarization as optm
+import Ranking.output_files as output_files
+import Ranking.output_format as out
+import Ranking.structure as struct
+from Ranking.read_input import read_input
 from options import DATASETS_TO_TEST
 from options import DISCARD_TESTS
 from options import LIM_SENTENCES  # Sets the maximum number of SENTENCES in each side of the summary
 from options import LIM_WORDS  # Sets the maximum number of WORDS in each side of the summary
-from options import METHOD
-from options import RANKING_MODE
 from options import REPEAT_TESTS
 from options import filepath  # Get full path for the file with data of target
+from options import options
+
+RANKING_MODE = options['Ranking']['strategy']
+INDEPENDENT_RANK = options['Ranking']['independent']
+SENTENCE_IDEAL_LENGTH = options['Ranking']['ideal length']
+
+method_info = [RANKING_MODE, INDEPENDENT_RANK, SENTENCE_IDEAL_LENGTH]
 
 
 # Load input
@@ -101,7 +109,7 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
         print('%3d) %5d %5d %5d %5d' % (repeat + 1, scores['R'], scores['C'], scores['D'], scores['H']))
 
         # Register parameters used
-        summary_parameters = [METHOD, 'LIMIT SENTENCES=' + str(LIM_SENTENCES), 'LIMIT WORDS=' + str(LIM_WORDS)]
+        summary_parameters = [method_info, 'LIMIT SENTENCES=' + str(LIM_SENTENCES), 'LIMIT WORDS=' + str(LIM_WORDS)]
 
         # Write output file
         output_files.new_summary(summ1, summ2, scores, summary_parameters, time_elapsed)

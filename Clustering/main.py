@@ -1,21 +1,30 @@
 import os
+import sys
 from time import time
 
-import evaluate
-import output_files
-import output_format as out
-from load_data import preprocess
-from load_data import read_input
+sys.path.append(os.path.realpath('..'))
+
+import Clustering.evaluate as evaluate
+import Clustering.output_files as output_files
+import Clustering.output_format as out
+from Clustering.load_data import preprocess
+from Clustering.load_data import read_input
+
 from options import DATASETS_TO_TEST
 from options import DISCARD_TESTS
-from options import HUNGARIAN_METHOD
-from options import LAMBDA
-from options import LIMIT_WORDS
-from options import METHOD
-from options import PICK_CENTROIDS
+from options import LIM_SENTENCES  # Sets the maximum number of SENTENCES in each side of the summary
+from options import LIM_WORDS  # Sets the maximum number of WORDS in each side of the summary
 from options import REPEAT_TESTS
-from options import SIZE_FAC
 from options import filepath  # Get full path for the file with data of target
+
+from options import options
+
+METHOD = options['Clustering']['variation']
+LAMBDA = options['Clustering']['lambda']
+PICK_CENTROIDS = options['Clustering']['centroids']
+HUNGARIAN_METHOD = options['Clustering']['hungarian']
+SIZE_FAC = options['Clustering']['size_fac']
+
 from structure import get_summ_closest_to_scores
 from structure import idx_to_summ
 from summarization import contrastiveness_first
@@ -121,7 +130,7 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
         w1 = sum([summ1[i]['word_count'] for i in summ1])
         w2 = sum([summ2[i]['word_count'] for i in summ2])
 
-        if w1 + w2 > 2 * LIMIT_WORDS:  # Summary is too large; will repeat with smaller size factor.
+        if w1 + w2 > 2 * LIM_WORDS:  # Summary is too large; will repeat with smaller size factor.
             discarded += 1
             repeat -= 1
             SIZE_FAC *= 0.95

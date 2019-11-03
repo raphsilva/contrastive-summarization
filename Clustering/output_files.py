@@ -1,7 +1,7 @@
 import json
 
 from options import DISCARD_TESTS, REPEAT_TESTS
-from options import LIMIT_WORDS  # Sets the maximum number of WORDS in each side of the summary
+from options import LIM_WORDS  # Sets the maximum number of WORDS in each side of the summary
 from structure import word_count
 
 json_results = {}
@@ -13,7 +13,7 @@ def reset():
     json_results = {'meta': {}}
     json_results['meta']['source'] = []
     json_results['meta']['limits (per side)'] = {}
-    json_results['meta']['limits (per side)']['words'] = LIMIT_WORDS
+    json_results['meta']['limits (per side)']['words'] = LIM_WORDS
     json_results['meta']['method_options'] = {}
     json_results['output'] = []
 

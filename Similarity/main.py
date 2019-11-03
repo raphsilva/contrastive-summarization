@@ -1,21 +1,23 @@
 import os
 from time import time
 
-import evaluate
-import summarization as optm
-import output_files
-import output_format as out
-import structure as struct
-from read_input import read_input
+import Similarity.evaluate as evaluate
+import Similarity.summarization as optm
+import Similarity.output_files as output_files 
+import Similarity.output_format as out
+import Similarity.structure as struct
+from Similarity.read_input import read_input
 from options import DATASETS_TO_TEST
 from options import DEBUG_MODE
 from options import DISCARD_TESTS
 from options import LIM_SENTENCES  # Sets the maximum number of SENTENCES in each side of the summary
 from options import LIM_WORDS  # Sets the maximum number of WORDS in each side of the summary
-from options import METHOD
 from options import REPEAT_TESTS
 from options import filepath  # Get full path for the file with data of target
+from options import options
 from structure import word_count
+
+METHOD = options['Similarity']['strategy']
 
 PATH_RESULTS = 'RESULTS'
 PATH_OUTPUT = 'OUTPUT'

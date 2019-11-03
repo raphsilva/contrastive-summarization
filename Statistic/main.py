@@ -1,21 +1,28 @@
 import os
+import sys
 from time import time
 
-import evaluate
-import method
-import output_files
-import output_format as out
-import structure as struct
-from read_input import read_input
-from options import ALPHA
+sys.path.append(os.path.realpath('..'))
+
+import Statistic.evaluate as evaluate
+import Statistic.method as method
+import Statistic.output_files as output_files
+import Statistic.output_format as out
+import Statistic.structure as struct
+from Statistic.read_input import read_input
+
+from Statistic.summarization import summarize
+
 from options import DATASETS_TO_TEST
-from options import DEBUG_MODE
 from options import DISCARD_TESTS
-from options import METHOD
-from options import OPTM_MODE
+from options import DEBUG_MODE
 from options import REPEAT_TESTS
 from options import filepath  # Get full path for the file with data of target
-from summarization import summarize
+
+from options import options
+OPTM_MODE = options['Statistic']['optimization']
+METHOD = options['Statistic']['strategy']
+ALPHA = options['Statistic']['alpha']
 
 PATH_RESULTS = 'RESULTS'
 PATH_OUTPUT = 'OUTPUT'
