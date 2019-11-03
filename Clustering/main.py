@@ -5,7 +5,7 @@ from time import time
 sys.path.append(os.path.realpath('..'))
 
 import common.evaluate as evaluate
-import Clustering.output_files as output_files
+import common.output_files as output_files
 import Clustering.output_format as out
 from Clustering.load_data import preprocess
 from Clustering.load_data import read_input

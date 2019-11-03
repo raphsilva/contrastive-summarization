@@ -6,7 +6,7 @@ sys.path.append(os.path.realpath('..'))
 
 import common.evaluate as evaluate
 import Ranking.summarization as optm
-import Ranking.output_files as output_files
+import common.output_files as output_files
 import Ranking.output_format as out
 import Ranking.structure as struct
 from Ranking.read_input import read_input

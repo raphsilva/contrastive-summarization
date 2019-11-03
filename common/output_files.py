@@ -1,7 +1,9 @@
 import json
 
 from options import DISCARD_TESTS, REPEAT_TESTS
+from options import LIM_SENTENCES  # Sets the maximum number of SENTENCES in each side of the summary
 from options import LIM_WORDS  # Sets the maximum number of WORDS in each side of the summary
+from options import options
 from structure import word_count
 
 json_results = {}
@@ -13,8 +15,9 @@ def reset():
     json_results = {'meta': {}}
     json_results['meta']['source'] = []
     json_results['meta']['limits (per side)'] = {}
+    json_results['meta']['limits (per side)']['sentences'] = LIM_SENTENCES
     json_results['meta']['limits (per side)']['words'] = LIM_WORDS
-    json_results['meta']['method_options'] = {}
+    json_results['meta']['method_parameters'] = options
     json_results['output'] = []
 
 
@@ -99,13 +102,13 @@ def write_summary(summ1, summ2, num_summaries):
 
     summary = '\n'
     for i in summ1:
-        summary += "%s " % (summ1[i]['sentence'])
+        summary += "%s " % (summ1[i]['verbatim'])
         summary += "\n"
 
     summary += '\n\n'
 
     for i in summ2:
-        summary += "%s " % (summ2[i]['sentence'])
+        summary += "%s " % (summ2[i]['verbatim'])
         summary += "\n"
 
     w1 = sum([summ1[i]['word_count'] for i in summ1])

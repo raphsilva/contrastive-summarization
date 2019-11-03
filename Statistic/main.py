@@ -6,7 +6,7 @@ sys.path.append(os.path.realpath('..'))
 
 import common.evaluate as evaluate
 import Statistic.method as method
-import Statistic.output_files as output_files
+import common.output_files as output_files
 import Statistic.output_format as out
 import Statistic.structure as struct
 from Statistic.read_input import read_input
