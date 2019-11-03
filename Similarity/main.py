@@ -1,7 +1,7 @@
 import os
 from time import time
 
-import Similarity.evaluate as evaluate
+import common.evaluate as evaluate
 import Similarity.summarization as optm
 import Similarity.output_files as output_files 
 import Similarity.output_format as out

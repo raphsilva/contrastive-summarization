@@ -4,7 +4,7 @@ from time import time
 
 sys.path.append(os.path.realpath('..'))
 
-import Statistic.evaluate as evaluate
+import common.evaluate as evaluate
 import Statistic.method as method
 import Statistic.output_files as output_files
 import Statistic.output_format as out

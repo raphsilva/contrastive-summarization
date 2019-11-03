@@ -4,7 +4,7 @@ from time import time
 
 sys.path.append(os.path.realpath('..'))
 
-import Ranking.evaluate as evaluate
+import common.evaluate as evaluate
 import Ranking.summarization as optm
 import Ranking.output_files as output_files
 import Ranking.output_format as out
