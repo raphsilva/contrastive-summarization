@@ -73,7 +73,7 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
     set2_neg = source2_proc['-']
 
     evaluate.reset()  # To start evaluating summaries of the current sources.
-    output_files.new_source(SOURCE1, SOURCE2, source1, source2)  # Prepare output files for the current sources.
+    output_files.new_source(SOURCE1, SOURCE2, source1, source2, 'Clustering')  # Prepare output files for the current sources.
 
     map_scores_summary = {}
 
@@ -132,7 +132,8 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
 
         # Register time elapsed
         time_final = time()
-        time_total += time_final - time_initial
+        time_elapsed = time_final - time_initial
+        time_total += time_elapsed
 
         # Register all summaries generated, ignoring order of sentences.
         s_id = ([sorted(summ_idx_1), sorted(summ_idx_2)])
@@ -146,7 +147,7 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
         summary_parameters = [METHOD, 'lambda=' + str(LAMBDA), PICK_CENTROIDS, HUNGARIAN_METHOD]
 
         # Write output file
-        output_files.new_summary(summ1, summ2, scores, summary_parameters)
+        output_files.new_summary(summ1, summ2, scores, summary_parameters, time_elapsed)
 
         # Make dictionary mapping evaluations to summaries
         map_scores_summary[(scores['R'], scores['C'], scores['D'])] = (summ_idx_1, summ_idx_2)

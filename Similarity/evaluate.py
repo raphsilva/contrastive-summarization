@@ -84,10 +84,10 @@ def source():
 
     e = {}
     e['scores'] = {
-        'R': r_scores_without_outliers,
-        'C': c_scores_without_outliers,
-        'D': d_scores_without_outliers,
-        'H': h_scores_without_outliers
+        'R': r_scores,
+        'C': c_scores,
+        'D': d_scores,
+        'H': h_scores
     }
     e['means'] = {
         'R': r_mean,

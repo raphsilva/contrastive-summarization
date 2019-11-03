@@ -4,7 +4,7 @@ POLARITY_SCALE = 100  # Sets the polarity scale (from -MAXPOLARITY to +MAXPOLARI
 
 # Method options
 
-RANKING_MODE = ['contrastive', 'contrastive+representative', 'random'][1]
+RANKING_MODE = ['contrastive', 'contrastive+representative', 'random'][2]
 INDEPENDENT_RANK = False
 SENTENCE_IDEAL_LENGTH = None
 METHOD = [RANKING_MODE, INDEPENDENT_RANK, SENTENCE_IDEAL_LENGTH]
@@ -18,7 +18,7 @@ LIM_SENTENCES = 20  # Sets the maximum number of sentences in each side of the s
 
 # Evaluation options
 
-REPEAT_TESTS = 10  # Times to repeat each test
+REPEAT_TESTS = 100  # Times to repeat each test
 DISCARD_TESTS = int(0.1 * REPEAT_TESTS)  # Amount of top-rated and bottom-rated tests to be discarded to compute average without outliers
 
 
@@ -33,7 +33,7 @@ DATA_DIR = "../input"
 
 INPUT_FILES = [(), ('D1a', 'D1b'), ('D2a', 'D2b'), ('D3a', 'D3b'), ('D4a', 'D4b'), ('D5a', 'D5b'), ('D6a', 'D6b'), ('D7a', 'D7b'), ('D8a', 'D8b')]
 
-DATASETS_TO_TEST = [INPUT_FILES[2]]
+DATASETS_TO_TEST = INPUT_FILES[1:]
 
 LOW_PRIORITY_ASPECTS = ['_GENERIC']  # Aspects that are send to the end of the queue
 

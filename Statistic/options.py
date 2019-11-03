@@ -3,7 +3,7 @@ POLARITY_SCALE = 100  # Sets the polarity scale (from -MAXPOLARITY to +MAXPOLARI
 
 
 # Method options
-METHOD = ['contrastive', 'noncontrastive'][1]
+METHOD = ['contrastive', 'noncontrastive'][0]
 OPTM_MODE = 'greedy'
 MIN_INTENSITY_IN_SUMMARY = 1 * POLARITY_SCALE  # If (the absolute value of) the intensity of a sentence is lower than that, that sentence will not be in the summary.
 ALPHA = 20
@@ -32,7 +32,7 @@ DATA_DIR = "../input"
 
 INPUT_FILES = [(), ('D1a', 'D1b'), ('D2a', 'D2b'), ('D3a', 'D3b'), ('D4a', 'D4b'), ('D5a', 'D5b'), ('D6a', 'D6b'), ('D7a', 'D7b'), ('D8a', 'D8b')]
 
-DATASETS_TO_TEST = INPUT_FILES[2:4]
+DATASETS_TO_TEST = [INPUT_FILES[8]]
 
 def filepath(target):  # Get full path for the file with data of target
     return DATA_DIR + '/' + target + '.json'

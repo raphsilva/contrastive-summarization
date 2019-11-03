@@ -20,9 +20,10 @@ def reset():
     json_results['output'] = []
 
 
-def new_source(SOURCE1_NAME, SOURCE2_NAME, source1, source2):
+def new_source(SOURCE1_NAME, SOURCE2_NAME, source1, source2, method):
     reset()
     json_results['meta']['source'] = (SOURCE1_NAME, SOURCE2_NAME)
+    json_results['meta']['method'] = method
     json_results['meta']['size'] = {}
     json_results['meta']['size']['source'] = {}
     json_results['meta']['size']['source']['sentences'] = []
@@ -33,7 +34,7 @@ def new_source(SOURCE1_NAME, SOURCE2_NAME, source1, source2):
     json_results['meta']['size']['source']['words'].append(word_count(source2))
 
 
-def new_summary(summ1, summ2, evals, summary_parameters):
+def new_summary(summ1, summ2, evals, summary_parameters, time_elapsed):
     n = {}
     n['parameters'] = summary_parameters
     n['evaluation'] = {}
@@ -48,6 +49,7 @@ def new_summary(summ1, summ2, evals, summary_parameters):
     n['size']['word count'] = []
     n['size']['word count'].append(word_count(summ1))
     n['size']['word count'].append(word_count(summ2))
+    n['time'] = time_elapsed
     json_results['output'].append(n)
 
 
