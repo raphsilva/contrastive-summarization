@@ -1,4 +1,5 @@
 import json
+import os
 
 from options import DISCARD_TESTS, REPEAT_TESTS
 from options import LIM_SENTENCES  # Sets the maximum number of SENTENCES in each side of the summary
@@ -9,6 +10,11 @@ from structure import word_count
 json_results = {}
 summary = ''
 
+DIR_RESULTS = '../OUTPUT/RESULTS'
+DIR_OUTPUT = '../OUTPUT/SUMMARIES'
+
+os.makedirs(DIR_RESULTS, exist_ok=True)
+os.makedirs(DIR_OUTPUT, exist_ok=True)
 
 def reset():
     global json_results
@@ -144,19 +150,19 @@ def print_stats(summ_idx_1, summ_idx_2, source1, source2):
         out.printinfo("      %4d)   %s " % (i, source2[i]['opinions']))
 
 
-
 def write_files(SOURCE1, SOURCE2, exec_code):
-    json_results_filename = 'RESULTS/' + exec_code + '_' + SOURCE1 + '_' + SOURCE2 + '.json'
+    json_results_filename = f'{DIR_RESULTS}/{exec_code}_{SOURCE1}_{SOURCE2}.json'
+    print(json_results_filename)
     f = open(json_results_filename, 'w')
     f.write(json.dumps(json_results, sort_keys=True, indent=4, separators=(',', ': '), ensure_ascii=False))
     f.close()
 
-    f = open(f'OUTPUT/out_{exec_code}_{SOURCE1[:-1]}.txt', 'w')
+    f = open(f'{DIR_OUTPUT}/out_{exec_code}_{SOURCE1[:-1]}.txt', 'w')
     f.write(summary)
     f.close()
 
     table_results = make_table_of_results()
-    table_results_filename = 'RESULTS/' + exec_code + '_' + 'table' + '.txt'  # Name of file that will save the results
+    table_results_filename = f'{DIR_RESULTS}+{exec_code}_table.txt'  # Name of file that will save the results
     f = open(table_results_filename, 'a')
     f.write('%d tests, discard %d(x2) best and worst\n\n' % (REPEAT_TESTS, DISCARD_TESTS))
     f.write('\n\n')
