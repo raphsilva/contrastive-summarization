@@ -18,15 +18,15 @@ def read_input(filename):
 
         n['opinions'] = sorted(i['opinions'])  # Sorted to help cache
 
-        n['sentence'] = i['sentence']
+        n['verbatim'] = i['sentence']
 
-        n['word_count'] = len((n['sentence']).split())  # Number of words
+        n['word_count'] = len((n['verbatim']).split())  # Number of words
 
         n['text_info'] = process_sentence(i['sentence'])
 
         r[n['id']] = n
 
-        makecache_remove_negs_adjs(n['sentence'])
+        makecache_remove_negs_adjs(n['verbatim'])
 
     return r
 

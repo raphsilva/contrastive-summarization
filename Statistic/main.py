@@ -8,7 +8,7 @@ import common.evaluate as evaluate
 import Statistic.method as method
 import common.output_files as output_files
 import Statistic.output_format as out
-import Statistic.structure as struct
+import common.structure as struct
 from Statistic.read_input import read_input
 
 from Statistic.summarization import summarize

@@ -5,7 +5,7 @@ import common.evaluate as evaluate
 import Similarity.summarization as optm
 import common.output_files as output_files
 import Similarity.output_format as out
-import Similarity.structure as struct
+import common.structure as struct
 from Similarity.read_input import read_input
 from options import DATASETS_TO_TEST
 from options import DEBUG_MODE
@@ -88,10 +88,10 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
         if sum([source2[i]['sent'][a] for a in source2[i]['sent']]) < 0:
             e2_neg[i] = source2[i]
 
-    stats_e1_pos = struct.aspects_stats(e1_pos)
-    stats_e1_neg = struct.aspects_stats(e1_neg)
-    stats_e2_pos = struct.aspects_stats(e2_pos)
-    stats_e2_neg = struct.aspects_stats(e2_neg)
+    stats_e1_pos = struct.aspects_stats_SIMILARITY(e1_pos)
+    stats_e1_neg = struct.aspects_stats_SIMILARITY(e1_neg)
+    stats_e2_pos = struct.aspects_stats_SIMILARITY(e2_pos)
+    stats_e2_neg = struct.aspects_stats_SIMILARITY(e2_neg)
 
     evaluate.reset()  # To start evaluating summaries of the current sources.
     output_files.new_source(SOURCE1, SOURCE2, source1, source2, 'Similarity')  # Prepare output files for the current sources.

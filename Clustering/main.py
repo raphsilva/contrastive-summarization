@@ -25,8 +25,8 @@ PICK_CENTROIDS = options['Clustering']['centroids']
 HUNGARIAN_METHOD = options['Clustering']['hungarian']
 SIZE_FAC = options['Clustering']['size_fac']
 
-from structure import get_summ_closest_to_scores
-from structure import idx_to_summ
+from common.structure import get_summ_closest_to_scores
+from common.structure import idx_to_summ
 from summarization import contrastiveness_first
 from summarization import representativeness_first
 

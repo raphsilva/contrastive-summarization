@@ -1,5 +1,5 @@
-import Ranking.structure as struct
-from Ranking.structure import trinary_polarity
+import common.structure as struct
+from common.structure import trinary_polarity
 
 INFINITY = 999999
 
@@ -14,8 +14,8 @@ RANKING_MODE = options['Ranking']['strategy']
 INDEPENDENT_RANK = options['Ranking']['independent']
 SENTENCE_IDEAL_LENGTH = options['Ranking']['ideal length']
 
-from Ranking.structure import get_opinions
-from Ranking.structure import get_contrastive_pairs
+from common.structure import get_opinions
+from common.structure import get_contrastive_pairs
 
 import random
 random.seed(0)

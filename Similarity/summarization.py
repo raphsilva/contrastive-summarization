@@ -1,6 +1,6 @@
 import method
 
-import structure as struct
+import common.structure as struct
 
 INFINITY = 999999
 
