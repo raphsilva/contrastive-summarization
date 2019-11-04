@@ -55,6 +55,9 @@ INPUT_FILES = [(), ('D1a','D1b'), ('D2a','D2b'), ('D3a','D3b'), ('D4a','D4b'), (
 DATASETS_TO_TEST = [INPUT_FILES[7]]
 # DATASETS_TO_TEST = reversed(INPUT_FILES[:])
 
+DIR_RESULTS = '../OUTPUT/RESULTS'
+DIR_OUTPUT = '../OUTPUT/SUMMARIES'
+
 def filepath(target):  # Get full path for the file with data of target
     return DATA_DIR + '/' + target + '.json'
 

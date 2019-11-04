@@ -16,14 +16,11 @@ from options import REPEAT_TESTS
 from options import filepath  # Get full path for the file with data of target
 from options import options
 from structure import word_count
+from options import DIR_RESULTS, DIR_OUTPUT
+
 
 METHOD = options['Similarity']['strategy']
 
-PATH_RESULTS = 'RESULTS'
-PATH_OUTPUT = 'OUTPUT'
-
-os.makedirs(PATH_RESULTS, exist_ok=True)
-os.makedirs(PATH_OUTPUT, exist_ok=True)
 
 EXECUTION_ID = str(int(time()) % 100000000)  # Execution code (will be in the results file name)
 
@@ -178,4 +175,4 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
     # Save output files in disc.
     output_files.write_files(SOURCE1, SOURCE2, EXECUTION_ID)
 
-print(f'\n\nSummaries and evaluations are in folders {PATH_OUTPUT} and {PATH_RESULTS}.')
+print(f'\n\nSummaries and evaluations are in folders {DIR_OUTPUT} and {DIR_RESULTS}.')

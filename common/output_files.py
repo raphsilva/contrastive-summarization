@@ -7,14 +7,13 @@ from options import LIM_WORDS  # Sets the maximum number of WORDS in each side o
 from options import options
 from structure import word_count
 
-json_results = {}
-summary = ''
-
-DIR_RESULTS = '../OUTPUT/RESULTS'
-DIR_OUTPUT = '../OUTPUT/SUMMARIES'
+from options import DIR_RESULTS, DIR_OUTPUT
 
 os.makedirs(DIR_RESULTS, exist_ok=True)
 os.makedirs(DIR_OUTPUT, exist_ok=True)
+
+json_results = {}
+summary = ''
 
 def reset():
     global json_results

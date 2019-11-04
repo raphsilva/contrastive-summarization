@@ -18,17 +18,13 @@ from options import DISCARD_TESTS
 from options import DEBUG_MODE
 from options import REPEAT_TESTS
 from options import filepath  # Get full path for the file with data of target
+from options import DIR_RESULTS, DIR_OUTPUT
+
 
 from options import options
 OPTM_MODE = options['Statistic']['optimization']
 METHOD = options['Statistic']['strategy']
 ALPHA = options['Statistic']['alpha']
-
-PATH_RESULTS = 'RESULTS'
-PATH_OUTPUT = 'OUTPUT'
-
-os.makedirs(PATH_RESULTS, exist_ok=True)
-os.makedirs(PATH_OUTPUT, exist_ok=True)
 
 EXECUTION_ID = str(int(time()) % 100000000)  # Execution code (will be in the results file name)
 
@@ -148,4 +144,4 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
     # Update cache.
     method.save_caches()
 
-print(f'\n\nSummaries and evaluations are in folders {PATH_OUTPUT} and {PATH_RESULTS}.')
+print(f'\n\nSummaries and evaluations are in folders {DIR_OUTPUT} and {DIR_RESULTS}.')
