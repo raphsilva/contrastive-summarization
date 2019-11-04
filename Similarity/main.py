@@ -4,7 +4,7 @@ from time import time
 import common.evaluate as evaluate
 import Similarity.summarization as optm
 import common.output_files as output_files
-import Similarity.output_format as out
+import common.output_format as out
 import common.structure as struct
 from Similarity.read_input import read_input
 from options import DATASETS_TO_TEST

@@ -7,7 +7,7 @@ sys.path.append(os.path.realpath('..'))
 import common.evaluate as evaluate
 import Ranking.summarization as optm
 import common.output_files as output_files
-import Ranking.output_format as out
+import common.output_format as out
 import common.structure as struct
 from Ranking.read_input import read_input
 from options import DATASETS_TO_TEST
