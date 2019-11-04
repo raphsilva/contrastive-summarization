@@ -9,7 +9,7 @@ import Ranking.summarization as optm
 import common.output_files as output_files
 import common.output_format as out
 import common.structure as struct
-from Ranking.read_input import read_input
+from common.read_input import read_input
 from options import DATASETS_TO_TEST
 from options import DISCARD_TESTS
 from options import LIM_SENTENCES  # Sets the maximum number of SENTENCES in each side of the summary

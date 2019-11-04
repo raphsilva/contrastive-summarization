@@ -9,7 +9,7 @@ import Statistic.method as method
 import common.output_files as output_files
 import common.output_format as out
 import common.structure as struct
-from Statistic.read_input import read_input
+from common.read_input import read_input_STATISTIC
 
 from Statistic.summarization import summarize
 
@@ -36,8 +36,8 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
     print(f'\n\n\n\n  =========datasets=======>  {SOURCE1} {SOURCE2}\n\n')
 
     out.print_verbose('Loading input')
-    source1 = read_input(filepath(SOURCE1))
-    source2 = read_input(filepath(SOURCE2))
+    source1 = read_input_STATISTIC(filepath(SOURCE1))
+    source2 = read_input_STATISTIC(filepath(SOURCE2))
     out.print_verbose('Sizes of data sets: ', len(source1), len(source2))
     source1 = method.remove_low_intensity(source1)
     source2 = method.remove_low_intensity(source2)

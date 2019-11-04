@@ -7,8 +7,8 @@ sys.path.append(os.path.realpath('..'))
 import common.evaluate as evaluate
 import common.output_files as output_files
 import common.output_format as out
-from Clustering.load_data import preprocess
-from Clustering.load_data import read_input
+from common.read_input import preprocess_CLUSTERING
+from common.read_input import read_input_CLUSTERING
 
 from options import DATASETS_TO_TEST
 from options import DISCARD_TESTS
@@ -47,8 +47,8 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
     print(f'\n\n\n\n  =========datasets=======>  {SOURCE1} {SOURCE2}\n\n')
 
     out.print_verbose('Loading input')
-    source1 = read_input(filepath(SOURCE1))
-    source2 = read_input(filepath(SOURCE2))
+    source1 = read_input_CLUSTERING(filepath(SOURCE1))
+    source2 = read_input_CLUSTERING(filepath(SOURCE2))
     out.print_verbose('Sizes of data sets: ', len(source1), len(source2))
 
     '''
@@ -71,8 +71,8 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
     }
     '''
 
-    source1_proc = preprocess(source1)
-    source2_proc = preprocess(source2)
+    source1_proc = preprocess_CLUSTERING(source1)
+    source2_proc = preprocess_CLUSTERING(source2)
 
     set1_pos = source1_proc['+']
     set1_neg = source1_proc['-']
