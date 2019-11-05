@@ -1,8 +1,15 @@
 import json
+import os
 
+from options import DIR_RESULTS, DIR_OUTPUT
 from options import DISCARD_TESTS, REPEAT_TESTS
-from options import LIMIT_WORDS  # Sets the maximum number of WORDS in each side of the summary
-from structure import word_count
+from options import LIM_SENTENCES  # Sets the maximum number of SENTENCES in each side of the summary
+from options import LIM_WORDS  # Sets the maximum number of WORDS in each side of the summary
+from options import options
+from common.structure import word_count
+
+os.makedirs(DIR_RESULTS, exist_ok=True)
+os.makedirs(DIR_OUTPUT, exist_ok=True)
 
 json_results = {}
 summary = ''
@@ -13,8 +20,9 @@ def reset():
     json_results = {'meta': {}}
     json_results['meta']['source'] = []
     json_results['meta']['limits (per side)'] = {}
-    json_results['meta']['limits (per side)']['words'] = LIMIT_WORDS
-    json_results['meta']['method_options'] = {}
+    json_results['meta']['limits (per side)']['sentences'] = LIM_SENTENCES
+    json_results['meta']['limits (per side)']['words'] = LIM_WORDS
+    json_results['meta']['method_parameters'] = options
     json_results['output'] = []
 
 
@@ -99,13 +107,13 @@ def write_summary(summ1, summ2, num_summaries):
 
     summary = '\n'
     for i in summ1:
-        summary += "%s " % (summ1[i]['sentence'])
+        summary += "%s " % (summ1[i]['verbatim'])
         summary += "\n"
 
     summary += '\n\n'
 
     for i in summ2:
-        summary += "%s " % (summ2[i]['sentence'])
+        summary += "%s " % (summ2[i]['verbatim'])
         summary += "\n"
 
     w1 = sum([summ1[i]['word_count'] for i in summ1])
@@ -141,19 +149,19 @@ def print_stats(summ_idx_1, summ_idx_2, source1, source2):
         out.printinfo("      %4d)   %s " % (i, source2[i]['opinions']))
 
 
-
 def write_files(SOURCE1, SOURCE2, exec_code):
-    json_results_filename = 'RESULTS/' + exec_code + '_' + SOURCE1 + '_' + SOURCE2 + '.json'
+    json_results_filename = f'{DIR_RESULTS}/{exec_code}_{SOURCE1}_{SOURCE2}.json'
+    print(json_results_filename)
     f = open(json_results_filename, 'w')
     f.write(json.dumps(json_results, sort_keys=True, indent=4, separators=(',', ': '), ensure_ascii=False))
     f.close()
 
-    f = open(f'OUTPUT/out_{exec_code}_{SOURCE1[:-1]}.txt', 'w')
+    f = open(f'{DIR_OUTPUT}/out_{exec_code}_{SOURCE1[:-1]}.txt', 'w')
     f.write(summary)
     f.close()
 
     table_results = make_table_of_results()
-    table_results_filename = 'RESULTS/' + exec_code + '_' + 'table' + '.txt'  # Name of file that will save the results
+    table_results_filename = f'{DIR_RESULTS}+{exec_code}_table.txt'  # Name of file that will save the results
     f = open(table_results_filename, 'a')
     f.write('%d tests, discard %d(x2) best and worst\n\n' % (REPEAT_TESTS, DISCARD_TESTS))
     f.write('\n\n')

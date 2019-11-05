@@ -1,8 +1,9 @@
-from similarity import psi, phi
 import math
 
-from options import LIMIT_SENTENCES
-from options import ALLOW_REPETITION
+from options import options
+from Clustering.method import psi, phi
+
+ALLOW_REPETITION = options['Clustering']['repetition']
 
 # clustering algorithm used in the implementation of RF method
 from sklearn.cluster import AgglomerativeClustering
@@ -14,25 +15,23 @@ from itertools import permutations
 from operator import itemgetter
 
 import random
+
 random.seed(0)  # Make random deterministic
 
 
 # Defines the size of the summary of the sets 'side1' and 'side2'.
-def summSize(side1, side2, SIZE_FAC):
-    from options import METHOD
+def summary_size(side1, side2, SIZE_FAC):
     l1 = len(side1)
     l2 = len(side2)
-    if LIMIT_SENTENCES != 'Auto':  # Force size to the value specified in the setup
-        k = int(LIMIT_SENTENCES / 2)
-    else:
-        k = 1 + int(math.floor(math.log2(l1 + l2)))
 
-    k = int(k * SIZE_FAC)
+    k = 1 + int(math.floor(math.log2(l1 + l2)))  # Heuristic to determine size
+
+    k = int(k * SIZE_FAC)  # Multiply by 'size factor', which keeps being adjusted so summaries have an amount of words close to the limit.
 
     return min(k, l1, l2)  # Don't allow summaries bigger than original sets (error would occur)
 
 
-def findCentroids(clusters, text_info, polarity, k):
+def find_centroids(clusters, text_info, polarity, k):
     centroids = [-1 for i in range(k)]
 
     # finding the centroids for clusters_x
@@ -53,6 +52,7 @@ def findCentroids(clusters, text_info, polarity, k):
         centroids[cluster_id] = best_sentence
     return centroids
 
+
 from random import uniform
 
 
@@ -72,7 +72,7 @@ def representativeness_first(side1, side2, polarity1, polarity2, SIZE_FAC, LAMBD
     text_info_2 = [s['text_info'] for s in side2]
 
     # amount of sentence pairs we want in the summary
-    k = summSize(side1, side2, SIZE_FAC)
+    k = summary_size(side1, side2, SIZE_FAC)
 
     # calculating the distance matrices; will be used for agglomerative clustering
     # distance_matrix[i, j] = 1.0 - phi(i, j)
@@ -103,8 +103,8 @@ def representativeness_first(side1, side2, polarity1, polarity2, SIZE_FAC, LAMBD
         clusters_y[model_labels_y[j]].append(j)
 
     # structures to store the centroids for each cluster
-    centroids_x = findCentroids(clusters_x, text_info_1, polarity1, k)
-    centroids_y = findCentroids(clusters_y, text_info_2, polarity2, k)
+    centroids_x = find_centroids(clusters_x, text_info_1, polarity1, k)
+    centroids_y = find_centroids(clusters_y, text_info_2, polarity2, k)
 
     # finding the best alignment
     best_alignment = -1
@@ -200,7 +200,7 @@ def contrastiveness_first(side1, side2, polarity1, polarity2, SIZE_FAC, LAMBDA=0
     text_info_2 = [s['text_info'] for s in side2]
 
     # amount of sentence pairs we want in the summary
-    k = summSize(side1, side2, SIZE_FAC)
+    k = summary_size(side1, side2, SIZE_FAC)
 
     # structures used to find the sets X_ui and Y_vi defined in the paper
     max_similarity_x = [0.0 for sX in side1]

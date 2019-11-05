@@ -1,9 +1,12 @@
-from probability import *
-from options import ALPHA
-from options import MIN_INTENSITY_IN_SUMMARY
+from Statistic.probability import *
 from options import POLARITY_SCALE
-from write_files import get_variable_from_file
-from write_files import overwrite_json
+from common.write_files import get_variable_from_file
+from common.write_files import overwrite_json
+
+from options import options
+
+MIN_INTENSITY_IN_SUMMARY = options['Statistic']['min intensity']
+ALPHA = options['Statistic']['alpha']
 
 cache_distance = get_variable_from_file('cache/distance.cache')
 cache_SAM = get_variable_from_file('cache/SAM.cache')

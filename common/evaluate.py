@@ -1,6 +1,6 @@
 from statistics import stdev
 
-import metrics
+import common.metrics as metrics
 from options import DISCARD_TESTS
 
 r_scores = []

@@ -1,20 +1,30 @@
 import os
+import sys
 from time import time
 
-import evaluate
-import summarization as optm
-import output_files
-import output_format as out
-import structure as struct
-from read_input import read_input
+sys.path.append(os.path.realpath('..'))
+
+import common.evaluate as evaluate
+import Ranking.summarization as optm
+import common.output_files as output_files
+import common.output_format as out
+import common.structure as struct
+from common.read_input import read_input
 from options import DATASETS_TO_TEST
 from options import DISCARD_TESTS
 from options import LIM_SENTENCES  # Sets the maximum number of SENTENCES in each side of the summary
 from options import LIM_WORDS  # Sets the maximum number of WORDS in each side of the summary
-from options import METHOD
-from options import RANKING_MODE
 from options import REPEAT_TESTS
 from options import filepath  # Get full path for the file with data of target
+from options import options
+from options import DIR_RESULTS, DIR_OUTPUT
+
+
+RANKING_MODE = options['Ranking']['strategy']
+INDEPENDENT_RANK = options['Ranking']['independent']
+SENTENCE_IDEAL_LENGTH = options['Ranking']['ideal length']
+
+method_info = [RANKING_MODE, INDEPENDENT_RANK, SENTENCE_IDEAL_LENGTH]
 
 
 # Load input
@@ -25,12 +35,6 @@ def load_input():
     source2 = read_input(filepath(SOURCE2))
     return source1, source2
 
-
-PATH_RESULTS = 'RESULTS'
-PATH_OUTPUT = 'OUTPUT'
-
-os.makedirs(PATH_RESULTS, exist_ok=True)
-os.makedirs(PATH_OUTPUT, exist_ok=True)
 
 EXECUTION_ID = str(int(time()) % 100000000)  # Execution code (will be in the results file name)
 
@@ -101,7 +105,7 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
         print('%3d) %5d %5d %5d %5d' % (repeat + 1, scores['R'], scores['C'], scores['D'], scores['H']))
 
         # Register parameters used
-        summary_parameters = [METHOD, 'LIMIT SENTENCES=' + str(LIM_SENTENCES), 'LIMIT WORDS=' + str(LIM_WORDS)]
+        summary_parameters = [method_info, 'LIMIT SENTENCES=' + str(LIM_SENTENCES), 'LIMIT WORDS=' + str(LIM_WORDS)]
 
         # Write output file
         output_files.new_summary(summ1, summ2, scores, summary_parameters, time_elapsed)
@@ -127,4 +131,4 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
     # Save output files in disc.
     output_files.write_files(SOURCE1, SOURCE2, EXECUTION_ID)
 
-print(f'\n\nSummaries and evaluations are in folders {PATH_OUTPUT} and {PATH_RESULTS}.')
+print(f'\n\nSummaries and evaluations are in folders {DIR_OUTPUT} and {DIR_RESULTS}.')

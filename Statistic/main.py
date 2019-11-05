@@ -1,27 +1,30 @@
 import os
+import sys
 from time import time
 
-import evaluate
-import method
-import output_files
-import output_format as out
-import structure as struct
-from read_input import read_input
-from options import ALPHA
+sys.path.append(os.path.realpath('..'))  # To import modules from directory above.
+
+import common.evaluate as evaluate
+import Statistic.method as method
+import common.output_files as output_files
+import common.output_format as out
+import common.structure as struct
+from common.read_input import read_input_STATISTIC
+
+from Statistic.summarization import summarize
+
 from options import DATASETS_TO_TEST
-from options import DEBUG_MODE
 from options import DISCARD_TESTS
-from options import METHOD
-from options import OPTM_MODE
+from options import DEBUG_MODE
 from options import REPEAT_TESTS
 from options import filepath  # Get full path for the file with data of target
-from summarization import summarize
+from options import DIR_RESULTS, DIR_OUTPUT
 
-PATH_RESULTS = 'RESULTS'
-PATH_OUTPUT = 'OUTPUT'
 
-os.makedirs(PATH_RESULTS, exist_ok=True)
-os.makedirs(PATH_OUTPUT, exist_ok=True)
+from options import options
+OPTM_MODE = options['Statistic']['optimization']
+METHOD = options['Statistic']['strategy']
+ALPHA = options['Statistic']['alpha']
 
 EXECUTION_ID = str(int(time()) % 100000000)  # Execution code (will be in the results file name)
 
@@ -33,8 +36,8 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
     print(f'\n\n\n\n  =========datasets=======>  {SOURCE1} {SOURCE2}\n\n')
 
     out.print_verbose('Loading input')
-    source1 = read_input(filepath(SOURCE1))
-    source2 = read_input(filepath(SOURCE2))
+    source1 = read_input_STATISTIC(filepath(SOURCE1))
+    source2 = read_input_STATISTIC(filepath(SOURCE2))
     out.print_verbose('Sizes of data sets: ', len(source1), len(source2))
     source1 = method.remove_low_intensity(source1)
     source2 = method.remove_low_intensity(source2)
@@ -141,4 +144,4 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
     # Update cache.
     method.save_caches()
 
-print(f'\n\nSummaries and evaluations are in folders {PATH_OUTPUT} and {PATH_RESULTS}.')
+print(f'\n\nSummaries and evaluations are in folders {DIR_OUTPUT} and {DIR_RESULTS}.')
