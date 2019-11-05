@@ -12,7 +12,6 @@ from common.read_input import read_input_CLUSTERING
 
 from options import DATASETS_TO_TEST
 from options import DISCARD_TESTS
-from options import LIM_SENTENCES  # Sets the maximum number of SENTENCES in each side of the summary
 from options import LIM_WORDS  # Sets the maximum number of WORDS in each side of the summary
 from options import REPEAT_TESTS
 from options import filepath  # Get full path for the file with data of target
@@ -28,11 +27,8 @@ SIZE_FAC = options['Clustering']['size_fac']
 
 from common.structure import get_summ_closest_to_scores
 from common.structure import idx_to_summ
-from summarization import contrastiveness_first
-from summarization import representativeness_first
-
-
-
+from Clustering.summarization import contrastiveness_first
+from Clustering.summarization import representativeness_first
 
 EXECUTION_ID = str(int(time()) % 100000000)  # Execution code (will be in the results file name)
 

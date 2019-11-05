@@ -2,7 +2,7 @@ import os
 import sys
 from time import time
 
-sys.path.append(os.path.realpath('..'))
+sys.path.append(os.path.realpath('..'))  # To import modules from directory above.
 
 import common.evaluate as evaluate
 import Statistic.method as method

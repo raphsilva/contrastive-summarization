@@ -1,1 +1,0 @@
-Developed by: Otávio Augusto Ferreira Sousa (June 2018) and Raphael Rocha da Silva (September 2018 – October 2019)

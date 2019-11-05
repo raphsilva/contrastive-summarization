@@ -1,7 +1,7 @@
-from probability import *
+from Statistic.probability import *
 from options import POLARITY_SCALE
-from write_files import get_variable_from_file
-from write_files import overwrite_json
+from common.write_files import get_variable_from_file
+from common.write_files import overwrite_json
 
 from options import options
 

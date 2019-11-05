@@ -1,5 +1,8 @@
 import os
+import sys
 from time import time
+
+sys.path.append(os.path.realpath('..'))  # To import modules from directory above.
 
 import common.evaluate as evaluate
 import Similarity.summarization as optm
@@ -15,7 +18,7 @@ from options import LIM_WORDS  # Sets the maximum number of WORDS in each side o
 from options import REPEAT_TESTS
 from options import filepath  # Get full path for the file with data of target
 from options import options
-from structure import word_count
+from common.structure import word_count
 from options import DIR_RESULTS, DIR_OUTPUT
 
 

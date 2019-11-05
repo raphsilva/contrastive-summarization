@@ -1,6 +1,6 @@
-import method
-import output_format as out
-import structure as struct
+import Statistic.method as method
+import common.output_format as out
+import common.structure as struct
 
 INFINITY = 999999
 

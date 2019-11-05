@@ -92,11 +92,13 @@ def makecache_remove_negs_adjs(sentence):
 
 
 def removeNegsAndAdjs(sentence_proc):
+    from pprint import  pprint
+    pprint(cache_removed_negs_adjs)
     return cache_removed_negs_adjs[str(sentence_proc)]
 
 
-from write_files import get_variable_from_file
-from write_files import overwrite_json
+from common.write_files import get_variable_from_file
+from common.write_files import overwrite_json
 
 got_all_lemmas = False
 

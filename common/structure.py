@@ -11,56 +11,7 @@ def trinary_polarity(num):
     return 0
 
 
-
-
-
-def get_summ_closest_to_scores(scores, map_scores_summary):
-
-    def sqdiff(l1, l2):  # To determine difference between two summaries scores
-        r = 0
-        for i in range(len(l1)):
-            r += pow(l1[i] - l2[i], 2)
-        return r
-
-    fairness_rank = sorted(map_scores_summary.keys(), key=lambda k: sqdiff(k, scores))
-
-    summ_idx_f_1 = map_scores_summary[fairness_rank[0]][0]
-    summ_idx_f_2 = map_scores_summary[fairness_rank[0]][1]
-
-    return summ_idx_f_1, summ_idx_f_2
-
-
 cache_get_opinions = {}
-
-
-def word_count(summ):
-    r = 0
-    for i in summ:
-        r += summ[i]['word_count']
-    return r
-
-
-# def get_opinions(source):
-#     key_cache = repr(source)
-#     if key_cache in cache_get_opinions:
-#         return cache_get_opinions[key_cache]
-#
-#     r = []
-#     for j in source:
-#
-#         for aspect in source[j]['sent']:
-#
-#             polarity = source[j]['sent'][aspect]
-#             polarity = trinary_polarity(polarity)
-#
-#             if polarity == 0:
-#                 continue
-#
-#             r.append((aspect, polarity))
-#
-#     cache_get_opinions[key_cache] = r
-#
-#     return r
 
 
 def get_opinions(source):
@@ -112,9 +63,7 @@ def count_words(summ):
     return r
 
 
-
-
-import output_format
+import common.output_format as output_format
 
 
 def idx_to_summ_SIMILARITY(source, indexes):
@@ -127,11 +76,12 @@ def idx_to_summ_SIMILARITY(source, indexes):
 
     return r
 
+
 def idx_to_summ(source, indexes):
     return {i: source[i] for i in indexes}
 
-def get_summ_closest_to_scores(scores, map_scores_summary):
 
+def get_summ_closest_to_scores(scores, map_scores_summary):
     def sqdiff(l1, l2):  # To determine difference between two summaries scores
         r = 0
         for i in range(len(l1)):
@@ -158,10 +108,6 @@ def word_count(summ):
     return r
 
 
-def compression(source, summ):
-    return word_count(summ) / word_count(source)
-
-
 def printOverview(distribution):
     for i in sorted(distribution, key=lambda x: distribution[x]['prob']):
         output_format.printinfo(
@@ -176,20 +122,6 @@ def getTopics(source):
             if j[0] not in aspects:
                 aspects.append(j[0])
     return aspects
-
-
-def avgSent(info):
-    if len(info) == 0:
-        return 0
-
-    a = 0
-    c = 0
-    for i in info:
-        for o in info[i]['opinions']:
-            a += o[1]
-            c += 1
-
-    return a / c
 
 
 def bagOfWordsAndScores(info):
@@ -209,7 +141,6 @@ def bagOfWordsAndScores(info):
     # input()
 
     return r
-
 
 
 def getGroupsPairsAspectSentim(info):
@@ -238,21 +169,8 @@ def getGroupsPairsAspectSentim(info):
     return r
 
 
-
-
-# Calculate the (mean, stdev, probability) of each aspect
-# def aspects_stats(info):
-#     r = {}
-#
-#     for i in info:
-#         n = {}
-#         for j in info[i]['sent']:
-#             n[j] = trinary_polarity(info[i]['sent'][j])
-#         r[i] = n
-#     return r
-
-
 aspsentdistr_cache = {}
+
 
 # Calculate the (mean, stdev, probability) of each aspect
 def aspects_stats(info):
@@ -298,7 +216,6 @@ def aspects_stats(info):
     aspsentdistr_cache[str(pairs)] = r
 
     return r
-
 
 
 # Calculate the (mean, stdev, probability) of each aspect

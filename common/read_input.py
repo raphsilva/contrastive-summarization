@@ -1,5 +1,6 @@
-from common.write_files import get_variable_from_file
 from Statistic.method import sent
+from common.write_files import get_variable_from_file
+
 
 # Reads input files
 def read_input(filename):
@@ -32,13 +33,12 @@ def read_input(filename):
         r[n['id']] = n
     return r
 
-
-
+from language import process_sentence
+from language import makecache_remove_negs_adjs
 
 # Reads input files
 def read_input_CLUSTERING(filename):
-    from language import process_sentence
-    from language import makecache_remove_negs_adjs
+
 
     g = get_variable_from_file(filename)
     info = g['data']
@@ -91,8 +91,6 @@ def preprocess_CLUSTERING(data):
     return r
 
 
-
-
 # Reads input files
 def read_input_STATISTIC(filename):
     g = get_variable_from_file(filename)
@@ -111,16 +109,16 @@ def read_input_STATISTIC(filename):
 
         n['word_count'] = len((n['verbatim']).split())  # Number of words
 
-        n['sent'] = opinionsToSent(n['opinions'])
+        n['sent'] = opinionsToSent_STATISTIC(n['opinions'])
 
-        n['intensity'] = opinionsToIntensity(n['opinions'])
+        n['intensity'] = opinionsToIntensity_STATISTIC(n['opinions'])
 
         r[n['id']] = n
 
     return r
 
 
-def getAspectSent(opinions, aspect):
+def getAspectSent_STATISTIC(opinions, aspect):
     s = []
     for i in opinions:
         if i[0] == aspect:
@@ -128,17 +126,17 @@ def getAspectSent(opinions, aspect):
     return sent(s)
 
 
-def opinionsToSent(opinions):
+def opinionsToSent_STATISTIC(opinions):
     r = {}
     for i in opinions:
         if i[0] in r:
             continue
-        r[i[0]] = getAspectSent(opinions, i[0])
+        r[i[0]] = getAspectSent_STATISTIC(opinions, i[0])
 
     return r
 
 
-def opinionsToIntensity(opinions):
+def opinionsToIntensity_STATISTIC(opinions):
     if len(opinions) == 0:
         return 0
     s = 0

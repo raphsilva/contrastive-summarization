@@ -1,5 +1,6 @@
-from options import DEBUG_MODE
 from pprint import pformat
+
+from options import DEBUG_MODE
 
 GRAY = '\33[90m'
 BLUE = '\33[94m'

@@ -1,4 +1,4 @@
-import method
+import Similarity.method as method
 
 import common.structure as struct
 

@@ -1,4 +1,4 @@
-from language import removeNegsAndAdjs
+from Clustering.language import removeNegsAndAdjs
 
 # in order to gain efficiency timewise, if a ϕ or ψ is calculated, it's stored
 # so it wouldn't be necessary to calculate it again
