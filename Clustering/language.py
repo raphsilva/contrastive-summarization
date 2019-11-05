@@ -52,7 +52,6 @@ def simplify_characters(my_string):
 
 cache_removed_negs_adjs = {}
 
-
 def makecache_remove_negs_adjs(sentence):
     global cache_removed_negs_adjs
 
@@ -92,8 +91,6 @@ def makecache_remove_negs_adjs(sentence):
 
 
 def removeNegsAndAdjs(sentence_proc):
-    from pprint import  pprint
-    pprint(cache_removed_negs_adjs)
     return cache_removed_negs_adjs[str(sentence_proc)]
 
 
