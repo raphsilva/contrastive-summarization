@@ -44,12 +44,12 @@ After tests are done, the outputs will be in two folders: `OUTPUT` will contain 
 
 #### Summaries 
 
-After a method of summarization has been executed multiple times for a given input, the summary that best reflects the average performance of the method is chosen and saved at `OUTPUT/summaries/[n]_[dataset].txt`, where `n` is an identifier attributed to each execution. Summaries are saved in simple text format and are divided in two parts, separated by a long line break, one for each entity.
+After a method of summarization has been executed multiple times for a given input, the summary that best reflects the average performance of the method is chosen and saved at `OUTPUT/summaries/[method]_[n]_[dataset].txt`, where `n` is an identifier attributed to each execution. Summaries are saved in simple text format and are divided in two parts, separated by a long line break, one for each entity.
 
 
 #### Evaluation
 
-The evaluation results are saved in the directory `OUTPUT` of each method. They are files named `OUTPUT/results/[n]_[dataset].json`,  where `n` is an identifier attributed to each execution. These files are JSONs that contain the following: 
+The evaluation results are saved in the directory `OUTPUT` of each method. They are files named `OUTPUT/results/[method]_[n]_[dataset].json`,  where `n` is an identifier attributed to each execution. These files are JSONs that contain the following: 
 * Information about the **input**, such as **number of words**, **number of sentences**, **file names**.
 * The **options** used in the tests, such as **method parameters**, **limits of words**, etc;
 * Statistics of execution, such as **time consumed** and **number of distinct summaries** gotten;
@@ -57,7 +57,7 @@ The evaluation results are saved in the directory `OUTPUT` of each method. They 
 * The **quantitative** information of summaries, with the **average of words** and **average of sentences**.
 * Information of **each summary** generated, such as the **size** of the summary, the **evaluation** scores and the **indexes of sentences** that make the the summary.
 
-Another file is generated at each execution, called `[n]_table.txt`, and it has a summary of results for all input files. It shows, in a compact way: the average scores, standard deviation, highest / lowest scores, average sizes, time consumed and the number of distinct summaries found.
+Another file is generated at each execution, called `[method]_[n]_table.txt`, and it has a summary of results for all input files. It shows, in a compact way: the average scores, standard deviation, highest / lowest scores, average sizes, time consumed and the number of distinct summaries found.
 
 
 ## Instructions

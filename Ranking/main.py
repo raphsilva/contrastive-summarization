@@ -19,10 +19,11 @@ from OPTIONS import filepath  # Get full path for the file with data of target
 from OPTIONS import options
 from OPTIONS import DIR_RESULTS, DIR_OUTPUT
 
+METHOD_NAME = 'Ranking'
 
-RANKING_MODE = options['Ranking']['strategy']
-INDEPENDENT_RANK = options['Ranking']['independent']
-SENTENCE_IDEAL_LENGTH = options['Ranking']['ideal length']
+RANKING_MODE = options[METHOD_NAME]['strategy']
+INDEPENDENT_RANK = options[METHOD_NAME]['independent']
+SENTENCE_IDEAL_LENGTH = options[METHOD_NAME]['ideal length']
 
 method_info = [RANKING_MODE, INDEPENDENT_RANK, SENTENCE_IDEAL_LENGTH]
 
@@ -129,6 +130,6 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
     output_files.write_summary(summ1, summ2, len(distinct_summaries))
 
     # Save output files in disc.
-    output_files.write_files(SOURCE1, SOURCE2, EXECUTION_ID)
+    output_files.write_files(SOURCE1, SOURCE2, METHOD_NAME, EXECUTION_ID)
 
 print(f'\n\nSummaries and evaluations are in folders {DIR_OUTPUT} and {DIR_RESULTS}.')

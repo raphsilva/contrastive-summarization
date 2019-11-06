@@ -19,11 +19,13 @@ from OPTIONS import DIR_RESULTS, DIR_OUTPUT
 
 from OPTIONS import options
 
-METHOD = options['Clustering']['variation']
-LAMBDA = options['Clustering']['lambda']
-PICK_CENTROIDS = options['Clustering']['centroids']
-HUNGARIAN_METHOD = options['Clustering']['hungarian']
-SIZE_FAC = options['Clustering']['size_fac']
+METHOD_NAME = 'Clustering'
+
+METHOD = options[METHOD_NAME]['variation']
+LAMBDA = options[METHOD_NAME]['lambda']
+PICK_CENTROIDS = options[METHOD_NAME]['centroids']
+HUNGARIAN_METHOD = options[METHOD_NAME]['hungarian']
+SIZE_FAC = options[METHOD_NAME]['size_fac']
 
 from common.structure import get_summ_closest_to_scores
 from common.structure import idx_to_summ
@@ -173,6 +175,6 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
     output_files.write_summary(summ1, summ2, len(distinct_summaries))
 
     # Save output files in disc.
-    output_files.write_files(SOURCE1, SOURCE2, EXECUTION_ID)
+    output_files.write_files(SOURCE1, SOURCE2, METHOD_NAME, EXECUTION_ID)
 
 print(f'\n\nSummaries and evaluations are in folders {DIR_OUTPUT} and {DIR_RESULTS}.')

@@ -22,9 +22,12 @@ from OPTIONS import DIR_RESULTS, DIR_OUTPUT
 
 
 from OPTIONS import options
-OPTM_MODE = options['Statistic']['optimization']
-METHOD = options['Statistic']['strategy']
-ALPHA = options['Statistic']['alpha']
+
+METHOD_NAME = 'Statistic'
+
+OPTM_MODE = options[METHOD_NAME]['optimization']
+METHOD = options[METHOD_NAME]['strategy']
+ALPHA = options[METHOD_NAME]['alpha']
 
 EXECUTION_ID = str(int(time()) % 100000000)  # Execution code (will be in the results file name)
 
@@ -139,7 +142,7 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
         output_files.print_stats(summ_idx_1, summ_idx_2, source1, source2)
 
     # Save output files in disc.
-    output_files.write_files(SOURCE1, SOURCE2, EXECUTION_ID)
+    output_files.write_files(SOURCE1, SOURCE2, METHOD_NAME, EXECUTION_ID)
 
     # Update cache.
     method.save_caches()

@@ -21,8 +21,9 @@ from OPTIONS import options
 from common.structure import word_count
 from OPTIONS import DIR_RESULTS, DIR_OUTPUT
 
+METHOD_NAME = 'Similarity'
 
-METHOD = options['Similarity']['strategy']
+METHOD = options[METHOD_NAME]['strategy']
 
 
 EXECUTION_ID = str(int(time()) % 100000000)  # Execution code (will be in the results file name)
@@ -176,6 +177,6 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
         output_files.print_stats(summ_idx_1, summ_idx_2, source1, source2)
 
     # Save output files in disc.
-    output_files.write_files(SOURCE1, SOURCE2, EXECUTION_ID)
+    output_files.write_files(SOURCE1, SOURCE2, METHOD_NAME, EXECUTION_ID)
 
 print(f'\n\nSummaries and evaluations are in folders {DIR_OUTPUT} and {DIR_RESULTS}.')

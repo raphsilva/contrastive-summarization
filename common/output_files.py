@@ -126,8 +126,8 @@ def write_summary(summ1, summ2, num_summaries):
 
 
 def print_stats(summ_idx_1, summ_idx_2, source1, source2):
-    import output_format as out
-    import structure as struct
+    import common.output_format as out
+    import common.structure as struct
     # Get statistics about aspects in the source (mean, standard deviation, probability)
     stats_source_1 = struct.aspects_stats(source1)
     stats_source_2 = struct.aspects_stats(source2)
@@ -149,19 +149,19 @@ def print_stats(summ_idx_1, summ_idx_2, source1, source2):
         out.printinfo("      %4d)   %s " % (i, source2[i]['opinions']))
 
 
-def write_files(SOURCE1, SOURCE2, exec_code):
-    json_results_filename = f'{DIR_RESULTS}/{exec_code}_{SOURCE1}_{SOURCE2}.json'
+def write_files(SOURCE1, SOURCE2, METHOD, exec_code):
+    json_results_filename = f'{DIR_RESULTS}/{METHOD}_{exec_code}_{SOURCE1}_{SOURCE2}.json'
     print(json_results_filename)
     f = open(json_results_filename, 'w')
     f.write(json.dumps(json_results, sort_keys=True, indent=4, separators=(',', ': '), ensure_ascii=False))
     f.close()
 
-    f = open(f'{DIR_OUTPUT}/out_{exec_code}_{SOURCE1[:-1]}.txt', 'w')
+    f = open(f'{DIR_OUTPUT}/{METHOD}_{exec_code}_{SOURCE1[:-1]}.txt', 'w')
     f.write(summary)
     f.close()
 
     table_results = make_table_of_results()
-    table_results_filename = f'{DIR_RESULTS}+{exec_code}_table.txt'  # Name of file that will save the results
+    table_results_filename = f'{DIR_RESULTS}/{METHOD}_{exec_code}_table.txt'  # Name of file that will save the results
     f = open(table_results_filename, 'a')
     f.write('%d tests, discard %d(x2) best and worst\n\n' % (REPEAT_TESTS, DISCARD_TESTS))
     f.write('\n\n')
