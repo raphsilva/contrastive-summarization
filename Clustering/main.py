@@ -10,14 +10,14 @@ import common.output_format as out
 from common.read_input import preprocess_CLUSTERING
 from common.read_input import read_input_CLUSTERING
 
-from options import DATASETS_TO_TEST
-from options import DISCARD_TESTS
-from options import LIM_WORDS  # Sets the maximum number of WORDS in each side of the summary
-from options import REPEAT_TESTS
-from options import filepath  # Get full path for the file with data of target
-from options import DIR_RESULTS, DIR_OUTPUT
+from OPTIONS import DATASETS_TO_TEST
+from OPTIONS import DISCARD_TESTS
+from OPTIONS import LIM_WORDS  # Sets the maximum number of WORDS in each side of the summary
+from OPTIONS import REPEAT_TESTS
+from OPTIONS import filepath  # Get full path for the file with data of target
+from OPTIONS import DIR_RESULTS, DIR_OUTPUT
 
-from options import options
+from OPTIONS import options
 
 METHOD = options['Clustering']['variation']
 LAMBDA = options['Clustering']['lambda']

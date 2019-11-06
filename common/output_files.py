@@ -1,11 +1,11 @@
 import json
 import os
 
-from options import DIR_RESULTS, DIR_OUTPUT
-from options import DISCARD_TESTS, REPEAT_TESTS
-from options import LIM_SENTENCES  # Sets the maximum number of SENTENCES in each side of the summary
-from options import LIM_WORDS  # Sets the maximum number of WORDS in each side of the summary
-from options import options
+from OPTIONS import DIR_RESULTS, DIR_OUTPUT
+from OPTIONS import DISCARD_TESTS, REPEAT_TESTS
+from OPTIONS import LIM_SENTENCES  # Sets the maximum number of SENTENCES in each side of the summary
+from OPTIONS import LIM_WORDS  # Sets the maximum number of WORDS in each side of the summary
+from OPTIONS import options
 from common.structure import word_count
 
 os.makedirs(DIR_RESULTS, exist_ok=True)

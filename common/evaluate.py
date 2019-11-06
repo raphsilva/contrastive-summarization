@@ -1,7 +1,7 @@
 from statistics import stdev
 
 import common.metrics as metrics
-from options import DISCARD_TESTS
+from OPTIONS import DISCARD_TESTS
 
 r_scores = []
 c_scores = []

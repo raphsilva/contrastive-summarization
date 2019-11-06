@@ -3,12 +3,12 @@ from common.structure import trinary_polarity
 
 INFINITY = 999999
 
-from options import LIM_SENTENCES
-from options import LIM_WORDS
+from OPTIONS import LIM_SENTENCES
+from OPTIONS import LIM_WORDS
 
 # from options_c import LOW_PRIORITY_ASPECTS
 
-from options import options
+from OPTIONS import options
 
 RANKING_MODE = options['Ranking']['strategy']
 INDEPENDENT_RANK = options['Ranking']['independent']

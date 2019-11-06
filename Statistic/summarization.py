@@ -4,8 +4,8 @@ import common.structure as struct
 
 INFINITY = 999999
 
-from options import LIM_SENTENCES
-from options import LIM_WORDS
+from OPTIONS import LIM_SENTENCES
+from OPTIONS import LIM_WORDS
 
 # from options_c import GREEDY_CANDS_SELECTED
 GREEDY_CANDS_SELECTED = 1 # TODO undo hardcode

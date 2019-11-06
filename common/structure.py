@@ -1,6 +1,6 @@
 import statistics
 
-from options import POLARITY_SCALE
+from OPTIONS import POLARITY_SCALE
 
 
 def trinary_polarity(num):

@@ -13,15 +13,15 @@ from common.read_input import read_input_STATISTIC
 
 from Statistic.summarization import summarize
 
-from options import DATASETS_TO_TEST
-from options import DISCARD_TESTS
-from options import DEBUG_MODE
-from options import REPEAT_TESTS
-from options import filepath  # Get full path for the file with data of target
-from options import DIR_RESULTS, DIR_OUTPUT
+from OPTIONS import DATASETS_TO_TEST
+from OPTIONS import DISCARD_TESTS
+from OPTIONS import DEBUG_MODE
+from OPTIONS import REPEAT_TESTS
+from OPTIONS import filepath  # Get full path for the file with data of target
+from OPTIONS import DIR_RESULTS, DIR_OUTPUT
 
 
-from options import options
+from OPTIONS import options
 OPTM_MODE = options['Statistic']['optimization']
 METHOD = options['Statistic']['strategy']
 ALPHA = options['Statistic']['alpha']

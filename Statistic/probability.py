@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 import scipy.stats as stats
 
-from options import POLARITY_SCALE
+from OPTIONS import POLARITY_SCALE
 
 # Value to be added to divisors to avoid division by zero. 
 INFINITESIMAL = 1e-64

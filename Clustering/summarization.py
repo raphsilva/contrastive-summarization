@@ -1,6 +1,6 @@
 import math
 
-from options import options
+from OPTIONS import options
 from Clustering.method import psi, phi
 
 ALLOW_REPETITION = options['Clustering']['repetition']

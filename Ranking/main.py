@@ -10,14 +10,14 @@ import common.output_files as output_files
 import common.output_format as out
 import common.structure as struct
 from common.read_input import read_input
-from options import DATASETS_TO_TEST
-from options import DISCARD_TESTS
-from options import LIM_SENTENCES  # Sets the maximum number of SENTENCES in each side of the summary
-from options import LIM_WORDS  # Sets the maximum number of WORDS in each side of the summary
-from options import REPEAT_TESTS
-from options import filepath  # Get full path for the file with data of target
-from options import options
-from options import DIR_RESULTS, DIR_OUTPUT
+from OPTIONS import DATASETS_TO_TEST
+from OPTIONS import DISCARD_TESTS
+from OPTIONS import LIM_SENTENCES  # Sets the maximum number of SENTENCES in each side of the summary
+from OPTIONS import LIM_WORDS  # Sets the maximum number of WORDS in each side of the summary
+from OPTIONS import REPEAT_TESTS
+from OPTIONS import filepath  # Get full path for the file with data of target
+from OPTIONS import options
+from OPTIONS import DIR_RESULTS, DIR_OUTPUT
 
 
 RANKING_MODE = options['Ranking']['strategy']
