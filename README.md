@@ -44,12 +44,12 @@ After tests are done, the outputs will be in two folders: `OUTPUT` will contain 
 
 #### Summaries 
 
-After a method of summarization has been executed multiple times for a given input, the summary that best reflects the average performance of the method is chosen and saved at `[method]/OUTPUT/[n]_[dataset].txt`, where `n` is an identifier attributed to each execution. Summaries are saved in simple text format and are divided in two parts, separated by a long line break, one for each entity.
+After a method of summarization has been executed multiple times for a given input, the summary that best reflects the average performance of the method is chosen and saved at `OUTPUT/summaries/[n]_[dataset].txt`, where `n` is an identifier attributed to each execution. Summaries are saved in simple text format and are divided in two parts, separated by a long line break, one for each entity.
 
 
 #### Evaluation
 
-The evaluation results are saved in the directory `RESULTS` of each method. They are files named `[method]/OUTPUT/[n]_[dataset].json`,  where `n` is an identifier attributed to each execution. The files are JSONs that contain the following: 
+The evaluation results are saved in the directory `OUTPUT` of each method. They are files named `OUTPUT/results/[n]_[dataset].json`,  where `n` is an identifier attributed to each execution. These files are JSONs that contain the following: 
 * Information about the **input**, such as **number of words**, **number of sentences**, **file names**.
 * The **options** used in the tests, such as **method parameters**, **limits of words**, etc;
 * Statistics of execution, such as **time consumed** and **number of distinct summaries** gotten;
@@ -99,9 +99,9 @@ The execution of each method is done inside the method's directory. Choose the m
 
 #### Set options
 
-Each method has a file `options.py` which allows you to choose the options for execution. The values you may want to change are: 
-* `LIM_WORDS`: Maximum number of words in the summary (for each entity).
-* `LIM_SENTENCES`: Maximum number of sentences in the summary (for each entity).
+The file `OPTIONS.py` allows you to choose the options for execution. The values you may want to change are: 
+* `LIMIT_WORDS`: Maximum number of words in the summary (for each entity).
+* `LIMIT_SENTENCES`: Maximum number of sentences in the summary (for each entity).
 * `REPEAT_TESTS`: Number of tests performed with each dataset (which are shuffled before each repetition)
 * `DISCARD_TESTS`: Amount of outliers tests that will be discarded for overall evaluation (the total number of discarded tests is twice this value, because this amount of best summaries and of worst summaries are discarded).
 * `DATASETS_TO_TEST`: Choose which files of data will be tested.
@@ -127,8 +127,8 @@ To install:
 ```
 git clone https://github.com/raphsilva/contrastive-summarization.git
 cd contrastive-summarization
-chmode +x get_dataset.sh
-chmode +x get_dependencies.sh
+chmod +x get_dataset.sh
+chmod +x get_dependencies.sh
 ./get_dataset.sh
 ./get_dependencies.sh
 pip install -r requirements.txt
