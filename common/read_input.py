@@ -33,11 +33,10 @@ def read_input(filename):
         r[n['id']] = n
     return r
 
-from Clustering.language import process_sentence
-from Clustering.language import makecache_remove_negs_adjs
-
 # Reads input files
 def read_input_CLUSTERING(filename):
+    from Clustering.language import process_sentence
+    from Clustering.language import makecache_remove_negs_adjs
 
 
     g = get_variable_from_file(filename)
