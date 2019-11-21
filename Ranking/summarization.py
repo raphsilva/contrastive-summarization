@@ -10,6 +10,8 @@ from OPTIONS import LIM_WORDS
 
 from OPTIONS import options
 
+from OPTIONS import LOW_PRIORITY_ASPECTS
+
 RANKING_MODE = options['Ranking']['strategy']
 INDEPENDENT_RANK = options['Ranking']['independent']
 SENTENCE_IDEAL_LENGTH = options['Ranking']['ideal length']

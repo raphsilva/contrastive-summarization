@@ -151,7 +151,6 @@ def print_stats(summ_idx_1, summ_idx_2, source1, source2):
 
 def write_files(SOURCE1, SOURCE2, METHOD, exec_code):
     json_results_filename = f'{DIR_RESULTS}/{METHOD}_{exec_code}_{SOURCE1}_{SOURCE2}.json'
-    print(json_results_filename)
     f = open(json_results_filename, 'w')
     f.write(json.dumps(json_results, sort_keys=True, indent=4, separators=(',', ': '), ensure_ascii=False))
     f.close()
