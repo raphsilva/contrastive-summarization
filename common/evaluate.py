@@ -108,6 +108,8 @@ def source():
         'sentences_2': avg_sentences2
     }
 
+    print('\n     %5d %5d %5d %5d\n\n' % (r_mean, c_mean, d_mean, h_mean))
+
     return e
 
 
