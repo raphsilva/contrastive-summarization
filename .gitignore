@@ -1,24 +1,6 @@
-__pycache__
-__*
-OUTPUT
-RESULTS
-cache
-.*
-!.gitignore
+*.*
 
-language
-output
-results
-out*
-results_*
-out*
-!output_format.py
 !*.py
-results
-results_*
-*.txt
-wget-log*
-test*
-input/*
-venv/*
+!*.md
+!*.sh
 !requirements.txt
