@@ -52,20 +52,11 @@ for SOURCE1, SOURCE2 in INPUT_DATASETS:
     '''
     /source.../ are structures of the form
     {
-    0: {'intensity': 80.0,
-        'opinions': [('CÂMERA', 80.0)],
-        'sent': {'CÂMERA': 88},
-        'word_count': 2,
-        'verbatim': 'Câmera boa.'},
-    2: {'intensity': 80.0,
-        'opinions': [('DESEMPENHO',  -80.0),
-                     ('DESEMPENHO',  -80.0),
-                     ('RESISTÊNCIA', -80.0)],
-        'sent': {'DESEMPENHO': -94, 'RESISTÊNCIA': -88},
-        'verbatim': 'Entretanto, na primeira semana de uso já ralou facilmente, '
-                    'esquenta muito com os dados móveis ligados e trava, mesmo '
-                    'que raramente.',
-        'word_count': 21}
+        135: { 'id': 135,
+                'verbatim': 'Boa maquina para quem esta começando a fotografar.',
+                'text_info': ['bom', 'maquinar', 'começar', 'fotografar'],
+               'opinions': [['PRODUTO', 100]],               
+               'word_count': 8}
     }
     '''
 

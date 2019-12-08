@@ -42,22 +42,10 @@ for SOURCE1, SOURCE2 in INPUT_DATASETS:
     out.print_verbose('Words: ', struct.word_count(source1), struct.word_count(source2))
 
     '''
-    /source.../ are structures of the form
+    /source.../ are structures that contain
     {
-    0: {'intensity': 80.0,
-        'opinions': [('CÂMERA', 80.0)],
-        'sent': {'CÂMERA': 88},
-        'word_count': 2,
-        'verbatim': 'Câmera boa.'},
-    2: {'intensity': 80.0,
-        'opinions': [('DESEMPENHO',  -80.0),
-                     ('DESEMPENHO',  -80.0),
-                     ('RESISTÊNCIA', -80.0)],
-        'sent': {'DESEMPENHO': -94, 'RESISTÊNCIA': -88},
-        'verbatim': 'Entretanto, na primeira semana de uso já ralou facilmente, '
-                    'esquenta muito com os dados móveis ligados e trava, mesmo '
-                    'que raramente.',
-        'word_count': 21}
+    0: { 'opinions': [('CÂMERA', 80.0)],
+         'verbatim': 'Câmera boa.'}
     }
     '''
 
