@@ -23,7 +23,7 @@ options['Clustering']['hungarian'] = False  # Use the Hungarian method of optimi
 options['Clustering']['size_fac'] = 0.7  # To adjust summaries' size (this method doesn't allow to limit sentences)
 options['Clustering']['repetitions'] = False  # To allow sentences to be repeated in the same summary
 
-options['Ranking']['variation'] = ['contrastive', 'contrastive+representative', 'random'][1]
+options['Ranking']['variation'] = ['contrastive', 'contrastive+representative'][1]
 options['Ranking']['independent'] = False
 options['Ranking']['ideal length'] = None
 
