@@ -25,7 +25,6 @@ from OPTIONS import options
 
 METHOD_NAME = 'Statistic'
 
-OPTM_MODE = options[METHOD_NAME]['optimization']
 VARIATION = options[METHOD_NAME]['variation']
 ALPHA = options[METHOD_NAME]['alpha']
 
@@ -96,7 +95,7 @@ for SOURCE1, SOURCE2 in INPUT_DATASETS:
         time_initial = time()
 
         # Make summary
-        summ_idx_1, summ_idx_2 = summarize(source1, source2, stats_source_1, stats_source_2, VARIATION, OPTM_MODE)
+        summ_idx_1, summ_idx_2 = summarize(source1, source2, stats_source_1, stats_source_2, VARIATION)
         summ1 = {i: source1[i] for i in summ_idx_1}
         summ2 = {i: source2[i] for i in summ_idx_2}
 

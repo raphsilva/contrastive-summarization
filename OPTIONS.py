@@ -9,8 +9,7 @@ from collections import defaultdict
 
 options = defaultdict(lambda : defaultdict())
 
-options['Statistic']['variation'] = ['contrastive', 'noncontrastive'][0]
-options['Statistic']['optimization'] = 'greedy'
+options['Statistic']['variation'] = ['contrastive', 'single'][0]
 options['Statistic']['min intensity'] = 1 * POLARITY_SCALE  # If (the absolute value of) the intensity of a sentence is lower than that, that sentence will not be in the summary.
 options['Statistic']['alpha'] = 20
 
