@@ -8,6 +8,8 @@ The methods available in this repository are:
 * **Similarity**: Uses similarities of sentences (by looking at the topics approached in each sentence) to estimate which sentences add more value to the summary considering representativity, contrastivity and diversity. Described by _Jin et al. (2016)_.
 * **Ranking**: Makes a ranking of pairs of contrasting opinions based on their frequency in the source, then selects sentences that contain the top-ranked opinions to enter the summary. Novel method, not published yet.
 
+There is also a baseline **Random** method that chooses sentences arbitrarily.
+
 
 ## Implementations
 
