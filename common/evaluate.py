@@ -3,6 +3,8 @@ from statistics import stdev
 import common.metrics as metrics
 from OPTIONS import DISCARD_TESTS
 
+ROUND_DIGS = 2
+
 r_scores = []
 c_scores = []
 d_scores = []
@@ -63,6 +65,13 @@ def new_sample(source1, source2, summ1, summ2):
 
 def source():
 
+    global r_scores, c_scores, d_scores, h_scores
+
+    r_scores = [round(i, ROUND_DIGS) for i in sorted(r_scores)]
+    c_scores = [round(i, ROUND_DIGS) for i in sorted(c_scores)]
+    d_scores = [round(i, ROUND_DIGS) for i in sorted(d_scores)]
+    h_scores = [round(i, ROUND_DIGS) for i in sorted(h_scores)]
+
     r_scores_without_outliers = sorted(r_scores)
     c_scores_without_outliers = sorted(c_scores)
     d_scores_without_outliers = sorted(d_scores)
@@ -97,22 +106,20 @@ def source():
         'H': h_scores
     }
     e['means'] = {
-        'R': r_mean,
-        'C': c_mean,
-        'D': d_mean,
-        'H': h_mean
+        'R': round(r_mean, ROUND_DIGS),
+        'C': round(c_mean, ROUND_DIGS),
+        'D': round(d_mean, ROUND_DIGS),
+        'H': round(h_mean, ROUND_DIGS)
     }
     e['stdevs'] = {
-        'R': r_stdev,
-        'C': c_stdev,
-        'D': d_stdev,
-        'H': h_stdev
+        'R': round(r_stdev, ROUND_DIGS),
+        'C': round(c_stdev, ROUND_DIGS),
+        'D': round(d_stdev, ROUND_DIGS),
+        'H': round(h_stdev, ROUND_DIGS)
     }
-    e['avg_sizes'] = {
-        'words_1': avg_words1,
-        'words_2': avg_words2,
-        'sentences_1': avg_sentences1,
-        'sentences_2': avg_sentences2
+    e['avg sizes'] = {
+        'words': [avg_words1, avg_words2],
+        'sentences': [avg_sentences1, avg_sentences2]
     }
 
     print('\n     %5d %5d %5d %5d\n\n' % (r_mean, c_mean, d_mean, h_mean))

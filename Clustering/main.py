@@ -21,7 +21,7 @@ from OPTIONS import options
 
 METHOD_NAME = 'Clustering'
 
-METHOD = options[METHOD_NAME]['variation']
+VARIATION = options[METHOD_NAME]['variation']
 LAMBDA = options[METHOD_NAME]['lambda']
 PICK_CENTROIDS = options[METHOD_NAME]['centroids']
 HUNGARIAN_METHOD = options[METHOD_NAME]['hungarian']
@@ -102,14 +102,14 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
 
         ini_time = time()
 
-        if METHOD == 'CF':
+        if VARIATION == 'CF':
 
             summ_idx_A = contrastiveness_first(set1_pos, set2_neg, '+', '-', SIZE_FAC, LAMBDA, PICK_CENTROIDS,
                                                HUNGARIAN_METHOD)
             summ_idx_B = contrastiveness_first(set1_neg, set2_pos, '-', '+', SIZE_FAC, LAMBDA, PICK_CENTROIDS,
                                                HUNGARIAN_METHOD)
 
-        elif METHOD == 'RF':
+        elif VARIATION == 'RF':
 
             summ_idx_A = representativeness_first(set1_pos, set2_neg, '+', '-', LAMBDA,
                                                   PICK_CENTROIDS, HUNGARIAN_METHOD)
@@ -148,11 +148,8 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
         scores = evaluate.new_sample(source1, source2, summ1, summ2)
         print('%3d) %5d %5d %5d %5d' % (repeat, scores['R'], scores['C'], scores['D'], scores['H']))
 
-        # Register parameters used
-        summary_parameters = [METHOD, 'lambda=' + str(LAMBDA), PICK_CENTROIDS, HUNGARIAN_METHOD]
-
         # Write output file
-        output_files.new_summary(summ1, summ2, scores, summary_parameters, time_elapsed)
+        output_files.new_summary(summ1, summ2, scores, time_elapsed)
 
         # Make dictionary mapping evaluations to summaries
         map_scores_summary[(scores['R'], scores['C'], scores['D'])] = (summ_idx_1, summ_idx_2)

@@ -26,7 +26,7 @@ from OPTIONS import options
 METHOD_NAME = 'Statistic'
 
 OPTM_MODE = options[METHOD_NAME]['optimization']
-METHOD = options[METHOD_NAME]['variation']
+VARIATION = options[METHOD_NAME]['variation']
 ALPHA = options[METHOD_NAME]['alpha']
 
 EXECUTION_ID = str(int(time()) % 100000000)  # Execution code (will be in the results file name)
@@ -96,7 +96,7 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
         time_initial = time()
 
         # Make summary
-        summ_idx_1, summ_idx_2 = summarize(source1, source2, stats_source_1, stats_source_2, METHOD, OPTM_MODE)
+        summ_idx_1, summ_idx_2 = summarize(source1, source2, stats_source_1, stats_source_2, VARIATION, OPTM_MODE)
         summ1 = {i: source1[i] for i in summ_idx_1}
         summ2 = {i: source2[i] for i in summ_idx_2}
 
@@ -113,11 +113,8 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
         scores = evaluate.new_sample(source1, source2, summ1, summ2)
         print('%3d) %5d %5d %5d %5d' % (repeat + 1, scores['R'], scores['C'], scores['D'], scores['H']))
 
-        # Register parameters used
-        summary_parameters = [METHOD, OPTM_MODE, 'alpha=' + str(ALPHA)]
-
         # Write output file
-        output_files.new_summary(summ1, summ2, scores, summary_parameters,time_elapsed)
+        output_files.new_summary(summ1, summ2, scores,time_elapsed)
 
         # Make dictionary mapping evaluations to summaries
         map_scores_summary[(scores['R'], scores['C'], scores['D'])] = (summ_idx_1, summ_idx_2)

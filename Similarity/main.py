@@ -13,7 +13,6 @@ from common.read_input import read_input
 from OPTIONS import DATASETS_TO_TEST
 from OPTIONS import DEBUG_MODE
 from OPTIONS import DISCARD_TESTS
-from OPTIONS import LIM_SENTENCES  # Sets the maximum number of SENTENCES in each side of the summary
 from OPTIONS import LIM_WORDS  # Sets the maximum number of WORDS in each side of the summary
 from OPTIONS import REPEAT_TESTS
 from OPTIONS import filepath  # Get full path for the file with data of target
@@ -23,7 +22,7 @@ from OPTIONS import DIR_RESULTS, DIR_OUTPUT
 
 METHOD_NAME = 'Similarity'
 
-METHOD = options[METHOD_NAME]['variation']
+VARIATION = options[METHOD_NAME]['variation']
 
 
 EXECUTION_ID = str(int(time()) % 100000000)  # Execution code (will be in the results file name)
@@ -149,11 +148,8 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
         scores = evaluate.new_sample(source1, source2, summ1, summ2)
         print('%3d) %5d %5d %5d %5d' % (repeat + 1, scores['R'], scores['C'], scores['D'], scores['H']))
 
-        # Register parameters used
-        summary_parameters = [METHOD, 'LIMIT SENTENCES=' + str(LIM_SENTENCES), 'LIMIT WORDS=' + str(LIM_WORDS)]
-
         # Write output file
-        output_files.new_summary(summ1, summ2, scores, summary_parameters, time_elapsed)
+        output_files.new_summary(summ1, summ2, scores, time_elapsed)
 
         # Make dictionary mapping evaluations to summaries
         map_scores_summary[(scores['R'], scores['C'], scores['D'])] = (summ_idx_1, summ_idx_2)

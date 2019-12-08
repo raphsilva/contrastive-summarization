@@ -12,8 +12,6 @@ import common.structure as struct
 from common.read_input import read_input
 from OPTIONS import DATASETS_TO_TEST
 from OPTIONS import DISCARD_TESTS
-from OPTIONS import LIM_SENTENCES  # Sets the maximum number of SENTENCES in each side of the summary
-from OPTIONS import LIM_WORDS  # Sets the maximum number of WORDS in each side of the summary
 from OPTIONS import REPEAT_TESTS
 from OPTIONS import filepath  # Get full path for the file with data of target
 from OPTIONS import options
@@ -71,7 +69,7 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
     '''
 
     evaluate.reset()  # To start evaluating summaries of the current sources.
-    output_files.new_source(SOURCE1, SOURCE2, source1, source2, 'Random')  # Prepare output files for the current sources.
+    output_files.new_source(SOURCE1, SOURCE2, source1, source2, METHOD_NAME)  # Prepare output files for the current sources.
 
     map_scores_summary = {}
 
@@ -105,11 +103,8 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
         scores = evaluate.new_sample(source1, source2, summ1, summ2)
         print('%3d) %5d %5d %5d %5d' % (repeat + 1, scores['R'], scores['C'], scores['D'], scores['H']))
 
-        # Register parameters used
-        summary_parameters = [method_info, 'LIMIT SENTENCES=' + str(LIM_SENTENCES), 'LIMIT WORDS=' + str(LIM_WORDS)]
-
         # Write output file
-        output_files.new_summary(summ1, summ2, scores, summary_parameters, time_elapsed)
+        output_files.new_summary(summ1, summ2, scores, time_elapsed)
 
         # Make dictionary mapping evaluations to summaries
         map_scores_summary[(scores['R'], scores['C'], scores['D'])] = (summ_idx_1, summ_idx_2)
