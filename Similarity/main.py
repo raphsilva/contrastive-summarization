@@ -23,7 +23,7 @@ from OPTIONS import DIR_RESULTS, DIR_OUTPUT
 
 METHOD_NAME = 'Similarity'
 
-METHOD = options[METHOD_NAME]['strategy']
+METHOD = options[METHOD_NAME]['variation']
 
 
 EXECUTION_ID = str(int(time()) % 100000000)  # Execution code (will be in the results file name)

@@ -7,7 +7,7 @@ INFINITY = 999999
 from OPTIONS import LIM_SENTENCES
 
 from OPTIONS import options
-METHOD = options['Similarity']['strategy']
+METHOD = options['Similarity']['variation']
 
 import random
 random.seed(0)

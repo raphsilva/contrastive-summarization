@@ -26,7 +26,7 @@ from OPTIONS import options
 METHOD_NAME = 'Statistic'
 
 OPTM_MODE = options[METHOD_NAME]['optimization']
-METHOD = options[METHOD_NAME]['strategy']
+METHOD = options[METHOD_NAME]['variation']
 ALPHA = options[METHOD_NAME]['alpha']
 
 EXECUTION_ID = str(int(time()) % 100000000)  # Execution code (will be in the results file name)

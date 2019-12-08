@@ -21,7 +21,7 @@ from OPTIONS import DIR_RESULTS, DIR_OUTPUT
 
 METHOD_NAME = 'Ranking'
 
-RANKING_MODE = options[METHOD_NAME]['strategy']
+RANKING_MODE = options[METHOD_NAME]['variation']
 INDEPENDENT_RANK = options[METHOD_NAME]['independent']
 SENTENCE_IDEAL_LENGTH = options[METHOD_NAME]['ideal length']
 
