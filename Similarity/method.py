@@ -1,8 +1,6 @@
 import random
 random.seed(0)
 
-from OPTIONS import LOW_PRIORITY_ASPECTS
-
 
 def get_topics(source):
     t = []
@@ -25,7 +23,7 @@ def similarity(op1, op2):
         if opinion not in t2:
             t2.append(opinion)
 
-    intersection = [i for i in t1 if (i in t2 and i not in LOW_PRIORITY_ASPECTS)]
+    intersection = [i for i in t1 if i in t2]
     union = list(set(t1 + t2))
 
     if len(union) == 0:
