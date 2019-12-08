@@ -10,7 +10,7 @@ import common.console_output as out
 from common.read_input import preprocess_CLUSTERING
 from common.read_input import read_input_CLUSTERING
 
-from OPTIONS import DATASETS_TO_TEST
+from OPTIONS import INPUT_DATASETS
 from OPTIONS import DISCARD_TESTS
 from OPTIONS import LIM_WORDS  # Sets the maximum number of WORDS in each side of the summary
 from OPTIONS import REPEAT_TESTS
@@ -38,7 +38,7 @@ print('\n\nWill perform %d tests and discard %d(x2) best and worst\n\n' % (REPEA
 
 SIZE_FAC_DEFAULT = SIZE_FAC
 
-for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
+for SOURCE1, SOURCE2 in INPUT_DATASETS:
 
     SIZE_FAC = SIZE_FAC_DEFAULT
 

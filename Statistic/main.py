@@ -13,7 +13,7 @@ from common.read_input import read_input_STATISTIC
 
 from Statistic.summarization import summarize
 
-from OPTIONS import DATASETS_TO_TEST
+from OPTIONS import INPUT_DATASETS
 from OPTIONS import DISCARD_TESTS
 from OPTIONS import DEBUG_MODE
 from OPTIONS import REPEAT_TESTS
@@ -34,7 +34,7 @@ EXECUTION_ID = str(int(time()) % 100000000)  # Execution code (will be in the re
 
 print('\n\nWill perform %d tests and discard %d(x2) best and worst\n\n' % (REPEAT_TESTS, DISCARD_TESTS))
 
-for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
+for SOURCE1, SOURCE2 in INPUT_DATASETS:
 
     print(f'\n\n\n\n  =========datasets=======>  {SOURCE1} {SOURCE2}\n\n')
 

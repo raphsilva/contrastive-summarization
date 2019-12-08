@@ -10,7 +10,7 @@ import common.output_files as output_files
 import common.console_output as out
 import common.structure as struct
 from common.read_input import read_input
-from OPTIONS import DATASETS_TO_TEST
+from OPTIONS import INPUT_DATASETS
 from OPTIONS import DEBUG_MODE
 from OPTIONS import DISCARD_TESTS
 from OPTIONS import LIM_WORDS  # Sets the maximum number of WORDS in each side of the summary
@@ -41,7 +41,7 @@ def load_input():
 
 print('\n\nWill perform %d tests and discard %d(x2) best and worst\n\n' % (REPEAT_TESTS, DISCARD_TESTS))
 
-for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
+for SOURCE1, SOURCE2 in INPUT_DATASETS:
 
     print(f'\n\n\n\n  =========datasets=======>  {SOURCE1} {SOURCE2}\n\n')
 
