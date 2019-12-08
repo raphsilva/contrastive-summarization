@@ -197,8 +197,7 @@ def aspects_stats(info):
     # total = 10
 
     for i in pairs:
-        if i == 'empresa' or i == 'EMPRESA' or i == '_NONE' or i[0] == 'X' or i[0] == 'x':
-            continue
+
         if i not in r:
             r[i] = {'prob': round_num(len(pairs[i]) / total)}
             # if len(info) < 20:
