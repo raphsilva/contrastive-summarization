@@ -2,7 +2,7 @@
 
 This repository contains algorithms used to perform contrastive opinion summarization, which is a task that aims to build summaries that help find differences about two entities given opinions about them. 
 
-Scientific text explaining the methods and their implementations will be coming soon. The methods available in this repository are:
+The methods available in this repository are:
 * **Statistic**: Builds summaries that are more statistically similar to the source, considering the means and standard deviations of polarities of each aspect. Described by _Lerman and McDonald (2009)_.  
 * **Clustering**: Performs a similarity clustering of sentences, them matches clusters as to form pairs and selects the best sentence of each cluster to be added to the summary. Described by _Kim and Zhai (2009)_.
 * **Similarity**: Uses similarities of sentences (by looking at the topics approached in each sentence) to estimate which sentences add more value to the summary considering representativity, contrastivity and diversity. Described by _Jin et al. (2016)_.
@@ -106,7 +106,7 @@ The file `OPTIONS.py` allows you to choose the options for execution. The values
 * `DISCARD_TESTS`: Amount of outliers tests that will be discarded for overall evaluation (the total number of discarded tests is twice this value, because this amount of best summaries and of worst summaries are discarded).
 * `DATASETS_TO_TEST`: Choose which files of data will be tested.
 
-Besides those, you'll find the section `# Method options` which lets you change the method's parameters. 
+Besides those, you'll find the section `# Methods options` which lets you change the method's parameters. 
 
 
 #### Run
