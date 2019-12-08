@@ -70,7 +70,7 @@ def source():
     r_mean = sum(r_scores_without_outliers) / len(r_scores_without_outliers)
     c_mean = sum(c_scores_without_outliers) / len(c_scores_without_outliers)
     d_mean = sum(d_scores_without_outliers) / len(d_scores_without_outliers)
-    h_mean = harmonic_mean([r_mean, c_mean, d_mean])
+    h_mean = sum(h_scores_without_outliers) / len(h_scores_without_outliers)
 
     r_stdev = stdev(r_scores_without_outliers)
     c_stdev = stdev(c_scores_without_outliers)
