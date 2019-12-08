@@ -62,10 +62,17 @@ def new_sample(source1, source2, summ1, summ2):
 
 
 def source():
-    r_scores_without_outliers = sorted(r_scores)[DISCARD_TESTS:-DISCARD_TESTS]
-    c_scores_without_outliers = sorted(c_scores)[DISCARD_TESTS:-DISCARD_TESTS]
-    d_scores_without_outliers = sorted(d_scores)[DISCARD_TESTS:-DISCARD_TESTS]
-    h_scores_without_outliers = sorted(h_scores)[DISCARD_TESTS:-DISCARD_TESTS]
+
+    r_scores_without_outliers = sorted(r_scores)
+    c_scores_without_outliers = sorted(c_scores)
+    d_scores_without_outliers = sorted(d_scores)
+    h_scores_without_outliers = sorted(h_scores)
+
+    if DISCARD_TESTS > 0:
+        r_scores_without_outliers = r_scores_without_outliers[DISCARD_TESTS:-DISCARD_TESTS]
+        c_scores_without_outliers = c_scores_without_outliers[DISCARD_TESTS:-DISCARD_TESTS]
+        d_scores_without_outliers = d_scores_without_outliers[DISCARD_TESTS:-DISCARD_TESTS]
+        h_scores_without_outliers = h_scores_without_outliers[DISCARD_TESTS:-DISCARD_TESTS]
 
     r_mean = sum(r_scores_without_outliers) / len(r_scores_without_outliers)
     c_mean = sum(c_scores_without_outliers) / len(c_scores_without_outliers)
