@@ -6,7 +6,7 @@ sys.path.append(os.path.realpath('..'))
 
 import common.evaluate as evaluate
 import common.output_files as output_files
-import common.output_format as out
+import common.console_output as out
 from common.read_input import preprocess_CLUSTERING
 from common.read_input import read_input_CLUSTERING
 

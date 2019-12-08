@@ -7,7 +7,7 @@ sys.path.append(os.path.realpath('..'))  # To import modules from directory abov
 import common.evaluate as evaluate
 import Similarity.summarization as optm
 import common.output_files as output_files
-import common.output_format as out
+import common.console_output as out
 import common.structure as struct
 from common.read_input import read_input
 from OPTIONS import DATASETS_TO_TEST

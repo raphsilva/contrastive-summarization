@@ -1,5 +1,5 @@
 import Statistic.method as method
-import common.output_format as out
+import common.console_output as out
 import common.structure as struct
 
 INFINITY = 999999
