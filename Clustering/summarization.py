@@ -3,7 +3,7 @@ import math
 from OPTIONS import options
 from Clustering.method import psi, phi
 
-ALLOW_REPETITION = options['Clustering']['repetition']
+ALLOW_REPETITION = options['Clustering']['repetitions']
 
 # clustering algorithm used in the implementation of RF method
 from sklearn.cluster import AgglomerativeClustering
