@@ -1,27 +1,33 @@
 import os
+import sys
 from time import time
 
-import evaluate
-import method
-import output_files
-import output_format as out
-import structure as struct
-from read_input import read_input
-from options import ALPHA
-from options import DATASETS_TO_TEST
-from options import DEBUG_MODE
-from options import DISCARD_TESTS
-from options import METHOD
-from options import OPTM_MODE
-from options import REPEAT_TESTS
-from options import filepath  # Get full path for the file with data of target
-from summarization import summarize
+sys.path.append(os.path.realpath('..'))  # To import modules from directory above.
 
-PATH_RESULTS = 'RESULTS'
-PATH_OUTPUT = 'OUTPUT'
+import common.evaluate as evaluate
+import Statistic.method as method
+import common.output_files as output_files
+import common.output_format as out
+import common.structure as struct
+from common.read_input import read_input_STATISTIC
 
-os.makedirs(PATH_RESULTS, exist_ok=True)
-os.makedirs(PATH_OUTPUT, exist_ok=True)
+from Statistic.summarization import summarize
+
+from OPTIONS import DATASETS_TO_TEST
+from OPTIONS import DISCARD_TESTS
+from OPTIONS import DEBUG_MODE
+from OPTIONS import REPEAT_TESTS
+from OPTIONS import filepath  # Get full path for the file with data of target
+from OPTIONS import DIR_RESULTS, DIR_OUTPUT
+
+
+from OPTIONS import options
+
+METHOD_NAME = 'Statistic'
+
+OPTM_MODE = options[METHOD_NAME]['optimization']
+VARIATION = options[METHOD_NAME]['variation']
+ALPHA = options[METHOD_NAME]['alpha']
 
 EXECUTION_ID = str(int(time()) % 100000000)  # Execution code (will be in the results file name)
 
@@ -33,8 +39,8 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
     print(f'\n\n\n\n  =========datasets=======>  {SOURCE1} {SOURCE2}\n\n')
 
     out.print_verbose('Loading input')
-    source1 = read_input(filepath(SOURCE1))
-    source2 = read_input(filepath(SOURCE2))
+    source1 = read_input_STATISTIC(filepath(SOURCE1))
+    source2 = read_input_STATISTIC(filepath(SOURCE2))
     out.print_verbose('Sizes of data sets: ', len(source1), len(source2))
     source1 = method.remove_low_intensity(source1)
     source2 = method.remove_low_intensity(source2)
@@ -72,7 +78,7 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
     '''
 
     evaluate.reset()  # To start evaluating summaries of the current sources.
-    output_files.new_source(SOURCE1, SOURCE2, source1, source2)  # Prepare output files for the current sources.
+    output_files.new_source(SOURCE1, SOURCE2, source1, source2, 'Statistic')  # Prepare output files for the current sources.
 
     map_scores_summary = {}
 
@@ -90,13 +96,14 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
         time_initial = time()
 
         # Make summary
-        summ_idx_1, summ_idx_2 = summarize(source1, source2, stats_source_1, stats_source_2, METHOD, OPTM_MODE)
+        summ_idx_1, summ_idx_2 = summarize(source1, source2, stats_source_1, stats_source_2, VARIATION, OPTM_MODE)
         summ1 = {i: source1[i] for i in summ_idx_1}
         summ2 = {i: source2[i] for i in summ_idx_2}
 
         # Register time elapsed
         time_final = time()
-        time_total += time_final - time_initial
+        time_elapsed = time_final - time_initial
+        time_total += time_elapsed
 
         # Register all summaries generated, ignoring order of sentences.
         s_id = ([sorted(summ_idx_1), sorted(summ_idx_2)])
@@ -106,11 +113,8 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
         scores = evaluate.new_sample(source1, source2, summ1, summ2)
         print('%3d) %5d %5d %5d %5d' % (repeat + 1, scores['R'], scores['C'], scores['D'], scores['H']))
 
-        # Register parameters used
-        summary_parameters = [METHOD, OPTM_MODE, 'alpha=' + str(ALPHA)]
-
         # Write output file
-        output_files.new_summary(summ1, summ2, scores, summary_parameters)
+        output_files.new_summary(summ1, summ2, scores,time_elapsed)
 
         # Make dictionary mapping evaluations to summaries
         map_scores_summary[(scores['R'], scores['C'], scores['D'])] = (summ_idx_1, summ_idx_2)
@@ -135,9 +139,9 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
         output_files.print_stats(summ_idx_1, summ_idx_2, source1, source2)
 
     # Save output files in disc.
-    output_files.write_files(SOURCE1, SOURCE2, EXECUTION_ID)
+    output_files.write_files(SOURCE1, SOURCE2, METHOD_NAME, EXECUTION_ID)
 
     # Update cache.
     method.save_caches()
 
-print(f'\n\nSummaries and evaluations are in folders {PATH_OUTPUT} and {PATH_RESULTS}.')
+print(f'\n\nSummaries and evaluations are in folders {DIR_OUTPUT} and {DIR_RESULTS}.')

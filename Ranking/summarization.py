@@ -1,26 +1,29 @@
-import structure as struct
-from structure import trinary_polarity
+import common.structure as struct
+from common.structure import trinary_polarity
 
 INFINITY = 999999
 
-from options import LIM_SENTENCES
-from options import LIM_WORDS
+from OPTIONS import LIM_SENTENCES
+from OPTIONS import LIM_WORDS
 
-from options import LOW_PRIORITY_ASPECTS
+# from options_c import LOW_PRIORITY_ASPECTS
 
-from options import SENTENCE_IDEAL_LENGTH
-from options import INDEPENDENT_RANK
+from OPTIONS import options
 
-from structure import get_opinions
-from structure import get_contrastive_pairs
+from OPTIONS import LOW_PRIORITY_ASPECTS
+
+RANKING_MODE = options['Ranking']['variation']
+INDEPENDENT_RANK = options['Ranking']['independent']
+SENTENCE_IDEAL_LENGTH = options['Ranking']['ideal length']
+
+from common.structure import get_opinions
+from common.structure import get_contrastive_pairs
 
 import random
 random.seed(0)
 
 
 def make_contrastive_summary(source_1, source_2, mode):
-    if mode == 'random':
-        return make_summary_random(source_1, source_2)
     if mode == 'contrastive':
         return make_summary_contrastive(source_1, source_2)
     if mode == 'contrastive+representative':
@@ -311,28 +314,3 @@ def make_summary_side_contrastive_and_representative(source, repr_rank, contr_ra
                 break  # Stops after one sentence is chosen.
 
     return summary
-
-
-def make_summary_random(source_1, source_2):
-    from random import sample
-
-    indexes_1 = source_1.keys()
-    indexes_2 = source_2.keys()
-
-    # Choose random indexes for the summary, with size equal to the limit of sentences.
-    summary_indexes_1 = sample(indexes_1, LIM_SENTENCES)
-    summary_indexes_2 = sample(indexes_2, LIM_SENTENCES)
-
-    # Build summary
-    summary_1 = struct.get_summary_from_indexes(source_1, summary_indexes_1)
-    summary_2 = struct.get_summary_from_indexes(source_2, summary_indexes_2)
-
-    # Remove sentences until the summary size respects the limit of words.
-    while struct.count_words(summary_1) > LIM_WORDS and len(summary_indexes_1) > 0:
-        summary_indexes_1 = summary_indexes_1[:-1]
-        summary_1 = struct.get_summary_from_indexes(source_1, summary_indexes_1)
-    while struct.count_words(summary_2) > LIM_WORDS and len(summary_indexes_2) > 0:
-        summary_indexes_2 = summary_indexes_2[:-1]
-        summary_2 = struct.get_summary_from_indexes(source_2, summary_indexes_2)
-
-    return summary_indexes_1, summary_indexes_2

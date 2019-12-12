@@ -52,7 +52,6 @@ def simplify_characters(my_string):
 
 cache_removed_negs_adjs = {}
 
-
 def makecache_remove_negs_adjs(sentence):
     global cache_removed_negs_adjs
 
@@ -95,8 +94,8 @@ def removeNegsAndAdjs(sentence_proc):
     return cache_removed_negs_adjs[str(sentence_proc)]
 
 
-from write_files import get_variable_from_file
-from write_files import overwrite_json
+from common.write_files import get_variable_from_file
+from common.write_files import overwrite_json
 
 got_all_lemmas = False
 

@@ -5,7 +5,7 @@ from time import time
 sys.path.append(os.path.realpath('..'))
 
 import common.evaluate as evaluate
-import Ranking.summarization as optm
+import Random.summarization as summ
 import common.output_files as output_files
 import common.output_format as out
 import common.structure as struct
@@ -14,16 +14,9 @@ from OPTIONS import DATASETS_TO_TEST
 from OPTIONS import DISCARD_TESTS
 from OPTIONS import REPEAT_TESTS
 from OPTIONS import filepath  # Get full path for the file with data of target
-from OPTIONS import options
 from OPTIONS import DIR_RESULTS, DIR_OUTPUT
 
-METHOD_NAME = 'Ranking'
-
-RANKING_MODE = options[METHOD_NAME]['variation']
-INDEPENDENT_RANK = options[METHOD_NAME]['independent']
-SENTENCE_IDEAL_LENGTH = options[METHOD_NAME]['ideal length']
-
-method_info = [RANKING_MODE, INDEPENDENT_RANK, SENTENCE_IDEAL_LENGTH]
+METHOD_NAME = 'Random'
 
 
 # Load input
@@ -86,7 +79,7 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
 
         # Make summary
 
-        summ_idx_1, summ_idx_2 = optm.make_contrastive_summary(source1, source2, RANKING_MODE)
+        summ_idx_1, summ_idx_2 = summ.make_contrastive_summary(source1, source2)
         summ1 = {i: source1[i] for i in summ_idx_1}
         summ2 = {i: source2[i] for i in summ_idx_2}
 

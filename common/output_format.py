@@ -1,5 +1,7 @@
 from pprint import pformat
 
+from OPTIONS import DEBUG_MODE
+
 GRAY = '\33[90m'
 BLUE = '\33[94m'
 GREEN = '\33[92m'
@@ -9,8 +11,13 @@ RED = '\33[31m'
 DEBUG_PRINTS = False
 
 
+def printdebug(*text):
+    if DEBUG_MODE:
+        printColor(printFormat(*text), GRAY)
+
+
 def print_verbose(*msg):
-    from options import VERBOSE_MODE
+    from OPTIONS import VERBOSE_MODE
     if not VERBOSE_MODE:
         return
     printMessage(*msg)

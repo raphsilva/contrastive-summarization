@@ -1,27 +1,29 @@
 import os
+import sys
 from time import time
 
-import evaluate
-import summarization as optm
-import output_files
-import output_format as out
-import structure as struct
-from read_input import read_input
-from options import DATASETS_TO_TEST
-from options import DEBUG_MODE
-from options import DISCARD_TESTS
-from options import LIM_SENTENCES  # Sets the maximum number of SENTENCES in each side of the summary
-from options import LIM_WORDS  # Sets the maximum number of WORDS in each side of the summary
-from options import METHOD
-from options import REPEAT_TESTS
-from options import filepath  # Get full path for the file with data of target
-from structure import word_count
+sys.path.append(os.path.realpath('..'))  # To import modules from directory above.
 
-PATH_RESULTS = 'RESULTS'
-PATH_OUTPUT = 'OUTPUT'
+import common.evaluate as evaluate
+import Similarity.summarization as optm
+import common.output_files as output_files
+import common.output_format as out
+import common.structure as struct
+from common.read_input import read_input
+from OPTIONS import DATASETS_TO_TEST
+from OPTIONS import DEBUG_MODE
+from OPTIONS import DISCARD_TESTS
+from OPTIONS import LIM_WORDS  # Sets the maximum number of WORDS in each side of the summary
+from OPTIONS import REPEAT_TESTS
+from OPTIONS import filepath  # Get full path for the file with data of target
+from OPTIONS import options
+from common.structure import word_count
+from OPTIONS import DIR_RESULTS, DIR_OUTPUT
 
-os.makedirs(PATH_RESULTS, exist_ok=True)
-os.makedirs(PATH_OUTPUT, exist_ok=True)
+METHOD_NAME = 'Similarity'
+
+VARIATION = options[METHOD_NAME]['variation']
+
 
 EXECUTION_ID = str(int(time()) % 100000000)  # Execution code (will be in the results file name)
 
@@ -86,13 +88,13 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
         if sum([source2[i]['sent'][a] for a in source2[i]['sent']]) < 0:
             e2_neg[i] = source2[i]
 
-    stats_e1_pos = struct.aspects_stats(e1_pos)
-    stats_e1_neg = struct.aspects_stats(e1_neg)
-    stats_e2_pos = struct.aspects_stats(e2_pos)
-    stats_e2_neg = struct.aspects_stats(e2_neg)
+    stats_e1_pos = struct.aspects_stats_SIMILARITY(e1_pos)
+    stats_e1_neg = struct.aspects_stats_SIMILARITY(e1_neg)
+    stats_e2_pos = struct.aspects_stats_SIMILARITY(e2_pos)
+    stats_e2_neg = struct.aspects_stats_SIMILARITY(e2_neg)
 
     evaluate.reset()  # To start evaluating summaries of the current sources.
-    output_files.new_source(SOURCE1, SOURCE2, source1, source2)  # Prepare output files for the current sources.
+    output_files.new_source(SOURCE1, SOURCE2, source1, source2, 'Similarity')  # Prepare output files for the current sources.
 
     map_scores_summary = {}
 
@@ -135,7 +137,8 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
 
         # Register time elapsed
         time_final = time()
-        time_total += time_final - time_initial
+        time_elapsed = time_final - time_initial
+        time_total += time_elapsed
 
         # Register all summaries generated, ignoring order of sentences.
         s_id = ([sorted(summ_idx_1), sorted(summ_idx_2)])
@@ -145,11 +148,8 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
         scores = evaluate.new_sample(source1, source2, summ1, summ2)
         print('%3d) %5d %5d %5d %5d' % (repeat + 1, scores['R'], scores['C'], scores['D'], scores['H']))
 
-        # Register parameters used
-        summary_parameters = [METHOD, 'LIMIT SENTENCES=' + str(LIM_SENTENCES), 'LIMIT WORDS=' + str(LIM_WORDS)]
-
         # Write output file
-        output_files.new_summary(summ1, summ2, scores, summary_parameters)
+        output_files.new_summary(summ1, summ2, scores, time_elapsed)
 
         # Make dictionary mapping evaluations to summaries
         map_scores_summary[(scores['R'], scores['C'], scores['D'])] = (summ_idx_1, summ_idx_2)
@@ -173,6 +173,6 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
         output_files.print_stats(summ_idx_1, summ_idx_2, source1, source2)
 
     # Save output files in disc.
-    output_files.write_files(SOURCE1, SOURCE2, EXECUTION_ID)
+    output_files.write_files(SOURCE1, SOURCE2, METHOD_NAME, EXECUTION_ID)
 
-print(f'\n\nSummaries and evaluations are in folders {PATH_OUTPUT} and {PATH_RESULTS}.')
+print(f'\n\nSummaries and evaluations are in folders {DIR_OUTPUT} and {DIR_RESULTS}.')

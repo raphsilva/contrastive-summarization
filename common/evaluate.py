@@ -1,7 +1,9 @@
 from statistics import stdev
 
-import metrics
-from options import DISCARD_TESTS
+import common.metrics as metrics
+from OPTIONS import DISCARD_TESTS
+
+ROUND_DIGS = 2
 
 r_scores = []
 c_scores = []
@@ -62,15 +64,29 @@ def new_sample(source1, source2, summ1, summ2):
 
 
 def source():
-    r_scores_without_outliers = sorted(r_scores)[DISCARD_TESTS:-DISCARD_TESTS]
-    c_scores_without_outliers = sorted(c_scores)[DISCARD_TESTS:-DISCARD_TESTS]
-    d_scores_without_outliers = sorted(d_scores)[DISCARD_TESTS:-DISCARD_TESTS]
-    h_scores_without_outliers = sorted(h_scores)[DISCARD_TESTS:-DISCARD_TESTS]
+
+    global r_scores, c_scores, d_scores, h_scores
+
+    r_scores = [round(i, ROUND_DIGS) for i in sorted(r_scores)]
+    c_scores = [round(i, ROUND_DIGS) for i in sorted(c_scores)]
+    d_scores = [round(i, ROUND_DIGS) for i in sorted(d_scores)]
+    h_scores = [round(i, ROUND_DIGS) for i in sorted(h_scores)]
+
+    r_scores_without_outliers = sorted(r_scores)
+    c_scores_without_outliers = sorted(c_scores)
+    d_scores_without_outliers = sorted(d_scores)
+    h_scores_without_outliers = sorted(h_scores)
+
+    if DISCARD_TESTS > 0:
+        r_scores_without_outliers = r_scores_without_outliers[DISCARD_TESTS:-DISCARD_TESTS]
+        c_scores_without_outliers = c_scores_without_outliers[DISCARD_TESTS:-DISCARD_TESTS]
+        d_scores_without_outliers = d_scores_without_outliers[DISCARD_TESTS:-DISCARD_TESTS]
+        h_scores_without_outliers = h_scores_without_outliers[DISCARD_TESTS:-DISCARD_TESTS]
 
     r_mean = sum(r_scores_without_outliers) / len(r_scores_without_outliers)
     c_mean = sum(c_scores_without_outliers) / len(c_scores_without_outliers)
     d_mean = sum(d_scores_without_outliers) / len(d_scores_without_outliers)
-    h_mean = harmonic_mean([r_mean, c_mean, d_mean])
+    h_mean = sum(h_scores_without_outliers) / len(h_scores_without_outliers)
 
     r_stdev = stdev(r_scores_without_outliers)
     c_stdev = stdev(c_scores_without_outliers)
@@ -84,29 +100,29 @@ def source():
 
     e = {}
     e['scores'] = {
-        'R': r_scores_without_outliers,
-        'C': c_scores_without_outliers,
-        'D': d_scores_without_outliers,
-        'H': h_scores_without_outliers
+        'R': r_scores,
+        'C': c_scores,
+        'D': d_scores,
+        'H': h_scores
     }
     e['means'] = {
-        'R': r_mean,
-        'C': c_mean,
-        'D': d_mean,
-        'H': h_mean
+        'R': round(r_mean, ROUND_DIGS),
+        'C': round(c_mean, ROUND_DIGS),
+        'D': round(d_mean, ROUND_DIGS),
+        'H': round(h_mean, ROUND_DIGS)
     }
     e['stdevs'] = {
-        'R': r_stdev,
-        'C': c_stdev,
-        'D': d_stdev,
-        'H': h_stdev
+        'R': round(r_stdev, ROUND_DIGS),
+        'C': round(c_stdev, ROUND_DIGS),
+        'D': round(d_stdev, ROUND_DIGS),
+        'H': round(h_stdev, ROUND_DIGS)
     }
-    e['avg_sizes'] = {
-        'words_1': avg_words1,
-        'words_2': avg_words2,
-        'sentences_1': avg_sentences1,
-        'sentences_2': avg_sentences2
+    e['avg sizes'] = {
+        'words': [avg_words1, avg_words2],
+        'sentences': [avg_sentences1, avg_sentences2]
     }
+
+    print('\n     %5d %5d %5d %5d\n\n' % (r_mean, c_mean, d_mean, h_mean))
 
     return e
 

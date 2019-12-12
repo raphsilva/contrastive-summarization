@@ -2,11 +2,13 @@
 
 This repository contains algorithms used to perform contrastive opinion summarization, which is a task that aims to build summaries that help find differences about two entities given opinions about them. 
 
-Scientific text explaining the methods and their implementations will be coming soon. The methods available in this repository are:
+The methods available in this repository are:
 * **Statistic**: Builds summaries that are more statistically similar to the source, considering the means and standard deviations of polarities of each aspect. Described by _Lerman and McDonald (2009)_.  
 * **Clustering**: Performs a similarity clustering of sentences, them matches clusters as to form pairs and selects the best sentence of each cluster to be added to the summary. Described by _Kim and Zhai (2009)_.
 * **Similarity**: Uses similarities of sentences (by looking at the topics approached in each sentence) to estimate which sentences add more value to the summary considering representativity, contrastivity and diversity. Described by _Jin et al. (2016)_.
 * **Ranking**: Makes a ranking of pairs of contrasting opinions based on their frequency in the source, then selects sentences that contain the top-ranked opinions to enter the summary. Novel method, not published yet.
+
+There is also a baseline **Random** method that chooses sentences arbitrarily.
 
 
 ## Implementations
@@ -44,12 +46,12 @@ After tests are done, the outputs will be in two folders: `OUTPUT` will contain 
 
 #### Summaries 
 
-After a method of summarization has been executed multiple times for a given input, the summary that best reflects the average performance of the method is chosen and saved at `[method]/OUTPUT/[n]_[dataset].txt`, where `n` is an identifier attributed to each execution. Summaries are saved in simple text format and are divided in two parts, separated by a long line break, one for each entity.
+After a method of summarization has been executed multiple times for a given input, the summary that best reflects the average performance of the method is chosen and saved at `OUTPUT/summaries/[method]_[n]_[dataset].txt`, where `n` is an identifier attributed to each execution. Summaries are saved in simple text format and are divided in two parts, separated by a long line break, one for each entity.
 
 
 #### Evaluation
 
-The evaluation results are saved in the directory `RESULTS` of each method. They are files named `[method]/OUTPUT/[n]_[dataset].json`,  where `n` is an identifier attributed to each execution. The files are JSONs that contain the following: 
+The evaluation results are saved in the directory `OUTPUT` of each method. They are files named `OUTPUT/results/[method]_[n]_[dataset].json`,  where `n` is an identifier attributed to each execution. These files are JSONs that contain the following: 
 * Information about the **input**, such as **number of words**, **number of sentences**, **file names**.
 * The **options** used in the tests, such as **method parameters**, **limits of words**, etc;
 * Statistics of execution, such as **time consumed** and **number of distinct summaries** gotten;
@@ -57,7 +59,7 @@ The evaluation results are saved in the directory `RESULTS` of each method. They
 * The **quantitative** information of summaries, with the **average of words** and **average of sentences**.
 * Information of **each summary** generated, such as the **size** of the summary, the **evaluation** scores and the **indexes of sentences** that make the the summary.
 
-Another file is generated at each execution, called `[n]_table.txt`, and it has a summary of results for all input files. It shows, in a compact way: the average scores, standard deviation, highest / lowest scores, average sizes, time consumed and the number of distinct summaries found.
+Another file is generated at each execution, called `[method]_[n]_table.txt`, and it has a summary of results for all input files. It shows, in a compact way: the average scores, standard deviation, highest / lowest scores, average sizes, time consumed and the number of distinct summaries found.
 
 
 ## Instructions
@@ -99,14 +101,14 @@ The execution of each method is done inside the method's directory. Choose the m
 
 #### Set options
 
-Each method has a file `options.py` which allows you to choose the options for execution. The values you may want to change are: 
-* `LIM_WORDS`: Maximum number of words in the summary (for each entity).
-* `LIM_SENTENCES`: Maximum number of sentences in the summary (for each entity).
+The file `OPTIONS.py` allows you to choose the options for execution. The values you may want to change are: 
+* `LIMIT_WORDS`: Maximum number of words in the summary (for each entity).
+* `LIMIT_SENTENCES`: Maximum number of sentences in the summary (for each entity).
 * `REPEAT_TESTS`: Number of tests performed with each dataset (which are shuffled before each repetition)
 * `DISCARD_TESTS`: Amount of outliers tests that will be discarded for overall evaluation (the total number of discarded tests is twice this value, because this amount of best summaries and of worst summaries are discarded).
 * `DATASETS_TO_TEST`: Choose which files of data will be tested.
 
-Besides those, you'll find the section `# Method options` which lets you change the method's parameters. 
+Besides those, you'll find the section `# Methods options` which lets you change the method's parameters. 
 
 
 #### Run
@@ -127,8 +129,8 @@ To install:
 ```
 git clone https://github.com/raphsilva/contrastive-summarization.git
 cd contrastive-summarization
-chmode +x get_dataset.sh
-chmode +x get_dependencies.sh
+chmod +x get_dataset.sh
+chmod +x get_dependencies.sh
 ./get_dataset.sh
 ./get_dependencies.sh
 pip install -r requirements.txt

@@ -1,20 +1,6 @@
 import random
 random.seed(0)
 
-from probability import *
-from write_files import get_variable_from_file
-
-cache_distance = get_variable_from_file('cache/distance.cache')
-cache_SAM = get_variable_from_file('cache/SAM.cache')
-
-if cache_distance == False:
-    cache_distance = {}
-
-if cache_SAM == False:
-    cache_SAM = {}
-
-normal_distribution_zero = normalDistributionZero()
-
 
 def get_topics(source):
     t = []
@@ -29,14 +15,19 @@ def similarity(op1, op2):
     t1 = []
     t2 = []
     for i in op1:
-        if i not in t1:
-            t1.append(i)
+        opinion = str(op1[i])
+        if opinion not in t1:
+            t1.append(opinion)
     for i in op2:
-        if i not in t2:
-            t2.append(i)
+        opinion = str(op2[i])
+        if opinion not in t2:
+            t2.append(opinion)
 
     intersection = [i for i in t1 if i in t2]
     union = list(set(t1 + t2))
+
+    if len(union) == 0:
+        return 0
 
     r = len(intersection) / len(union)
 

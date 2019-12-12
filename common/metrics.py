@@ -1,7 +1,12 @@
 MAXSENT = 100
 
-from structure import get_contrastive_pairs
-from structure import get_opinions
+from common.structure import get_contrastive_pairs
+from common.structure import get_opinions as structure_get_opinions
+
+
+def get_opinions(info):
+    opinions = structure_get_opinions(info)
+    return [i for i in opinions if i[0]]
 
 
 def representativiness(source, summ):

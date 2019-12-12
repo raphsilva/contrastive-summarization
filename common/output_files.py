@@ -1,28 +1,37 @@
 import json
+import os
 
-from options import DISCARD_TESTS, REPEAT_TESTS
-from options import LIM_SENTENCES  # Sets the maximum number of SENTENCES in each side of the summary
-from options import LIM_WORDS  # Sets the maximum number of WORDS in each side of the summary
-from structure import word_count
+from OPTIONS import DIR_RESULTS, DIR_OUTPUT
+from OPTIONS import DISCARD_TESTS, REPEAT_TESTS
+from OPTIONS import LIM_SENTENCES  # Sets the maximum number of SENTENCES in each side of the summary
+from OPTIONS import LIM_WORDS  # Sets the maximum number of WORDS in each side of the summary
+from OPTIONS import options
+from common.structure import word_count
+
+os.makedirs(DIR_RESULTS, exist_ok=True)
+os.makedirs(DIR_OUTPUT, exist_ok=True)
+
+ROUND_DIGS = 2
 
 json_results = {}
 summary = ''
 
 
-def reset():
+def reset(method):
     global json_results
     json_results = {'meta': {}}
     json_results['meta']['source'] = []
     json_results['meta']['limits (per side)'] = {}
     json_results['meta']['limits (per side)']['sentences'] = LIM_SENTENCES
     json_results['meta']['limits (per side)']['words'] = LIM_WORDS
-    json_results['meta']['method_options'] = {}
+    json_results['meta']['method_parameters'] = options[method]
     json_results['output'] = []
 
 
-def new_source(SOURCE1_NAME, SOURCE2_NAME, source1, source2):
-    reset()
+def new_source(SOURCE1_NAME, SOURCE2_NAME, source1, source2, method):
+    reset(method)
     json_results['meta']['source'] = (SOURCE1_NAME, SOURCE2_NAME)
+    json_results['meta']['method'] = method
     json_results['meta']['size'] = {}
     json_results['meta']['size']['source'] = {}
     json_results['meta']['size']['source']['sentences'] = []
@@ -33,14 +42,13 @@ def new_source(SOURCE1_NAME, SOURCE2_NAME, source1, source2):
     json_results['meta']['size']['source']['words'].append(word_count(source2))
 
 
-def new_summary(summ1, summ2, evals, summary_parameters):
+def new_summary(summ1, summ2, evals, time_elapsed):
     n = {}
-    n['parameters'] = summary_parameters
     n['evaluation'] = {}
-    n['evaluation']['R'] = evals['R']
-    n['evaluation']['C'] = evals['C']
-    n['evaluation']['D'] = evals['D']
-    n['evaluation']['H'] = evals['H']
+    n['evaluation']['R'] = round(evals['R'], ROUND_DIGS)
+    n['evaluation']['C'] = round(evals['C'], ROUND_DIGS)
+    n['evaluation']['D'] = round(evals['D'], ROUND_DIGS)
+    n['evaluation']['H'] = round(evals['H'], ROUND_DIGS)
     n['summ'] = []
     n['summ'].append([i for i in summ1])
     n['summ'].append([i for i in summ2])
@@ -48,13 +56,14 @@ def new_summary(summ1, summ2, evals, summary_parameters):
     n['size']['word count'] = []
     n['size']['word count'].append(word_count(summ1))
     n['size']['word count'].append(word_count(summ2))
+    n['time'] = time_elapsed
     json_results['output'].append(n)
 
 
 def overall_scores(e, time_total, all_summaries):
     global json_results
     json_results['meta']['run time'] = round(time_total, 2)
-    json_results['meta']['different summaries generated'] = len(all_summaries)
+    json_results['meta']['distinct summaries generated'] = len(all_summaries)
     json_results['evaluation'] = e
 
 
@@ -62,7 +71,7 @@ def make_table_of_results():
     means = json_results['evaluation']['means']
     stdevs = json_results['evaluation']['stdevs']
     scores = json_results['evaluation']['scores']
-    sizes = json_results['evaluation']['avg_sizes']
+    sizes = json_results['evaluation']['avg sizes']
 
     table_results = '\n\nSCORES'
     table_results += '\n\n'
@@ -78,17 +87,17 @@ def make_table_of_results():
     table_results += '\n\n\n'
 
     table_results += '\n\n'
-    table_results += ' avg words 1:  %6.2lf ' % (sizes['words_1'])
+    table_results += ' avg words 1:  %6.2lf ' % (sizes['words'][0])
     table_results += '\n'
-    table_results += ' avg words 2:  %6.2lf ' % (sizes['words_2'])
+    table_results += ' avg words 2:  %6.2lf ' % (sizes['words'][1])
     table_results += '\n\n'
-    table_results += ' avg sentences 1:  %6.2lf ' % (sizes['sentences_1'])
+    table_results += ' avg sentences 1:  %6.2lf ' % (sizes['sentences'][0])
     table_results += '\n'
-    table_results += ' avg sentences 2:  %6.2lf ' % (sizes['sentences_2'])
+    table_results += ' avg sentences 2:  %6.2lf ' % (sizes['sentences'][1])
     table_results += '\n\n'
     table_results += ' time %6.2lf ' % (json_results['meta']['run time'])
     table_results += '\n'
-    table_results += ' diff summs: %d' % (json_results['meta']['different summaries generated'])
+    table_results += ' diff summs: %d' % (json_results['meta']['distinct summaries generated'])
     table_results += '\n\n'
 
     return table_results
@@ -118,8 +127,8 @@ def write_summary(summ1, summ2, num_summaries):
 
 
 def print_stats(summ_idx_1, summ_idx_2, source1, source2):
-    import output_format as out
-    import structure as struct
+    import common.output_format as out
+    import common.structure as struct
     # Get statistics about aspects in the source (mean, standard deviation, probability)
     stats_source_1 = struct.aspects_stats(source1)
     stats_source_2 = struct.aspects_stats(source2)
@@ -141,19 +150,26 @@ def print_stats(summ_idx_1, summ_idx_2, source1, source2):
         out.printinfo("      %4d)   %s " % (i, source2[i]['opinions']))
 
 
+def write_files(SOURCE1, SOURCE2, METHOD, exec_code):
 
-def write_files(SOURCE1, SOURCE2, exec_code):
-    json_results_filename = 'RESULTS/' + exec_code + '_' + SOURCE1 + '_' + SOURCE2 + '.json'
+    json_results_filename = f'{DIR_RESULTS}/{METHOD}_{exec_code}_{SOURCE1}_{SOURCE2}.json'
+
+    output_json = json.dumps(json_results, sort_keys=True, indent=4, separators=(',', ': '), ensure_ascii=False)
+    import re
+    output_json= re.sub(r'\[\s+', '[', output_json)
+    output_json= re.sub(r',\s+', ', ', output_json)
+    output_json = re.sub(r'\s+\]', ']', output_json)
+
     f = open(json_results_filename, 'w')
-    f.write(json.dumps(json_results, sort_keys=True, indent=4, separators=(',', ': '), ensure_ascii=False))
+    f.write(output_json)
     f.close()
 
-    f = open(f'OUTPUT/out_{exec_code}_{SOURCE1[:-1]}.txt', 'w')
+    f = open(f'{DIR_OUTPUT}/{METHOD}_{exec_code}_{SOURCE1[:-1]}.txt', 'w')
     f.write(summary)
     f.close()
 
     table_results = make_table_of_results()
-    table_results_filename = 'RESULTS/' + exec_code + '_' + 'table' + '.txt'  # Name of file that will save the results
+    table_results_filename = f'{DIR_RESULTS}/{METHOD}_{exec_code}_table.txt'  # Name of file that will save the results
     f = open(table_results_filename, 'a')
     f.write('%d tests, discard %d(x2) best and worst\n\n' % (REPEAT_TESTS, DISCARD_TESTS))
     f.write('\n\n')

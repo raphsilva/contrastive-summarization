@@ -1,12 +1,13 @@
-import method
+import Similarity.method as method
 
-import structure as struct
+import common.structure as struct
 
 INFINITY = 999999
 
-from options import LIM_SENTENCES
+from OPTIONS import LIM_SENTENCES
 
-from options import METHOD
+from OPTIONS import options
+METHOD = options['Similarity']['variation']
 
 import random
 random.seed(0)

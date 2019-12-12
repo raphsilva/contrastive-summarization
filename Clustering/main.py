@@ -1,31 +1,36 @@
 import os
+import sys
 from time import time
 
-import evaluate
-import output_files
-import output_format as out
-from load_data import preprocess
-from load_data import read_input
-from options import DATASETS_TO_TEST
-from options import DISCARD_TESTS
-from options import HUNGARIAN_METHOD
-from options import LAMBDA
-from options import LIMIT_WORDS
-from options import METHOD
-from options import PICK_CENTROIDS
-from options import REPEAT_TESTS
-from options import SIZE_FAC
-from options import filepath  # Get full path for the file with data of target
-from structure import get_summ_closest_to_scores
-from structure import idx_to_summ
-from summarization import contrastiveness_first
-from summarization import representativeness_first
+sys.path.append(os.path.realpath('..'))
 
-PATH_RESULTS = 'RESULTS'
-PATH_OUTPUT = 'OUTPUT'
+import common.evaluate as evaluate
+import common.output_files as output_files
+import common.output_format as out
+from common.read_input import preprocess_CLUSTERING
+from common.read_input import read_input_CLUSTERING
 
-os.makedirs(PATH_RESULTS, exist_ok=True)
-os.makedirs(PATH_OUTPUT, exist_ok=True)
+from OPTIONS import DATASETS_TO_TEST
+from OPTIONS import DISCARD_TESTS
+from OPTIONS import LIM_WORDS  # Sets the maximum number of WORDS in each side of the summary
+from OPTIONS import REPEAT_TESTS
+from OPTIONS import filepath  # Get full path for the file with data of target
+from OPTIONS import DIR_RESULTS, DIR_OUTPUT
+
+from OPTIONS import options
+
+METHOD_NAME = 'Clustering'
+
+VARIATION = options[METHOD_NAME]['variation']
+LAMBDA = options[METHOD_NAME]['lambda']
+PICK_CENTROIDS = options[METHOD_NAME]['centroids']
+HUNGARIAN_METHOD = options[METHOD_NAME]['hungarian']
+SIZE_FAC = options[METHOD_NAME]['size_fac']
+
+from common.structure import get_summ_closest_to_scores
+from common.structure import idx_to_summ
+from Clustering.summarization import contrastiveness_first
+from Clustering.summarization import representativeness_first
 
 EXECUTION_ID = str(int(time()) % 100000000)  # Execution code (will be in the results file name)
 
@@ -40,8 +45,8 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
     print(f'\n\n\n\n  =========datasets=======>  {SOURCE1} {SOURCE2}\n\n')
 
     out.print_verbose('Loading input')
-    source1 = read_input(filepath(SOURCE1))
-    source2 = read_input(filepath(SOURCE2))
+    source1 = read_input_CLUSTERING(filepath(SOURCE1))
+    source2 = read_input_CLUSTERING(filepath(SOURCE2))
     out.print_verbose('Sizes of data sets: ', len(source1), len(source2))
 
     '''
@@ -64,8 +69,8 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
     }
     '''
 
-    source1_proc = preprocess(source1)
-    source2_proc = preprocess(source2)
+    source1_proc = preprocess_CLUSTERING(source1)
+    source2_proc = preprocess_CLUSTERING(source2)
 
     set1_pos = source1_proc['+']
     set1_neg = source1_proc['-']
@@ -73,7 +78,7 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
     set2_neg = source2_proc['-']
 
     evaluate.reset()  # To start evaluating summaries of the current sources.
-    output_files.new_source(SOURCE1, SOURCE2, source1, source2)  # Prepare output files for the current sources.
+    output_files.new_source(SOURCE1, SOURCE2, source1, source2, 'Clustering')  # Prepare output files for the current sources.
 
     map_scores_summary = {}
 
@@ -97,14 +102,14 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
 
         ini_time = time()
 
-        if METHOD == 'CF':
+        if VARIATION == 'CF':
 
             summ_idx_A = contrastiveness_first(set1_pos, set2_neg, '+', '-', SIZE_FAC, LAMBDA, PICK_CENTROIDS,
                                                HUNGARIAN_METHOD)
             summ_idx_B = contrastiveness_first(set1_neg, set2_pos, '-', '+', SIZE_FAC, LAMBDA, PICK_CENTROIDS,
                                                HUNGARIAN_METHOD)
 
-        elif METHOD == 'RF':
+        elif VARIATION == 'RF':
 
             summ_idx_A = representativeness_first(set1_pos, set2_neg, '+', '-', LAMBDA,
                                                   PICK_CENTROIDS, HUNGARIAN_METHOD)
@@ -121,7 +126,7 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
         w1 = sum([summ1[i]['word_count'] for i in summ1])
         w2 = sum([summ2[i]['word_count'] for i in summ2])
 
-        if w1 + w2 > 2 * LIMIT_WORDS:  # Summary is too large; will repeat with smaller size factor.
+        if w1 + w2 > 2 * LIM_WORDS:  # Summary is too large; will repeat with smaller size factor.
             discarded += 1
             repeat -= 1
             SIZE_FAC *= 0.95
@@ -132,7 +137,8 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
 
         # Register time elapsed
         time_final = time()
-        time_total += time_final - time_initial
+        time_elapsed = time_final - time_initial
+        time_total += time_elapsed
 
         # Register all summaries generated, ignoring order of sentences.
         s_id = ([sorted(summ_idx_1), sorted(summ_idx_2)])
@@ -142,11 +148,8 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
         scores = evaluate.new_sample(source1, source2, summ1, summ2)
         print('%3d) %5d %5d %5d %5d' % (repeat, scores['R'], scores['C'], scores['D'], scores['H']))
 
-        # Register parameters used
-        summary_parameters = [METHOD, 'lambda=' + str(LAMBDA), PICK_CENTROIDS, HUNGARIAN_METHOD]
-
         # Write output file
-        output_files.new_summary(summ1, summ2, scores, summary_parameters)
+        output_files.new_summary(summ1, summ2, scores, time_elapsed)
 
         # Make dictionary mapping evaluations to summaries
         map_scores_summary[(scores['R'], scores['C'], scores['D'])] = (summ_idx_1, summ_idx_2)
@@ -169,6 +172,6 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
     output_files.write_summary(summ1, summ2, len(distinct_summaries))
 
     # Save output files in disc.
-    output_files.write_files(SOURCE1, SOURCE2, EXECUTION_ID)
+    output_files.write_files(SOURCE1, SOURCE2, METHOD_NAME, EXECUTION_ID)
 
-print(f'\n\nSummaries and evaluations are in folders {PATH_OUTPUT} and {PATH_RESULTS}.')
+print(f'\n\nSummaries and evaluations are in folders {DIR_OUTPUT} and {DIR_RESULTS}.')
