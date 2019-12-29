@@ -7,10 +7,10 @@ sys.path.append(os.path.realpath('..'))
 import common.evaluate as evaluate
 import Ranking.summarization as optm
 import common.output_files as output_files
-import common.output_format as out
+import common.console_output as out
 import common.structure as struct
 from common.read_input import read_input
-from OPTIONS import DATASETS_TO_TEST
+from OPTIONS import INPUT_DATASETS
 from OPTIONS import DISCARD_TESTS
 from OPTIONS import REPEAT_TESTS
 from OPTIONS import filepath  # Get full path for the file with data of target
@@ -24,6 +24,9 @@ INDEPENDENT_RANK = options[METHOD_NAME]['independent']
 SENTENCE_IDEAL_LENGTH = options[METHOD_NAME]['ideal length']
 
 method_info = [RANKING_MODE, INDEPENDENT_RANK, SENTENCE_IDEAL_LENGTH]
+
+if SENTENCE_IDEAL_LENGTH != None:
+    METHOD_NAME = 'Ranking+'
 
 
 # Load input
@@ -39,7 +42,7 @@ EXECUTION_ID = str(int(time()) % 100000000)  # Execution code (will be in the re
 
 print('\n\nWill perform %d tests and discard %d(x2) best and worst\n\n' % (REPEAT_TESTS, DISCARD_TESTS))
 
-for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
+for SOURCE1, SOURCE2 in INPUT_DATASETS:
 
     print(f'\n\n\n\n  =========datasets=======>  {SOURCE1} {SOURCE2}\n\n')
 
@@ -49,22 +52,10 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
     out.print_verbose('Words: ', struct.word_count(source1), struct.word_count(source2))
 
     '''
-    /source.../ are structures of the form
+    /source.../ are structures that contain
     {
-    0: {'intensity': 80.0,
-        'opinions': [('CÂMERA', 80.0)],
-        'sent': {'CÂMERA': 88},
-        'word_count': 2,
-        'verbatim': 'Câmera boa.'},
-    2: {'intensity': 80.0,
-        'opinions': [('DESEMPENHO',  -80.0),
-                     ('DESEMPENHO',  -80.0),
-                     ('RESISTÊNCIA', -80.0)],
-        'sent': {'DESEMPENHO': -94, 'RESISTÊNCIA': -88},
-        'verbatim': 'Entretanto, na primeira semana de uso já ralou facilmente, '
-                    'esquenta muito com os dados móveis ligados e trava, mesmo '
-                    'que raramente.',
-        'word_count': 21}
+    0: { 'opinions': [('CÂMERA', 80.0)],
+         'verbatim': 'Câmera boa.'}
     }
     '''
 

@@ -6,11 +6,11 @@ sys.path.append(os.path.realpath('..'))
 
 import common.evaluate as evaluate
 import common.output_files as output_files
-import common.output_format as out
+import common.console_output as out
 from common.read_input import preprocess_CLUSTERING
 from common.read_input import read_input_CLUSTERING
 
-from OPTIONS import DATASETS_TO_TEST
+from OPTIONS import INPUT_DATASETS
 from OPTIONS import DISCARD_TESTS
 from OPTIONS import LIM_WORDS  # Sets the maximum number of WORDS in each side of the summary
 from OPTIONS import REPEAT_TESTS
@@ -38,7 +38,7 @@ print('\n\nWill perform %d tests and discard %d(x2) best and worst\n\n' % (REPEA
 
 SIZE_FAC_DEFAULT = SIZE_FAC
 
-for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
+for SOURCE1, SOURCE2 in INPUT_DATASETS:
 
     SIZE_FAC = SIZE_FAC_DEFAULT
 
@@ -52,20 +52,11 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
     '''
     /source.../ are structures of the form
     {
-    0: {'intensity': 80.0,
-        'opinions': [('CÂMERA', 80.0)],
-        'sent': {'CÂMERA': 88},
-        'word_count': 2,
-        'verbatim': 'Câmera boa.'},
-    2: {'intensity': 80.0,
-        'opinions': [('DESEMPENHO',  -80.0),
-                     ('DESEMPENHO',  -80.0),
-                     ('RESISTÊNCIA', -80.0)],
-        'sent': {'DESEMPENHO': -94, 'RESISTÊNCIA': -88},
-        'verbatim': 'Entretanto, na primeira semana de uso já ralou facilmente, '
-                    'esquenta muito com os dados móveis ligados e trava, mesmo '
-                    'que raramente.',
-        'word_count': 21}
+        135: { 'id': 135,
+                'verbatim': 'Boa maquina para quem esta começando a fotografar.',
+                'text_info': ['bom', 'maquinar', 'começar', 'fotografar'],
+               'opinions': [['PRODUTO', 100]],               
+               'word_count': 8}
     }
     '''
 

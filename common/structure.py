@@ -63,7 +63,7 @@ def count_words(summ):
     return r
 
 
-import common.output_format as output_format
+import common.console_output as output_format
 
 
 def idx_to_summ_SIMILARITY(source, indexes):

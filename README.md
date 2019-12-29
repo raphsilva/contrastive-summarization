@@ -2,6 +2,8 @@
 
 This repository contains algorithms used to perform contrastive opinion summarization, which is a task that aims to build summaries that help find differences about two entities given opinions about them. 
 
+## Algorithms
+
 The methods available in this repository are:
 * **Statistic**: Builds summaries that are more statistically similar to the source, considering the means and standard deviations of polarities of each aspect. Described by _Lerman and McDonald (2009)_.  
 * **Clustering**: Performs a similarity clustering of sentences, them matches clusters as to form pairs and selects the best sentence of each cluster to be added to the summary. Described by _Kim and Zhai (2009)_.
@@ -9,6 +11,13 @@ The methods available in this repository are:
 * **Ranking**: Makes a ranking of pairs of contrasting opinions based on their frequency in the source, then selects sentences that contain the top-ranked opinions to enter the summary. Novel method, not published yet.
 
 There is also a baseline **Random** method that chooses sentences arbitrarily.
+
+
+## Structure
+
+The directories in the root directory are: 
+* One for each method: `Clustering`, `Random`, `Ranking`, `Similarity`, `Statistic`;
+* One with code that is used by all the methods: `common`
 
 
 ## Implementations

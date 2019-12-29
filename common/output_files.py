@@ -127,7 +127,7 @@ def write_summary(summ1, summ2, num_summaries):
 
 
 def print_stats(summ_idx_1, summ_idx_2, source1, source2):
-    import common.output_format as out
+    import common.console_output as out
     import common.structure as struct
     # Get statistics about aspects in the source (mean, standard deviation, probability)
     stats_source_1 = struct.aspects_stats(source1)

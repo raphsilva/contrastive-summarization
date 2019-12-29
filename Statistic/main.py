@@ -7,13 +7,13 @@ sys.path.append(os.path.realpath('..'))  # To import modules from directory abov
 import common.evaluate as evaluate
 import Statistic.method as method
 import common.output_files as output_files
-import common.output_format as out
+import common.console_output as out
 import common.structure as struct
 from common.read_input import read_input_STATISTIC
 
 from Statistic.summarization import summarize
 
-from OPTIONS import DATASETS_TO_TEST
+from OPTIONS import INPUT_DATASETS
 from OPTIONS import DISCARD_TESTS
 from OPTIONS import DEBUG_MODE
 from OPTIONS import REPEAT_TESTS
@@ -25,7 +25,6 @@ from OPTIONS import options
 
 METHOD_NAME = 'Statistic'
 
-OPTM_MODE = options[METHOD_NAME]['optimization']
 VARIATION = options[METHOD_NAME]['variation']
 ALPHA = options[METHOD_NAME]['alpha']
 
@@ -34,7 +33,7 @@ EXECUTION_ID = str(int(time()) % 100000000)  # Execution code (will be in the re
 
 print('\n\nWill perform %d tests and discard %d(x2) best and worst\n\n' % (REPEAT_TESTS, DISCARD_TESTS))
 
-for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
+for SOURCE1, SOURCE2 in INPUT_DATASETS:
 
     print(f'\n\n\n\n  =========datasets=======>  {SOURCE1} {SOURCE2}\n\n')
 
@@ -96,7 +95,7 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
         time_initial = time()
 
         # Make summary
-        summ_idx_1, summ_idx_2 = summarize(source1, source2, stats_source_1, stats_source_2, VARIATION, OPTM_MODE)
+        summ_idx_1, summ_idx_2 = summarize(source1, source2, stats_source_1, stats_source_2, VARIATION)
         summ1 = {i: source1[i] for i in summ_idx_1}
         summ2 = {i: source2[i] for i in summ_idx_2}
 

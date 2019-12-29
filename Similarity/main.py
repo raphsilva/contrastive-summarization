@@ -7,10 +7,10 @@ sys.path.append(os.path.realpath('..'))  # To import modules from directory abov
 import common.evaluate as evaluate
 import Similarity.summarization as optm
 import common.output_files as output_files
-import common.output_format as out
+import common.console_output as out
 import common.structure as struct
 from common.read_input import read_input
-from OPTIONS import DATASETS_TO_TEST
+from OPTIONS import INPUT_DATASETS
 from OPTIONS import DEBUG_MODE
 from OPTIONS import DISCARD_TESTS
 from OPTIONS import LIM_WORDS  # Sets the maximum number of WORDS in each side of the summary
@@ -41,7 +41,7 @@ def load_input():
 
 print('\n\nWill perform %d tests and discard %d(x2) best and worst\n\n' % (REPEAT_TESTS, DISCARD_TESTS))
 
-for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
+for SOURCE1, SOURCE2 in INPUT_DATASETS:
 
     print(f'\n\n\n\n  =========datasets=======>  {SOURCE1} {SOURCE2}\n\n')
 
@@ -51,22 +51,10 @@ for SOURCE1, SOURCE2 in DATASETS_TO_TEST:
     out.print_verbose('Words: ', struct.word_count(source1), struct.word_count(source2))
 
     '''
-    /source.../ are structures of the form
+    /source.../ are structures that contain
     {
-    0: {'intensity': 80.0,
-        'opinions': [('CÂMERA', 80.0)],
-        'sent': {'CÂMERA': 88},
-        'word_count': 2,
-        'verbatim': 'Câmera boa.'},
-    2: {'intensity': 80.0,
-        'opinions': [('DESEMPENHO',  -80.0),
-                     ('DESEMPENHO',  -80.0),
-                     ('RESISTÊNCIA', -80.0)],
-        'sent': {'DESEMPENHO': -94, 'RESISTÊNCIA': -88},
-        'verbatim': 'Entretanto, na primeira semana de uso já ralou facilmente, '
-                    'esquenta muito com os dados móveis ligados e trava, mesmo '
-                    'que raramente.',
-        'word_count': 21}
+    0: { 'opinions': [('CÂMERA', 80.0)],
+         'verbatim': 'Câmera boa.'}
     }
     '''
 
