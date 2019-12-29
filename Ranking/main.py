@@ -25,6 +25,9 @@ SENTENCE_IDEAL_LENGTH = options[METHOD_NAME]['ideal length']
 
 method_info = [RANKING_MODE, INDEPENDENT_RANK, SENTENCE_IDEAL_LENGTH]
 
+if SENTENCE_IDEAL_LENGTH != None:
+    METHOD_NAME = 'Ranking+'
+
 
 # Load input
 def load_input():
