@@ -1,4 +1,4 @@
-DATASET='https://github.com/raphsilva/corpus-4p/archive/v1.0.0-beta.tar.gz'
+DATASET='https://github.com/raphsilva/corpus-4p/archive/master.tar.gz'
 
 echo 'Cleaning old files'
 gio trash input
