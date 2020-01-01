@@ -1,0 +1,32 @@
+
+Custo beneficio. 
+Bom custo/benefício. 
+O aparelho é bonito. 
+Celular com Android 7.0, com bons recursos, boa bateria, boa câmera e bom custo benefício. 
+Celular bom e barato! 
+Ótimo aparelho, com preço bom e qualidade melhora ainda. 
+Bateria já estava ruim. 
+Um bom aparelho porém baixo desempenho. 
+Peca pela pouca duração da bateria. 
+A câmera não é das melhores, nem o design. 
+O produto após duas semanas não carrega mais. 
+Só acho que devem melhorar a qualidade da câmera tanto traseira quanto frontal. 
+
+
+Podia ter melhor custo-benefício. 
+Poderia custar mais barato. 
+O aparelho poderia ser um pouco mais barato. 
+Bateria horrível. 
+Celular Bom mas poderia ser mais barato e resistente. 
+Excelente aparelho! Só o preço que é alto demais e a Samsung que enche de APPs que não se utiliza que não tem como apagar. 
+Excelente bateria. 
+O aparelho é excelente, o desempenho me surpreendeu muito. 
+Rápido e com boa duração de bateria. 
+Ótimo celular. Câmera excelente. 
+Produto muito bom, a bateria dura muito e o carregador carrega muito mais rapido que os normais. 
+A tela e a câmera têm muita qualidade. 
+
+
+
+          sentences:    12   12
+              words:    82   99
