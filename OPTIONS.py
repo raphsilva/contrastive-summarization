@@ -39,7 +39,7 @@ LOW_PRIORITY_ASPECTS = ['PRODUTO']
 
 # Evaluation options
 
-REPEAT_TESTS = 8  # Times to repeat each test
+REPEAT_TESTS = 100  # Times to repeat each test
 DISCARD_TESTS = int(0.1*REPEAT_TESTS)  # Amount of top-rated and bottom-rated tests to be discarded to compute average
 
 
@@ -55,8 +55,7 @@ DATA_DIR = '../input'
 
 DATASETS = [(), ('D1a', 'D1b'), ('D2a', 'D2b'), ('D3a', 'D3b'), ('D4a', 'D4b'), ('D5a', 'D5b'), ('D6a', 'D6b'), ('D7a', 'D7b'), ('D8a', 'D8b')]
 
-INPUT_DATASETS = [DATASETS[2]]
-# DATASETS_TO_TEST = reversed(INPUT_FILES[:])
+INPUT_DATASETS = DATASETS[1:8]
 
 DIR_RESULTS = '../OUTPUT/results'
 DIR_OUTPUT = '../OUTPUT/summaries'
