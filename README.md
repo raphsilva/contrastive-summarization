@@ -50,7 +50,7 @@ The input file of each entity is a JSON file with a list of sentences with IDs a
 
 ### Output
 
-After tests are done, the outputs will be in two folders: `OUTPUT` will contain the summaries generated and `RESULTS` will contain the summaries characteristics, including evaluation. 
+After tests are done, the outputs will be in two folders inside the `OUTPUT` directory: `summaries` will contain the summaries generated and `results` will contain the summaries characteristics, including evaluation. 
 
 
 #### Summaries 
