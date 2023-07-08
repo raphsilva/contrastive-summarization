@@ -1,7 +1,7 @@
 h5py==2.10.0
 joblib==1.2.0
 nlpnet==1.2.4
-nltk==3.4.5
+nltk==3.6.6
 numpy==1.22.0
 scikit-learn==0.21.3
 scipy==1.10.0
